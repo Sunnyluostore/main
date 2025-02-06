@@ -1,0 +1,10 @@
+md	ProfessionalLighting
+md	LightingAccessories
+md	LandscapeLighting
+md	OutdoorLighting
+md	Commercial&IndustrialLighting
+md	LightingBulbs&Tubes
+md	HolidayLighting
+md	Smartlighting
+md	IndoorLighting
+md	Solarlighting

@@ -1,0 +1,15 @@
+md	HomeDecor
+md	Festive&PartySupplies
+md	Kitchenware
+md	Dinnerware#Coffee&WineSet
+md	GardenSupplies
+md	HouseholdCleaningTools&Accessories
+md	Lighters&SmokingAccessories
+md	HomeStorage&Organization
+md	HouseholdScales
+md	HomeTextiles
+md	Drinkware&Accessories
+md	SmartHomeImprovement
+md	BathroomProducts
+md	RainGear
+md	HouseholdSundries
