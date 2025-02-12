@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品列表 - 第页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 200px;
+            /* 可根据实际情况调整图片大小 */
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        nav {
+            background-color: #03a9f4;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* 新添加的样式 */
+        .product-item h3 {
+            font-size: 14px;
+            /* 产品名称文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item p {
+            font-size: 12px;
+            /* 其他产品信息文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item:hover h3 {
+            color: #03a9f4;
+            /* 鼠标悬停时产品名称文字变色 */
+        }
+
+        .product-item:hover p {
+            color: #03a9f4;
+            /* 鼠标悬停时其他产品信息文字变色 */
+        }
+
+        /* 产品容器样式 */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        /* 产品项样式 */
+        .product-item {
+            width: calc(25% - 20px);
+            /* 默认每行显示 4 个产品 */
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 鼠标悬停效果 */
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* 媒体查询，适配不同屏幕尺寸 */
+        @media (max-width: 1024px) {
+            .product-item {
+                width: calc(33.33% - 20px);
+                /* 平板设备每行显示 3 个产品 */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* 小屏幕设备每行显示 2 个产品 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: 100%;
+                /* 超小屏幕设备每行显示 1 个产品 */
+            }
+        }
+
+        /* 分页按钮样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color.3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        /* 回到顶部按钮样式 */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #03a9f4;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部图片和文字 -->
+    <div class="header">
+        <img src="file:///D:/taob/main/main1/image/logo.png" alt="Logo">
+        <p>Sunnyluo Store</p>
+        <p>Build a curated directory of store with factory</p>
+    </div>
+    <nav>
+        <a href="../../../index.html">Home</a>
+        <a href="../../../pdfs/pdf.html">Resources</a>
+        <a href="mailto:sunnyluo330@gmail.com">About Us</a>
+        <a href="mailto:sunnyluo330@gmail.com">Contact Us</a>
+        <a href="https://www.facebook.com/sunnyluoting">Facebook</a>
+    </nav>
+    <h1>Product list</h1>
+    <div class="products">
+        
+        <div class="product-item">
+            <a href="product_801.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc5474fe0d8dd472896426b450ac18080P.jpg_300x300.jpg" alt="Soft Silicone Wrist Straps Short Anti-Drop Rubber Hand Lanyard for Mobile Phones Cameras Keys Cord Chains Hanging Rope Charms" style="max-width: 200px;">
+            </a>
+            <h3>Soft Silicone Wrist Straps Short Anti-Drop Rubber Hand Lanyard for Mobile Phones Cameras Keys Cord Chains Hanging Rope Charms</h3>
+            <p>Price: $0.06-0.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_802.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5317ed4a5cec4129a2eb143652538349N.jpg_300x300.jpg" alt="Flashlight Bike Mount Silicone Strap Rubber Tie Down Straps Bicycle Silicone Band Flashlight Helmet Light Mount Phone Strap Tie" style="max-width: 200px;">
+            </a>
+            <h3>Flashlight Bike Mount Silicone Strap Rubber Tie Down Straps Bicycle Silicone Band Flashlight Helmet Light Mount Phone Strap Tie</h3>
+            <p>Price: $0.09-0.13</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_803.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H176677ae8d57483fa97d9693dcde96cb7.jpg_300x300.jpg" alt="Silicone Manufacturer Wholesale Promotional Custom Color Soft Silicone Lanyard For Phone" style="max-width: 200px;">
+            </a>
+            <h3>Silicone Manufacturer Wholesale Promotional Custom Color Soft Silicone Lanyard For Phone</h3>
+            <p>Price: $0.06-0.10</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_804.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H376ec500b21d49d699ff2f2428daf2f78.jpg_300x300.jpg" alt="Wholesale Colorful Silicone Beads Monogram Disc Necklace Keychain Teacher Nurse Beaded ID Card Badge Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Colorful Silicone Beads Monogram Disc Necklace Keychain Teacher Nurse Beaded ID Card Badge Lanyard</h3>
+            <p>Price: $1.45-1.78</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 12 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_805.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2531e95b91314d4587aedfeea85246ecc.jpg_300x300.jpg" alt="Personalized Polyester Keychain Neck Strap Lanyard Sublimated Printed With logo Blank Lanyards" style="max-width: 200px;">
+            </a>
+            <h3>Personalized Polyester Keychain Neck Strap Lanyard Sublimated Printed With logo Blank Lanyards</h3>
+            <p>Price: $0.45</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_806.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1nhaGy4GYBuNjy0Fnq6x5lpXad.jpg_300x300.jpg" alt="Sublimation Printed Lanyards/keycords/neck Straps" style="max-width: 200px;">
+            </a>
+            <h3>Sublimation Printed Lanyards/keycords/neck Straps</h3>
+            <p>Price: $0.05-0.12</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_807.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf4b733b2d457492e8e5f43de5ec9aa95k.png_300x300.png" alt="New Phone Case Accessories Heart Bracelet Pendant Colorful Double Hand Short Rope Round key Lock Phone Lanyard Gift Wholesale" style="max-width: 200px;">
+            </a>
+            <h3>New Phone Case Accessories Heart Bracelet Pendant Colorful Double Hand Short Rope Round key Lock Phone Lanyard Gift Wholesale</h3>
+            <p>Price: $1.28-1.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 12 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_808.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hfd24b83e2bb940dea2ff626c61277a63O.jpg_300x300.jpg" alt="Trendy Teacher Fuel Coffee Beaded Custom Wood Lanyard TEACH Wood Personalized Name Badge Lanyard ID Badge" style="max-width: 200px;">
+            </a>
+            <h3>Trendy Teacher Fuel Coffee Beaded Custom Wood Lanyard TEACH Wood Personalized Name Badge Lanyard ID Badge</h3>
+            <p>Price: $2.59</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 60 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_809.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6ef752580ba04c74a78478ba2b86bee88.jpg_300x300.jpg" alt="Bohemian Daisy Bead Keychain Badge Holder Cute Flower Silicone Key Ring Lanyard With Clip For Teachers Students Gift Idea" style="max-width: 200px;">
+            </a>
+            <h3>Bohemian Daisy Bead Keychain Badge Holder Cute Flower Silicone Key Ring Lanyard With Clip For Teachers Students Gift Idea</h3>
+            <p>Price: $0.98</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 12 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_810.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8e5624a97e9541f69cdac6633224f14d0.jpg_300x300.jpg" alt="Wrist Lanyard Phone Strap Silicone Wristlet Small Short Liquid Silicone Rubber Charms For Cellphone Umbrella Water Bottle Camera" style="max-width: 200px;">
+            </a>
+            <h3>Wrist Lanyard Phone Strap Silicone Wristlet Small Short Liquid Silicone Rubber Charms For Cellphone Umbrella Water Bottle Camera</h3>
+            <p>Price: $0.07</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_811.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf10ffba34ee5420f9242450b984eec90e.jpg_300x300.jpg" alt="Wholesale colorful Liquid Soft Rubber Phone Silicone Lanyard for Camera USB Thumb Drives Charms Keychain Badges" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale colorful Liquid Soft Rubber Phone Silicone Lanyard for Camera USB Thumb Drives Charms Keychain Badges</h3>
+            <p>Price: $0.17-0.24</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_812.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha69bb8a686274698a1d8bebf316dad16G.png_300x300.png" alt="Custom Teacher Smile Lanyard Rainbow Daisy Beaded Lanyard Personalized Name Bohemian Teacher Nurse Tassel Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Custom Teacher Smile Lanyard Rainbow Daisy Beaded Lanyard Personalized Name Bohemian Teacher Nurse Tassel Lanyard</h3>
+            <p>Price: $1.99</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 120 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_813.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2358daa2e05343779733117c34be9a97f.jpg_300x300.jpg" alt="Fashion Daisy Teacher Lanyard Breakaway ID Holder Beaded Badge Accessory Key Fob Necklace Spring Silicone Beaded Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Fashion Daisy Teacher Lanyard Breakaway ID Holder Beaded Badge Accessory Key Fob Necklace Spring Silicone Beaded Lanyard</h3>
+            <p>Price: $1.98-2.32</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 12 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_814.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hca1b49aeb3cb488cbcc9f1a8a24ba49aq.png_300x300.png" alt="Custom Logo Printing Latex Free Silicone Phone Lanyard Medical Use Rubber Lanyard Keychain" style="max-width: 200px;">
+            </a>
+            <h3>Custom Logo Printing Latex Free Silicone Phone Lanyard Medical Use Rubber Lanyard Keychain</h3>
+            <p>Price: $0.80-2.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_815.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H282a567b7f9f4c4697d729203a925062o.jpg_300x300.jpg" alt="New Silicone Bead Wood Disk Lanyard Custom Engraved Badge Lanyard with Rainbow Tassel Teacher Appreciation Gift" style="max-width: 200px;">
+            </a>
+            <h3>New Silicone Bead Wood Disk Lanyard Custom Engraved Badge Lanyard with Rainbow Tassel Teacher Appreciation Gift</h3>
+            <p>Price: $1.99</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_816.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hebab7be3108844bda6e481633c44a679g.jpg_300x300.jpg" alt="2024 New Style Silicone Beaded Lanyard Accept Custom Lanyards Key Chain Teacher Lanyards for ID Badges Keychain" style="max-width: 200px;">
+            </a>
+            <h3>2024 New Style Silicone Beaded Lanyard Accept Custom Lanyards Key Chain Teacher Lanyards for ID Badges Keychain</h3>
+            <p>Price: $1.79-2.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_817.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H82e2d1f087014073bd34ba6aa9896b62m.jpg_300x300.jpg" alt="High quality low price custom eco friendly logo printed clear rubber neck strap soft silicone pvc lanyard with metal clip" style="max-width: 200px;">
+            </a>
+            <h3>High quality low price custom eco friendly logo printed clear rubber neck strap soft silicone pvc lanyard with metal clip</h3>
+            <p>Price: $0.14-0.35</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_818.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H69fa8e22d3644a8789e8560271c1ec8aP.jpg_300x300.jpg" alt="2022 New Wholesale Silicone Beads Monogrammed Wooden Disc Pendant Necklace Teacher Lanyards" style="max-width: 200px;">
+            </a>
+            <h3>2022 New Wholesale Silicone Beads Monogrammed Wooden Disc Pendant Necklace Teacher Lanyards</h3>
+            <p>Price: $0.99-1.19</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_819.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Heef13143543c49b9921668dd8b37aa36M.jpg_300x300.jpg" alt="Cute Brown Silicone Rainbow Wood Bead Teacher Lanyard With ID Holder" style="max-width: 200px;">
+            </a>
+            <h3>Cute Brown Silicone Rainbow Wood Bead Teacher Lanyard With ID Holder</h3>
+            <p>Price: $0.99-1.52</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_820.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb09a58449c5645948490f106b3977d5dV.jpg_300x300.jpg" alt="Daisy Silicone Beads Lanyard With ID Holder for Business Trade Schools Teachers Keychain Long Necklace Beaded Badge Holder" style="max-width: 200px;">
+            </a>
+            <h3>Daisy Silicone Beads Lanyard With ID Holder for Business Trade Schools Teachers Keychain Long Necklace Beaded Badge Holder</h3>
+            <p>Price: $0.99</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_821.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4350731b7b054bf0be457ed54b330dc15.png_300x300.png" alt="Teacher Lanyard Gift, Personalized pastel silicone beads Lanyard Keychain Pencil Lanyard, Wooden Apple shape Sign Keychain" style="max-width: 200px;">
+            </a>
+            <h3>Teacher Lanyard Gift, Personalized pastel silicone beads Lanyard Keychain Pencil Lanyard, Wooden Apple shape Sign Keychain</h3>
+            <p>Price: $1.50-1.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_822.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H86ecb58f43444992b410a8f8faaf1892C.png_300x300.png" alt="Bottle Handle Silicone Water Bottle Holder Sling Lanyard Carrier With Strap Fits Most 8-40oz Compatible Stanley Cup Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Bottle Handle Silicone Water Bottle Holder Sling Lanyard Carrier With Strap Fits Most 8-40oz Compatible Stanley Cup Accessories</h3>
+            <p>Price: $1.15-1.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_823.html">
+                <img src="https://s.alicdn.com/@sc04/kf/A58b930eed5f8485f926e348ca54c24c6s.jpg_300x300.jpg" alt="Customized Sublimation Blanks Short Polyester Wrist Designer KeyChain Lanyard For Promotion logo custom" style="max-width: 200px;">
+            </a>
+            <h3>Customized Sublimation Blanks Short Polyester Wrist Designer KeyChain Lanyard For Promotion logo custom</h3>
+            <p>Price: $0.25-0.45</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_824.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hee4a6afbd8ec4683a2aceb94f7b89359n.jpg_300x300.jpg" alt="2024 Factory direct sales handmade silicone beads rattan decorative pendant badge work card lanyard" style="max-width: 200px;">
+            </a>
+            <h3>2024 Factory direct sales handmade silicone beads rattan decorative pendant badge work card lanyard</h3>
+            <p>Price: $0.85-1.15</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_825.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5c795e57808a49499d3f0ff1f89c2113b.jpg_300x300.jpg" alt="zixin Strap Accessories Mobile Phone Chain All Bag with strap anti-loss lanyard" style="max-width: 200px;">
+            </a>
+            <h3>zixin Strap Accessories Mobile Phone Chain All Bag with strap anti-loss lanyard</h3>
+            <p>Price: $1.22</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_826.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4ce85f32d7ff413c841778e3bbb3067cc.jpg_300x300.jpg" alt="Cheap, stylish and convenient phone lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Cheap, stylish and convenient phone lanyard</h3>
+            <p>Price: $0.09-0.11</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_827.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4389fb00d31f4aadade868ea14b10f44A.jpg_300x300.jpg" alt="Wholesale Promotional Braided Short Twist Wrist Rope Silicone Rubber Phone Lanyards" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Promotional Braided Short Twist Wrist Rope Silicone Rubber Phone Lanyards</h3>
+            <p>Price: $0.10-0.18</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_828.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H91024ea854494d1c8fd7014744f43845x.jpg_300x300.jpg" alt="Printed Custom Logo Adjustable Short Card Lace Lanyards Fashion Adjustable Lanyards" style="max-width: 200px;">
+            </a>
+            <h3>Printed Custom Logo Adjustable Short Card Lace Lanyards Fashion Adjustable Lanyards</h3>
+            <p>Price: $0.08-0.45</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_829.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H303b893f28194909b9ae2461e904dbfbM.jpg_300x300.jpg" alt="Wholesale colorful Liquid Soft Rubber Phone Silicone Lanyard for Camera USB Thumb Drives Charms Keychain Badges" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale colorful Liquid Soft Rubber Phone Silicone Lanyard for Camera USB Thumb Drives Charms Keychain Badges</h3>
+            <p>Price: $0.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_830.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He2257dc291af47eb9ece9b4d29010c9bM.jpg_300x300.jpg" alt="ins popular hand-woven Daisy Boho flower thickened silicone ring portable 40oz water bottles strap lanyard cup holder" style="max-width: 200px;">
+            </a>
+            <h3>ins popular hand-woven Daisy Boho flower thickened silicone ring portable 40oz water bottles strap lanyard cup holder</h3>
+            <p>Price: $2.20-2.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_831.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8fc0ccdb05914488a40d1dab77183f7a1.png_300x300.png" alt="Teacher Lanyards for ID Badges and Keys, Cute Silicone Beaded Lanyard for Women Nurse Employees Students" style="max-width: 200px;">
+            </a>
+            <h3>Teacher Lanyards for ID Badges and Keys, Cute Silicone Beaded Lanyard for Women Nurse Employees Students</h3>
+            <p>Price: $1.59</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_832.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H501d49df66f34d5ca3b8317af783700cu.jpg_300x300.jpg" alt="Custom waterproof luxury silicon smart mobile phone cell phone case with lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Custom waterproof luxury silicon smart mobile phone cell phone case with lanyard</h3>
+            <p>Price: $0.20-0.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_833.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7b1e1ba58f98452fbfb0943b33b650acZ.jpg_300x300.jpg" alt="Silicone Cellphone Strap Heart Loop Phone Lanyard Cell Phone Hand Wrist Lanyard Strap With Key Chain Holder Universal for Case" style="max-width: 200px;">
+            </a>
+            <h3>Silicone Cellphone Strap Heart Loop Phone Lanyard Cell Phone Hand Wrist Lanyard Strap With Key Chain Holder Universal for Case</h3>
+            <p>Price: $0.38-0.42</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_834.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7f3bb768e07d4f189f9e1e8fb6db2be40.jpg_300x300.jpg" alt="Travel DIY Non-slip Reusable Beverages Mug Lanyard Portable Food Grade Silicone Adjustable Length Handle Strap for Beverages Mug" style="max-width: 200px;">
+            </a>
+            <h3>Travel DIY Non-slip Reusable Beverages Mug Lanyard Portable Food Grade Silicone Adjustable Length Handle Strap for Beverages Mug</h3>
+            <p>Price: $2.75-3.38</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_835.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc2f8d2ee085c40608adc1475186e07c8w.jpg_300x300.jpg" alt="Anti-lost Sports Neck Rope Magnetic Strap Silicone Leash Earphone earbud String Lanyard Holder" style="max-width: 200px;">
+            </a>
+            <h3>Anti-lost Sports Neck Rope Magnetic Strap Silicone Leash Earphone earbud String Lanyard Holder</h3>
+            <p>Price: $0.25-1.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_836.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0f5950592c2b4b86a64cd65ca8ff73d1J.jpg_300x300.jpg" alt="Custom Logo Personalised Smoke Vaper Lanyards Adjustable Nylon Polyester Lanyards With Silicone Ring" style="max-width: 200px;">
+            </a>
+            <h3>Custom Logo Personalised Smoke Vaper Lanyards Adjustable Nylon Polyester Lanyards With Silicone Ring</h3>
+            <p>Price: $0.25-0.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_837.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9a917156ac714e8bb453fa2e301bcadfm.jpg_300x300.jpg" alt="Fashion Cute Cat Silicone Ring Lanyard For Women Men Phones Lanyard Keychain Bag Lanyards Wrist Strap Accessories Party Gift" style="max-width: 200px;">
+            </a>
+            <h3>Fashion Cute Cat Silicone Ring Lanyard For Women Men Phones Lanyard Keychain Bag Lanyards Wrist Strap Accessories Party Gift</h3>
+            <p>Price: $0.94</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 12 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_838.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd1e5ed7f9f5849df89e0569a2928da7aX.jpg_300x300.jpg" alt="Cartoon girl love strawberry bell wrist short rope mobile phone lanyard key chain simulation food play cake pendant" style="max-width: 200px;">
+            </a>
+            <h3>Cartoon girl love strawberry bell wrist short rope mobile phone lanyard key chain simulation food play cake pendant</h3>
+            <p>Price: $0.46-0.52</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_839.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H52de5cb6798e4410bfcf18e77e027a09d.jpg_300x300.jpg" alt="Smartphone Charging Lanyard with Personalized Design Perfect Corporate Promotional Gift with Fast Charging Compatibility" style="max-width: 200px;">
+            </a>
+            <h3>Smartphone Charging Lanyard with Personalized Design Perfect Corporate Promotional Gift with Fast Charging Compatibility</h3>
+            <p>Price: $0.99-1.25</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_840.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hae10fdc6b5dd49f49596bdfa1458388aR.jpg_300x300.jpg" alt="ZheHu 2024 Beaded Teacher Lanyards Holiday Lanyards ID Badge Holder Christmas Halloween Silicone Beads Pumpkin Teacher Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>ZheHu 2024 Beaded Teacher Lanyards Holiday Lanyards ID Badge Holder Christmas Halloween Silicone Beads Pumpkin Teacher Lanyard</h3>
+            <p>Price: $1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 60 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_841.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H823a7f05cb15484fb49b13806a0881263.jpeg_300x300.jpeg" alt="Personalised Polyester custom bright color sublimation heat transfer printing keychain lanyards with neck id badge card holder" style="max-width: 200px;">
+            </a>
+            <h3>Personalised Polyester custom bright color sublimation heat transfer printing keychain lanyards with neck id badge card holder</h3>
+            <p>Price: $0.15-0.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_842.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8f0792f91bee4253a5094f725700b37aO.jpg_300x300.jpg" alt="KEJEA T-1034 Card Sleeve Lanyard - Silicone Rope, Silk Screen Tag Work Card Badge Lanyard with Custom LOGO" style="max-width: 200px;">
+            </a>
+            <h3>KEJEA T-1034 Card Sleeve Lanyard - Silicone Rope, Silk Screen Tag Work Card Badge Lanyard with Custom LOGO</h3>
+            <p>Price: $0.27-0.32</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_843.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H37c8eff2431a4dd6a5619be8c58f70f1G.jpg_300x300.jpg" alt="Short Soft Silicone Cell Phone Holder Hand Anti Lost Wrist Strap Mobilephone Wrist Lanyard Safety String For Mobile Phone" style="max-width: 200px;">
+            </a>
+            <h3>Short Soft Silicone Cell Phone Holder Hand Anti Lost Wrist Strap Mobilephone Wrist Lanyard Safety String For Mobile Phone</h3>
+            <p>Price: $0.15-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_844.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb3e5ee6346284bf5b766c1d5397327ccq.jpg_300x300.jpg" alt="Custom breakaway sublimation blanks lanyard designer printed nylon silicone logo glow lanyard neck wrist tool lanyards strap" style="max-width: 200px;">
+            </a>
+            <h3>Custom breakaway sublimation blanks lanyard designer printed nylon silicone logo glow lanyard neck wrist tool lanyards strap</h3>
+            <p>Price: $0.26-1.95</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 units</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_845.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha19ad4633d1a46dbb743fed8f5ef82287.jpg_300x300.jpg" alt="Simple Macaron Lanyard Solid Colors Silicone Wrist Rope Anti-loss Mobile Phone Sling Key Chain Pendant" style="max-width: 200px;">
+            </a>
+            <h3>Simple Macaron Lanyard Solid Colors Silicone Wrist Rope Anti-loss Mobile Phone Sling Key Chain Pendant</h3>
+            <p>Price: $0.08-0.14</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_846.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H669e617f60264c988ce41595b7f92a91p.jpg_300x300.jpg" alt="Bohemian Handmade Knitted Daisy Flower Mug Strap Food Grade Thickened Silicone Rings for 16-40oz Water Bottle Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Bohemian Handmade Knitted Daisy Flower Mug Strap Food Grade Thickened Silicone Rings for 16-40oz Water Bottle Lanyard</h3>
+            <p>Price: $2.93</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 6 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_847.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2f24b59078dd4b98977908549d64cc05n.jpg_300x300.jpg" alt="lanyard cup holder Compatible Stanley Accessories Portable water bottles strap Bottle Handle SiliconeSling" style="max-width: 200px;">
+            </a>
+            <h3>lanyard cup holder Compatible Stanley Accessories Portable water bottles strap Bottle Handle SiliconeSling</h3>
+            <p>Price: $1.50-1.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_848.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3833f039e34740c6a48ea6da7768f509F.jpg_300x300.jpg" alt="2024 Creative Modern Simple Silicone Cell Phone Dropproof Stretchy Lanyard Cell Phone Case Slant Anti-Lost Wristband" style="max-width: 200px;">
+            </a>
+            <h3>2024 Creative Modern Simple Silicone Cell Phone Dropproof Stretchy Lanyard Cell Phone Case Slant Anti-Lost Wristband</h3>
+            <p>Price: $0.38-1.16</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_849.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbe93e8c29a664fd3a2578b53630fa66e9.png_300x300.png" alt="Cheap Silicone Mobile Phone Holder Case With Strap Hang Around Neck Lanyard With Pocket Make Cell Phone Strap" style="max-width: 200px;">
+            </a>
+            <h3>Cheap Silicone Mobile Phone Holder Case With Strap Hang Around Neck Lanyard With Pocket Make Cell Phone Strap</h3>
+            <p>Price: $0.45</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_850.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H18a639250cbd4b4887bddac78bdb1f50C.jpg_300x300.jpg" alt="Colorful Glasses Strap Eyewear Retainer Sunglass Straps Eyeglass Holder Strap Glass Cord Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Colorful Glasses Strap Eyewear Retainer Sunglass Straps Eyeglass Holder Strap Glass Cord Lanyard</h3>
+            <p>Price: $0.75</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_851.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H15c5761a73f649acb447a6c985a6eba6c.jpg_300x300.jpg" alt="Bulk Quality 2D Embossed Logo Silicone PVC Rubber Fastening Keyring O Ring Nylon Lanyard Wristlet Strap Keychain with Carabiner" style="max-width: 200px;">
+            </a>
+            <h3>Bulk Quality 2D Embossed Logo Silicone PVC Rubber Fastening Keyring O Ring Nylon Lanyard Wristlet Strap Keychain with Carabiner</h3>
+            <p>Price: $0.20-0.72</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_852.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbed70ac405b5418781a48ab4de942712I.png_300x300.png" alt="OKSILICOEN Factory Price Colorful Eco-friendly Silicone Finger Ring Lanyards Rubber Silicone Bands for Parties Couples Gift" style="max-width: 200px;">
+            </a>
+            <h3>OKSILICOEN Factory Price Colorful Eco-friendly Silicone Finger Ring Lanyards Rubber Silicone Bands for Parties Couples Gift</h3>
+            <p>Price: $0.35</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_853.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H17fced614ce44bf7a6833a50afe73de0w.jpg_300x300.jpg" alt="Silicone Mobile Phone Lanyard with Card Pocket Smartphones Neck Phone Holder" style="max-width: 200px;">
+            </a>
+            <h3>Silicone Mobile Phone Lanyard with Card Pocket Smartphones Neck Phone Holder</h3>
+            <p>Price: $0.30-0.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_854.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd7de909dbef9418785d95d0e12d715b6m.jpg_300x300.jpg" alt="Hot Sale Custom Eco-Friendly Silicone Beads Bracelets Colorful Alphabet Silicone Lanyards" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale Custom Eco-Friendly Silicone Beads Bracelets Colorful Alphabet Silicone Lanyards</h3>
+            <p>Price: $0.14-0.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_855.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H968829ff68d24df09c27d803dfc61a61M.jpg_300x300.jpg" alt="Wholesale Soft Stretch Cute Wrist Strap Mobile Phone Lanyards Waterproof Wallet Short Silicone Lanyard for Camera" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Soft Stretch Cute Wrist Strap Mobile Phone Lanyards Waterproof Wallet Short Silicone Lanyard for Camera</h3>
+            <p>Price: $0.17-0.29</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_856.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf8aec89f0af64daf9ea89a0098f54112Q.jpg_300x300.jpg" alt="2024 Best-Selling Polyester Mobile Phone Lanyard with Small Fan Direct from Wholesale Manufacturers Silicone Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>2024 Best-Selling Polyester Mobile Phone Lanyard with Small Fan Direct from Wholesale Manufacturers Silicone Lanyard</h3>
+            <p>Price: $0.22-0.28</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_857.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8e921504ac374988b954b514fc9acb21K.jpg_300x300.jpg" alt="MOQ 50 Pcs 32mm Silicone Medical Nurse Badge Reel Retractable Hearts Shape Stethoscope Badge Holder" style="max-width: 200px;">
+            </a>
+            <h3>MOQ 50 Pcs 32mm Silicone Medical Nurse Badge Reel Retractable Hearts Shape Stethoscope Badge Holder</h3>
+            <p>Price: $2.20-3.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_858.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H411757410a41444f837b95ebf00859c78.jpg_300x300.jpg" alt="MOQ 50 Pcs 32mm Silicone Medical Nurse Badge Reel Retractable Hearts Shape Stethoscope Badge Holder" style="max-width: 200px;">
+            </a>
+            <h3>MOQ 50 Pcs 32mm Silicone Medical Nurse Badge Reel Retractable Hearts Shape Stethoscope Badge Holder</h3>
+            <p>Price: $2.20-3.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_859.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H400b9195d757484faef5603f6f279a86j.jpg_300x300.jpg" alt="Fashion Bead Teacher Lanyard Custom Rainbow Necklace Lanyards With printed Id Card Badge Holder Nurse Student Gift ID Badge" style="max-width: 200px;">
+            </a>
+            <h3>Fashion Bead Teacher Lanyard Custom Rainbow Necklace Lanyards With printed Id Card Badge Holder Nurse Student Gift ID Badge</h3>
+            <p>Price: $2.29-2.69</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 24 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_860.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3626d9bfab4047fd86b75655d7679a9a6.jpg_300x300.jpg" alt="Custom Ring Lanyard Silicone Phone Lanyard U Disk Cute Silicone Mobile Phone Drop-resistant Short Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Custom Ring Lanyard Silicone Phone Lanyard U Disk Cute Silicone Mobile Phone Drop-resistant Short Lanyard</h3>
+            <p>Price: $0.13</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_861.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6a4d7df4e5e24db1afc55919d3915eb71.jpg_300x300.jpg" alt="Monogrammed Pencil Design Hexagon Silicone Beads Tassel pendant Keychain Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Monogrammed Pencil Design Hexagon Silicone Beads Tassel pendant Keychain Lanyard</h3>
+            <p>Price: $1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_862.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc6c0947bbabd46b2a890376f330f0373J.png_300x300.png" alt="Mobile Phone Solid Colour Soft Rubber Silicone Wrist Strap Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Mobile Phone Solid Colour Soft Rubber Silicone Wrist Strap Lanyard</h3>
+            <p>Price: $0.12-0.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_863.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5cc090a0ae754d069c9ab6351c3b78cdY.jpg_300x300.jpg" alt="BSBH Cute ID Badge Holder With Silicone Beaded Breakaway Lanyards For Badge Reel ID Card Holder Key Chain Phone Car Key Lanyards" style="max-width: 200px;">
+            </a>
+            <h3>BSBH Cute ID Badge Holder With Silicone Beaded Breakaway Lanyards For Badge Reel ID Card Holder Key Chain Phone Car Key Lanyards</h3>
+            <p>Price: $0.55-1.15</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_864.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H891ecf99fc8d415782aa6a80ccc9520bf.jpg_300x300.jpg" alt="Spring Summer colorful pastel Colour Heart Silicone DIY Beads Cell Mobile Phone Wrist Strap" style="max-width: 200px;">
+            </a>
+            <h3>Spring Summer colorful pastel Colour Heart Silicone DIY Beads Cell Mobile Phone Wrist Strap</h3>
+            <p>Price: $1.05-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_865.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H34cb60f0ab7b4ac8b203b4586fd82b00o.jpg_300x300.jpg" alt="Silicone holder Custom Printing Polyester Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Silicone holder Custom Printing Polyester Lanyard</h3>
+            <p>Price: $0.20-0.25</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 300 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_866.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1fe0ae48191a4a6abc98f2e531b4a9f1p.jpg_300x300.jpg" alt="Hot Sale Silicon Lanyard Beads Boho Personalized Devil Eye Wooden Silicone Bead Keychain Wood Beads Phone Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale Silicon Lanyard Beads Boho Personalized Devil Eye Wooden Silicone Bead Keychain Wood Beads Phone Lanyard</h3>
+            <p>Price: $0.20-0.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_867.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf0b6b053432d4345a96ed228eca76561m.jpg_300x300.jpg" alt="New arrival Elastic Cell Phone Case Cover Holder Wrist Strap ID Card holder necklace silicone lanyard for phone" style="max-width: 200px;">
+            </a>
+            <h3>New arrival Elastic Cell Phone Case Cover Holder Wrist Strap ID Card holder necklace silicone lanyard for phone</h3>
+            <p>Price: $0.52-0.76</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_868.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H33613e2ed9f34a21a092491c9bb6ae7fF.jpg_300x300.jpg" alt="Wholesale Silicone Phone Lanyard Color Mobile Phone Lanyard and Lanyards Customized Silicone Phone Strap Card 4 Color CS20230620" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Silicone Phone Lanyard Color Mobile Phone Lanyard and Lanyards Customized Silicone Phone Strap Card 4 Color CS20230620</h3>
+            <p>Price: $0.09-0.15</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_869.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H79bb8e195b0d47048cc5bb2edea32feaj.png_300x300.png" alt="High Quality Phone Loop Wrist Strap Rubber Silicone Wristlet Short Lanyards for Phone Case, USB Disk, Water Cup and Others" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Phone Loop Wrist Strap Rubber Silicone Wristlet Short Lanyards for Phone Case, USB Disk, Water Cup and Others</h3>
+            <p>Price: $0.08</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_870.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7601acfb7af4400c9837fa5c7023e796w.jpg_300x300.jpg" alt="New Wooden Beads Necklace Keychain Small Daisy Silicone Beaded Pendant Lanyard Keychain For Teacher Gifts Badge Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>New Wooden Beads Necklace Keychain Small Daisy Silicone Beaded Pendant Lanyard Keychain For Teacher Gifts Badge Lanyard</h3>
+            <p>Price: $1.49-1.79</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 12 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_871.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6bcb12f59a84414891c9212046991468W.jpg_300x300.jpg" alt="Hot Sale Silicone bracelet key ring bear love mobile phone accessories mobile phone lanyard patch multi-functional pendant" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale Silicone bracelet key ring bear love mobile phone accessories mobile phone lanyard patch multi-functional pendant</h3>
+            <p>Price: $0.32-0.42</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_872.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H42e1b5a786494fd2b944e8b7b67f5db8X.jpg_300x300.jpg" alt="Wholesale soft Waterproof Wallet short Silicone Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale soft Waterproof Wallet short Silicone Lanyard</h3>
+            <p>Price: $0.42</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_873.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha6eca5e9851c4b9881808b5c454c3ccbD.jpg_300x300.jpg" alt="Newest Liquid Silicone Phone Case Wrist Strap Short Lanyard Key Chain Cellphone Cover Hand Lanyard For i Phone 13 Pro Max Case" style="max-width: 200px;">
+            </a>
+            <h3>Newest Liquid Silicone Phone Case Wrist Strap Short Lanyard Key Chain Cellphone Cover Hand Lanyard For i Phone 13 Pro Max Case</h3>
+            <p>Price: $0.07-0.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_874.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H800ac2fd475d4b44ac4713a9ea9f7665j.jpg_300x300.jpg" alt="Wholesale Silicone Beads Lanyard Monogram Wooden Disc Tassel Pendant Necklace Teacher ID Badge Beaded Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Silicone Beads Lanyard Monogram Wooden Disc Tassel Pendant Necklace Teacher ID Badge Beaded Lanyard</h3>
+            <p>Price: $1.32-1.84</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_875.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb450759165414843a1a67f5d9079c506C.jpg_300x300.jpg" alt="UHOO fashion Silicone hanging rope soft lanyard 12mm" style="max-width: 200px;">
+            </a>
+            <h3>UHOO fashion Silicone hanging rope soft lanyard 12mm</h3>
+            <p>Price: $1.21-1.81</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 60 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_876.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf6ee1924752e4876b95dee8eafef8f7ee.jpg_300x300.jpg" alt="Mobile Phone Solid Colour Soft Rubber cell phone lanyard Wrist Strap phone case custom short Silicone lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Mobile Phone Solid Colour Soft Rubber cell phone lanyard Wrist Strap phone case custom short Silicone lanyard</h3>
+            <p>Price: $0.05-0.15</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_877.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb0d7d537bba347caa3fb39515d2b68b5n.jpg_300x300.jpg" alt="Silicone Mobile Phone Strap hang Around Web Style Neck Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Silicone Mobile Phone Strap hang Around Web Style Neck Lanyard</h3>
+            <p>Price: $0.12-0.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_878.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H240ac1e958894ee0a66cd07abb3eaa0eJ.jpg_300x300.jpg" alt="High Quality Pen Holder Lace Neck Woven Custom Lanyard Rubber Band Jacquard Webbing Silicone Ring Rope Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Pen Holder Lace Neck Woven Custom Lanyard Rubber Band Jacquard Webbing Silicone Ring Rope Lanyard</h3>
+            <p>Price: $0.15-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_879.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H610b1aa06a714209a5cf3abed6f1f00fi.jpg_300x300.jpg" alt="Factory Custom Universal Lanyard Card Slot Wallet Silicon Mobile Phone Holder Neck Strap Lanyard With Credit" style="max-width: 200px;">
+            </a>
+            <h3>Factory Custom Universal Lanyard Card Slot Wallet Silicon Mobile Phone Holder Neck Strap Lanyard With Credit</h3>
+            <p>Price: $0.25-0.35</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_880.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb4fb5b0c83e84469ac9d26d1d58784bfi.jpg_300x300.jpg" alt="Anti-Slip Silicon Flexible Dental Bib Scarf Stainless Steel Clips Napkin Chain Face Covering Strap Holder Lanyards" style="max-width: 200px;">
+            </a>
+            <h3>Anti-Slip Silicon Flexible Dental Bib Scarf Stainless Steel Clips Napkin Chain Face Covering Strap Holder Lanyards</h3>
+            <p>Price: $0.31-0.67</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_881.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7c89f7ec904e4107aef5cb8bc97cf5b2N.jpg_300x300.jpg" alt="2022 New Teacher Nurse Student Gift Silicone Lanyard for Keys or ID Badge Silicone Bead Lanyard Silicone Lanyard Keyring" style="max-width: 200px;">
+            </a>
+            <h3>2022 New Teacher Nurse Student Gift Silicone Lanyard for Keys or ID Badge Silicone Bead Lanyard Silicone Lanyard Keyring</h3>
+            <p>Price: $0.99-1.25</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_882.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Haa5f4cfec37543c08945ddd1c24e9f9dC.jpg_300x300.jpg" alt="Wholesales Mobile Solid Color Soft Rubber Silicone elastic Wrist Strap Lanyard Phone lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Wholesales Mobile Solid Color Soft Rubber Silicone elastic Wrist Strap Lanyard Phone lanyard</h3>
+            <p>Price: $0.23-0.35</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_883.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7b088654753c4cb7b21407b2a2a98bc4m.jpg_300x300.jpg" alt="Commonly Use Hot Sale Soft Colorful Waterproof Name Card Tool Silicone Adjustable Neck Lanyards for Children" style="max-width: 200px;">
+            </a>
+            <h3>Commonly Use Hot Sale Soft Colorful Waterproof Name Card Tool Silicone Adjustable Neck Lanyards for Children</h3>
+            <p>Price: $0.33-0.37</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 300 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_884.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H50e63fcaafd949d3960625d3661cecdc7.jpg_300x300.jpg" alt="Portable Cell Hand Wrist Finger Ring Strap Phone Holder Silicone Gift Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Portable Cell Hand Wrist Finger Ring Strap Phone Holder Silicone Gift Lanyard</h3>
+            <p>Price: $0.70-0.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_885.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4e053e47da6149c0aa11c94c4e4295e8l.jpg_300x300.jpg" alt="Anti Lost Strap String Rope For Pro Case Cover Ear Hook Earbuds" style="max-width: 200px;">
+            </a>
+            <h3>Anti Lost Strap String Rope For Pro Case Cover Ear Hook Earbuds</h3>
+            <p>Price: $0.31-0.34</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_886.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Heb5a756e3816479cb6d48bd4d29b51a4d.jpg_300x300.jpg" alt="2023 New Arrival Colorful Silicone Beads Key Lanyard for Christmas Gift Teacher Student ID Badge Hold" style="max-width: 200px;">
+            </a>
+            <h3>2023 New Arrival Colorful Silicone Beads Key Lanyard for Christmas Gift Teacher Student ID Badge Hold</h3>
+            <p>Price: $0.69-1.68</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_887.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8bc025c15e9041fba4113d475d451561o.png_300x300.png" alt="Wrist Lanyard USB Flash Disk Fan Liquid Feel Silicone Lanyard for Mobile Phone" style="max-width: 200px;">
+            </a>
+            <h3>Wrist Lanyard USB Flash Disk Fan Liquid Feel Silicone Lanyard for Mobile Phone</h3>
+            <p>Price: $0.12-0.16</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_888.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H90c010c5109c46b686f8c07e0c3d909dp.jpg_300x300.jpg" alt="Factory Price Double Hammock Folding Outdoor Camping Hanging Bed Bend Wood Stick Steady Garden Chair Swing Hanging for Travel" style="max-width: 200px;">
+            </a>
+            <h3>Factory Price Double Hammock Folding Outdoor Camping Hanging Bed Bend Wood Stick Steady Garden Chair Swing Hanging for Travel</h3>
+            <p>Price: $3.28-4.89</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_889.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H095c4b12d2994cf289fcfb581e35ce19u.jpg_300x300.jpg" alt="Short Lanyard Keychain Silicone Wrist Hand Lanyard Strap for mobile phone, cell phone lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Short Lanyard Keychain Silicone Wrist Hand Lanyard Strap for mobile phone, cell phone lanyard</h3>
+            <p>Price: $0.23</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_890.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H74451a1059d44dbea4ca5c0454cfe36fN.jpg_300x300.jpg" alt="New Promotional Cheap Custom Logo Universal Silicone Mobile Phone Lanyard with Card Pocket" style="max-width: 200px;">
+            </a>
+            <h3>New Promotional Cheap Custom Logo Universal Silicone Mobile Phone Lanyard with Card Pocket</h3>
+            <p>Price: $0.42-0.47</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_891.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc3b9607b3cdd437ab964fc75041e0d4e2.jpg_300x300.jpg" alt="Custom Cute Silicone And Wooden Beads Lanyard Teacher Nurse Student Bohemian Style Keychain Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Custom Cute Silicone And Wooden Beads Lanyard Teacher Nurse Student Bohemian Style Keychain Lanyard</h3>
+            <p>Price: $1.06-1.09</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_892.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6b797478ecc844278ee566da538ce4f02.jpg_300x300.jpg" alt="Low Price Various Specifications Bottle Holder Neck Silicone Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Low Price Various Specifications Bottle Holder Neck Silicone Lanyard</h3>
+            <p>Price: $0.24</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_893.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdc1a2a381f15427aa5815a9429ebf33eU.jpg_300x300.jpg" alt="Portable Liquid Silicone Cell Phone Hand Wrist Finger Ring Strap Phone Holder" style="max-width: 200px;">
+            </a>
+            <h3>Portable Liquid Silicone Cell Phone Hand Wrist Finger Ring Strap Phone Holder</h3>
+            <p>Price: $0.11-0.15</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_894.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8e5f6a7a0d3c428b8ff87640d17d3c1a3.png_300x300.png" alt="Silicone Cell Phone Holder Lanyard With Credit Card Pocket" style="max-width: 200px;">
+            </a>
+            <h3>Silicone Cell Phone Holder Lanyard With Credit Card Pocket</h3>
+            <p>Price: $0.32-0.36</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_895.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdb95af06c0a34cabaee3817b7288914aq.jpg_300x300.jpg" alt="Silicone neck strap lanyard cell phone mobile holder smart phone case with lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Silicone neck strap lanyard cell phone mobile holder smart phone case with lanyard</h3>
+            <p>Price: $0.30-0.56</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_896.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd004a3dc08b5457381f7b3cdd71f79b0D.jpg_300x300.jpg" alt="wholesale adjustable Lanyard with 13*6mm silicone ring" style="max-width: 200px;">
+            </a>
+            <h3>wholesale adjustable Lanyard with 13*6mm silicone ring</h3>
+            <p>Price: $0.20-0.27</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_897.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H53b17343ee614bad84a3a505efaec046V.jpg_300x300.jpg" alt="Wholesale cheap custom cotton lanyard anime custom design lanyard printing strap custom 3d silicone polyester neck lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale cheap custom cotton lanyard anime custom design lanyard printing strap custom 3d silicone polyester neck lanyard</h3>
+            <p>Price: $0.08-0.38</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_898.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H313fa5c4007f4a3bbeaab925f02511f8n.jpg_300x300.jpg" alt="Eco Friendly Material Mobile Phone Holder Lanyard Silicone Cellphone Lanyard with Custom Logo" style="max-width: 200px;">
+            </a>
+            <h3>Eco Friendly Material Mobile Phone Holder Lanyard Silicone Cellphone Lanyard with Custom Logo</h3>
+            <p>Price: $0.30-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_899.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1tlB4XHH1gK0jSZFwq6A7aXXaD.jpg_300x300.jpg" alt="Adjustable Fashion Anti Slip Silicone Sports Glasses Strap Eyewear Retainer Lanyard" style="max-width: 200px;">
+            </a>
+            <h3>Adjustable Fashion Anti Slip Silicone Sports Glasses Strap Eyewear Retainer Lanyard</h3>
+            <p>Price: $0.32-0.62</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_900.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB18bFZaoKF3KVjSZFEq6xExFXaQ.jpg_300x300.jpg" alt="2019 hot sell Silicone Lanyard, Lanyard phone case" style="max-width: 200px;">
+            </a>
+            <h3>2019 hot sell Silicone Lanyard, Lanyard phone case</h3>
+            <p>Price: $0.66</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <!-- 分页按钮 -->
+        <div class="pagination">
+            
+    <a href="page_8.html">Previous</a>
+    
+
+    
+    <a href="page_1.html" >1</a>
+    
+    <a href="page_2.html" >2</a>
+    
+    <a href="page_3.html" >3</a>
+    
+    <a href="page_4.html" >4</a>
+    
+    <a href="page_5.html" >5</a>
+    
+    <a href="page_6.html" >6</a>
+    
+    <a href="page_7.html" >7</a>
+    
+    <a href="page_8.html" >8</a>
+    
+    <a href="page_9.html" class="active">9</a>
+    
+    <a href="page_10.html" >10</a>
+    
+
+    
+    <a href="page_10.html">Next</a>
+    
+        </div>
+        <!-- 回到顶部按钮 -->
+        <button id="back-to-top" onclick="topFunction()">回到顶部</button>
+    </div>
+
+    <script>
+        // 回到顶部按钮显示与隐藏逻辑
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // 回到顶部按钮点击事件
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>
