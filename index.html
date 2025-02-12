@@ -1,106 +1,1022 @@
+
 <!DOCTYPE html>
-<html dir="auto" lang="en">
+<html lang="en">
+
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9L8EDEXZBV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Product Category Display</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+            .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-  gtag('config', 'G-9L8EDEXZBV');
-</script>
-	<meta charset="UTF-8" />
+        .header img {
+            width: 200px;
+            /* 可根据实际情况调整图片大小 */
+            margin-bottom: 10px;
+        }
 
-	<title>My Page Title</title>
-	<meta name="description" content="My Page Description" />
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
 
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="icon" href="assets/favicon.png" />
+        nav {
+            background-color: #03a9f4;
+            overflow: hidden;
+            text-align: center;
+        }
 
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:title" content="My Page Title" />
-	<meta name="twitter:description" content="My Page Description" />
-	<meta name="twitter:image" content="assets/og-image.png" />
+       nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
 
-	<meta property="og:title" content="My Page Title" />
-	<meta property="og:description" content="My Page Description" />
-	<meta property="og:image" content="assets/og-image.png" />
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
 
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="assets/style.css" />
+        .category {
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+      
+        .category:hover {
+            background-color: #e0e0e0;
+        }
 
+        .category::before {
+            content: '+ ';
+        }
+
+        .category.active::before {
+            content: '- ';
+        }
+
+        .sub-category {
+            display: none;
+            margin-left: 20px;
+            padding: 5px;
+        }
+
+        .sub-category.active {
+            display: block;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+       li {
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+           margin: 20px 2px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+    </style>
 </head>
+
 <body>
+ <!-- 顶部图片和文字 -->
+    <div class="header">
+        <img src="file:///D:/taob/main/main1/image/logo.png" alt="Logo">
+        <p>Sunnyluo Store</p>
+        <p>Build a curated directory of store with factory</p>
+    </div>
+     <nav>
+        <a href="#">Home</a>
+        <a href="file:///D:/taob/main/main1/pdfs/pdf.html">Resources</a>
+        <a href="mailto:sunnyluo330@gmail.com">About Us</a>
+        <a href="mailto:sunnyluo330@gmail.com">Contact Us</a>
+        <a href="https://www.facebook.com/sunnyluoting">Facebook</a>
+    </nav>
+    <h1>Full Product Category Directory</h1>
+    <div id="category-tree">
+<div class="category" onclick="toggleSubCategory(this)">Home Decor</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">Gifts & Crafts</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/Lanyard/html_pages/page_1.html">Lanyard</a></li>
+    <li><a href="sub_pages/key_chains.html">Key Chains</a></li>
+    <li><a href="sub_pages/promotional_business_gifts.html">Promotional & Business Gifts</a></li>
+    <li><a href="sub_pages/other_gifts.html">Other Gifts</a></li>
+    <li><a href="sub_pages/crafts.html">Crafts</a></li>
+    <li><a href="sub_pages/festive_gifts.html">Festive Gifts</a></li>
+    <li><a href="sub_pages/stickers.html">Stickers</a></li>
+</ul>
+<div class="category" onclick="toggleSubCategory(this)">Flags</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+<li> Banners & Display Accessories</li>
+</ul>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Home & Garden</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/home_decor.html">Home Decor</a></li>
+    <li><a href="sub_pages/festive_party_supplies.html">Festive & Party Supplies</a></li>
+    <li><a href="sub_pages/home_storage_organization.html">Home Storage & Organization</a></li>
+    <li><a href="sub_pages/kitchenware.html">Kitchenware</a></li>
+    <li><a href="sub_pages/home_textiles.html">Home Textiles</a></li>
+    <li><a href="sub_pages/household_cleaning_tools_accessories.html">Household Cleaning Tools & Accessories</a></li>
+    <li><a href="sub_pages/smart_home_improvement.html">Smart Home Improvement</a></li>
+    <li><a href="sub_pages/lighters_smoking_accessories.html">Lighters & Smoking Accessories</a></li>
+    <li><a href="sub_pages/garden_supplies.html">Garden Supplies</a></li>
+    <li><a href="sub_pages/household_scales.html">Household Scales</a></li>
+    <li><a href="sub_pages/drinkware_accessories.html">Drinkware & Accessories</a></li>
+    <li><a href="sub_pages/bathroom_products.html">Bathroom Products</a></li>
+    <li><a href="sub_pages/rain_gear.html">Rain Gear</a></li>
+    <li><a href="sub_pages/household_sundries.html">Household Sundries</a></li>
+</ul>
+<div class="category" onclick="toggleSubCategory(this)">Dinnerware</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+<li>Coffee&Wine Set</li>
+</ul>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Construction & Real Estate</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/timber.html">Timber</a></li>
+    <li><a href="sub_pages/tiles_accessories.html">Tiles & Accessories</a></li>
+    <li><a href="sub_pages/wallpapers_wall_panels.html">Wallpapers/Wall panels</a></li>
+    <li><a href="sub_pages/bathroom_kitchen.html">Bathroom & Kitchen</a></li>
+    <li><a href="sub_pages/building_industrial_glass.html">Building & Industrial Glass</a></li>
+    <li><a href="sub_pages/prefabricated_buildings.html">Prefabricated Buildings</a></li>
+    <li><a href="sub_pages/flooring_accessories.html">Flooring & Accessories</a></li>
+    <li><a href="sub_pages/ladders_scaffoldings.html">Ladders & Scaffoldings</a></li>
+    <li><a href="sub_pages/soundproofing_materials.html">Soundproofing Materials</a></li>
+    <li><a href="sub_pages/waterproofing_materials.html">Waterproofing Materials</a></li>
+    <li><a href="sub_pages/building_boards.html">Building Boards</a></li>
+    <li><a href="sub_pages/plastic_building_materials.html">Plastic Building Materials</a></li>
+    <li><a href="sub_pages/fireproofing_materials.html">Fireproofing Materials</a></li>
+    <li><a href="sub_pages/earthwork_products.html">Earthwork Products</a></li>
+    <li><a href="sub_pages/heat_insulation_materials.html">Heat Insulation Materials</a></li>
+    <li><a href="sub_pages/curtain_walls_accessories.html">Curtain Walls & Accessories</a></li>
+    <li><a href="sub_pages/masonry_materials.html">Masonry Materials</a></li>
+    <li><a href="sub_pages/stone.html">Stone</a></li>
+    <li><a href="sub_pages/elevators_escalators.html">Elevators & Escalators</a></li>
+    <li><a href="sub_pages/ceilings.html">Ceilings</a></li>
+    <li><a href="sub_pages/stairs_stair_parts.html">Stairs & Stair Parts</a></li>
+    <li><a href="sub_pages/fireplaces_stoves.html">Fireplaces & Stoves</a></li>
+    <li><a href="sub_pages/hvac_system_parts.html">HVAC System & Parts</a></li>
+    <li><a href="sub_pages/outdoor_facilities.html">Outdoor Facilities</a></li>
+</ul>
+<div class="category" onclick="toggleSubCategory(this)">Door</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+<li> Window & Accessories</li>
+</ul>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Lights & Lighting</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/professional_lighting.html">Professional Lighting</a></li>
+    <li><a href="sub_pages/lighting_accessories.html">Lighting Accessories</a></li>
+    <li><a href="sub_pages/commercial_industrial_lighting.html">Commercial & Industrial Lighting</a></li>
+    <li><a href="sub_pages/outdoor_lighting.html">Outdoor Lighting</a></li>
+    <li><a href="sub_pages/landscape_lighting.html">Landscape Lighting</a></li>
+    <li><a href="sub_pages/lighting_bulbs_tubes.html">Lighting Bulbs & Tubes</a></li>
+    <li><a href="sub_pages/indoor_lighting.html">Indoor Lighting</a></li>
+    <li><a href="sub_pages/holiday_lighting.html">Holiday Lighting</a></li>
+    <li><a href="sub_pages/smart_lighting.html">Smart lighting</a></li>
+    <li><a href="sub_pages/solar_lighting.html">Solar lighting</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Furniture</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/commercial_furniture.html">Commercial Furniture</a></li>
+    <li><a href="sub_pages/furniture_accessories.html">Furniture Accessories</a></li>
+    <li><a href="sub_pages/furniture_parts.html">Furniture Parts</a></li>
+    <li><a href="sub_pages/furniture_hardware.html">Furniture Hardware</a></li>
+    <li><a href="sub_pages/home_furniture.html">Home Furniture</a></li>
+    <li><a href="sub_pages/kids_furniture.html">Kid's Furniture</a></li>
+    <li><a href="sub_pages/outdoor_furniture.html">Outdoor Furniture</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Pet Supplies</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+<li><a href="sub_pages/Pet Products.html">Pet Products</a></li>
+<li><a href="sub_pages/Pet Food.html">Pet Food</a></li>
+</ul>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Industrial</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">Industrial Machinery</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/machine_tool_equipment.html">Machine Tool Equipment</a></li>
+    <li><a href="sub_pages/used_industrial_machinery.html">Used Industrial Machinery</a></li>
+    <li><a href="sub_pages/packaging_machines.html">Packaging Machines</a></li>
+    <li><a href="sub_pages/home_product_manufacturing_machinery.html">Home Product Manufacturing Machinery</a></li>
+    <li><a href="sub_pages/apparel_textile_machinery.html">Apparel & Textile Machinery</a></li>
+    <li><a href="sub_pages/chemical_machinery.html">Chemical Machinery</a></li>
+    <li><a href="sub_pages/agricultural_machinery_equipment.html">Agricultural Machinery & Equipment</a></li>
+    <li><a href="sub_pages/food_beverage_machinery.html">Food & Beverage Machinery</a></li>
+    <li><a href="sub_pages/refrigeration_heat_exchange_equipment.html">Refrigeration & Heat Exchange Equipment</a></li>
+    <li><a href="sub_pages/metal_metallurgy_machinery.html">Metal & Metallurgy Machinery</a></li>
+    <li><a href="sub_pages/woodworking_machinery.html">Woodworking Machinery</a></li>
+    <li><a href="sub_pages/industrial_compressors_parts.html">Industrial Compressors & Parts</a></li>
+    <li><a href="sub_pages/production_line.html">Production Line</a></li>
+    <li><a href="sub_pages/paper_production_machinery.html">Paper Production Machinery</a></li>
+    <li><a href="sub_pages/plastic_rubber_processing_machinery.html">Plastic & Rubber Processing Machinery</a></li>
+    <li><a href="sub_pages/environmental_machinery.html">Environmental Machinery</a></li>
+    <li><a href="sub_pages/machinery_accessories.html">Machinery Accessories</a></li>
+    <li><a href="sub_pages/tobacco_cigarette_machinery.html">Tobacco & Cigarette Machinery</a></li>
+    <li><a href="sub_pages/industrial_robots.html">Industrial Robots</a></li>
+    <li><a href="sub_pages/electrical_equipment_manufacturing_machinery.html">Electrical Equipment Manufacturing Machinery</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Vehicles & Transportation</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/automotives.html">Automotives</a></li>
+    <li><a href="sub_pages/bus.html">Bus</a></li>
+    <li><a href="sub_pages/motorcycles_scooters.html">Motorcycles & Scooters</a></li>
+    <li><a href="sub_pages/atvs_utvs.html">ATVs & UTVs</a></li>
+    <li><a href="sub_pages/tricycles.html">Tricycles</a></li>
+    <li><a href="sub_pages/truck.html">Truck</a></li>
+    <li><a href="sub_pages/emergency_vehicles.html">Emergency Vehicles</a></li>
+    <li><a href="sub_pages/trailers.html">Trailers</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Commercial Equipment & Machinery</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/printing_machine.html">Printing Machine</a></li>
+    <li><a href="sub_pages/advertising_equipment.html">Advertising Equipment</a></li>
+    <li><a href="sub_pages/cleaning_equipment.html">Cleaning Equipment</a></li>
+    <li><a href="sub_pages/restaurant_hotel_supplies.html">Restaurant & Hotel Supplies</a></li>
+    <li><a href="sub_pages/laser_equipment.html">Laser Equipment</a></li>
+    <li><a href="sub_pages/trade_show_party_equipment.html">Trade Show and Party Equipment</a></li>
+    <li><a href="sub_pages/financial_equipment.html">Financial Equipment</a></li>
+    <li><a href="sub_pages/welding_equipment.html">Welding Equipment</a></li>
+    <li><a href="sub_pages/warehousing_supermarket_supplies.html">Warehousing & Supermarket Supplies</a></li>
+    <li><a href="sub_pages/digital_signage.html">Digital Signage</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Fabrication Services</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/forging_services.html">Forging Services</a></li>
+    <li><a href="sub_pages/casting_services.html">Casting Services</a></li>
+    <li><a href="sub_pages/sheet_metal_fabrication.html">Sheet Metal Fabrication</a></li>
+    <li><a href="sub_pages/machining_services.html">Machining Services</a></li>
+    <li><a href="sub_pages/other_fabrication_services.html">Other Fabrication Services</a></li>
+    <li><a href="sub_pages/moulds.html">Moulds</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Renewable Energy</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/solar_energy_products.html">Solar Energy Products</a></li>
+    <li><a href="sub_pages/solar_applications.html">Solar Applications</a></li>
+    <li><a href="sub_pages/batteries.html">Batteries</a></li>
+    <li><a href="sub_pages/energy_storage_system.html">Energy Storage System</a></li>
+    <li><a href="sub_pages/wind_power_products.html">Wind Power Products</a></li>
+    <li><a href="sub_pages/hydrogen_energy.html">Hydrogen Energy</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Tools & Hardware</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/welding_soldering_supplies.html">Welding & Soldering Supplies</a></li>
+    <li><a href="sub_pages/hardware.html">Hardware</a></li>
+    <li><a href="sub_pages/machining.html">Machining</a></li>
+    <li><a href="sub_pages/hand_tools.html">Hand Tools</a></li>
+    <li><a href="sub_pages/power_tool_accessories.html">Power Tool Accessories</a></li>
+    <li><a href="sub_pages/power_tools.html">Power Tools</a></li>
+    <li><a href="sub_pages/abrasives.html">Abrasives</a></li>
+    <li><a href="sub_pages/drill_bits.html">Drill Bits</a></li>
+    <li><a href="sub_pages/fasteners.html">Fasteners</a></li>
+    <li><a href="sub_pages/garden_tools.html">Garden Tools</a></li>
+    <li><a href="sub_pages/pumps_parts.html">Pumps & Parts</a></li>
+    <li><a href="sub_pages/tool_storage.html">Tool Storage</a></li>
+    <li><a href="sub_pages/pneumatic_tools.html">Pneumatic Tools</a></li>
+    <li><a href="sub_pages/valves.html">Valves</a></li>
+    <li><a href="sub_pages/hydraulic_tools.html">Hydraulic Tools</a></li>
+    <li><a href="sub_pages/other_tools.html">Other Tools</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Material Handling</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/transporting.html">Transporting</a></li>
+    <li><a href="sub_pages/warehousing.html">Warehousing</a></li>
+</ul>
+<div class="category" onclick="toggleSubCategory(this)">Lifting</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/pulling_positioning.html"> Pulling & Positioning</a></li>
+</ul>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Power Transmission</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/power_transmission_parts.html">Power Transmission Parts</a></li>
+    <li><a href="sub_pages/bearings.html">Bearings</a></li>
+    <li><a href="sub_pages/motors.html">Motors</a></li>
+    <li><a href="sub_pages/hydraulic_parts.html">Hydraulic Parts</a></li>
+    <li><a href="sub_pages/bearing_accessories.html">Bearing Accessories</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Electrical Equipment & Supplies</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/switches.html">Switches</a></li>
+    <li><a href="sub_pages/generators.html">Generators</a></li>
+    <li><a href="sub_pages/electrical_instruments.html">Electrical Instruments</a></li>
+    <li><a href="sub_pages/electrical_supplies.html">Electrical Supplies</a></li>
+    <li><a href="sub_pages/industrial_controls.html">Industrial Controls</a></li>
+    <li><a href="sub_pages/low_voltage_products.html">Low Voltage Products</a></li>
+    <li><a href="sub_pages/wiring_accessories.html">Wiring Accessories</a></li>
+    <li><a href="sub_pages/connectors_terminals.html">Connectors & Terminals</a></li>
+    <li><a href="sub_pages/medium_high_voltage_products.html">Medium & High Voltage Products</a></li>
+</ul>
+<div class="category" onclick="toggleSubCategory(this)">Wires</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/cables_cable_assemblies.html"> Cables & Cable Assemblies</a></li>
+</ul>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Vehicle Parts & Accessories</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/auto_performance_parts.html">Auto Performance Parts</a></li>
+    <li><a href="sub_pages/universal_parts.html">Universal Parts</a></li>
+    <li><a href="sub_pages/auto_engine_systems.html">Auto Engine Systems</a></li>
+    <li><a href="sub_pages/auto_lighting_systems.html">Auto Lighting Systems</a></li>
+    <li><a href="sub_pages/auto_brake_systems.html">Auto Brake Systems</a></li>
+    <li><a href="sub_pages/auto_body_systems.html">Auto Body Systems</a></li>
+    <li><a href="sub_pages/auto_transmission_systems.html">Auto Transmission Systems</a></li>
+    <li><a href="sub_pages/cooling_system.html">Cooling System</a></li>
+    <li><a href="sub_pages/new_energy_vehicle_parts_accessories.html">New Energy Vehicle Parts & Accessories</a></li>
+    <li><a href="sub_pages/motorcycle_parts_accessories.html">Motorcycle Parts & Accessories</a></li>
+    <li><a href="sub_pages/air_conditioning_systems.html">Air Conditioning Systems</a></li>
+    <li><a href="sub_pages/auto_steering_systems.html">Auto Steering Systems</a></li>
+    <li><a href="sub_pages/auto_electrical_systems.html">Auto Electrical Systems</a></li>
+    <li><a href="sub_pages/auto_drive_systems.html">Auto Drive Systems</a></li>
+    <li><a href="sub_pages/bus_parts_accessories.html">Bus Parts & Accessories</a></li>
+    <li><a href="sub_pages/marine_parts_accessories.html">Marine Parts & Accessories</a></li>
+    <li><a href="sub_pages/truck_parts_accessories.html">Truck Parts & Accessories</a></li>
+    <li><a href="sub_pages/aviation_parts_accessories.html">Aviation Parts & Accessories</a></li>
+    <li><a href="sub_pages/auto_suspension_systems.html">Auto Suspension Systems</a></li>
+</ul>
+<div class="category" onclick="toggleSubCategory(this)">Wheels</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/tires_accessories.html"> Tires & Accessories</a></li>
+</ul>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Construction & Building Machinery</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/energy_mineral_equipment.html">Energy & Mineral Equipment</a></li>
+    <li><a href="sub_pages/used_machinery.html">Used Machinery</a></li>
+    <li><a href="sub_pages/building_material_machinery.html">Building Material Machinery</a></li>
+    <li><a href="sub_pages/engineering_construction_machinery.html">Engineering & Construction Machinery</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Electronic Components</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)"> Accessories & Telecommunications</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/electronic_accessories_supplies.html">Electronic Accessories & Supplies</a></li>
+    <li><a href="sub_pages/pcb_pcba.html">PCB & PCBA</a></li>
+    <li><a href="sub_pages/passive_components.html">Passive Components</a></li>
+    <li><a href="sub_pages/audio_components_products.html">Audio Components and Products</a></li>
+    <li><a href="sub_pages/relays.html">Relays</a></li>
+    <li><a href="sub_pages/discrete_semiconductors.html">Discrete Semiconductors</a></li>
+    <li><a href="sub_pages/wireless_iot_module_products.html">Wireless & IoT Module and Products</a></li>
+    <li><a href="sub_pages/telecommunications.html">Telecommunications</a></li>
+    <li><a href="sub_pages/circuit_protection.html">Circuit Protection</a></li>
+    <li><a href="sub_pages/isolators.html">Isolators</a></li>
+    <li><a href="sub_pages/sensors.html">Sensors</a></li>
+    <li><a href="sub_pages/power_supplies.html">Power Supplies</a></li>
+    <li><a href="sub_pages/integrated_circuits.html">Integrated Circuits</a></li>
+</ul>
+<div class="category" onclick="toggleSubCategory(this)">Development Boards</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/electronic_modules_kits.html"> Electronic Modules and Kits</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Connectors</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/electronic_modules_kits.html"> Electronic Modules and Kits</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Displays</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/signage_optoelectronics.html"> Signage and Optoelectronics</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">RF</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/microwave_rfid.html"> Microwave and RFID</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Vehicle Accessories</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)"> Electronics & Tools</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/exterior_accessories.html">Exterior Accessories</a></li>
+    <li><a href="sub_pages/interior_accessories.html">Interior Accessories</a></li>
+    <li><a href="sub_pages/auto_electronics.html">Auto Electronics</a></li>
+    <li><a href="sub_pages/vehicle_tools.html">Vehicle Tools</a></li>
+    <li><a href="sub_pages/car_care_cleanings.html">Car Care & Cleanings</a></li>
+    <li><a href="sub_pages/recovery_off_road_accessories.html">Recovery & Off-road Accessories</a></li>
+    <li><a href="sub_pages/fluid_chemicals.html">Fluid & Chemicals</a></li>
+    <li><a href="sub_pages/vehicle_equipment.html">Vehicle Equipment</a></li>
+    <li><a href="sub_pages/automobile_interconnected_products.html">Automobile interconnected products</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Health & Personal Care</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">Food & Beverage</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/food_ingredients.html">Food Ingredients</a></li>
+    <li><a href="sub_pages/plant_animal_oil.html">Plant & Animal Oil</a></li>
+    <li><a href="sub_pages/beverages.html">Beverages</a></li>
+    <li><a href="sub_pages/nuts_kernels.html">Nuts & Kernels</a></li>
+    <li><a href="sub_pages/seasonings_condiments.html">Seasonings & Condiments</a></li>
+    <li><a href="sub_pages/confectionery.html">Confectionery</a></li>
+    <li><a href="sub_pages/instant_food.html">Instant Food</a></li>
+    <li><a href="sub_pages/dairy_products.html">Dairy Products</a></li>
+    <li><a href="sub_pages/snacks.html">Snacks</a></li>
+    <li><a href="sub_pages/honey_honey_products.html">Honey & Honey Products</a></li>
+    <li><a href="sub_pages/seafood.html">Seafood</a></li>
+    <li><a href="sub_pages/canned_food.html">Canned Food</a></li>
+    <li><a href="sub_pages/baked_goods.html">Baked Goods</a></li>
+    <li><a href="sub_pages/meat_poultry.html">Meat & Poultry</a></li>
+    <li><a href="sub_pages/grain_products.html">Grain Products</a></li>
+    <li><a href="sub_pages/fruit_vegetable_products.html">Fruit & Vegetable Products</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Medical devices & Supplies</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/chinese_medicine.html">Chinese Medicine</a></li>
+    <li><a href="sub_pages/medical_consumables.html">Medical Consumables</a></li>
+    <li><a href="sub_pages/professional_medical_devices.html">Professional Medical Devices</a></li>
+    <li><a href="sub_pages/household_medical_devices.html">Household Medical Devices</a></li>
+    <li><a href="sub_pages/animal_veterinary.html">Animal & Veterinary</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Sports & Entertainment</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">Billiards</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)"> Board Game</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/coin_operated_games.html">Coin Operated Games</a></li>
+</ul>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/ball_sports_equipments.html">Ball Sports Equipments</a></li>
+    <li><a href="sub_pages/scooters.html">Scooters</a></li>
+    <li><a href="sub_pages/golf.html">Golf</a></li>
+    <li><a href="sub_pages/water_sports.html">Water Sports</a></li>
+    <li><a href="sub_pages/fitness_body_building.html">Fitness & Body Building</a></li>
+    <li><a href="sub_pages/fishing.html">Fishing</a></li>
+    <li><a href="sub_pages/sports_safety_rehabilitation.html">Sports Safety&Rehabilitation</a></li>
+    <li><a href="sub_pages/cycling.html">Cycling</a></li>
+    <li><a href="sub_pages/camping_hiking.html">Camping & Hiking</a></li>
+    <li><a href="sub_pages/luxury_travel_equipments.html">Luxury Travel Equipments</a></li>
+    <li><a href="sub_pages/artificial_grass_sports_flooring_sports_court_equipment.html">Artificial Grass&Sports Flooring&Sports Court Equipment</a></li>
+    <li><a href="sub_pages/winter_sports.html">Winter Sports</a></li>
+    <li><a href="sub_pages/outdoor_affordable_luxury_sports.html">Outdoor Affordable Luxury Sports</a></li>
+    <li><a href="sub_pages/musical_instruments.html">Musical Instruments</a></li>
+    <li><a href="sub_pages/amusement_park_facilities.html">Amusement Park Facilities</a></li>
+</ul>
+<div class="category" onclick="toggleSubCategory(this)">Sports Shoes</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/bags_accessories.html"> Bags & Accessories</a></li>
+</ul>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Packaging & Printing</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/packaging_printing_services.html">Packaging & Printing Services</a></li>
+    <li><a href="sub_pages/paper_packaging.html">Paper Packaging</a></li>
+    <li><a href="sub_pages/packaging_auxiliary_materials.html">Packaging Auxiliary Materials</a></li>
+    <li><a href="sub_pages/textile_packaging.html">Textile Packaging</a></li>
+    <li><a href="sub_pages/printing_materials.html">Printing Materials</a></li>
+    <li><a href="sub_pages/glass_packaging.html">Glass Packaging</a></li>
+    <li><a href="sub_pages/plastic_packaging.html">Plastic Packaging</a></li>
+    <li><a href="sub_pages/packaging_raw_materials.html">Packaging Raw Materials</a></li>
+    <li><a href="sub_pages/logistics_packaging.html">Logistics Packaging</a></li>
+    <li><a href="sub_pages/pharmaceutical_packaging.html">Pharmaceutical Packaging</a></li>
+    <li><a href="sub_pages/metal_packaging.html">Metal Packaging</a></li>
+    <li><a href="sub_pages/wooden_bamboo_packaging.html">Wooden & Bamboo Packaging</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Personal Care & Household Cleaning</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/feminine_care.html">Feminie Care</a></li>
+    <li><a href="sub_pages/hair_care_styling.html">Hair Care & Styling</a></li>
+    <li><a href="sub_pages/oral_care.html">Oral Care</a></li>
+    <li><a href="sub_pages/bath_supplies.html">Bath Supplies</a></li>
+    <li><a href="sub_pages/body_care.html">Body Care</a></li>
+    <li><a href="sub_pages/mens_grooming.html">Men's Grooming</a></li>
+    <li><a href="sub_pages/special_household_cleaning.html">Special Household Cleaning</a></li>
+    <li><a href="sub_pages/kitchen_bathroom_cleaning.html">Kitchen & Bathroom Cleaning</a></li>
+    <li><a href="sub_pages/travel_size_gift_sets.html">Travel Size & Gift Sets</a></li>
+    <li><a href="sub_pages/laundry_cleaning_supplies.html">Laundry Cleaning Supplies</a></li>
+    <li><a href="sub_pages/pest_control_products.html">Pest Control Products</a></li>
+    <li><a href="sub_pages/other_personal_care_products.html">Other Personal Care Products</a></li>
+    <li><a href="sub_pages/room_deodorizers.html">Room Deodorizers</a></li>
+    <li><a href="sub_pages/floor_cleaning.html">Floor Cleaning</a></li>
+    <li><a href="sub_pages/hands_feet_care.html">Hands & Feet Care</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Mother</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)"> Kids & Toys</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/kids_shoes.html">Kids Shoes</a></li>
+    <li><a href="sub_pages/puzzle_games.html">Puzzle & Games</a></li>
+    <li><a href="sub_pages/blocks_model_building_toys.html">Blocks & Model Building Toys</a></li>
+    <li><a href="sub_pages/pregnancy_maternity.html">Pregnancy & Maternity</a></li>
+    <li><a href="sub_pages/baby_supplies_products.html">Baby Supplies & Products</a></li>
+    <li><a href="sub_pages/childrens_clothing.html">Children's Clothing</a></li>
+    <li><a href="sub_pages/baby_food.html">Baby Food</a></li>
+    <li><a href="sub_pages/baby_care.html">Baby Care</a></li>
+    <li><a href="sub_pages/baby_clothing.html">Baby Clothing</a></li>
+    <li><a href="sub_pages/toddler_clothing.html">Toddler Clothing</a></li>
+    <li><a href="sub_pages/maternity_clothes.html">Maternity Clothes</a></li>
+    <li><a href="sub_pages/stuffed_animals_plush_toys.html">Stuffed Animals & Plush Toys</a></li>
+    <li><a href="sub_pages/toy_vehicle.html">Toy Vehicle</a></li>
+    <li><a href="sub_pages/outdoor_toys_structures.html">Outdoor Toys & Structures</a></li>
+    <li><a href="sub_pages/educational_toys.html">Educational Toys</a></li>
+    <li><a href="sub_pages/dress_up_pretend_play.html">Dress Up & Pretend Play</a></li>
+    <li><a href="sub_pages/classic_toys.html">Classic Toys</a></li>
+    <li><a href="sub_pages/baby_toddler_toys.html">Baby & Toddler Toys</a></li>
+    <li><a href="sub_pages/baby_appliances.html">Baby Appliances</a></li>
+    <li><a href="sub_pages/dolls_accessories.html">Dolls & Accessories</a></li>
+    <li><a href="sub_pages/baby_gifts.html">Baby Gifts</a></li>
+    <li><a href="sub_pages/baby_storage_organization.html">Baby Storage & Organization</a></li>
+    <li><a href="sub_pages/remote_control_toys.html">Remote Control Toys</a></li>
+    <li><a href="sub_pages/novelty_gag_toys.html">Novelty & Gag Toys</a></li>
+    <li><a href="sub_pages/action_toy_figures.html">Action & Toy Figures</a></li>
+    <li><a href="sub_pages/hobbies_models.html">Hobbies & Models</a></li>
+    <li><a href="sub_pages/novelty_special_use.html">Novelty & Special Use</a></li>
+    <li><a href="sub_pages/toy_weapons.html">Toy Weapons</a></li>
+    <li><a href="sub_pages/kids_textile_bedding.html">Kid's Textile&Bedding</a></li>
+    <li><a href="sub_pages/hygiene_products.html">Hygiene Products</a></li>
+</ul>
+<div class="category" onclick="toggleSubCategory(this)">Arts</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+<li> Crafts & DIY Toys</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Fashion & Beauty</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">Shoes & Accessories</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/shoe_parts_accessories.html">Shoe Parts & Accessories</a></li>
+    <li><a href="sub_pages/womens_shoes.html">Women's Shoes</a></li>
+    <li><a href="sub_pages/shoe_care_services.html">Shoe Care & Services</a></li>
+    <li><a href="sub_pages/mens_shoes.html">Men's Shoes</a></li>
+    <li><a href="sub_pages/functional_shoes.html">Functional Shoes</a></li>
+    <li><a href="sub_pages/outdoor_shoes.html">Outdoor Shoes</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Apparel & Accessories</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/wedding_apparel_accessories.html">Wedding Apparel & Accessories</a></li>
+    <li><a href="sub_pages/garment_processing_accessories.html">Garment & Processing Accessories</a></li>
+    <li><a href="sub_pages/underwear_sleepwear.html">Underwear & Sleepwear</a></li>
+    <li><a href="sub_pages/hats_caps.html">Hats & Caps</a></li>
+    <li><a href="sub_pages/socks_hosiery.html">Socks & Hosiery</a></li>
+    <li><a href="sub_pages/sportswear.html">Sportswear</a></li>
+    <li><a href="sub_pages/mens_clothing.html">Men's Clothing</a></li>
+    <li><a href="sub_pages/other_apparel_accessories.html">Other Apparel&Accessories</a></li>
+    <li><a href="sub_pages/womens_clothing.html">Women's Clothing</a></li>
+    <li><a href="sub_pages/uniforms_costumes.html">Uniforms & Costumes</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Luggage</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)"> Bags & Cases</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/special_purpose_bags_cases.html">Special Purpose Bags & Cases</a></li>
+    <li><a href="sub_pages/womens_bags.html">Women's Bags</a></li>
+    <li><a href="sub_pages/mens_bags.html">Men's Bags</a></li>
+    <li><a href="sub_pages/wallets_holders.html">Wallets & Holders</a></li>
+    <li><a href="sub_pages/lifestyle_bags.html">Lifestyle Bags</a></li>
+    <li><a href="sub_pages/luggage_travel_bags.html">Luggage & Travel Bags</a></li>
+    <li><a href="sub_pages/backpacks.html">Backpacks</a></li>
+</ul>
+<div class="category" onclick="toggleSubCategory(this)">Bag</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/luggage_parts_accessories.html">Luggage Parts & Accessories</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Jewelry</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)"> Eyewear</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)"> Watches & Accessories</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/jewelry_making.html">Jewelry Making</a></li>
+    <li><a href="sub_pages/fashion_jewelry.html">Fashion Jewelry</a></li>
+    <li><a href="sub_pages/hair_accessories.html">Hair Accessories</a></li>
+    <li><a href="sub_pages/fine_jewelry.html">Fine Jewelry</a></li>
+    <li><a href="sub_pages/jewelry_packaging_display.html">Jewelry Packaging & Display</a></li>
+    <li><a href="sub_pages/eyewear.html">Eyewear</a></li>
+    <li><a href="sub_pages/smart_jewelry.html">Smart Jewelry</a></li>
+    <li><a href="sub_pages/watches.html">Watches</a></li>
+    <li><a href="sub_pages/eyewear_accessories.html">Eyewear Accessories</a></li>
+    <li><a href="sub_pages/watch_accessories_parts.html">Watch Accessories & Parts</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Beauty</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/skin_care_tools_facial.html">Skin Care & Tools（facial）</a></li>
+    <li><a href="sub_pages/makeup_tools.html">Makeup & Tools</a></li>
+    <li><a href="sub_pages/body_art.html">Body Art</a></li>
+    <li><a href="sub_pages/nail_supplies.html">Nail Supplies</a></li>
+    <li><a href="sub_pages/hair_extensions_wigs.html">Hair Extensions & Wigs</a></li>
+    <li><a href="sub_pages/aesthetic_medicine.html">Aesthetic medicine</a></li>
+    <li><a href="sub_pages/beauty_equipment.html">Beauty Equipment</a></li>
+    <li><a href="sub_pages/perfume_fragrance.html">Perfume & Fragrance</a></li>
+    <li><a href="sub_pages/mini_size_gift_sets.html">Mini Size & Gift Sets</a></li>
+    <li><a href="sub_pages/used_beauty_care.html">Used Beauty Care</a></li>
+    <li><a href="sub_pages/eyelash_beauty_tools.html">Eyelash Beauty & Tools</a></li>
+</ul>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Sports & Entertainment</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">Consumer Electronics</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">VR</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)"> AR</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/mr_hardware_software.html"> MR Hardware & Software</a></li>
+</ul>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/tv_receivers_accessories.html">TV Receivers & Accessories</a></li>
+    <li><a href="sub_pages/mobile_phone_computer_repair_parts.html">Mobile Phone & Computer Repair Parts</a></li>
+    <li><a href="sub_pages/computer_hardware_software.html">Computer Hardware & Software</a></li>
+    <li><a href="sub_pages/used_electronics.html">Used Electronics</a></li>
+    <li><a href="sub_pages/cables_commonly_used_accessories.html">Cables & Commonly Used Accessories</a></li>
+    <li><a href="sub_pages/smart_electronics.html">Smart Electronics</a></li>
+    <li><a href="sub_pages/projectors_presentation_equipments.html">Projectors & Presentation Equipments</a></li>
+    <li><a href="sub_pages/mobile_phone_accessories.html">Mobile Phone & Accessories</a></li>
+    <li><a href="sub_pages/video_games_accessories.html">Video Games & Accessories</a></li>
+    <li><a href="sub_pages/electronic_publications.html">Electronic Publications</a></li>
+    <li><a href="sub_pages/earphone_headphone_accessories.html">Earphone & Headphone & Accessories</a></li>
+    <li><a href="sub_pages/speakers_accessories.html">Speakers & Accessories</a></li>
+</ul>
+<div class="category" onclick="toggleSubCategory(this)">Chargers</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/batteries_power_supplies.html"> Batteries & Power Supplies</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Portable Audio</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/video_accessories.html"> Video & Accessories</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Camera</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/photo_accessories.html"> Photo & Accessories</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Television</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)"> Home Audio</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/video_accessories.html">Video & Accessories</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Home Appliances</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/home_appliance_parts.html">Home Appliance Parts</a></li>
+    <li><a href="sub_pages/laundry_appliances.html">Laundry Appliances</a></li>
+    <li><a href="sub_pages/refrigerators_freezers.html">Refrigerators & Freezers</a></li>
+    <li><a href="sub_pages/small_kitchen_appliances.html">Small Kitchen Appliances</a></li>
+    <li><a href="sub_pages/personal_care_beauty_appliances.html">Personal Care & Beauty Appliances</a></li>
+    <li><a href="sub_pages/smart_home_appliances.html">Smart Home Appliances</a></li>
+    <li><a href="sub_pages/water_treatment_appliances.html">Water Treatment Appliances</a></li>
+    <li><a href="sub_pages/cleaning_appliances.html">Cleaning Appliances</a></li>
+    <li><a href="sub_pages/heating_cooling_appliances.html">Heating & Cooling Appliances</a></li>
+    <li><a href="sub_pages/air_quality_appliances.html">Air Quality Appliances</a></li>
+    <li><a href="sub_pages/major_kitchen_appliances.html">Major Kitchen Appliances</a></li>
+    <li><a href="sub_pages/second_hand_appliances.html">Second-hand Appliances</a></li>
+    <li><a href="sub_pages/water_heaters.html">Water Heaters</a></li>
+</ul>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Tools & Home Improvement</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">Safety</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/roadway_safety.html">Roadway Safety</a></li>
+    <li><a href="sub_pages/personal_protective_equipment.html">Personal Protective Equipment</a></li>
+    <li><a href="sub_pages/tactical_personal_defense_equipment.html">Tactical & Personal Defense Equipment</a></li>
+    <li><a href="sub_pages/firefighting_supplies.html">Firefighting Supplies</a></li>
+    <li><a href="sub_pages/water_safety_products.html">Water Safety Products</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Security</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/surveillance_products.html">Surveillance Products</a></li>
+    <li><a href="sub_pages/locks_keys.html">Locks & Keys</a></li>
+    <li><a href="sub_pages/alarms.html">Alarms</a></li>
+    <li><a href="sub_pages/access_control_systems_products.html">Access Control Systems & Products</a></li>
+</ul>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Raw Materials</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">Chemicals</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/pigments_dyestuff.html">Pigments & Dyestuff</a></li>
+    <li><a href="sub_pages/energy_chemicals.html">Energy Chemicals</a></li>
+    <li><a href="sub_pages/basic_organic_chemicals.html">Basic Organic Chemicals</a></li>
+    <li><a href="sub_pages/inorganic_chemicals.html">Inorganic Chemicals</a></li>
+    <li><a href="sub_pages/surface_treatment_chemicals.html">Surface Treatment Chemicals</a></li>
+    <li><a href="sub_pages/admixture_additives.html">Admixture & Additives</a></li>
+    <li><a href="sub_pages/biological_chemical_products.html">Biological Chemical Products</a></li>
+    <li><a href="sub_pages/painting_coating.html">Painting & Coating</a></li>
+    <li><a href="sub_pages/catalysts_chemical_auxiliary_agents.html">Catalysts & Chemical Auxiliary Agents</a></li>
+    <li><a href="sub_pages/agrochemicals.html">Agrochemicals</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Metals & Alloys</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/iron_iron_products.html">Iron & Iron Products</a></li>
+    <li><a href="sub_pages/metals_metal_products.html">Metals & Metal Products</a></li>
+    <li><a href="sub_pages/non_ferrous_metal.html">Non-ferrous Metal</a></li>
+    <li><a href="sub_pages/wire_mesh.html">Wire Mesh</a></li>
+    <li><a href="sub_pages/carbon_steel.html">Carbon Steel</a></li>
+    <li><a href="sub_pages/stainless_steel.html">Stainless Steel</a></li>
+    <li><a href="sub_pages/alloy_steel.html">Alloy Steel</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Rubber & Plastics</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/plastic_products.html">Plastic Products</a></li>
+    <li><a href="sub_pages/plastic_raw_materials.html">Plastic Raw Materials</a></li>
+    <li><a href="sub_pages/rubber_products.html">Rubber Products</a></li>
+    <li><a href="sub_pages/rubber_raw_materials.html">Rubber Raw Materials</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Fabric & Textile Raw Material</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/fabric.html">Fabric</a></li>
+    <li><a href="sub_pages/down_feather.html">Down & Feather</a></li>
+    <li><a href="sub_pages/yarn.html">Yarn</a></li>
+    <li><a href="sub_pages/fur.html">Fur</a></li>
+    <li><a href="sub_pages/fiber.html">Fiber</a></li>
+    <li><a href="sub_pages/textile_accessories.html">Textile Accessories</a></li>
+    <li><a href="sub_pages/leather.html">Leather</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Agriculture</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/fresh_fruit.html">Fresh Fruit</a></li>
+    <li><a href="sub_pages/mushrooms_truffles.html">Mushrooms & Truffles</a></li>
+    <li><a href="sub_pages/beans.html">Beans</a></li>
+    <li><a href="sub_pages/grain.html">Grain</a></li>
+    <li><a href="sub_pages/animal_products.html">Animal Products</a></li>
+    <li><a href="sub_pages/ornamental_plants.html">Ornamental Plants</a></li>
+    <li><a href="sub_pages/agricultural_equipment.html">Agricultural Equipment</a></li>
+    <li><a href="sub_pages/fresh_vegetables.html">Fresh Vegetables</a></li>
+    <li><a href="sub_pages/timber_raw_materials.html">Timber Raw Materials</a></li>
+    <li><a href="sub_pages/plant_seeds_bulbs.html">Plant Seeds & Bulbs</a></li>
+    <li><a href="sub_pages/frozen_products.html">Frozen Products</a></li>
+</ul>
+</div>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Maintenance Repair & Operations</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">Testing Instrument & Equipment</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/test_instruments.html">Test Instruments</a></li>
+    <li><a href="sub_pages/measuring_gauging_tools.html">Measuring & Gauging Tools</a></li>
+    <li><a href="sub_pages/lab_supplies.html">Lab Supplies</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">School & Office Supplies</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/writing_accessories.html">Writing Accessories</a></li>
+    <li><a href="sub_pages/printer_supplies.html">Printer Supplies</a></li>
+    <li><a href="sub_pages/commercial_office_supplies.html">Commercial Office Supplies</a></li>
+    <li><a href="sub_pages/office_paper.html">Office Paper</a></li>
+    <li><a href="sub_pages/pens.html">Pens</a></li>
+    <li><a href="sub_pages/notebooks_writing_pads.html">Notebooks & Writing Pads</a></li>
+    <li><a href="sub_pages/correction_supplies.html">Correction Supplies</a></li>
+    <li><a href="sub_pages/drafting_supplies.html">Drafting Supplies</a></li>
+    <li><a href="sub_pages/markers_highlighters.html">Markers & Highlighters</a></li>
+    <li><a href="sub_pages/pencil_cases_bags.html">Pencil Cases & Bags</a></li>
+    <li><a href="sub_pages/office_adhesives_tapes.html">Office Adhesives & Tapes</a></li>
+    <li><a href="sub_pages/education_supplies.html">Education Supplies</a></li>
+    <li><a href="sub_pages/office_binding_supplies.html">Office Binding Supplies</a></li>
+    <li><a href="sub_pages/board_erasers.html">Board Erasers</a></li>
+    <li><a href="sub_pages/office_cutting_supplies.html">Office Cutting Supplies</a></li>
+    <li><a href="sub_pages/pencils.html">Pencils</a></li>
+    <li><a href="sub_pages/desk_organizers.html">Desk Organizers</a></li>
+    <li><a href="sub_pages/art_supplies.html">Art Supplies</a></li>
+    <li><a href="sub_pages/boards.html">Boards</a></li>
+</ul>
+</div>
+<div class="category" onclick="toggleSubCategory(this)">Environment</div>
+<div class="sub-category">
+<div class="category" onclick="toggleSubCategory(this)">items</div>
+<ul>
+    <li><a href="sub_pages/recycling.html">Recycling</a></li>
+</ul>
+</div>
+</div>
 
-<header class="header container">
-	<a href="main/index.html">
-		<img alt="Logo" class="logo" alt="Sunnyluo Store" src="content/image/logo.png">
-	</a>
-	<h1 class="title">Sunnyluo Store</h1>
-	<h2 class="subtitle">Build a curated directory of store with  factory </h2>
-</header>
+    </div>
+    <div class="footer">
+        <button class="button" onclick="copyPageLink()">复制页面链接</button>
+        <a href="https://www.facebook.com" class="button">Facebook</a>
+        <a href="mailto:sunnyluo330@gmail.com" class="button">邮件联系</a>
+    </div>
+    <script>
+        function toggleSubCategory(element) {
+            element.classList.toggle('active');
+            var subCategory = element.nextElementSibling;
+            if (subCategory.style.display === 'block') {
+                subCategory.style.display = 'none';
+            } else {
+                subCategory.style.display = 'block';
+            }
+        }
 
-<section class="tools">
-	<div class="container">
-		<h2 class="section-title">Product Categoris</h2>
-		<p class="section-description">Find the product you need in each category</p>
-		<div class="categories">
-			 <a href="content/Home Decor/Home Decor.html" class="category-item">
-				<p class="icon">#</p>
-				<p class="name">Home Decor</p>
-			</a>
-			<a href="content/RawMaterials/category-7.html" class="category-item">
-				<p class="icon">#</p>
-				<p class="name">Raw Materials</p>
-			</a>
-			<a href="content/ToolsHomeImprovement/category-6.html" class="category-item">
-				<p class="icon">#</p>
-				<p class="name">Tools &amp; Home Improvement</p>
-			</a>
-			<a href="content/SportsEntertainment/category-5.html" class="category-item">
-				<p class="icon">#</p>
-				<p class="name">Sports &amp; Entertainment</p>
-			</a>
-			<a href="content/FashionBeauty/category-4.html" class="category-item">
-				<p class="icon">#</p>
-				<p class="name">Fashion &amp; Beauty</p>
-			</a>
-			<a href="content/HealthPersonalCare/category-3.html" class="category-item">
-				<p class="icon">#</p>
-				<p class="name">Health &amp; Personal Care</p>
-			</a>
-			<a href="content/Industrial/category-2.html" class="category-item">
-				<p class="icon">#</p>
-				<p class="name">Industrial</p>
-			</a>
-			<a href="content/MaintenanceRepairOperations/category-8.html" class="category-item">
-				<p class="icon">#</p>
-				<p class="name">Maintenance, Repair &amp; Operations</p>
-			</a>
-		</div>
-	</div>
-</section>
-
-
-<footer class="footer">
-	<div class="container">
-		<div class="contact">
-			<h2 class="section-title">Any product  to suggest?</h2>
-                                                <h3 class="section-title">Contact WeChat Sunnyluo223345</h3>
-			<p class="section-description">Any idea? Any product forgotten? Feel free to send it!</p>
-			<a class="button" href="https://www.facebook.com/share/g/15gFGwB3GT/" target="_blank">Contact</a>
-		</div>
-	</div>
-
-	<div class="copyright">
-		<div class="container">
-			<script>document.write('&copy;' + (new Date()).getFullYear());</script><noscript>&copy;2025</noscript> All rights reserved
-				&mdash; Powered by <a href="https://t3mpl.n4no.com/" target="_blank" title="T3MPL Editor">T3MPL</a>
-				&mdash; Template by <a href="https://www.sandoche.com">Sandoche</a>
-		</div>
-	</div>
-</footer>
-
+        function copyPageLink() {
+            var dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = window.location.href;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+            alert('页面链接已复制到剪贴板');
+        }
+    </script>
 </body>
+
 </html>
