@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L8EDEXZBV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9L8EDEXZBV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品列表 - 第页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 200px;
+            /* 可根据实际情况调整图片大小 */
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        nav {
+            background-color: #03a9f4;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* 新添加的样式 */
+        .product-item h3 {
+            font-size: 14px;
+            /* 产品名称文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item p {
+            font-size: 12px;
+            /* 其他产品信息文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item:hover h3 {
+            color: #03a9f4;
+            /* 鼠标悬停时产品名称文字变色 */
+        }
+
+        .product-item:hover p {
+            color: #03a9f4;
+            /* 鼠标悬停时其他产品信息文字变色 */
+        }
+
+        /* 产品容器样式 */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        /* 产品项样式 */
+        .product-item {
+            width: calc(25% - 20px);
+            /* 默认每行显示 4 个产品 */
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 鼠标悬停效果 */
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* 媒体查询，适配不同屏幕尺寸 */
+        @media (max-width: 1024px) {
+            .product-item {
+                width: calc(33.33% - 20px);
+                /* 平板设备每行显示 3 个产品 */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* 小屏幕设备每行显示 2 个产品 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: 100%;
+                /* 超小屏幕设备每行显示 1 个产品 */
+            }
+        }
+
+        /* 分页按钮样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        /* 回到顶部按钮样式 */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #03a9f4;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部图片和文字 -->
+    <div class="header">
+        <img src="../../main/image/logo.png" alt="Logo">
+        <p>Sunnyluo Store</p>
+        <p>Build a curated directory of store with factory</p>
+    </div>
+    <nav>
+        <a href="../../main/index.html">Home</a>
+        <a href="../../main/pdfs/pdf.html">Resources</a>
+        <a href="../../main/About us.html">About Us</a>
+        <a href="mailto:sunnyluo330@gmail.com">Contact Us</a>
+        <a href="https://www.facebook.com/sunnyluoting">Facebook</a>
+    </nav>
+    <h1>Product list</h1>
+    <div class="products">
+        
+        <div class="product-item">
+            <a href="product_4501.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6698e51140074e949292a797eda95c21s.png_300x300.png" alt="80.0mm clear grey green pink cloudy parallel sea wave hollow glass block for home house decoration and building glass wall" style="max-width: 200px;">
+            </a>
+            <h3>80.0mm clear grey green pink cloudy parallel sea wave hollow glass block for home house decoration and building glass wall</h3>
+            <p>Price: $0.92-0.98</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4502.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H22c2ab07811244e7b83f9d6fc4f8a84ah.jpg_300x300.jpg" alt="5mm 5.5mm 6mm transparent clear grey bronze green pink tinted reflective float glass price" style="max-width: 200px;">
+            </a>
+            <h3>5mm 5.5mm 6mm transparent clear grey bronze green pink tinted reflective float glass price</h3>
+            <p>Price: $3.65-3.75</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4503.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H41af7d2f97b74a95a4e81d0b53a8ab74S.jpg_300x300.jpg" alt="190x190x80mm 190x190x95mm 115x115x80mm transparent colored hollow glass block for building" style="max-width: 200px;">
+            </a>
+            <h3>190x190x80mm 190x190x95mm 115x115x80mm transparent colored hollow glass block for building</h3>
+            <p>Price: $0.90-0.95</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4504.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc51baec91d8f4bbf94a305a876bd90bah.jpg_300x300.jpg" alt="All kinds of 80.0mm190x190 transparent green pink cloudy parallel hollow glass block for building decoration partition wall" style="max-width: 200px;">
+            </a>
+            <h3>All kinds of 80.0mm190x190 transparent green pink cloudy parallel hollow glass block for building decoration partition wall</h3>
+            <p>Price: $0.90-0.95</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4505.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9955ad1823874aeaae8490ccbb2c12a9P.png_300x300.png" alt="80.0mm 95.0mm clear pink green grey cloudy parallel 190x190mm 145x145mm 115x115mm hollow glass block for home decoration" style="max-width: 200px;">
+            </a>
+            <h3>80.0mm 95.0mm clear pink green grey cloudy parallel 190x190mm 145x145mm 115x115mm hollow glass block for home decoration</h3>
+            <p>Price: $0.90-0.98</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4506.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He98aa5d8391b495c830ca43a279fe907B.png_300x300.png" alt="80.0mm transparent colorful cloudy parallel sea wave hollow glass block for wall kitchen partition wall decoration" style="max-width: 200px;">
+            </a>
+            <h3>80.0mm transparent colorful cloudy parallel sea wave hollow glass block for wall kitchen partition wall decoration</h3>
+            <p>Price: $0.92-0.98</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4507.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H78505dbadf664902a9101a4b765e21d7n.png_300x300.png" alt="80.0mm 95.0mm decoration glass block /brick for kitchen partition wall and door" style="max-width: 200px;">
+            </a>
+            <h3>80.0mm 95.0mm decoration glass block /brick for kitchen partition wall and door</h3>
+            <p>Price: $0.94-0.96</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4508.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Haa6285f5b9054749a4ba15495e55ff076.png_300x300.png" alt="Top sales wall hollow glass blocks building Customized colors glass brick curve corner glass bricks prices" style="max-width: 200px;">
+            </a>
+            <h3>Top sales wall hollow glass blocks building Customized colors glass brick curve corner glass bricks prices</h3>
+            <p>Price: $0.98-1.10</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4509.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc1c71bf1335343a2a319296b51d7c75ba.jpg_300x300.jpg" alt="Laminated glass Factory Price For stairs/floor/balustrade balcony railing bifold window decorative glass panels Laminated glass" style="max-width: 200px;">
+            </a>
+            <h3>Laminated glass Factory Price For stairs/floor/balustrade balcony railing bifold window decorative glass panels Laminated glass</h3>
+            <p>Price: $5.90-6.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4510.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8acf6cdfc1494313bd1da0336e30a5e1a.png_300x300.png" alt="Fireplace Glass Window and Door Customized Transparent Ceramic Glass Heat Resistant Panel Stove" style="max-width: 200px;">
+            </a>
+            <h3>Fireplace Glass Window and Door Customized Transparent Ceramic Glass Heat Resistant Panel Stove</h3>
+            <p>Price: $5.25-30.75</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4511.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H27c3db4e263a4ab2a42b62921d4485acZ.jpg_300x300.jpg" alt="4mm 5mm 6mm 8mm 10mm Privacy Frosted Tempered Glass Satin Glass" style="max-width: 200px;">
+            </a>
+            <h3>4mm 5mm 6mm 8mm 10mm Privacy Frosted Tempered Glass Satin Glass</h3>
+            <p>Price: $5.00-14.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4512.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hcd7caceef1cc4e8c8e28059b93eebd71S.jpg_300x300.jpg" alt="Double Glazing Thermal Break Tempered Building Laminated Glass" style="max-width: 200px;">
+            </a>
+            <h3>Double Glazing Thermal Break Tempered Building Laminated Glass</h3>
+            <p>Price: $15.50-22.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4513.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0c1bca7eb0d24d6bbd0635c39ed4a89b3.jpg_300x300.jpg" alt="6.38mm & 12mm Clear Laminated Safety Glass Custom Cut to Size for Dining Hospital & Bedroom Applications" style="max-width: 200px;">
+            </a>
+            <h3>6.38mm & 12mm Clear Laminated Safety Glass Custom Cut to Size for Dining Hospital & Bedroom Applications</h3>
+            <p>Price: $16.50-19.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4514.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7bf0bce3be804bda88dc6d1dbbe11ffbg.jpg_300x300.jpg" alt="Solid 8mm 12mm Tempered Polished Flat Glass Dining Living Room Kitchen Lighting Display Screen Supermarket Warehouse-Versatile" style="max-width: 200px;">
+            </a>
+            <h3>Solid 8mm 12mm Tempered Polished Flat Glass Dining Living Room Kitchen Lighting Display Screen Supermarket Warehouse-Versatile</h3>
+            <p>Price: $12.00-18.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4515.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H101499cc3c6d484fb9e4ec87c7cab4b3Y.jpg_300x300.jpg" alt="Hot Sale 6mm Solid Structure Tempered and Laminated Glass for Window for Kitchen Hall Hospital Park Entry" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale 6mm Solid Structure Tempered and Laminated Glass for Window for Kitchen Hall Hospital Park Entry</h3>
+            <p>Price: $2.80-6.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4516.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H894819cd3c12426eb1dc283d78753c1aW.png_300x300.png" alt="heat resistant glass factory direct kitchen heat resistant glass black ceramic glass for induction cooker" style="max-width: 200px;">
+            </a>
+            <h3>heat resistant glass factory direct kitchen heat resistant glass black ceramic glass for induction cooker</h3>
+            <p>Price: $13.78-48.23</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4517.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd4b32e303a564e019e577e7b96d5a88ep.jpg_300x300.jpg" alt="ESG Suppliers Offer 5MM 6MM 10MM Tempered Glass at Affordab" style="max-width: 200px;">
+            </a>
+            <h3>ESG Suppliers Offer 5MM 6MM 10MM Tempered Glass at Affordab</h3>
+            <p>Price: $5.50-71.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4518.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7ad8a78dea944f2da55157a7f850f625v.jpg_300x300.jpg" alt="Factory Direct Clear Float Glass Sheet 2mm-12mm Solid Structure Flat Pattern Industrial Bathroom Decoration Solar Exterior" style="max-width: 200px;">
+            </a>
+            <h3>Factory Direct Clear Float Glass Sheet 2mm-12mm Solid Structure Flat Pattern Industrial Bathroom Decoration Solar Exterior</h3>
+            <p>Price: $1.67-6.58</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4519.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdf59d079bf914489aa7d0b254d14e0a5k.jpg_300x300.jpg" alt="442 Clear Colorless 8.76mm PVB Laminated Float Glass Per M2 Bulletproof Outdoor Bathroom Curtain Wall Flat Industrial Decoration" style="max-width: 200px;">
+            </a>
+            <h3>442 Clear Colorless 8.76mm PVB Laminated Float Glass Per M2 Bulletproof Outdoor Bathroom Curtain Wall Flat Industrial Decoration</h3>
+            <p>Price: $2.08-5.69</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4520.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H86b6c4102ea149f5ad40e63f38cced802.png_300x300.png" alt="door glass design stained decorative Church Window Solution Art Leaded stained glass panel art glass" style="max-width: 200px;">
+            </a>
+            <h3>door glass design stained decorative Church Window Solution Art Leaded stained glass panel art glass</h3>
+            <p>Price: $45.00-50.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4521.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd9038f77014349e1b3dbab0663955deex.png_300x300.png" alt="Wholesale High-quality Patterned Glass Decorative Glass Partitions Supplied by Chinese Glass Factories" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale High-quality Patterned Glass Decorative Glass Partitions Supplied by Chinese Glass Factories</h3>
+            <p>Price: $2.36-2.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4522.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd2d00ca1631845b58271cccb43bbaaccS.jpg_300x300.jpg" alt="Facade window double glazing units manufacturer energy saving sound proof low E coating tempered insulated glass curtain wall" style="max-width: 200px;">
+            </a>
+            <h3>Facade window double glazing units manufacturer energy saving sound proof low E coating tempered insulated glass curtain wall</h3>
+            <p>Price: $12.00-25.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4523.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd53ea99226fa4d35a05910064e44f4d9B.jpg_300x300.jpg" alt="Building glass CE AS/NZS 2208 Balcony railing balustrade show room with clear laminated glass float toughen tempered glass" style="max-width: 200px;">
+            </a>
+            <h3>Building glass CE AS/NZS 2208 Balcony railing balustrade show room with clear laminated glass float toughen tempered glass</h3>
+            <p>Price: $3.86-6.42</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4524.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4a3c77c848024899a0f0e35a7d19e766G.jpg_300x300.jpg" alt="Building laminated tempered glass laminated glass plate tempered laminated safety glass factory" style="max-width: 200px;">
+            </a>
+            <h3>Building laminated tempered glass laminated glass plate tempered laminated safety glass factory</h3>
+            <p>Price: 7.29</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 300 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4525.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha43c1a5105654fb0b9a4f488d4d69a828.jpg_300x300.jpg" alt="custom cut corning gorilla silk screen printing tempered glass lcd display cover glass" style="max-width: 200px;">
+            </a>
+            <h3>custom cut corning gorilla silk screen printing tempered glass lcd display cover glass</h3>
+            <p>Price: $1.30-1.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4526.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H06647522fda046da86619bd92734ec51O.png_300x300.png" alt="Efficient and energy-saving vacuum glass for commercial building windows, soundproof and heat-insulating low radiation glass" style="max-width: 200px;">
+            </a>
+            <h3>Efficient and energy-saving vacuum glass for commercial building windows, soundproof and heat-insulating low radiation glass</h3>
+            <p>Price: $7.80-8.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4527.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb0747ec4341f4633a9bdf123e6e1ff46g.jpg_300x300.jpg" alt="8mm 10mm 12mm Crystal clear Tempered Glass Sheet Building Glass Balcony Railing Price Thickness clear Glass Shower Bathroom" style="max-width: 200px;">
+            </a>
+            <h3>8mm 10mm 12mm Crystal clear Tempered Glass Sheet Building Glass Balcony Railing Price Thickness clear Glass Shower Bathroom</h3>
+            <p>Price: $2.85-3.98</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4528.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6f0a9dee75dd48b29d1982dfc44b3cffm.png_300x300.png" alt="Tempered Wire Glass Fireproof Explosion-proof Wired Glass 6mm-12mm Clear Colored Nashiji Patterned Glass for Decoration Safety" style="max-width: 200px;">
+            </a>
+            <h3>Tempered Wire Glass Fireproof Explosion-proof Wired Glass 6mm-12mm Clear Colored Nashiji Patterned Glass for Decoration Safety</h3>
+            <p>Price: $5.00-15.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4529.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H233d7df2f3ad4978b880f735ffd1ad5cP.jpg_300x300.jpg" alt="google glass 4 5 6 8mm 10mm round square clear tempered polished edge full toughened small round safety instrument meter" style="max-width: 200px;">
+            </a>
+            <h3>google glass 4 5 6 8mm 10mm round square clear tempered polished edge full toughened small round safety instrument meter</h3>
+            <p>Price: $1.31-3.27</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4530.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H064e166be638484e888ee06288ada11e0.png_300x300.png" alt="Customized Tiffany Style European style art stained glass windows for Home Decor Art Decorative" style="max-width: 200px;">
+            </a>
+            <h3>Customized Tiffany Style European style art stained glass windows for Home Decor Art Decorative</h3>
+            <p>Price: $120.20-150.10</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4531.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc3b7f4c11606406198686e0718ace633G.jpg_300x300.jpg" alt="Fully Tempered Building Glass Manufacturer Safe Transparent Flat Tempered Hot Glass Price Per Square Meter" style="max-width: 200px;">
+            </a>
+            <h3>Fully Tempered Building Glass Manufacturer Safe Transparent Flat Tempered Hot Glass Price Per Square Meter</h3>
+            <p>Price: $1.90-3.10</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4532.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H79da2d75c1554597ad997bebc4da74b7I.jpg_300x300.jpg" alt="Glass Manufacturer Steel Glass High Quality 10mm 12mm Transparent Safety Insulation Laminated Tempered Building Glass" style="max-width: 200px;">
+            </a>
+            <h3>Glass Manufacturer Steel Glass High Quality 10mm 12mm Transparent Safety Insulation Laminated Tempered Building Glass</h3>
+            <p>Price: $1.90-3.10</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4533.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H04fa44608e0d421e99dc834de4d50bdd2.jpg_300x300.jpg" alt="4 5 6 810 Clear Solar Panel Extra White Extra Clear Ultra-white Low Iron Tempered Glass From China Glass Factory" style="max-width: 200px;">
+            </a>
+            <h3>4 5 6 810 Clear Solar Panel Extra White Extra Clear Ultra-white Low Iron Tempered Glass From China Glass Factory</h3>
+            <p>Price: $2.38-3.75</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4534.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H82b2c01cd8fd486298eb4f8f25d8f7e78.jpg_300x300.jpg" alt="frosted glass bathroom window door tempered glass villa hotel door hospital house bathroom shower building supplies" style="max-width: 200px;">
+            </a>
+            <h3>frosted glass bathroom window door tempered glass villa hotel door hospital house bathroom shower building supplies</h3>
+            <p>Price: $1.85-2.98</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4535.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbd3d6417d80741268481675ea1964246W.jpg_300x300.jpg" alt="frosted glass railings Modern Frameless Fence Outdoor Exterior glass railing Balcony Glass Railing System Baluster Standoff" style="max-width: 200px;">
+            </a>
+            <h3>frosted glass railings Modern Frameless Fence Outdoor Exterior glass railing Balcony Glass Railing System Baluster Standoff</h3>
+            <p>Price: $6.22-12.89</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4536.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H62fa213e76ea47958d75c6f6841870a8j.jpg_300x300.jpg" alt="Building 6.38mm 10.38mm 12.76mm 13.52mm Safe Transparent SGP PVB Tempered Sandwich Glass" style="max-width: 200px;">
+            </a>
+            <h3>Building 6.38mm 10.38mm 12.76mm 13.52mm Safe Transparent SGP PVB Tempered Sandwich Glass</h3>
+            <p>Price: $1.90-3.10</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4537.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc8279fb15239414581a4e218d9dd094dU.jpg_300x300.jpg" alt="China factory ultra clear 2mm 3.2 mm 4mm 5mm 6mm 8mm 10mm 12mm 15mm 19mm thick standard size float building glass price low iron" style="max-width: 200px;">
+            </a>
+            <h3>China factory ultra clear 2mm 3.2 mm 4mm 5mm 6mm 8mm 10mm 12mm 15mm 19mm thick standard size float building glass price low iron</h3>
+            <p>Price: 1.69</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4538.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H20c79f2620c84361ac3809bf2acf2810v.jpg_300x300.jpg" alt="10mm Tempered Transparent Glass Building Building Float Tempered Glass Apartment Building Safety" style="max-width: 200px;">
+            </a>
+            <h3>10mm Tempered Transparent Glass Building Building Float Tempered Glass Apartment Building Safety</h3>
+            <p>Price: $1.90-3.10</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4539.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H03f1a676ea0949ffb3f5d649aab75e07D.jpeg_300x300.jpeg" alt="Low-Emissivity Glass hollow insulated window curtain wall low e building sheets insulating glass" style="max-width: 200px;">
+            </a>
+            <h3>Low-Emissivity Glass hollow insulated window curtain wall low e building sheets insulating glass</h3>
+            <p>Price: $12.50-22.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4540.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H95ae533f6aba44d48911bd45f4a00a1bC.jpeg_300x300.jpeg" alt="glazing glass storefront glass Single Double Triple Silver Low E Glass Bendable Low Emissivity" style="max-width: 200px;">
+            </a>
+            <h3>glazing glass storefront glass Single Double Triple Silver Low E Glass Bendable Low Emissivity</h3>
+            <p>Price: $14.50-17.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <!-- 分页按钮 -->
+        <div class="pagination">
+            
+            <a href="page_45.html">Previous</a>
+            
+
+            
+            
+
+            
+            <a href="page_41.html" >41</a>
+            
+            <a href="page_42.html" >42</a>
+            
+            <a href="page_43.html" >43</a>
+            
+            <a href="page_44.html" >44</a>
+            
+            <a href="page_45.html" >45</a>
+            
+            <a href="page_46.html" class="active">46</a>
+            
+
+            
+        </div>
+        <!-- 回到顶部按钮 -->
+        <button id="back-to-top" onclick="topFunction()">回到顶部</button>
+    </div>
+
+    <script>
+        // 回到顶部按钮显示与隐藏逻辑
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // 回到顶部按钮点击事件
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>
