@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L8EDEXZBV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9L8EDEXZBV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品列表 - 第页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 200px;
+            /* 可根据实际情况调整图片大小 */
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        nav {
+            background-color: #03a9f4;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* 新添加的样式 */
+        .product-item h3 {
+            font-size: 14px;
+            /* 产品名称文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item p {
+            font-size: 12px;
+            /* 其他产品信息文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item:hover h3 {
+            color: #03a9f4;
+            /* 鼠标悬停时产品名称文字变色 */
+        }
+
+        .product-item:hover p {
+            color: #03a9f4;
+            /* 鼠标悬停时其他产品信息文字变色 */
+        }
+
+        /* 产品容器样式 */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        /* 产品项样式 */
+        .product-item {
+            width: calc(25% - 20px);
+            /* 默认每行显示 4 个产品 */
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 鼠标悬停效果 */
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* 媒体查询，适配不同屏幕尺寸 */
+        @media (max-width: 1024px) {
+            .product-item {
+                width: calc(33.33% - 20px);
+                /* 平板设备每行显示 3 个产品 */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* 小屏幕设备每行显示 2 个产品 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: 100%;
+                /* 超小屏幕设备每行显示 1 个产品 */
+            }
+        }
+
+        /* 分页按钮样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        /* 回到顶部按钮样式 */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #03a9f4;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部图片和文字 -->
+    <div class="header">
+        <img src="../../../main/image/logo.png" alt="Logo">
+        <p>Sunnyluo Store</p>
+        <p>Build a curated directory of store with factory</p>
+    </div>
+    <nav>
+        <a href="../../../index.html">Home</a>
+        <a href="../../pdfs/pdf.html">Resources</a>
+        <a href="../../../main/About us.html">About Us</a>
+        <a href="mailto:sunnyluo330@gmail.com">Contact Us</a>
+        <a href="https://www.facebook.com/sunnyluoting">Facebook</a>
+    </nav>
+    <h1>Product list</h1>
+    <div class="products">
+        
+        <div class="product-item">
+            <a href="product_4401.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H43877005139b49e1ad9da8ca844fde5el.jpg_300x300.jpg" alt="PVC Profiles UPVC Windows in Lead Free" style="max-width: 200px;">
+            </a>
+            <h3>PVC Profiles UPVC Windows in Lead Free</h3>
+            <p>Price: $1.06-1.12</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 9,000 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4402.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H44751fbac2bb474da37940f04dfb9664g.jpg_300x300.jpg" alt="Blue-White Multi-Cavity UPVC Profiles White High Anti-UV UPVC Profiles" style="max-width: 200px;">
+            </a>
+            <h3>Blue-White Multi-Cavity UPVC Profiles White High Anti-UV UPVC Profiles</h3>
+            <p>Price: $1.06-1.12</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 9,000 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4403.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc617fc681557433da9f3bab3370bbc414.jpg_300x300.jpg" alt="Plastic Extrusion Companies UPVC/PVC Plastic Profile for Casement Window" style="max-width: 200px;">
+            </a>
+            <h3>Plastic Extrusion Companies UPVC/PVC Plastic Profile for Casement Window</h3>
+            <p>Price: $1.06-1.12</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 9,000 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4404.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9d712298b4cc4c5d98ae191475e64333E.jpg_300x300.jpg" alt="Quality Assurance: Plastic, Antique Clay Tile, Synthetic Resin Roof Tile" style="max-width: 200px;">
+            </a>
+            <h3>Quality Assurance: Plastic, Antique Clay Tile, Synthetic Resin Roof Tile</h3>
+            <p>Price: $2.40-3.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4405.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd90a7ad482634dfd8ee0dc4cfeedc2dds.jpg_300x300.jpg" alt="Plastic Sheet Hot Forming Equipment Processing Workpiece Polycarbonate Sheet Engraving Molding Hot Bending" style="max-width: 200px;">
+            </a>
+            <h3>Plastic Sheet Hot Forming Equipment Processing Workpiece Polycarbonate Sheet Engraving Molding Hot Bending</h3>
+            <p>Price: $9.80-12.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4406.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H919b0c11ff854b678051eef11b75710cp.jpg_300x300.jpg" alt="PC Sheet Bending Processing Blister Sheet Engraving Stamping Polycarbonate Sheet Plastic Processing Products" style="max-width: 200px;">
+            </a>
+            <h3>PC Sheet Bending Processing Blister Sheet Engraving Stamping Polycarbonate Sheet Plastic Processing Products</h3>
+            <p>Price: $0.80-6.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4407.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd335c536085a4a2fbb4f08ded0674474l.jpg_300x300.jpg" alt="Pc Plate Engraving Bending Milling Slot Transparent Plastic Plate Extrusion Plastic Parts Equipment Parts" style="max-width: 200px;">
+            </a>
+            <h3>Pc Plate Engraving Bending Milling Slot Transparent Plastic Plate Extrusion Plastic Parts Equipment Parts</h3>
+            <p>Price: $0.80-8.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4408.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3c86e63361234b4d8512269f0787b37dy.jpg_300x300.jpg" alt="2mm, 4mm, 6mm, 8mm Polycarbonate Solid Panel Plastic Plate Partition protection Panel" style="max-width: 200px;">
+            </a>
+            <h3>2mm, 4mm, 6mm, 8mm Polycarbonate Solid Panel Plastic Plate Partition protection Panel</h3>
+            <p>Price: $3.20-8.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4409.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha103aaba8a644a2c95b91080054587dcD.jpg_300x300.jpg" alt="PVC Vinyl sheet piles Flood control water and sand to prevent breakwater to build dam walls" style="max-width: 200px;">
+            </a>
+            <h3>PVC Vinyl sheet piles Flood control water and sand to prevent breakwater to build dam walls</h3>
+            <p>Price: $21.00-27.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4410.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5c83db84922d4f7e82f013797f5cbc31q.jpg_300x300.jpg" alt="Polycarbonate Plate Bent Plastic Cover Transparent Protective Shell" style="max-width: 200px;">
+            </a>
+            <h3>Polycarbonate Plate Bent Plastic Cover Transparent Protective Shell</h3>
+            <p>Price: $0.60-8.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4411.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4dc95e9c9e8945028081d86df433a2a8S.jpg_300x300.jpg" alt="Transparent Polycarbonate Board Can Be Processed Bending Plastic Board PC Board Manufacturers According to Drawings Processing" style="max-width: 200px;">
+            </a>
+            <h3>Transparent Polycarbonate Board Can Be Processed Bending Plastic Board PC Board Manufacturers According to Drawings Processing</h3>
+            <p>Price: $9.80-12.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4412.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0b5a6d5e7c424ee19012e6a779907456S.jpg_300x300.jpg" alt="Processing Custom Polycarbonate Sheet CNC Lathe Bending PC Solid Sheet Plastic Accessories Customized" style="max-width: 200px;">
+            </a>
+            <h3>Processing Custom Polycarbonate Sheet CNC Lathe Bending PC Solid Sheet Plastic Accessories Customized</h3>
+            <p>Price: $0.80-6.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4413.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hafcf862249494a6490ac9a346a2b2a01H.png_300x300.png" alt="80# for Windows and Doors Pvc Upvc Extrusion Profiles Coohd Building Window China Price Frame Indoors Drawing Door Profile" style="max-width: 200px;">
+            </a>
+            <h3>80# for Windows and Doors Pvc Upvc Extrusion Profiles Coohd Building Window China Price Frame Indoors Drawing Door Profile</h3>
+            <p>Price: $980.00-1,250.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4414.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf61f5b3241b74b47a6765566f32aa00fX.jpg_300x300.jpg" alt="Transparent Solid Board Polycarbonate Board Industrial Production PC Solid Board Wholesale and Retail" style="max-width: 200px;">
+            </a>
+            <h3>Transparent Solid Board Polycarbonate Board Industrial Production PC Solid Board Wholesale and Retail</h3>
+            <p>Price: $3.50-8.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4415.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hac97143a33734579b94ab085e7081aear.jpg_300x300.jpg" alt="High Quality Factory Sale Reliable Plastic Drainage Board Supplier Storage and Building Materials" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Factory Sale Reliable Plastic Drainage Board Supplier Storage and Building Materials</h3>
+            <p>Price: $0.11-0.15</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4416.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H75d274fb21134ca1a5d98eda407d86ecO.jpg_300x300.jpg" alt="Waterproof Black Hdpe Plastic Drainage Board for Garages Building Materials Earthwork Products Water Drainage Board" style="max-width: 200px;">
+            </a>
+            <h3>Waterproof Black Hdpe Plastic Drainage Board for Garages Building Materials Earthwork Products Water Drainage Board</h3>
+            <p>Price: $0.11-0.15</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4417.html">
+                <img src="https://s.alicdn.com/@sc04/kf/A45b545a7c2f440b49c6e8fb2d38dafbev.jpg_300x300.jpg" alt="Modern Round Pattern PVC Sand Storm Gutters New Building Material Running Drain Pipe Outlet for Outdoor Roof Exterior-GRN116S" style="max-width: 200px;">
+            </a>
+            <h3>Modern Round Pattern PVC Sand Storm Gutters New Building Material Running Drain Pipe Outlet for Outdoor Roof Exterior-GRN116S</h3>
+            <p>Price: $1.80-2.15</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4418.html">
+                <img src="https://s.alicdn.com/@sc04/kf/A44f63b0bf2304a9e9e2a9e795392ab14c.jpg_300x300.jpg" alt="Modern Outdoor PVC PP Rain Water Gutter Square Rectangular Pattern Exterior Drainage Pipe White Building Modern Outdoor PVC Pipe" style="max-width: 200px;">
+            </a>
+            <h3>Modern Outdoor PVC PP Rain Water Gutter Square Rectangular Pattern Exterior Drainage Pipe White Building Modern Outdoor PVC Pipe</h3>
+            <p>Price: $3.30-3.95</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4419.html">
+                <img src="https://s.alicdn.com/@sc04/kf/A49b9d16fd98c4301b40ccf2afb57941e2.jpg_300x300.jpg" alt="Italy Direct Supply PVC Grey Drainage Pipe Fittings Collar 50 mm Plastic Roof Pipe Made Directly High Quality Building Materials" style="max-width: 200px;">
+            </a>
+            <h3>Italy Direct Supply PVC Grey Drainage Pipe Fittings Collar 50 mm Plastic Roof Pipe Made Directly High Quality Building Materials</h3>
+            <p>Price: $0.30-0.35</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4420.html">
+                <img src="https://s.alicdn.com/@sc04/kf/A7df9387ada33438c96fe1650020af4c5l.jpg_300x300.jpg" alt="Modern Grey PVC Water Drain Pipe Plastic Building Material for Rain Gutter Outdoor Roof Exterior Application Stopend Outlet" style="max-width: 200px;">
+            </a>
+            <h3>Modern Grey PVC Water Drain Pipe Plastic Building Material for Rain Gutter Outdoor Roof Exterior Application Stopend Outlet</h3>
+            <p>Price: $0.65-0.75</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4421.html">
+                <img src="https://s.alicdn.com/@sc04/kf/A771d9403371f472da5ba49d013ea9ee6b.jpg_300x300.jpg" alt="Modern Outdoor PVC Sand Downpipe New Rainwater Collector Building Materials Exterior Drainage Rainwater Gutter Roof Fittings" style="max-width: 200px;">
+            </a>
+            <h3>Modern Outdoor PVC Sand Downpipe New Rainwater Collector Building Materials Exterior Drainage Rainwater Gutter Roof Fittings</h3>
+            <p>Price: $3.30-3.95</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4422.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Acdcdb5d4c8494d37a0218a9a47e8f3006.jpg_300x300.jpg" alt="Modern Outdoor PVC Rain Water Gutter Roof Profile Grey UPVC Rectangular Building Material for Exteriors & Hotel Drainage" style="max-width: 200px;">
+            </a>
+            <h3>Modern Outdoor PVC Rain Water Gutter Roof Profile Grey UPVC Rectangular Building Material for Exteriors & Hotel Drainage</h3>
+            <p>Price: $2.50-3.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4423.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha427018b7bd2422c95aa9bc1ec80415fP.jpg_300x300.jpg" alt="Quality Guarantee Durable Building Roofing Modern Copper Plated PVC Leaf Grate Outdoor Pipe Rain Water Fittings FRP Exterior" style="max-width: 200px;">
+            </a>
+            <h3>Quality Guarantee Durable Building Roofing Modern Copper Plated PVC Leaf Grate Outdoor Pipe Rain Water Fittings FRP Exterior</h3>
+            <p>Price: $6.55-7.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4424.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H49d6421d13a346d99abdfd42730d12d7d.jpg_300x300.jpg" alt="Modern Design Galvanized PVC Roof Rafter Outdoor Exterior Use Building Roofing Materials Rain Water Plastic Building Materials" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Galvanized PVC Roof Rafter Outdoor Exterior Use Building Roofing Materials Rain Water Plastic Building Materials</h3>
+            <p>Price: $1.30-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4425.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Aa94a1735f9d24a81b60a6fcbe90141b52.jpg_300x300.jpg" alt="Italy Direct Supply PVC Plastic Drainage Pipe Fittings Collar Sand Outdoor and Exterior Application for 50 mm Roof Down Pipe" style="max-width: 200px;">
+            </a>
+            <h3>Italy Direct Supply PVC Plastic Drainage Pipe Fittings Collar Sand Outdoor and Exterior Application for 50 mm Roof Down Pipe</h3>
+            <p>Price: $0.20-0.25</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4426.html">
+                <img src="https://s.alicdn.com/@sc04/kf/A7920d700c7d741c987ce7df445abbb22E.jpg_300x300.jpg" alt="Durable Quality PVC Plastic Building Materials 90 Degree Corner Sand Rain Water Gutter GRN116S Modern Roof Exterior Outdoor" style="max-width: 200px;">
+            </a>
+            <h3>Durable Quality PVC Plastic Building Materials 90 Degree Corner Sand Rain Water Gutter GRN116S Modern Roof Exterior Outdoor</h3>
+            <p>Price: $1.50-1.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4427.html">
+                <img src="https://s.alicdn.com/@sc04/kf/A291bc0f067ec4f81adec5d76b093867dR.jpg_300x300.jpg" alt="Custom Made Modern Design PVC Rafter Sand Waterproof Building Rain Water Gutter Roof Exterior Outdoor GRN116S Made Plastic" style="max-width: 200px;">
+            </a>
+            <h3>Custom Made Modern Design PVC Rafter Sand Waterproof Building Rain Water Gutter Roof Exterior Outdoor GRN116S Made Plastic</h3>
+            <p>Price: $2.05-2.45</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4428.html">
+                <img src="https://s.alicdn.com/@sc04/kf/A53b7fbdcefce49e580ccd5e8cb6b80e2Z.jpg_300x300.jpg" alt="Custom Made Modern Design GRN116N Rafter Grey Waterproof PVC Building Material for Roof Exterior Outdoor Rain Water Gutter" style="max-width: 200px;">
+            </a>
+            <h3>Custom Made Modern Design GRN116N Rafter Grey Waterproof PVC Building Material for Roof Exterior Outdoor Rain Water Gutter</h3>
+            <p>Price: $0.50-0.62</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4429.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H31867263c32e41098272fc080c2e590bk.jpg_300x300.jpg" alt="Italian Modern Design Outdoor Roof Exterior Rainwater Gutter Running Outlet Waterproof Plastic Rubber Gasket Building Materials" style="max-width: 200px;">
+            </a>
+            <h3>Italian Modern Design Outdoor Roof Exterior Rainwater Gutter Running Outlet Waterproof Plastic Rubber Gasket Building Materials</h3>
+            <p>Price: $0.25-0.35</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4430.html">
+                <img src="https://s.alicdn.com/@sc04/kf/A8badc071e94648e9ad95b94ee69d8fb14.jpg_300x300.jpg" alt="Modern Design Brown PVC Water Pipe Down Stems 45 Degree Bend for 50mm Outdoor Roof and Exterior Building Materials" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Brown PVC Water Pipe Down Stems 45 Degree Bend for 50mm Outdoor Roof and Exterior Building Materials</h3>
+            <p>Price: $0.95-1.15</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4431.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha511c37339624121b1ce55b94d79131aY.jpg_300x300.jpg" alt="Wholesale Modern PVC Plastic Galvanized Roof Rafters Outdoor Construction House Roofing Tiles Industrial Hot Sale Building" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Modern PVC Plastic Galvanized Roof Rafters Outdoor Construction House Roofing Tiles Industrial Hot Sale Building</h3>
+            <p>Price: $2.40-2.75</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4432.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Adfb507d62f12479abf2a1e4c7ddf724e9.jpg_300x300.jpg" alt="Modern Grey PVC Brackets Rain Water Gutter Home Building Material GRN116N Plastic Joint Roof Exterior Outdoor Use Export Ready" style="max-width: 200px;">
+            </a>
+            <h3>Modern Grey PVC Brackets Rain Water Gutter Home Building Material GRN116N Plastic Joint Roof Exterior Outdoor Use Export Ready</h3>
+            <p>Price: $0.65-0.75</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4433.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H81a5c7d572364da6aad92e8c05c5f708H.jpg_300x300.jpg" alt="Modern 100 mm PVC Plastic Water Pipe 45 Degree Copper Effect Outdoor Roof Exterior Building Materials Stems Exterior Pipelines" style="max-width: 200px;">
+            </a>
+            <h3>Modern 100 mm PVC Plastic Water Pipe 45 Degree Copper Effect Outdoor Roof Exterior Building Materials Stems Exterior Pipelines</h3>
+            <p>Price: $1.80-2.05</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4434.html">
+                <img src="https://s.alicdn.com/@sc04/kf/A6541fc4fc6ba4626802005f5b70754d1q.jpg_300x300.jpg" alt="Custom Made Modern Design Brown PVC Rafter Rainwater Gutter Waterproof Building Material GRN116M Roof Exterior Outdoor" style="max-width: 200px;">
+            </a>
+            <h3>Custom Made Modern Design Brown PVC Rafter Rainwater Gutter Waterproof Building Material GRN116M Roof Exterior Outdoor</h3>
+            <p>Price: $1.85-2.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4435.html">
+                <img src="https://s.alicdn.com/@sc04/kf/A71abcd5baafa4b59be17ab2f25a739e7M.jpg_300x300.jpg" alt="Modern Grey PVC Storm Pipes New Building Material for Hotel Roof Outdoor/Exterior Rainwater Gutter Running Drain Outlet-GRN116N" style="max-width: 200px;">
+            </a>
+            <h3>Modern Grey PVC Storm Pipes New Building Material for Hotel Roof Outdoor/Exterior Rainwater Gutter Running Drain Outlet-GRN116N</h3>
+            <p>Price: $1.80-2.15</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4436.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hcf4ee52fd0a6430ebf3464903c187e61e.jpg_300x300.jpg" alt="custom color Uv Resistant door window plastic awning Canopy 8mm 10mm Polycarbonate solid Sheet" style="max-width: 200px;">
+            </a>
+            <h3>custom color Uv Resistant door window plastic awning Canopy 8mm 10mm Polycarbonate solid Sheet</h3>
+            <p>Price: $3.40-6.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4437.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4dc87f6dba514df7bdb49dd1b4220aa9g.jpg_300x300.jpg" alt="Commercial Building Hospital Use Outdoor Canopy Bracket with Heat-Resistant Plastic Different Colors of Awnings Bracket" style="max-width: 200px;">
+            </a>
+            <h3>Commercial Building Hospital Use Outdoor Canopy Bracket with Heat-Resistant Plastic Different Colors of Awnings Bracket</h3>
+            <p>Price: $1.20-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4438.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8ac48d9c58484453ae87140651362294N.jpg_300x300.jpg" alt="20mm Polycarbonate Sheet Car Shed UV Resistant Modern Design for Vehicle Roof Protection Durable Hollow Sheet" style="max-width: 200px;">
+            </a>
+            <h3>20mm Polycarbonate Sheet Car Shed UV Resistant Modern Design for Vehicle Roof Protection Durable Hollow Sheet</h3>
+            <p>Price: $1.50-4.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square miles</p>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <!-- 分页按钮 -->
+        <div class="pagination">
+            
+            <a href="page_44.html">Previous</a>
+            
+
+            
+            
+
+            
+            <a href="page_41.html" >41</a>
+            
+            <a href="page_42.html" >42</a>
+            
+            <a href="page_43.html" >43</a>
+            
+            <a href="page_44.html" >44</a>
+            
+            <a href="page_45.html" class="active">45</a>
+            
+
+            
+        </div>
+        <!-- 回到顶部按钮 -->
+        <button id="back-to-top" onclick="topFunction()">回到顶部</button>
+    </div>
+
+    <script>
+        // 回到顶部按钮显示与隐藏逻辑
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // 回到顶部按钮点击事件
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

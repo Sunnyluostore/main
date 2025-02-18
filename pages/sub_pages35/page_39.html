@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L8EDEXZBV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9L8EDEXZBV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品列表 - 第页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 200px;
+            /* 可根据实际情况调整图片大小 */
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        nav {
+            background-color: #03a9f4;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* 新添加的样式 */
+        .product-item h3 {
+            font-size: 14px;
+            /* 产品名称文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item p {
+            font-size: 12px;
+            /* 其他产品信息文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item:hover h3 {
+            color: #03a9f4;
+            /* 鼠标悬停时产品名称文字变色 */
+        }
+
+        .product-item:hover p {
+            color: #03a9f4;
+            /* 鼠标悬停时其他产品信息文字变色 */
+        }
+
+        /* 产品容器样式 */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        /* 产品项样式 */
+        .product-item {
+            width: calc(25% - 20px);
+            /* 默认每行显示 4 个产品 */
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 鼠标悬停效果 */
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* 媒体查询，适配不同屏幕尺寸 */
+        @media (max-width: 1024px) {
+            .product-item {
+                width: calc(33.33% - 20px);
+                /* 平板设备每行显示 3 个产品 */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* 小屏幕设备每行显示 2 个产品 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: 100%;
+                /* 超小屏幕设备每行显示 1 个产品 */
+            }
+        }
+
+        /* 分页按钮样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        /* 回到顶部按钮样式 */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #03a9f4;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部图片和文字 -->
+    <div class="header">
+        <img src="../../../main/image/logo.png" alt="Logo">
+        <p>Sunnyluo Store</p>
+        <p>Build a curated directory of store with factory</p>
+    </div>
+    <nav>
+        <a href="../../../index.html">Home</a>
+        <a href="../../pdfs/pdf.html">Resources</a>
+        <a href="../../../main/About us.html">About Us</a>
+        <a href="mailto:sunnyluo330@gmail.com">Contact Us</a>
+        <a href="https://www.facebook.com/sunnyluoting">Facebook</a>
+    </nav>
+    <h1>Product list</h1>
+    <div class="products">
+        
+        <div class="product-item">
+            <a href="product_3801.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H90ee4e50c52342beb052f616ed676ee3f.jpg_300x300.jpg" alt="Factory Direct Supply Good Price Steel-Plastic Insulation Nail High Quality Insulating Nylon Nail for Building Materials" style="max-width: 200px;">
+            </a>
+            <h3>Factory Direct Supply Good Price Steel-Plastic Insulation Nail High Quality Insulating Nylon Nail for Building Materials</h3>
+            <p>Price: $0.03-0.05</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3802.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hae27c3ee8efd42b5b59af3472e256e21M.png_300x300.png" alt="Geocellular Attenuation Installation Drainage Stormwater Management System Tank Ferguson Geo Stormwater" style="max-width: 200px;">
+            </a>
+            <h3>Geocellular Attenuation Installation Drainage Stormwater Management System Tank Ferguson Geo Stormwater</h3>
+            <p>Price: $0.15-3.26</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 cubic meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3803.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb6bc4106dbff49dbabf12295a698eeb9l.jpg_300x300.jpg" alt="Modular Water Storage Eco Underground Rainwater Tanks Rain Harvesting System Geocellular Units" style="max-width: 200px;">
+            </a>
+            <h3>Modular Water Storage Eco Underground Rainwater Tanks Rain Harvesting System Geocellular Units</h3>
+            <p>Price: $0.15-3.26</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 cubic meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3804.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha34e537eeef1483296a34b547075f308S.png_300x300.png" alt="Installing Modular Underground Rainwater Storage System Rain Water Harvesting Cost Collection Tanks" style="max-width: 200px;">
+            </a>
+            <h3>Installing Modular Underground Rainwater Storage System Rain Water Harvesting Cost Collection Tanks</h3>
+            <p>Price: $0.15-3.26</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 cubic meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3805.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6f546dc47c9e40bb890e7593aee9a9ac5.png_300x300.png" alt="High Quality 60 80mm PVC UPVC Casement Windows Many Series of Profiles for Manufacturing UPVC Products" style="max-width: 200px;">
+            </a>
+            <h3>High Quality 60 80mm PVC UPVC Casement Windows Many Series of Profiles for Manufacturing UPVC Products</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3806.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He60f806eae5344f7812a00f2cb6f9996p.png_300x300.png" alt="High Quality PVC & UPVC Three-Track Sliding Windows Doors Black Thermal Black UPVC Window Lower Price Plastic Profiles Product" style="max-width: 200px;">
+            </a>
+            <h3>High Quality PVC & UPVC Three-Track Sliding Windows Doors Black Thermal Black UPVC Window Lower Price Plastic Profiles Product</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3807.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6088f28924d04d679baf15eef46193b6Q.png_300x300.png" alt="Chinese Manufacturer's UPVC Casement Profiles for Door and Window Building" style="max-width: 200px;">
+            </a>
+            <h3>Chinese Manufacturer's UPVC Casement Profiles for Door and Window Building</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3808.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hcf7ba142446e4965994fc3d5ba6aac6b6.jpg_300x300.jpg" alt="China Factory High Quality PVC Window Profile Casement Building Use Low Price UPVC Frame Profiles for Windows" style="max-width: 200px;">
+            </a>
+            <h3>China Factory High Quality PVC Window Profile Casement Building Use Low Price UPVC Frame Profiles for Windows</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3809.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5cee6f816a824807987d38773f9027821.png_300x300.png" alt="OEM 60mm Sliding UPVC Window Profile PVC Design for Building Casement Window with Factory Price-Direct Chinese Manufacturer" style="max-width: 200px;">
+            </a>
+            <h3>OEM 60mm Sliding UPVC Window Profile PVC Design for Building Casement Window with Factory Price-Direct Chinese Manufacturer</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3810.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H27e524c1149b415aa0fff1334715f5f7X.png_300x300.png" alt="Top 3 Chinese Brand High Quality UPVC Profile Windows Door Frame Manufacture's Plastic-Steel Casement Profiles Building High UV" style="max-width: 200px;">
+            </a>
+            <h3>Top 3 Chinese Brand High Quality UPVC Profile Windows Door Frame Manufacture's Plastic-Steel Casement Profiles Building High UV</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3811.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H24f4713417a94f0997e23b200a919b98v.png_300x300.png" alt="China Top Brand Laien 100% Lead-Free PVC/UPVC Profile Manufacturer of Profiles for Outdoor Casement Useful for Building Moulding" style="max-width: 200px;">
+            </a>
+            <h3>China Top Brand Laien 100% Lead-Free PVC/UPVC Profile Manufacturer of Profiles for Outdoor Casement Useful for Building Moulding</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3812.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha2a72bf67fe34d388eaabafc5dbc23d6t.png_300x300.png" alt="Custom Factory UPVC PVC Extrusion Profiles Plastic Frame for Window and Door Moulding for Building" style="max-width: 200px;">
+            </a>
+            <h3>Custom Factory UPVC PVC Extrusion Profiles Plastic Frame for Window and Door Moulding for Building</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3813.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd7da25e79c5b4b03b32b67792b4620e2c.jpg_300x300.jpg" alt="Chinese brand high UV High Quality Low Price Manufactures UPVC Profile Windows and Door Frame Plastic-Steel Profiles" style="max-width: 200px;">
+            </a>
+            <h3>Chinese brand high UV High Quality Low Price Manufactures UPVC Profile Windows and Door Frame Plastic-Steel Profiles</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3814.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He74539271b2d4d669bdebac4233e7d86d.png_300x300.png" alt="High Quality Chinese Brand UPVC Profile Windows and Door Frame Low Price Plastic-Steel Materials for Building Use" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Chinese Brand UPVC Profile Windows and Door Frame Low Price Plastic-Steel Materials for Building Use</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3815.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H73e4362edd4742f289732431eda07e34P.png_300x300.png" alt="White PVC Upvc Profile for Sliding Windows & Building Useful for Moulding Plastic Door Windows Profile" style="max-width: 200px;">
+            </a>
+            <h3>White PVC Upvc Profile for Sliding Windows & Building Useful for Moulding Plastic Door Windows Profile</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3816.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He56f4358efa44023a516ba14fb57ea40T.png_300x300.png" alt="High Quality Chinese Brand UPVC Profile Windows Door Frames Low Price Plastic-Steel Materials Casement Type for Building Use" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Chinese Brand UPVC Profile Windows Door Frames Low Price Plastic-Steel Materials Casement Type for Building Use</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3817.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf249bb53fc5946cea028717601d835b1s.jpg_300x300.jpg" alt="High Quality Chinese Brand UPVC Profile Casement Windows and Door Frames Low Price Plastic-Steel Materials for Building Use" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Chinese Brand UPVC Profile Casement Windows and Door Frames Low Price Plastic-Steel Materials for Building Use</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3818.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H88bc798e5ec242fdb97b5bdd4d28ae4aX.png_300x300.png" alt="High Quality UPVC Profile Windows and Door Frame Plastic-Steel Profiles Top 3 Chinese Brand High UV for Building Use" style="max-width: 200px;">
+            </a>
+            <h3>High Quality UPVC Profile Windows and Door Frame Plastic-Steel Profiles Top 3 Chinese Brand High UV for Building Use</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3819.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7c9198dacd5b4b3b800255e07258c347B.jpg_300x300.jpg" alt="High Quality UPVC Profile Windows Door Frame Top 3 Chinese Brand Manufactures Plastic-Steel Casement Series High UV Protection" style="max-width: 200px;">
+            </a>
+            <h3>High Quality UPVC Profile Windows Door Frame Top 3 Chinese Brand Manufactures Plastic-Steel Casement Series High UV Protection</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3820.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha0733a3a7ec24526b18347bf5ddd6f57e.png_300x300.png" alt="High Quality Chinese Brand UPVC Profile Windows and Door Frame Low Price Plastic-Steel Materials for Building Use" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Chinese Brand UPVC Profile Windows and Door Frame Low Price Plastic-Steel Materials for Building Use</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3821.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H66fea60acdf245e0a885dcb410a7b0d8c.jpg_300x300.jpg" alt="Chinese Brand High UV High Quality Low Price Manufactures UPVC Profile Windows and Door Frame Plastic-Steel Profiles" style="max-width: 200px;">
+            </a>
+            <h3>Chinese Brand High UV High Quality Low Price Manufactures UPVC Profile Windows and Door Frame Plastic-Steel Profiles</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3822.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H81b7c7a038e347719136d1bead572f1bl.jpg_300x300.jpg" alt="Building Materials China Upvc Profile Producer Plastic Extrusion Profile with Lowest Price" style="max-width: 200px;">
+            </a>
+            <h3>Building Materials China Upvc Profile Producer Plastic Extrusion Profile with Lowest Price</h3>
+            <p>Price: $1,100.00-1,200.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3823.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4a86393cb26a4166923d7311fbad0c5ai.png_300x300.png" alt="Trapezoidal Shockproof Upvc Pvc Roof Sheet Corrugated 3 mm for Warehouse Farmhouse" style="max-width: 200px;">
+            </a>
+            <h3>Trapezoidal Shockproof Upvc Pvc Roof Sheet Corrugated 3 mm for Warehouse Farmhouse</h3>
+            <p>Price: $1.86-5.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3824.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2ed8d32447b54f39bc8fee3d6fb5fa06C.png_300x300.png" alt="Top 3 Chinese brand high UV High Quality Manufactures UPVC Profile Windows and Door Frame Plastic-Steel Profiles" style="max-width: 200px;">
+            </a>
+            <h3>Top 3 Chinese brand high UV High Quality Manufactures UPVC Profile Windows and Door Frame Plastic-Steel Profiles</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3825.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H45f917f9ef23400fae03c5f8273c3415C.jpg_300x300.jpg" alt="High Quality Chinese Brand UPVC Profile Windows and Door Frames Plastic-Steel Profiles for Building and Moulding" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Chinese Brand UPVC Profile Windows and Door Frames Plastic-Steel Profiles for Building and Moulding</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3826.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7e58bbe489f24c189fb302dff0a18a56F.jpg_300x300.jpg" alt="Spanish style waterproof insulating plastic synthetic resin roofing tile" style="max-width: 200px;">
+            </a>
+            <h3>Spanish style waterproof insulating plastic synthetic resin roofing tile</h3>
+            <p>Price: $2.40-3.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3827.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc550e06d899e4908aa0e3cc2414beb83e.jpg_300x300.jpg" alt="Black Tawny Translucent Polycarbonate Plastic Building Material Sheet for Roofing Car Porch" style="max-width: 200px;">
+            </a>
+            <h3>Black Tawny Translucent Polycarbonate Plastic Building Material Sheet for Roofing Car Porch</h3>
+            <p>Price: $3.00-6.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square centimeters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3828.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He3dd80391ccb4993b868c15ad2f7c2a9E.png_300x300.png" alt="High Quality PVC UPVC 25 Track 88 Series Sliding Windows 88 Series Casement Building Profile Plastic Extrusion Technique" style="max-width: 200px;">
+            </a>
+            <h3>High Quality PVC UPVC 25 Track 88 Series Sliding Windows 88 Series Casement Building Profile Plastic Extrusion Technique</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3829.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hef5718e15bad47298d8e7f14f8e7776dL.png_300x300.png" alt="Chinese brand high UV High Quality Low Price Manufactures UPVC Profile Windows and Door Frame Plastic-Steel Profiles" style="max-width: 200px;">
+            </a>
+            <h3>Chinese brand high UV High Quality Low Price Manufactures UPVC Profile Windows and Door Frame Plastic-Steel Profiles</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3830.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H74e36aa760104a53b3774b3f89df3145Y.png_300x300.png" alt="High Quality ISO UPVC Casement Building Window Profiles Low Price Plastic Extrusion High UV Resistance" style="max-width: 200px;">
+            </a>
+            <h3>High Quality ISO UPVC Casement Building Window Profiles Low Price Plastic Extrusion High UV Resistance</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3831.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7cd23b88ab614f6a8a6c17d53ec9128f5.jpg_300x300.jpg" alt="Chinese brand high UV High Quality Manufactures UPVC Profile Windows and Door Frame Plastic-Steel Profiles" style="max-width: 200px;">
+            </a>
+            <h3>Chinese brand high UV High Quality Manufactures UPVC Profile Windows and Door Frame Plastic-Steel Profiles</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3832.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H566a6320677e45b4a74ee0a7268d1c902.png_300x300.png" alt="Chinese brand high UV High Quality Manufactures UPVC Profile Windows and Door Frame Plastic-Steel Profiles" style="max-width: 200px;">
+            </a>
+            <h3>Chinese brand high UV High Quality Manufactures UPVC Profile Windows and Door Frame Plastic-Steel Profiles</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3833.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Heb7daa63805048bb9dd49acc608cd573L.jpg_300x300.jpg" alt="China manufacturers high quality top brand high UV low price plastic-steel doors and windows upvc profile" style="max-width: 200px;">
+            </a>
+            <h3>China manufacturers high quality top brand high UV low price plastic-steel doors and windows upvc profile</h3>
+            <p>Price: $960.00-1,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3834.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6a8e76658cac4df28bf79414bac94773m.jpg_300x300.jpg" alt="Direct Factory Producer Price PVC Profiles 88/80/60 Series UPVC Plastic Profiles Manufacture Direct" style="max-width: 200px;">
+            </a>
+            <h3>Direct Factory Producer Price PVC Profiles 88/80/60 Series UPVC Plastic Profiles Manufacture Direct</h3>
+            <p>Price: $960.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 24 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3835.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5739bb0a666240c9a670e8e7220b4f246.jpg_300x300.jpg" alt="Customized UPVC Profiles Plastic Extrusion Luxury Modern Industrial PVC Casement Profile for Building European Style" style="max-width: 200px;">
+            </a>
+            <h3>Customized UPVC Profiles Plastic Extrusion Luxury Modern Industrial PVC Casement Profile for Building European Style</h3>
+            <p>Price: $910.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 24 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3836.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Habcfe2d0acbe4202a1fe2f68cde6bf0e3.png_300x300.png" alt="Engineering Plastics Polycarbonate Solid Sheet Panel Polycarbonate clear Plastic Sheet for Acoustic Barrier" style="max-width: 200px;">
+            </a>
+            <h3>Engineering Plastics Polycarbonate Solid Sheet Panel Polycarbonate clear Plastic Sheet for Acoustic Barrier</h3>
+            <p>Price: $2.40-5.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3837.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha97accdd44064e52993c15ea9aa5424dP.jpg_300x300.jpg" alt="Construction Materials White and Black 5.2 Inch 7 Inch PVC Rain Gutters and Down Pipes Downspouts Roof Water Drainage System" style="max-width: 200px;">
+            </a>
+            <h3>Construction Materials White and Black 5.2 Inch 7 Inch PVC Rain Gutters and Down Pipes Downspouts Roof Water Drainage System</h3>
+            <p>Price: $1.31-1.39</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 18 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3838.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7c4adc972cf44057b0086349cccb64f4j.png_300x300.png" alt="Sun sheets UV protection clear blue solid polycarbonate roof panel polycarbonate sheet for glazing skylight" style="max-width: 200px;">
+            </a>
+            <h3>Sun sheets UV protection clear blue solid polycarbonate roof panel polycarbonate sheet for glazing skylight</h3>
+            <p>Price: $1.10-5.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3839.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He25b0b57d0d248e28ff2ca539c5b5f1fW.png_300x300.png" alt="Impact resistance transparent windshield rainshed hurricane protection solid polycarbonate sheet for roofing skylight" style="max-width: 200px;">
+            </a>
+            <h3>Impact resistance transparent windshield rainshed hurricane protection solid polycarbonate sheet for roofing skylight</h3>
+            <p>Price: $1.20-5.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3840.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6f1ae52a61644aa1bf564950147cffea7.jpg_300x300.jpg" alt="High Quality Green House White and Black 5.2 inch 7 inch PVC Gutters Roofing Rainwater Drainage System" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Green House White and Black 5.2 inch 7 inch PVC Gutters Roofing Rainwater Drainage System</h3>
+            <p>Price: $1.31-1.39</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 24 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3841.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2ca021293fdb486bb21388c403019736Z.png_300x300.png" alt="Anti -scratch Hard Coated Pc Sheet Plastic High Light Transmmitance Polycarbonate Solid Sheet" style="max-width: 200px;">
+            </a>
+            <h3>Anti -scratch Hard Coated Pc Sheet Plastic High Light Transmmitance Polycarbonate Solid Sheet</h3>
+            <p>Price: $2.50-15.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3842.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha9de14763f064f80a09b042e2efb8ec22.png_300x300.png" alt="Building Material 4*8ft Blue 3mm 4mm 6mm 8mm Solid Polycarbonate Sheet for Canopy Roof Pergola" style="max-width: 200px;">
+            </a>
+            <h3>Building Material 4*8ft Blue 3mm 4mm 6mm 8mm Solid Polycarbonate Sheet for Canopy Roof Pergola</h3>
+            <p>Price: $2.60-6.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3843.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H545d2398ed074641a537e8ea4b4f5524T.png_300x300.png" alt="Polycarbonate Manufacturer 8mm 10mm Greenhouse Plastic Sheet Soundproof Smoked Double Layer Polycarbonate Panels Roofing" style="max-width: 200px;">
+            </a>
+            <h3>Polycarbonate Manufacturer 8mm 10mm Greenhouse Plastic Sheet Soundproof Smoked Double Layer Polycarbonate Panels Roofing</h3>
+            <p>Price: $1.20-6.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3844.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1M.hIaOLxK1Rjy0Ffq6zYdVXaV.jpg_300x300.jpg" alt="Poly Carbonate Roof Frosted Crystal Polycarbonate Sheet Twin Wall Polycarbonate Hollow Sheet" style="max-width: 200px;">
+            </a>
+            <h3>Poly Carbonate Roof Frosted Crystal Polycarbonate Sheet Twin Wall Polycarbonate Hollow Sheet</h3>
+            <p>Price: $1.70-6.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3845.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H083efd395dee4592a8fd180dd928fdfcZ.png_300x300.png" alt="High Impact Strength Transparent Material 8mm Plastic Poly Thickened Carbonate PC Roof Panel Roof" style="max-width: 200px;">
+            </a>
+            <h3>High Impact Strength Transparent Material 8mm Plastic Poly Thickened Carbonate PC Roof Panel Roof</h3>
+            <p>Price: $2.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3846.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H87f4ad111fe940d394971ae2e0e198d0y.jpg_300x300.jpg" alt="China Direct Factory Competitive Price OEM ODM Plastic Pvc Products Extruding Type PVC Profile" style="max-width: 200px;">
+            </a>
+            <h3>China Direct Factory Competitive Price OEM ODM Plastic Pvc Products Extruding Type PVC Profile</h3>
+            <p>Price: $3.55-5.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3847.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H249650510ff34ebc9d5b7a9fad9879ffl.jpg_300x300.jpg" alt="Useful PVC Vinyl Sheet UPVC Plastic Profiles Building Dam Walls Flood Water Sand Breakwater Prevention Plastic Extrusion" style="max-width: 200px;">
+            </a>
+            <h3>Useful PVC Vinyl Sheet UPVC Plastic Profiles Building Dam Walls Flood Water Sand Breakwater Prevention Plastic Extrusion</h3>
+            <p>Price: $21.00-27.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3848.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1551b3ea3156479fa47f9128e5dc02c3p.jpg_300x300.jpg" alt="88mm upvc sliding window sheet pvc co-extrusion profile for window and door" style="max-width: 200px;">
+            </a>
+            <h3>88mm upvc sliding window sheet pvc co-extrusion profile for window and door</h3>
+            <p>Price: $1,200.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 metric tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3849.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6a4ae65540e44adba73ad0a7ca22a8d9i.jpg_300x300.jpg" alt="Colorful upvc window frame pvc profile for door and window" style="max-width: 200px;">
+            </a>
+            <h3>Colorful upvc window frame pvc profile for door and window</h3>
+            <p>Price: $1,320.00-2,650.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 8 metric tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3850.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6ab52f171a2b43bca16800b21e2c77041.png_300x300.png" alt="European Style UPVC Profile for Windows and Doors" style="max-width: 200px;">
+            </a>
+            <h3>European Style UPVC Profile for Windows and Doors</h3>
+            <p>Price: $1,060.00-1,100.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 8 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3851.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7deb4b13963844ac90d63c2b743f2b189.jpg_300x300.jpg" alt="HSP60-08T extruded plastic casement window profile pvc upvc profile" style="max-width: 200px;">
+            </a>
+            <h3>HSP60-08T extruded plastic casement window profile pvc upvc profile</h3>
+            <p>Price: $1,150.00-1,320.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 metric tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3852.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc3e82c3ef57345b0903317d7c4c561066.jpg_300x300.jpg" alt="Customized uPVC sheet plastic extrusion profile for window and door" style="max-width: 200px;">
+            </a>
+            <h3>Customized uPVC sheet plastic extrusion profile for window and door</h3>
+            <p>Price: $1,170.00-1,300.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 8 metric tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3853.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5c959a0227f94f9fb96cddb260b9ea2cQ.png_300x300.png" alt="Soundproof Windproof Upvc Sliding Windows for Houses Eco-friendly Plastic Profiles Lead-free UPVC Profile" style="max-width: 200px;">
+            </a>
+            <h3>Soundproof Windproof Upvc Sliding Windows for Houses Eco-friendly Plastic Profiles Lead-free UPVC Profile</h3>
+            <p>Price: $58.00-72.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3854.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H843b2f0ad8e74bc6a09e81d7ad222ae0X.jpg_300x300.jpg" alt="Metal Roofing Panels 3' Long Inside Roof Closure Strip,Perfect Fit, Noise Reductio Weather Strip" style="max-width: 200px;">
+            </a>
+            <h3>Metal Roofing Panels 3' Long Inside Roof Closure Strip,Perfect Fit, Noise Reductio Weather Strip</h3>
+            <p>Price: $0.30-0.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3855.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H582e70dc88b24ed19e91ded2cce28be9K.jpg_300x300.jpg" alt="Hot Sales High Quality Building Material Prices in Africa Plastic Gutter Fittings" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sales High Quality Building Material Prices in Africa Plastic Gutter Fittings</h3>
+            <p>Price: $0.10-1.65</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3856.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3d1c8d618f3841bfa1c566d41906e352r.jpg_300x300.jpg" alt="Anti UV Waterproofing Durable, Cold Resistant, and Noise Reducing Metal Roof Polyethylene Foam Closure Strips Weather Strip" style="max-width: 200px;">
+            </a>
+            <h3>Anti UV Waterproofing Durable, Cold Resistant, and Noise Reducing Metal Roof Polyethylene Foam Closure Strips Weather Strip</h3>
+            <p>Price: $0.30-0.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3857.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc56d1552e81246ab8afa254a7fe5fc94U.jpg_300x300.jpg" alt="Long lifeservice hot sales Good toughness Aluminum downspout" style="max-width: 200px;">
+            </a>
+            <h3>Long lifeservice hot sales Good toughness Aluminum downspout</h3>
+            <p>Price: $4.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3858.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H99c9b2b0663f4eb688ddd8a29bdef13aK.png_300x300.png" alt="Clear Blue Green PC Embossed Sheet Plastic 2.8mm 3mm Embossed Polycarbonate Panel" style="max-width: 200px;">
+            </a>
+            <h3>Clear Blue Green PC Embossed Sheet Plastic 2.8mm 3mm Embossed Polycarbonate Panel</h3>
+            <p>Price: $2.90-18.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3859.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H045c679a8369420c8274a713321af266m.jpg_300x300.jpg" alt="Customized UPVC Plastic Extrusion and Co-Extrusion PVC Profile" style="max-width: 200px;">
+            </a>
+            <h3>Customized UPVC Plastic Extrusion and Co-Extrusion PVC Profile</h3>
+            <p>Price: $1.11-1.14</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 9,000 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3860.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hce348855ba304be289a6be2d2001b655j.jpg_300x300.jpg" alt="Factory Supply PVC Profile for UPVC Door and Window" style="max-width: 200px;">
+            </a>
+            <h3>Factory Supply PVC Profile for UPVC Door and Window</h3>
+            <p>Price: $1.11-1.14</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 9,000 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3861.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H36bf6584098941d4a20b8004370cdf99i.jpg_300x300.jpg" alt="UPVC Profile of 110 Series Sliding Window Door Profile Three Track Sliding Sash UPVC Profile" style="max-width: 200px;">
+            </a>
+            <h3>UPVC Profile of 110 Series Sliding Window Door Profile Three Track Sliding Sash UPVC Profile</h3>
+            <p>Price: $1.11-1.14</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 9,000 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3862.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H08aaf97d849e4b96b95e8f407ce37433Z.jpg_300x300.jpg" alt="Best Quality ISO UPVC Window high UV Low Price Plastic Extrusion Casement Building Window Profiles" style="max-width: 200px;">
+            </a>
+            <h3>Best Quality ISO UPVC Window high UV Low Price Plastic Extrusion Casement Building Window Profiles</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3863.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb1437c16d1834f719cfe89b393234be5N.jpg_300x300.jpg" alt="Fengze Ceiling Easy Clean Detachable Easy Installation Plastic Building Materials Baffle Ceiling Access Panel" style="max-width: 200px;">
+            </a>
+            <h3>Fengze Ceiling Easy Clean Detachable Easy Installation Plastic Building Materials Baffle Ceiling Access Panel</h3>
+            <p>Price: $2.38-2.75</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3864.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H385101206bb64e34bbca15035b13858au.jpg_300x300.jpg" alt="China brand high quality upvc material windows and doors upvc pvc extruded plastic profile frame manufacturer" style="max-width: 200px;">
+            </a>
+            <h3>China brand high quality upvc material windows and doors upvc pvc extruded plastic profile frame manufacturer</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3865.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf3e98eefee984b5e91cf5e59adfebe29v.jpg_300x300.jpg" alt="Top Quality High UV ISO UPVC Window and Door Factory Price Plastic Extrusion Casement Building Window Profiles" style="max-width: 200px;">
+            </a>
+            <h3>Top Quality High UV ISO UPVC Window and Door Factory Price Plastic Extrusion Casement Building Window Profiles</h3>
+            <p>Price: $980.00-1,020.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3866.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7f12c632523145a0a9854f960e82d73dG.png_300x300.png" alt="Chinese Brand High Quality Manufactures UPVC Profile Windows and Door Frame Plastic-Steel Profiles" style="max-width: 200px;">
+            </a>
+            <h3>Chinese Brand High Quality Manufactures UPVC Profile Windows and Door Frame Plastic-Steel Profiles</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3867.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H27479f3cba094ab19eb7e2269824ea78r.jpg_300x300.jpg" alt="Top Quality ISO UPVC Window Sliding Door Casement Frame Factory Price Plastic Extrusion Casement Building Window Profiles" style="max-width: 200px;">
+            </a>
+            <h3>Top Quality ISO UPVC Window Sliding Door Casement Frame Factory Price Plastic Extrusion Casement Building Window Profiles</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3868.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd23a035d2a71496591ab739c85a73f34Z.jpg_300x300.jpg" alt="Professional Manufacturers Wholesale Plastic Profiles Co-Extruded Frame Window Quality Profile Price Customizable" style="max-width: 200px;">
+            </a>
+            <h3>Professional Manufacturers Wholesale Plastic Profiles Co-Extruded Frame Window Quality Profile Price Customizable</h3>
+            <p>Price: $0.35-0.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5,000 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3869.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hed928ccdd1a943b787fa05bd9a28098fS.png_300x300.png" alt="China upvc profile manufacturers Customized PVC Window System" style="max-width: 200px;">
+            </a>
+            <h3>China upvc profile manufacturers Customized PVC Window System</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3870.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5a0ff83dfd4b478aaa479cbe9dcd4a5fQ.png_300x300.png" alt="China Manufacturers High Quality Top Brand Plastic-steel Doors and windows Upvc Profile" style="max-width: 200px;">
+            </a>
+            <h3>China Manufacturers High Quality Top Brand Plastic-steel Doors and windows Upvc Profile</h3>
+            <p>Price: $980.00-1,020.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3871.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6f4edf8c004b40c48003313f4ee0587eJ.png_300x300.png" alt="Chinese brand High Quality UPVC profile manufacturers plastic-steel building materials" style="max-width: 200px;">
+            </a>
+            <h3>Chinese brand High Quality UPVC profile manufacturers plastic-steel building materials</h3>
+            <p>Price: $920.00-980.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3872.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H569004ac9d01427ca1e4157c153ee99cn.png_300x300.png" alt="plastic sunroof tinted blue polycarbonate solid sheet suppliers wholesale polycarbonate" style="max-width: 200px;">
+            </a>
+            <h3>plastic sunroof tinted blue polycarbonate solid sheet suppliers wholesale polycarbonate</h3>
+            <p>Price: $1.60-4.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3873.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H870a9ccbed8940a6a1da2ef090814562F.jpg_300x300.jpg" alt="Outdoor Plastic Building Material Outdoor Gutter Downspout Drainage Channel" style="max-width: 200px;">
+            </a>
+            <h3>Outdoor Plastic Building Material Outdoor Gutter Downspout Drainage Channel</h3>
+            <p>Price: $0.10-5.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,764 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3874.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H460fd092a3a44ee5b783ee282a1efda9W.png_300x300.png" alt="Best Price Brand Building Material Upvc Window UPVC Profile for India Market" style="max-width: 200px;">
+            </a>
+            <h3>Best Price Brand Building Material Upvc Window UPVC Profile for India Market</h3>
+            <p>Price: $1,000.00-1,400.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3875.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H34d81815b12842f3917d6ac7cb6a5f4cu.jpg_300x300.jpg" alt="HAOSEN Multi-Functional Plastic Building Material Drainage Ditch for Park Courtyards and Streets" style="max-width: 200px;">
+            </a>
+            <h3>HAOSEN Multi-Functional Plastic Building Material Drainage Ditch for Park Courtyards and Streets</h3>
+            <p>Price: $4.00-6.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3876.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4056047088f74f1484867911401d094df.jpg_300x300.jpg" alt="Oem Plastic Building Material Upvc Profiles Roll Abs Pp Pe Uhmwpe Led UPvc Extrusion Profiles Waterproof 4mm/5mm/6" style="max-width: 200px;">
+            </a>
+            <h3>Oem Plastic Building Material Upvc Profiles Roll Abs Pp Pe Uhmwpe Led UPvc Extrusion Profiles Waterproof 4mm/5mm/6</h3>
+            <p>Price: $950.00-1,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3877.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3f4e0450266347bab218fb4967ab948bB.png_300x300.png" alt="Germany Upvc Profile White Upvc Windows Profile Upvc Profile Manufacturers in Turkey" style="max-width: 200px;">
+            </a>
+            <h3>Germany Upvc Profile White Upvc Windows Profile Upvc Profile Manufacturers in Turkey</h3>
+            <p>Price: $950.00-1,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3878.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdbdc0b1b183943159c815b5474edd8c3e.png_300x300.png" alt="High-Performance UPVC Profile UPVC Moulding Plastic Profiles for Long-Lasting Doors and Windows" style="max-width: 200px;">
+            </a>
+            <h3>High-Performance UPVC Profile UPVC Moulding Plastic Profiles for Long-Lasting Doors and Windows</h3>
+            <p>Price: $950.00-1,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3879.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd67acd028c224478b1423cb6bd032027J.jpg_300x300.jpg" alt="Variety PVC UPVC Extrusion Window Profile Plastic Window Upvc Profiles for windows Pvc Profile" style="max-width: 200px;">
+            </a>
+            <h3>Variety PVC UPVC Extrusion Window Profile Plastic Window Upvc Profiles for windows Pvc Profile</h3>
+            <p>Price: $950.00-1,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3880.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1904f3c485294b0c9c0dcd7292007dfe9.png_300x300.png" alt="Upvc Profile Manufacturers Plastic Building Materials Colorful Led Plastic Profiles Plastic Profiles" style="max-width: 200px;">
+            </a>
+            <h3>Upvc Profile Manufacturers Plastic Building Materials Colorful Led Plastic Profiles Plastic Profiles</h3>
+            <p>Price: $950.00-1,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3881.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8c0067365ec7424a9d6ff0bfa11c537ce.png_300x300.png" alt="PVC Marble Panel Indoor Decorate PVC Wall Sheet Panel" style="max-width: 200px;">
+            </a>
+            <h3>PVC Marble Panel Indoor Decorate PVC Wall Sheet Panel</h3>
+            <p>Price: $6.00-9.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3882.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0b12b8943aba4de99d1684e73901ee16v.jpg_300x300.jpg" alt="HAOSEN Modern Rectangular Multi-Function Laundry Basin Outdoor Removable Balcony Sink Washboard Integrated Basin Plastic" style="max-width: 200px;">
+            </a>
+            <h3>HAOSEN Modern Rectangular Multi-Function Laundry Basin Outdoor Removable Balcony Sink Washboard Integrated Basin Plastic</h3>
+            <p>Price: $9.50-19.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3883.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hcde36183322d4ec6820527bbbf37d8618.jpg_300x300.jpg" alt="HAOSEN Custom Pedestal Outdoor Wash Basin Sink Set Freestanding Hand Basin Faucet Wholesale Plastic Building Construction" style="max-width: 200px;">
+            </a>
+            <h3>HAOSEN Custom Pedestal Outdoor Wash Basin Sink Set Freestanding Hand Basin Faucet Wholesale Plastic Building Construction</h3>
+            <p>Price: $9.50-19.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3884.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha12fa4dcce784139ae74b8996463825fV.png_300x300.png" alt="Sun sheets UV protection polycarbonate board greenhouse panels clear roofing sheets factory price" style="max-width: 200px;">
+            </a>
+            <h3>Sun sheets UV protection polycarbonate board greenhouse panels clear roofing sheets factory price</h3>
+            <p>Price: $1.10-5.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3885.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H198e3d66a72547648183ab5ba8f3cfc4q.png_300x300.png" alt="Bronze Color Customize Thickness Polycarbonate Solid Board 4*8ft Roof Sheet Carport Awning Polycarbonate Solid Sun Visor" style="max-width: 200px;">
+            </a>
+            <h3>Bronze Color Customize Thickness Polycarbonate Solid Board 4*8ft Roof Sheet Carport Awning Polycarbonate Solid Sun Visor</h3>
+            <p>Price: $2.99-7.99</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3886.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4c9e64c211544013a124499a7d0c3ce8V.jpg_300x300.jpg" alt="Elegant European Pvc Moulding Extrusion Corner Edge Decor Profile Tile Trim Profiles" style="max-width: 200px;">
+            </a>
+            <h3>Elegant European Pvc Moulding Extrusion Corner Edge Decor Profile Tile Trim Profiles</h3>
+            <p>Price: $0.25-0.29</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3887.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0404b8fc83084254836df25f3fdf64ebX.jpg_300x300.jpg" alt="Foshan Wall Tile Protection Plastic Profile Corner Edge Round Mould Strip Tile Trim Pvc Molding" style="max-width: 200px;">
+            </a>
+            <h3>Foshan Wall Tile Protection Plastic Profile Corner Edge Round Mould Strip Tile Trim Pvc Molding</h3>
+            <p>Price: $0.25-0.29</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3888.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H57d0099883dd410ea0a42a5c4eacc63dL.jpg_300x300.jpg" alt="Ghonor Decorative F Shape Profile Pvc Strip Floor Corner Profiles" style="max-width: 200px;">
+            </a>
+            <h3>Ghonor Decorative F Shape Profile Pvc Strip Floor Corner Profiles</h3>
+            <p>Price: $0.25-0.29</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3889.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H76762d4f867140c7b542eae339ca0538S.jpg_300x300.jpg" alt="Cheap PVC Window Profile for Home Decoration Upgrade" style="max-width: 200px;">
+            </a>
+            <h3>Cheap PVC Window Profile for Home Decoration Upgrade</h3>
+            <p>Price: $960.00-1,050.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3890.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbe4d2b8e0f0742649a3e20bcca84eb5cb.jpg_300x300.jpg" alt="70 mm Sliding Window PVC Window Profile Building Materials for Doors and Windows" style="max-width: 200px;">
+            </a>
+            <h3>70 mm Sliding Window PVC Window Profile Building Materials for Doors and Windows</h3>
+            <p>Price: $900.00-1,100.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3891.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc29633fb25d94d029df7ef6c15049520K.jpg_300x300.jpg" alt="high strength square concrete spacer 40mm with wire" style="max-width: 200px;">
+            </a>
+            <h3>high strength square concrete spacer 40mm with wire</h3>
+            <p>Price: $0.10-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3892.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc4751170503c4bd2a0fa4e74b8cede0b9.png_300x300.png" alt="Wholesale Building Material PVC Sliding Window Profile" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Building Material PVC Sliding Window Profile</h3>
+            <p>Price: $910.00-1,030.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3893.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0652baf58a114840a7de3f524bd8b29b3.png_300x300.png" alt="Building Material PVC/UPVC Profile for Plastic Window and Door Frame" style="max-width: 200px;">
+            </a>
+            <h3>Building Material PVC/UPVC Profile for Plastic Window and Door Frame</h3>
+            <p>Price: $950.00-1,030.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3894.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf7b9187278e34d0194763b1eab2c9592E.jpg_300x300.jpg" alt="Ghonor Square Plastic PVC Profile Flexible Molding Trim Decorative Strip Free Sample" style="max-width: 200px;">
+            </a>
+            <h3>Ghonor Square Plastic PVC Profile Flexible Molding Trim Decorative Strip Free Sample</h3>
+            <p>Price: $0.29-0.34</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3895.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf54010a41ab749e2a02f0d63c12bf591S.png_300x300.png" alt="Top Quality Building Material PVC/UPVC Profile for Plastic Window and Door Frame" style="max-width: 200px;">
+            </a>
+            <h3>Top Quality Building Material PVC/UPVC Profile for Plastic Window and Door Frame</h3>
+            <p>Price: $950.00-1,030.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3896.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H746f2822acd14c67a41b43f34390d05fz.jpg_300x300.jpg" alt="Cheap UV-Resistant Plastic PVC Window Profile for Home Decoration Innovation" style="max-width: 200px;">
+            </a>
+            <h3>Cheap UV-Resistant Plastic PVC Window Profile for Home Decoration Innovation</h3>
+            <p>Price: $950.00-1,030.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3897.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H25764139fc5246b9a89c8f23b31a54e0Q.png_300x300.png" alt="Manufacturer Wholesale Innovative UPVC PVC Building Material Profile for Extruded Plastic Window and Door" style="max-width: 200px;">
+            </a>
+            <h3>Manufacturer Wholesale Innovative UPVC PVC Building Material Profile for Extruded Plastic Window and Door</h3>
+            <p>Price: $950.00-1,150.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3898.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7dd1144ba7ef4a20ba9191104993dd0a1.png_300x300.png" alt="Wholesale Top Quality Innovative UPVC PVC Building Material Profile for Plastic Window and Door Frame Decoration Upgrade" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Top Quality Innovative UPVC PVC Building Material Profile for Plastic Window and Door Frame Decoration Upgrade</h3>
+            <p>Price: $980.00-1,100.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3899.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc80d900235b840f6b3b7184b871b007eV.png_300x300.png" alt="Cheap Innovative Building Material Durable and UV-resistant PVC Profile for Plastic Sliding Window and Door Upgrade" style="max-width: 200px;">
+            </a>
+            <h3>Cheap Innovative Building Material Durable and UV-resistant PVC Profile for Plastic Sliding Window and Door Upgrade</h3>
+            <p>Price: $895.00-1,030.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3900.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hfff0adfc4a004413b67cfaed467a11b6S.png_300x300.png" alt="High Quality Manufactures UPVC Profile Windows and Door Frame Plastic-Steel Profiles" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Manufactures UPVC Profile Windows and Door Frame Plastic-Steel Profiles</h3>
+            <p>Price: $980.00-1,020.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 tons</p>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <!-- 分页按钮 -->
+        <div class="pagination">
+            
+            <a href="page_38.html">Previous</a>
+            
+
+            
+            
+
+            
+            <a href="page_31.html" >31</a>
+            
+            <a href="page_32.html" >32</a>
+            
+            <a href="page_33.html" >33</a>
+            
+            <a href="page_34.html" >34</a>
+            
+            <a href="page_35.html" >35</a>
+            
+            <a href="page_36.html" >36</a>
+            
+            <a href="page_37.html" >37</a>
+            
+            <a href="page_38.html" >38</a>
+            
+            <a href="page_39.html" class="active">39</a>
+            
+            <a href="page_40.html" >40</a>
+            
+
+            
+            <a href="page_41.html">Next</a>
+            
+        </div>
+        <!-- 回到顶部按钮 -->
+        <button id="back-to-top" onclick="topFunction()">回到顶部</button>
+    </div>
+
+    <script>
+        // 回到顶部按钮显示与隐藏逻辑
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // 回到顶部按钮点击事件
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

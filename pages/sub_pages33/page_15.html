@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L8EDEXZBV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9L8EDEXZBV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品列表 - 第页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 200px;
+            /* 可根据实际情况调整图片大小 */
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        nav {
+            background-color: #03a9f4;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* 新添加的样式 */
+        .product-item h3 {
+            font-size: 14px;
+            /* 产品名称文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item p {
+            font-size: 12px;
+            /* 其他产品信息文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item:hover h3 {
+            color: #03a9f4;
+            /* 鼠标悬停时产品名称文字变色 */
+        }
+
+        .product-item:hover p {
+            color: #03a9f4;
+            /* 鼠标悬停时其他产品信息文字变色 */
+        }
+
+        /* 产品容器样式 */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        /* 产品项样式 */
+        .product-item {
+            width: calc(25% - 20px);
+            /* 默认每行显示 4 个产品 */
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 鼠标悬停效果 */
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* 媒体查询，适配不同屏幕尺寸 */
+        @media (max-width: 1024px) {
+            .product-item {
+                width: calc(33.33% - 20px);
+                /* 平板设备每行显示 3 个产品 */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* 小屏幕设备每行显示 2 个产品 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: 100%;
+                /* 超小屏幕设备每行显示 1 个产品 */
+            }
+        }
+
+        /* 分页按钮样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        /* 回到顶部按钮样式 */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #03a9f4;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部图片和文字 -->
+    <div class="header">
+        <img src="../../../main/image/logo.png" alt="Logo">
+        <p>Sunnyluo Store</p>
+        <p>Build a curated directory of store with factory</p>
+    </div>
+    <nav>
+        <a href="../../../index.html">Home</a>
+        <a href="../../pdfs/pdf.html">Resources</a>
+        <a href="../../../main/About us.html">About Us</a>
+        <a href="mailto:sunnyluo330@gmail.com">Contact Us</a>
+        <a href="https://www.facebook.com/sunnyluoting">Facebook</a>
+    </nav>
+    <h1>Product list</h1>
+    <div class="products">
+        
+        <div class="product-item">
+            <a href="product_1401.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H662e50e269544f44932e3b60fe95be12T.png_300x300.png" alt="Self-Adhesive Waterproof Modified Polymer Multilayer Roofing Membrane Easy Construction Steel Metal Roofing Bitumen Asphalt" style="max-width: 200px;">
+            </a>
+            <h3>Self-Adhesive Waterproof Modified Polymer Multilayer Roofing Membrane Easy Construction Steel Metal Roofing Bitumen Asphalt</h3>
+            <p>Price: $1.54-2.81</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1402.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8f502bbb17544ca3998f50ee9d3c1c09H.jpg_300x300.jpg" alt="Manufacturer Direct Sale Waterproof Membrane Roofing Material Heat and Cold Insulation Asphalt for Leak Repair" style="max-width: 200px;">
+            </a>
+            <h3>Manufacturer Direct Sale Waterproof Membrane Roofing Material Heat and Cold Insulation Asphalt for Leak Repair</h3>
+            <p>Price: $2.40-2.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1403.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7fb534c77fd34b3abf4a01f812fb052ay.jpg_300x300.jpg" alt="High Quality Industrial-Grade Waterproof Membrane Roofing Solutions Easy-to-Construct Self-Adhesive SBS Type" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Industrial-Grade Waterproof Membrane Roofing Solutions Easy-to-Construct Self-Adhesive SBS Type</h3>
+            <p>Price: $2.40-2.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1404.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3d923ade677d4549b6f69ddeff62b90cF.jpg_300x300.jpg" alt="Aluminum Foil Heat Insulation Roof Waterproof Membrane Easy Installation New Building Paintless Torching Asphalt Roofing" style="max-width: 200px;">
+            </a>
+            <h3>Aluminum Foil Heat Insulation Roof Waterproof Membrane Easy Installation New Building Paintless Torching Asphalt Roofing</h3>
+            <p>Price: $2.50-2.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1405.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H802bcf2d567942bfbb03863dcb88861eb.png_300x300.png" alt="Wholesale Self-Adhesive Waterproof Membrane Roof Tiles Building Waterproofing Material Color Steel PVC Resin Ceramic Tiles Tape" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Self-Adhesive Waterproof Membrane Roof Tiles Building Waterproofing Material Color Steel PVC Resin Ceramic Tiles Tape</h3>
+            <p>Price: $2.40-2.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1406.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb862e8bd4839416f90790f568305c70fw.jpg_300x300.jpg" alt="Hot Welding Reinforced with Fabric Pvc Roofing Membrane Sheet" style="max-width: 200px;">
+            </a>
+            <h3>Hot Welding Reinforced with Fabric Pvc Roofing Membrane Sheet</h3>
+            <p>Price: $2.00-5.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1407.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0c8dfebcf35c4ea08ab23160149cac92k.jpg_300x300.jpg" alt="self-adhesive aluminum foil butyl sealing repair tape for roofing" style="max-width: 200px;">
+            </a>
+            <h3>self-adhesive aluminum foil butyl sealing repair tape for roofing</h3>
+            <p>Price: $1.25-2.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 rolls</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1408.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hba09bc1ccbfc4f2596911b93ea2be684v.jpg_300x300.jpg" alt="SBS Waterproof Membrane 4mm Torch, Modified Bituminous Sheet, Asphalt, Bitumen, Waterproofing, Waterproofing Membrane" style="max-width: 200px;">
+            </a>
+            <h3>SBS Waterproof Membrane 4mm Torch, Modified Bituminous Sheet, Asphalt, Bitumen, Waterproofing, Waterproofing Membrane</h3>
+            <p>Price: $16.00-18.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 rolls</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1409.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5b19eb8e21434f66aef3b80ab03b06c0B.jpg_300x300.jpg" alt="Blue Roof Waterproofing Membrane Flashing Butyl Tape Waterproof Tape for Metal Roof Concrete" style="max-width: 200px;">
+            </a>
+            <h3>Blue Roof Waterproofing Membrane Flashing Butyl Tape Waterproof Tape for Metal Roof Concrete</h3>
+            <p>Price: $0.50-1.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 rolls</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1410.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H775a83ab13ee4b95badbfd1464d7e9aaI.jpg_300x300.jpg" alt="Waterproof Roofing Membrane Flexible Lead Free Flashing Tape for Roof Flashing" style="max-width: 200px;">
+            </a>
+            <h3>Waterproof Roofing Membrane Flexible Lead Free Flashing Tape for Roof Flashing</h3>
+            <p>Price: $0.20-0.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 rolls</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1411.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc26bc084e95347709ebaa6aafdad5796Y.png_300x300.png" alt="Roofing Polyvinyl Chloride Civil Building Roof PVC Waterproofing Membrane" style="max-width: 200px;">
+            </a>
+            <h3>Roofing Polyvinyl Chloride Civil Building Roof PVC Waterproofing Membrane</h3>
+            <p>Price: $2.00-5.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1412.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H994abc3692394f96b67081ae22de684aO.jpg_300x300.jpg" alt="4-1/2 Inch Shower Pipe Excellent Waterproofing Features Waterproof Membrane Mixing Valve Seal Made 3mm Thick PP PE Material" style="max-width: 200px;">
+            </a>
+            <h3>4-1/2 Inch Shower Pipe Excellent Waterproofing Features Waterproof Membrane Mixing Valve Seal Made 3mm Thick PP PE Material</h3>
+            <p>Price: $3.00-3.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1413.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha014c086036046638ec2e80958e018f2H.jpg_300x300.jpg" alt="Hot-Selling DNCoupling Membrane Uncoupling Mat for Modern Bathroom Tiling and Flooring Waterproof PP/PE Material 3mm Thickness" style="max-width: 200px;">
+            </a>
+            <h3>Hot-Selling DNCoupling Membrane Uncoupling Mat for Modern Bathroom Tiling and Flooring Waterproof PP/PE Material 3mm Thickness</h3>
+            <p>Price: $3.25-4.25</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1414.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H055f1fca2f9041bfb009a7fe302577a5S.png_300x300.png" alt="Fireproof Waterproof Bitumen Roof Tiles Colorful Asphalt Shingles for Villa Renovation Ageing Resistant for Outdoor Application" style="max-width: 200px;">
+            </a>
+            <h3>Fireproof Waterproof Bitumen Roof Tiles Colorful Asphalt Shingles for Villa Renovation Ageing Resistant for Outdoor Application</h3>
+            <p>Price: $3.20-3.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1415.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H69018e1ddc0b4d13bb6aac97539ee330N.png_300x300.png" alt="SBS/APP Roof Bitumen Waterproofing Membrane 4mm 5mm Asphalt Sheet for Concrete Roof Repair Made Durable Polyester Construction" style="max-width: 200px;">
+            </a>
+            <h3>SBS/APP Roof Bitumen Waterproofing Membrane 4mm 5mm Asphalt Sheet for Concrete Roof Repair Made Durable Polyester Construction</h3>
+            <p>Price: $1.66-2.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1416.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0d7c83c59f9f4ccfb18b3bfe6aa77180B.png_300x300.png" alt="Modern SBS Material Asphalt Roofing Shingles Bitumen Roof Tiles for House Waterproof Thermal Insulation Pavilion Roof Blanket" style="max-width: 200px;">
+            </a>
+            <h3>Modern SBS Material Asphalt Roofing Shingles Bitumen Roof Tiles for House Waterproof Thermal Insulation Pavilion Roof Blanket</h3>
+            <p>Price: $3.20-3.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1417.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6cd9f34593ea441897e7bbee9b76d7e6z.png_300x300.png" alt="Reflective Self-Adhesive Sbs Rubber Membrane Bitumen Asphalt Concrete Roof Waterproof Materials for Construction Roofing" style="max-width: 200px;">
+            </a>
+            <h3>Reflective Self-Adhesive Sbs Rubber Membrane Bitumen Asphalt Concrete Roof Waterproof Materials for Construction Roofing</h3>
+            <p>Price: $1.57-1.93</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1418.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H05de1507805f495899d81aa692abd710S.jpg_300x300.jpg" alt="High Strength Self-Adhesive Aluminum Foil Butyl Rubber Tape Chinese Waterproofing Repairing Leaks Concrete Roof Base Metal" style="max-width: 200px;">
+            </a>
+            <h3>High Strength Self-Adhesive Aluminum Foil Butyl Rubber Tape Chinese Waterproofing Repairing Leaks Concrete Roof Base Metal</h3>
+            <p>Price: $1.78-3.14</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 rolls</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1419.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H61f75e0414284f199fdc92bf6962963fb.png_300x300.png" alt="Wholesale Retail America Shingle Standard Roof Tiles Modern Style SBS Bitumen Shingles Cheap Stone Coated Asphalt Outdoor Use" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Retail America Shingle Standard Roof Tiles Modern Style SBS Bitumen Shingles Cheap Stone Coated Asphalt Outdoor Use</h3>
+            <p>Price: $2.95-3.47</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 300 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1420.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8aa298d9a0694401945eab4a210278e5Y.jpg_300x300.jpg" alt="Self-Adhesive Waterproof Roofing Membrane Sheet Manufacture's Leak-Proof Polymer Multilayer Barrier Asphalt Roll Sealing" style="max-width: 200px;">
+            </a>
+            <h3>Self-Adhesive Waterproof Roofing Membrane Sheet Manufacture's Leak-Proof Polymer Multilayer Barrier Asphalt Roll Sealing</h3>
+            <p>Price: $2.50-2.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1421.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0c5732c9738d46a883d48c6f71309fc2G.jpg_300x300.jpg" alt="Self-Adhesive Easy-to-Construct Roofing with Polymer Multi-Layer Composite Waterproof Membrane Bitumen Asphalt SBS Material" style="max-width: 200px;">
+            </a>
+            <h3>Self-Adhesive Easy-to-Construct Roofing with Polymer Multi-Layer Composite Waterproof Membrane Bitumen Asphalt SBS Material</h3>
+            <p>Price: $2.40-2.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1422.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc5956d81d23444a68324a4140db3378bU.jpg_300x300.jpg" alt="Modern 1.5mm Self-Adhesive Waterproof Membrane Long-Anti Aging Roof Repair Material Metal Ceramic Tile Resin Roof Renovations" style="max-width: 200px;">
+            </a>
+            <h3>Modern 1.5mm Self-Adhesive Waterproof Membrane Long-Anti Aging Roof Repair Material Metal Ceramic Tile Resin Roof Renovations</h3>
+            <p>Price: $2.40-2.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1423.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc3043fb8d88a497a958f60b036b6e39aq.png_300x300.png" alt="High Quality Self-Adhesive Waterproof Polymer POE Heat Insulation Tape for Color Steel Tile Metal Roof Leakage Repair" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Self-Adhesive Waterproof Polymer POE Heat Insulation Tape for Color Steel Tile Metal Roof Leakage Repair</h3>
+            <p>Price: $2.28-2.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1424.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7a7f1605431b4593b9f5a11450ddb3cfH.jpg_300x300.jpg" alt="Flexible 1.5mm Durability Waterproof Membrane Thermal Heat Reflective Insulation Sheets Roof Built Rubber Butyl Building" style="max-width: 200px;">
+            </a>
+            <h3>Flexible 1.5mm Durability Waterproof Membrane Thermal Heat Reflective Insulation Sheets Roof Built Rubber Butyl Building</h3>
+            <p>Price: $2.40-2.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1425.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9830fa6d05f8429981964a1e715a9925W.jpg_300x300.jpg" alt="Modern Eco-friendly Polymer Cement Waterproofing Coating Acrylic Material Building Powder Barrel Available Various Colors" style="max-width: 200px;">
+            </a>
+            <h3>Modern Eco-friendly Polymer Cement Waterproofing Coating Acrylic Material Building Powder Barrel Available Various Colors</h3>
+            <p>Price: $1.80-2.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 18 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1426.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H679b3fdbdebe491393ffa2a38779dc9c1.jpg_300x300.jpg" alt="Dessini External Wall Tile Waterproof Glue Transparent Waterproof Paint Floor Waterproof Coating" style="max-width: 200px;">
+            </a>
+            <h3>Dessini External Wall Tile Waterproof Glue Transparent Waterproof Paint Floor Waterproof Coating</h3>
+            <p>Price: $1.45-2.19</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 400 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1427.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H52c90284371c4368a89f5043dcb61856x.jpg_300x300.jpg" alt="High Quality Self-Adhesive Thermal Insulation Waterproof Membrane Roofing Building Materials Modern Outdoor Roof Renovation" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Self-Adhesive Thermal Insulation Waterproof Membrane Roofing Building Materials Modern Outdoor Roof Renovation</h3>
+            <p>Price: $2.28-2.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1428.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4817850faa9a44fcb3b92affcb59e9ccu.png_300x300.png" alt="High Quality Self-Adhesive Bitumen Waterproof Membrane Rolls Asphalt Sealing Waterstop Tape for Outdoor Tunnel Concrete Roofing" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Self-Adhesive Bitumen Waterproof Membrane Rolls Asphalt Sealing Waterstop Tape for Outdoor Tunnel Concrete Roofing</h3>
+            <p>Price: $1.88-2.07</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 rolls</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1429.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H00101d0135ca48c980c0de8cd2c83befp.png_300x300.png" alt="UV PVC Roofing Membrane Roll Waterstop Material for Roof and Tunnel Plastic Waterproofing Sheet at an Price" style="max-width: 200px;">
+            </a>
+            <h3>UV PVC Roofing Membrane Roll Waterstop Material for Roof and Tunnel Plastic Waterproofing Sheet at an Price</h3>
+            <p>Price: $2.49-6.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1430.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2c00d19733d74d13a7cbf8be6ffd3d3a9.png_300x300.png" alt="Modern Self-Adhesive SBS Asphalt Bitumen Tile Roof Outdoor Use Linoleum-Colored Insulating Heat Waterproof Fiberglass Wall Villa" style="max-width: 200px;">
+            </a>
+            <h3>Modern Self-Adhesive SBS Asphalt Bitumen Tile Roof Outdoor Use Linoleum-Colored Insulating Heat Waterproof Fiberglass Wall Villa</h3>
+            <p>Price: $2.95-3.47</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1431.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H921b811729344a4da4411e5de6afd179o.png_300x300.png" alt="Multicolor SBS Material Asphalt Shingles Roof Mosaic Bitumen Tile Waterproof Villa Roof Membrane Outdoor House Modern Design" style="max-width: 200px;">
+            </a>
+            <h3>Multicolor SBS Material Asphalt Shingles Roof Mosaic Bitumen Tile Waterproof Villa Roof Membrane Outdoor House Modern Design</h3>
+            <p>Price: $3.20-3.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1432.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H795bfd57d24e4bcc87eaf5d3f71b7f7ao.png_300x300.png" alt="Asian Green Mosaic Asphalt Roof Shingles Self-Adhesive Bitumen Material Waterproof for Concrete Villa Roof Repair" style="max-width: 200px;">
+            </a>
+            <h3>Asian Green Mosaic Asphalt Roof Shingles Self-Adhesive Bitumen Material Waterproof for Concrete Villa Roof Repair</h3>
+            <p>Price: $3.20-3.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1433.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Haca541bf82fa4bf4b0a2b22f634e8898s.png_300x300.png" alt="High Performance 3mm Thick Plastic Sheet Modern Design Acrylic and Membrane Waterproofing Roofing Kit" style="max-width: 200px;">
+            </a>
+            <h3>High Performance 3mm Thick Plastic Sheet Modern Design Acrylic and Membrane Waterproofing Roofing Kit</h3>
+            <p>Price: $2.50-2.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1434.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H155025b41ef649fe949319f4b9ced671P.png_300x300.png" alt="Steel Resin PVC Self-Adhesive Waterproof Membrane House Metal Roof Insulation Water-Proof Leakage Repair Made Asphalt Material" style="max-width: 200px;">
+            </a>
+            <h3>Steel Resin PVC Self-Adhesive Waterproof Membrane House Metal Roof Insulation Water-Proof Leakage Repair Made Asphalt Material</h3>
+            <p>Price: $2.40-2.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1435.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8bf51e5386974adbad9b687d0b474c29y.jpg_300x300.jpg" alt="1.5mm 2.0mm Bitumen Material Waterproof UV Resistance Nano Self-Adhesive Polymer Multi-Layer Membrane for Ceramic Metal Roof" style="max-width: 200px;">
+            </a>
+            <h3>1.5mm 2.0mm Bitumen Material Waterproof UV Resistance Nano Self-Adhesive Polymer Multi-Layer Membrane for Ceramic Metal Roof</h3>
+            <p>Price: $2.20-2.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1436.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8eca6ef99ff248e4923e1e1612a77bf5J.jpg_300x300.jpg" alt="Self-Adhesive Waterproof Membrane Roofing Durable Weather-Resistant Color Steel Tiles Industrial Heat Cold Insulation Glasshouse" style="max-width: 200px;">
+            </a>
+            <h3>Self-Adhesive Waterproof Membrane Roofing Durable Weather-Resistant Color Steel Tiles Industrial Heat Cold Insulation Glasshouse</h3>
+            <p>Price: $2.50-2.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1437.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Haf57eb9765eb463dbe387f752e81bd9de.jpg_300x300.jpg" alt="Waterproof Bitumen Iron Sheet Roofing Non PVC Multi-Layer Composite Thermal Insulation Membrane UV Resistance Aluminum Thermal" style="max-width: 200px;">
+            </a>
+            <h3>Waterproof Bitumen Iron Sheet Roofing Non PVC Multi-Layer Composite Thermal Insulation Membrane UV Resistance Aluminum Thermal</h3>
+            <p>Price: $2.50-2.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1438.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha67f68f4fda147d5afba7e3cc8738a09t.jpg_300x300.jpg" alt="Self-Adhesive UV Resistant Waterproof Enhance Aluminium Surface Composite Material Membrane Roofing Renovate for House Use" style="max-width: 200px;">
+            </a>
+            <h3>Self-Adhesive UV Resistant Waterproof Enhance Aluminium Surface Composite Material Membrane Roofing Renovate for House Use</h3>
+            <p>Price: $2.50-2.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1439.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hec0361bfba614e859a6f545ee018e08aO.jpg_300x300.jpg" alt="1.5mm Blue PVC Waterproof Membrane Tape for Roof Leak Repair Thermal Insulation Renovation Roofing Building Material" style="max-width: 200px;">
+            </a>
+            <h3>1.5mm Blue PVC Waterproof Membrane Tape for Roof Leak Repair Thermal Insulation Renovation Roofing Building Material</h3>
+            <p>Price: $2.40-2.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1440.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1eQZLazihSKJjy0Ffq6zGzFXap.jpg_300x300.jpg" alt="High strength grouting material and polymer mortar concrete grout for secondary grouting of equipment foundation" style="max-width: 200px;">
+            </a>
+            <h3>High strength grouting material and polymer mortar concrete grout for secondary grouting of equipment foundation</h3>
+            <p>Price: $1.00-2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1441.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6d27db0196a44d8ab4cd6d81dd7d8e02t.png_300x300.png" alt="Waterproof Duct Tape with Heat Resistance No Residue and Tear Features Made of Butyl Rubber Material" style="max-width: 200px;">
+            </a>
+            <h3>Waterproof Duct Tape with Heat Resistance No Residue and Tear Features Made of Butyl Rubber Material</h3>
+            <p>Price: $0.80-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 boxes</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1442.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4ff1c98a52394415a5aa1c53bd83e91aE.jpg_300x300.jpg" alt="Best Price High Quality Home Coating Easy-to-Apply Waterproofing Paste With Outstanding Bonding Properties" style="max-width: 200px;">
+            </a>
+            <h3>Best Price High Quality Home Coating Easy-to-Apply Waterproofing Paste With Outstanding Bonding Properties</h3>
+            <p>Price: 18.37</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1443.html">
+                <img src="https://s.alicdn.com/@sc04/kf/A58b39dfd284f46a8970715c6b4eab455n.jpeg_300x300.jpeg" alt="Toptape Quick-Installing Rubber Butyl Tape for Sealing Uniquely Shaped Joints with No Gaps" style="max-width: 200px;">
+            </a>
+            <h3>Toptape Quick-Installing Rubber Butyl Tape for Sealing Uniquely Shaped Joints with No Gaps</h3>
+            <p>Price: $0.80-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 boxes</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1444.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H504d7bafe5424c8a8a899fdf21eca5d6B.jpg_300x300.jpg" alt="Butyl Tape Metal Roof Sealing Bulk Putty Sealant Camper RV Window Repair EPDM Rubber Roof Pipe Patching Waterproof Membrane" style="max-width: 200px;">
+            </a>
+            <h3>Butyl Tape Metal Roof Sealing Bulk Putty Sealant Camper RV Window Repair EPDM Rubber Roof Pipe Patching Waterproof Membrane</h3>
+            <p>Price: $0.80-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 boxes</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1445.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4df523336a8f48e9b434f14810b2896c3.jpg_300x300.jpg" alt="1mm 3mm IXPE Foam Acoustic Underlay Water-Resistant Floating Flooring for Timber Laminate for Wood and Underlay Flooring" style="max-width: 200px;">
+            </a>
+            <h3>1mm 3mm IXPE Foam Acoustic Underlay Water-Resistant Floating Flooring for Timber Laminate for Wood and Underlay Flooring</h3>
+            <p>Price: $0.19-3.99</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1446.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbef8c393d5b84e7baaaba41774d570687.jpg_300x300.jpg" alt="High Polymer Quality Self-Adhesive UV-Resistant Thermal Insulation Fire-Resistant Waterproof Membrane Industrial Construction" style="max-width: 200px;">
+            </a>
+            <h3>High Polymer Quality Self-Adhesive UV-Resistant Thermal Insulation Fire-Resistant Waterproof Membrane Industrial Construction</h3>
+            <p>Price: $2.38-2.64</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1447.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb599f74a1a854431abee9a08dfb02476j.png_300x300.png" alt="Asphalt Membrane Waterproofing" style="max-width: 200px;">
+            </a>
+            <h3>Asphalt Membrane Waterproofing</h3>
+            <p>Price: $16.00-18.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 rolls</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1448.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H37869a9d6f964fc4b1ce0cf7ba508e15i.jpg_300x300.jpg" alt="Aluminium Foil Modified Asphalt Waterproof Self Adhesive Bitumen Waterproof Roof Sheet Waterproof Tape for Iron Sheet" style="max-width: 200px;">
+            </a>
+            <h3>Aluminium Foil Modified Asphalt Waterproof Self Adhesive Bitumen Waterproof Roof Sheet Waterproof Tape for Iron Sheet</h3>
+            <p>Price: $10.00-30.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 rolls</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1449.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7712a318d23d4df185526dfee254e232p.png_300x300.png" alt="Sell Well Torch on Modified SBS Bitumen Waterproof Asphalt Roofing Felt" style="max-width: 200px;">
+            </a>
+            <h3>Sell Well Torch on Modified SBS Bitumen Waterproof Asphalt Roofing Felt</h3>
+            <p>Price: $16.00-18.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 rolls</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1450.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc41a7034682943728a3d93ca58fdabdae.png_300x300.png" alt="10m Heat Resistant Aluminum Foil Butyl Rubber Sealant Tape Roof Leakproof Membrane Film Waterproof Tape for Metal Roof" style="max-width: 200px;">
+            </a>
+            <h3>10m Heat Resistant Aluminum Foil Butyl Rubber Sealant Tape Roof Leakproof Membrane Film Waterproof Tape for Metal Roof</h3>
+            <p>Price: $2.50-3.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 rolls</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1451.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H68eb8f5676ea43fe99ceb51eb8be9df80.jpg_300x300.jpg" alt="Modern Design PVC Roofing Membrane High Quality Low-Priced Waterproof Film Outdoor Wall Tunnel Plastic Material Outdoor Usage" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design PVC Roofing Membrane High Quality Low-Priced Waterproof Film Outdoor Wall Tunnel Plastic Material Outdoor Usage</h3>
+            <p>Price: $1.45-5.57</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1452.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H206727d640e4459888f1f1af283c4d65d.png_300x300.png" alt="Silane Siloxane Hydrophobic Agent Damp Proof Chemical Silicone Resin Powder Exterior Concrete Water Repellent Borov Treatment" style="max-width: 200px;">
+            </a>
+            <h3>Silane Siloxane Hydrophobic Agent Damp Proof Chemical Silicone Resin Powder Exterior Concrete Water Repellent Borov Treatment</h3>
+            <p>Price: $3.00-7.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1453.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6ac2ea80cdc74233a1ac7246a79d7ebcc.jpg_300x300.jpg" alt="Oakhouse All-in-One Water Type Solar Reflective Roof Paint Heat-Absorbing Waterproofing Material" style="max-width: 200px;">
+            </a>
+            <h3>Oakhouse All-in-One Water Type Solar Reflective Roof Paint Heat-Absorbing Waterproofing Material</h3>
+            <p>Price: $1.99-2.59</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 kilometers</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1454.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf89e3463027a43d7abd8a0121ffb24979.jpg_300x300.jpg" alt="Acrylic Sunlight Reflecting Paint Cool Roof Coating Heat Insulation UV Anti-Aging Reflexing Roof Layer Waterproofing Materials" style="max-width: 200px;">
+            </a>
+            <h3>Acrylic Sunlight Reflecting Paint Cool Roof Coating Heat Insulation UV Anti-Aging Reflexing Roof Layer Waterproofing Materials</h3>
+            <p>Price: $1.99-2.59</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 kilometers</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1455.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H574148bcfc8f4816a5daf5dd8088f8f69.jpg_300x300.jpg" alt="Reflective UV Coating White Anti-Dirt Thermal Insulation Paint Waterproofing Roof Outdoor Material" style="max-width: 200px;">
+            </a>
+            <h3>Reflective UV Coating White Anti-Dirt Thermal Insulation Paint Waterproofing Roof Outdoor Material</h3>
+            <p>Price: $1.99-2.59</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 kilometers</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1456.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3e01e7f3cd4f44a9bf7ccc02279c50d6V.jpg_300x300.jpg" alt="Free Samples of Waterproof Roof Thermal Insulation Coating Heat Reflect Paint" style="max-width: 200px;">
+            </a>
+            <h3>Free Samples of Waterproof Roof Thermal Insulation Coating Heat Reflect Paint</h3>
+            <p>Price: $1.99-2.59</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 kilometers</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1457.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4fa82f2c380541a4a8fa0b5b562f5e85F.jpg_300x300.jpg" alt="High Quality High-Performance Nano Heat Reflective Coating for Truck Roof Custom Bucket-Packed Waterproof Paint" style="max-width: 200px;">
+            </a>
+            <h3>High Quality High-Performance Nano Heat Reflective Coating for Truck Roof Custom Bucket-Packed Waterproof Paint</h3>
+            <p>Price: $1.99-2.59</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 kilometers</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1458.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1azTDwhWYBuNjy1zkq6xGGpXat.jpg_300x300.jpg" alt="high strength flowable non shrink grout for stanchion plates" style="max-width: 200px;">
+            </a>
+            <h3>high strength flowable non shrink grout for stanchion plates</h3>
+            <p>Price: Other 100.0-Other 110.0</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1459.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H60ee88ea480d4103982b4894e647a689y.png_300x300.png" alt="Factory Direct Wholesale Integration Roof Coating Waterproof and Thermal Insulation Heat-Reflective Paint Material" style="max-width: 200px;">
+            </a>
+            <h3>Factory Direct Wholesale Integration Roof Coating Waterproof and Thermal Insulation Heat-Reflective Paint Material</h3>
+            <p>Price: $1.99-2.59</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 kilometers</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1460.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1UV6wX5nrK1RjSsziq6xptpXaB.jpg_300x300.jpg" alt="Flexible epoxy resin grouting materials for board/fiberglass/jewelry/led encapsulation" style="max-width: 200px;">
+            </a>
+            <h3>Flexible epoxy resin grouting materials for board/fiberglass/jewelry/led encapsulation</h3>
+            <p>Price: $100.00-110.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1461.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He08d78d37372437e9ba71a7b379031e64.png_300x300.png" alt="Wholesale Close Cell Foam Material Polyethylene Foam EPE /PE Foam Sheet" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Close Cell Foam Material Polyethylene Foam EPE /PE Foam Sheet</h3>
+            <p>Price: $0.10-0.45</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 40 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1462.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H58b80d76e9fc4ee59e1d7fa8d1ff7246i.jpg_300x300.jpg" alt="Customized 1kg 5kg 10kg Heat-Reflective Paint Waterproof and Thermal Insulation Integration Roof Coating Materials" style="max-width: 200px;">
+            </a>
+            <h3>Customized 1kg 5kg 10kg Heat-Reflective Paint Waterproof and Thermal Insulation Integration Roof Coating Materials</h3>
+            <p>Price: $1.99-2.59</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 kilometers</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1463.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4836606b78b248208aac79ad969d26649.jpg_300x300.jpg" alt="Waterproof and Thermal Insulation Integration Roof Coating Heat-Reflective Paint for Exterior Roof Wall Use" style="max-width: 200px;">
+            </a>
+            <h3>Waterproof and Thermal Insulation Integration Roof Coating Heat-Reflective Paint for Exterior Roof Wall Use</h3>
+            <p>Price: $1.99-2.59</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 kilometers</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1464.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H50bec0c48696480494e3ebfa1d7a1dd22.jpg_300x300.jpg" alt="Waterproof Non Toxic Paint Acrylic Emulsion Waterproofing Oil Resistant For Roads" style="max-width: 200px;">
+            </a>
+            <h3>Waterproof Non Toxic Paint Acrylic Emulsion Waterproofing Oil Resistant For Roads</h3>
+            <p>Price: $0.59-0.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 18 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1465.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H22559cbf9150409a8c5fb250f1eabd00O.png_300x300.png" alt="Roof Waterproof Leak Proof Leak Repair Material Polyurethane Modified Rubber Waterproof Paint" style="max-width: 200px;">
+            </a>
+            <h3>Roof Waterproof Leak Proof Leak Repair Material Polyurethane Modified Rubber Waterproof Paint</h3>
+            <p>Price: $1.00-1.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 25 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1466.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H816348b9c1c64fa78c81b99180e83053d.png_300x300.png" alt="High Quality UV Resistant Acrylic Waterproof Coating Durable Polyurethane Base Basement Sealer Roof Leak Repair Paint Building" style="max-width: 200px;">
+            </a>
+            <h3>High Quality UV Resistant Acrylic Waterproof Coating Durable Polyurethane Base Basement Sealer Roof Leak Repair Paint Building</h3>
+            <p>Price: $0.84-0.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1467.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdc0eece01be944579c8de82af5511a73L.jpeg_300x300.jpeg" alt="Customized 80mil TPO Metal Steel Roof Outdoor Waterproofing Membrane 80mil TPO Waterproof Protector for Swimming Pool Roofs" style="max-width: 200px;">
+            </a>
+            <h3>Customized 80mil TPO Metal Steel Roof Outdoor Waterproofing Membrane 80mil TPO Waterproof Protector for Swimming Pool Roofs</h3>
+            <p>Price: $2.49-6.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1468.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6dcc0d0614824e828d618fb6ec4bd761k.jpg_300x300.jpg" alt="First Factory Custom Flashing Bitumen Waterproof Tape Butyl Rubber Tape Aluminum Foil for Metal Roof & Concrete Roof Support" style="max-width: 200px;">
+            </a>
+            <h3>First Factory Custom Flashing Bitumen Waterproof Tape Butyl Rubber Tape Aluminum Foil for Metal Roof & Concrete Roof Support</h3>
+            <p>Price: $1.78-3.14</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 rolls</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1469.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4afeb42b9a8245e9a5095310377557b9T.png_300x300.png" alt="Self-Adhesive Aluminum Foil Butyl Membrane Color Steel Thermal Insulation for Metal Roof Repair Waterproof Tape with Iron Sheet" style="max-width: 200px;">
+            </a>
+            <h3>Self-Adhesive Aluminum Foil Butyl Membrane Color Steel Thermal Insulation for Metal Roof Repair Waterproof Tape with Iron Sheet</h3>
+            <p>Price: $1.40-2.14</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1470.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb05ceead704546549c371295d31ec6a69.jpg_300x300.jpg" alt="Bathroom Building Two Component Concrete Flexible Flexible Js K11 Waterproof Paint Coating Solution Stop Leaks Materials" style="max-width: 200px;">
+            </a>
+            <h3>Bathroom Building Two Component Concrete Flexible Flexible Js K11 Waterproof Paint Coating Solution Stop Leaks Materials</h3>
+            <p>Price: $0.93-1.06</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1471.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha7200fff500f4ed894794ce00ee3e4a6R.jpg_300x300.jpg" alt="House Bathroom Pool Terrace Wall Polymer Sealant Concrete Other Js K11 Waterproof Paint Coating Solution Sealant Agent" style="max-width: 200px;">
+            </a>
+            <h3>House Bathroom Pool Terrace Wall Polymer Sealant Concrete Other Js K11 Waterproof Paint Coating Solution Sealant Agent</h3>
+            <p>Price: $0.93-1.06</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1472.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha485d18ec0374dd39e9c4c09d391fd20I.jpg_300x300.jpg" alt="Bathroom Cement Concrete Sealer Basement Building Other Js K11 Flexible Waterproof Paint Coating Stop Leaks Materials" style="max-width: 200px;">
+            </a>
+            <h3>Bathroom Cement Concrete Sealer Basement Building Other Js K11 Flexible Waterproof Paint Coating Stop Leaks Materials</h3>
+            <p>Price: $0.93-1.06</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1473.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc2cc56a7fc0941759f7479dd9e8e8bf5z.jpg_300x300.jpg" alt="Factory Outlet Polymer Cement Concrete Wall Building JS K11 Flexible Waterproof Paint for Solution Stop Leaks Materials" style="max-width: 200px;">
+            </a>
+            <h3>Factory Outlet Polymer Cement Concrete Wall Building JS K11 Flexible Waterproof Paint for Solution Stop Leaks Materials</h3>
+            <p>Price: $0.93-1.06</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1474.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H91bb1f4150d140ec94749c092f2ac751y.jpg_300x300.jpg" alt="Liquid Rubber Building Wall Basement Concrete Roof Swimming Pool Other Polyurethane Waterproof Paint Coating Materials" style="max-width: 200px;">
+            </a>
+            <h3>Liquid Rubber Building Wall Basement Concrete Roof Swimming Pool Other Polyurethane Waterproof Paint Coating Materials</h3>
+            <p>Price: $1.80-2.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1475.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He8a2b23ca7ef4b8ba35a3c2e6e60e039c.jpg_300x300.jpg" alt="Concrete Roof Cement External Wall Basement Concrete Liquid Rubber Polyurethane Waterproof Paint Coating Concrete Solution" style="max-width: 200px;">
+            </a>
+            <h3>Concrete Roof Cement External Wall Basement Concrete Liquid Rubber Polyurethane Waterproof Paint Coating Concrete Solution</h3>
+            <p>Price: $1.80-2.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1476.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2c70754eb5414a628566d7dbf980f743D.jpg_300x300.jpg" alt="High Quality House Outdoor Cement Concrete Roof Pool Liquid Rubber Polyurethane Other Waterproof Water Stop Paint Coating" style="max-width: 200px;">
+            </a>
+            <h3>High Quality House Outdoor Cement Concrete Roof Pool Liquid Rubber Polyurethane Other Waterproof Water Stop Paint Coating</h3>
+            <p>Price: $1.80-2.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1477.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H87163d1dbe2f433bab4e2f64f6ea27fav.jpg_300x300.jpg" alt="Yu Ru Strong Adhesion Waterproof Sealant One Component Waterproofing Paint Polyurethane Waterproof Coating" style="max-width: 200px;">
+            </a>
+            <h3>Yu Ru Strong Adhesion Waterproof Sealant One Component Waterproofing Paint Polyurethane Waterproof Coating</h3>
+            <p>Price: $1.80-2.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1478.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0f91722159044331ace0ff264e3f48fdo.jpg_300x300.jpg" alt="Yu Ru Waterproofing Materials Roofing Waterproofing Paint Liquid Polyurethane Waterproof Coating" style="max-width: 200px;">
+            </a>
+            <h3>Yu Ru Waterproofing Materials Roofing Waterproofing Paint Liquid Polyurethane Waterproof Coating</h3>
+            <p>Price: $1.80-2.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1479.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9ae24ffa06174d09af34a5462ebfe9a0B.jpg_300x300.jpg" alt="YURU Waterproofing Materials Waterproofing Paint Liquid Waterproof Coating Paint" style="max-width: 200px;">
+            </a>
+            <h3>YURU Waterproofing Materials Waterproofing Paint Liquid Waterproof Coating Paint</h3>
+            <p>Price: $2.30-2.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1480.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H26d336a6db9948818ec0d1c9834e6571f.jpg_300x300.jpg" alt="YURU Concrete Roof Sealant Waterproof Coating Waterproofing Paint Liquid Rubber Waterproof Coating Paint" style="max-width: 200px;">
+            </a>
+            <h3>YURU Concrete Roof Sealant Waterproof Coating Waterproofing Paint Liquid Rubber Waterproof Coating Paint</h3>
+            <p>Price: $2.30-2.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1481.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0ac43e52f3e04c4384c4c9e07accfb88B.png_300x300.png" alt="Modern Design 1.5mm Thick Roof Waterproofing Material Thermoplastic Polyolefin TPO Asphalt Rubber Membrane Low Price Sales" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design 1.5mm Thick Roof Waterproofing Material Thermoplastic Polyolefin TPO Asphalt Rubber Membrane Low Price Sales</h3>
+            <p>Price: $1.55-5.65</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1482.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd8b7cc9b73b04a9ebbcfcd3dcbc49ff08.png_300x300.png" alt="Waterproof Membrane Rolls 200g 300g 400g for Roof and Wall Applications Excellent UV Resistance and Waterproof Performance" style="max-width: 200px;">
+            </a>
+            <h3>Waterproof Membrane Rolls 200g 300g 400g for Roof and Wall Applications Excellent UV Resistance and Waterproof Performance</h3>
+            <p>Price: $0.22-1.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1483.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H470b0cb01da74a6c83860f7dd83db3cfo.jpg_300x300.jpg" alt="Orange 1.5mm Thick Polyethylene Polypropylene Waterproof Membrane Industrial Design Roof and Bathroom Shower Area Film Roll" style="max-width: 200px;">
+            </a>
+            <h3>Orange 1.5mm Thick Polyethylene Polypropylene Waterproof Membrane Industrial Design Roof and Bathroom Shower Area Film Roll</h3>
+            <p>Price: $0.22-1.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1484.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3635731ac24a403a9b854f10bbf8edf2S.png_300x300.png" alt="Modern Design Pre-Laid HDPE Tunnel Waterproof Membrane 1.5mm Thickness for Roof and Construction Bitumen and PET Material" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Pre-Laid HDPE Tunnel Waterproof Membrane 1.5mm Thickness for Roof and Construction Bitumen and PET Material</h3>
+            <p>Price: $2.10-3.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1485.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H948a58eb83124c3a948877e4e02af98aS.jpg_300x300.jpg" alt="Wholesale Customized Breathable Moisture-Proof UV Resistant Roof Waterproof Film Industrial Design PE PP Manufacturers Export" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Customized Breathable Moisture-Proof UV Resistant Roof Waterproof Film Industrial Design PE PP Manufacturers Export</h3>
+            <p>Price: $0.22-1.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1486.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6d191f6a50554aa7a8259d4bc0728877U.jpg_300x300.jpg" alt="Industrial Building Materials Modern Design 1.5mm Butyl Tape Waterproof Film Roof Outdoor Construction Basement Durable Rubber" style="max-width: 200px;">
+            </a>
+            <h3>Industrial Building Materials Modern Design 1.5mm Butyl Tape Waterproof Film Roof Outdoor Construction Basement Durable Rubber</h3>
+            <p>Price: $0.20-2.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1487.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H644a24c0b91c495f99a945b481431305d.jpg_300x300.jpg" alt="SBS Modified Asphalt Roof Torch Roll Waterproof Membrane 3mm Thick Polyester Material Modern Industrial Construction Tunnels" style="max-width: 200px;">
+            </a>
+            <h3>SBS Modified Asphalt Roof Torch Roll Waterproof Membrane 3mm Thick Polyester Material Modern Industrial Construction Tunnels</h3>
+            <p>Price: $1.35-3.65</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1488.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6d50d359c2b34311aa8b056589bb9ad2H.jpg_300x300.jpg" alt="YURU Roof Waterproof Leak Proof Leak Repair Material Waterproofing Sealant Waterproof Coating Paint" style="max-width: 200px;">
+            </a>
+            <h3>YURU Roof Waterproof Leak Proof Leak Repair Material Waterproofing Sealant Waterproof Coating Paint</h3>
+            <p>Price: $2.30-2.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1489.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc509077210c6445f89a6e01321589f6du.jpg_300x300.jpg" alt="YURU Factory Direct Swimming Pool Waterproof Coating Modified Rubber Waterproof Paint Waterproof Coating for Concrete Roof" style="max-width: 200px;">
+            </a>
+            <h3>YURU Factory Direct Swimming Pool Waterproof Coating Modified Rubber Waterproof Paint Waterproof Coating for Concrete Roof</h3>
+            <p>Price: $2.30-2.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1490.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hddd9a5c252044f9399cadeebfafa2958x.jpg_300x300.jpg" alt="Yu Ru China Waterborne Polyurethane Waterproof Roof Coating Modified Rubber Waterproof Paint Polyurethane Waterproof Coating" style="max-width: 200px;">
+            </a>
+            <h3>Yu Ru China Waterborne Polyurethane Waterproof Roof Coating Modified Rubber Waterproof Paint Polyurethane Waterproof Coating</h3>
+            <p>Price: $1.40-1.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1491.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd0265b95889b4a26b277d7c66d4c78c1O.jpg_300x300.jpg" alt="OEM High Concentration Nano Heat Thermal Insulation Coating Waterproofing Materials 1kg 5kg 10kg Packs Modern Design Roof Repair" style="max-width: 200px;">
+            </a>
+            <h3>OEM High Concentration Nano Heat Thermal Insulation Coating Waterproofing Materials 1kg 5kg 10kg Packs Modern Design Roof Repair</h3>
+            <p>Price: $1.99-2.59</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 kilometers</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1492.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H32e29da9aed74c188176e6f140752be7o.jpg_300x300.jpg" alt="Eco-Friendly Non-Toxic Odorless Harmless High Density Nano Heat Insulation Coating Waterproofing Materials for Outdoor Building" style="max-width: 200px;">
+            </a>
+            <h3>Eco-Friendly Non-Toxic Odorless Harmless High Density Nano Heat Insulation Coating Waterproofing Materials for Outdoor Building</h3>
+            <p>Price: $1.99-2.59</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 kilometers</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1493.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2f94c2d2b9874a2a8c005cd6c151b977u.jpg_300x300.jpg" alt="Eco-Friendly High-Efficiency Heat Insulation Coating Waterproofing Materials for Cement House Color Steel Roof Outdoor Buildings" style="max-width: 200px;">
+            </a>
+            <h3>Eco-Friendly High-Efficiency Heat Insulation Coating Waterproofing Materials for Cement House Color Steel Roof Outdoor Buildings</h3>
+            <p>Price: $1.99-2.59</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 kilometers</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1494.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd3a55683622f4506be37de9f638415a1R.jpg_300x300.jpg" alt="Liquid Rubber Polyurethane PU Waterproofing Solution Roof Coating Construction Usage Building Application Waterproof Leakproof" style="max-width: 200px;">
+            </a>
+            <h3>Liquid Rubber Polyurethane PU Waterproofing Solution Roof Coating Construction Usage Building Application Waterproof Leakproof</h3>
+            <p>Price: $0.90-1.42</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1495.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4f651d04339e4010a73318834442da91l.jpeg_300x300.jpeg" alt="Professional Manufacturer's Waterproof Damp Proof Roofing Coating Paint for Construction Buildings Swimming Pools Powder Pattern" style="max-width: 200px;">
+            </a>
+            <h3>Professional Manufacturer's Waterproof Damp Proof Roofing Coating Paint for Construction Buildings Swimming Pools Powder Pattern</h3>
+            <p>Price: $0.79-1.42</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1496.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc040fb3022ec4eb49c6e4300d1b69948j.png_300x300.png" alt="China Factory SBS/App Bitumen Torch Waterproof Membrane 3mm Asphalt Concrete Waterproofing Coil for Roof Construction" style="max-width: 200px;">
+            </a>
+            <h3>China Factory SBS/App Bitumen Torch Waterproof Membrane 3mm Asphalt Concrete Waterproofing Coil for Roof Construction</h3>
+            <p>Price: $2.07-2.57</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1497.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf47de93680b94cfc9188d5129bbb2eb6k.jpg_300x300.jpg" alt="High-Elastic Acrylic Waterproofing Liquid Rubber Paint for Construction for Building and Coating Swimming Pools" style="max-width: 200px;">
+            </a>
+            <h3>High-Elastic Acrylic Waterproofing Liquid Rubber Paint for Construction for Building and Coating Swimming Pools</h3>
+            <p>Price: $0.90-1.42</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1498.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6bc326dc2a4f4b08a3180e1bbb9ef806z.jpg_300x300.jpg" alt="High Quality Wholesale Self-Adhesive Eco-Friendly Non-Toxic Flame Retardants Polymer Modified Asphalt Waterproofing Membrane" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Wholesale Self-Adhesive Eco-Friendly Non-Toxic Flame Retardants Polymer Modified Asphalt Waterproofing Membrane</h3>
+            <p>Price: $1.12-3.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1499.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1ee7881c971c48dfbe0565329c4a58ddw.png_300x300.png" alt="Factory Direct Price Self-Adhesive Easy Apply Long Lasting Good Elastic Polymer Modified Asphalt Waterproofing Membrane" style="max-width: 200px;">
+            </a>
+            <h3>Factory Direct Price Self-Adhesive Easy Apply Long Lasting Good Elastic Polymer Modified Asphalt Waterproofing Membrane</h3>
+            <p>Price: $1.12-1.69</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1500.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4ad7ba7060f24e0a81499db8ae1727469.png_300x300.png" alt="1.5/2/3/4Mm High-Performance Modified Bituminous Self-Adhesive Bitumen Sbs Sheet Asphalt Waterproofing Membrane Rolls" style="max-width: 200px;">
+            </a>
+            <h3>1.5/2/3/4Mm High-Performance Modified Bituminous Self-Adhesive Bitumen Sbs Sheet Asphalt Waterproofing Membrane Rolls</h3>
+            <p>Price: $1.12-1.69</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 square meters</p>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <!-- 分页按钮 -->
+        <div class="pagination">
+            
+            <a href="page_14.html">Previous</a>
+            
+
+            
+            
+
+            
+            <a href="page_11.html" >11</a>
+            
+            <a href="page_12.html" >12</a>
+            
+            <a href="page_13.html" >13</a>
+            
+            <a href="page_14.html" >14</a>
+            
+            <a href="page_15.html" class="active">15</a>
+            
+            <a href="page_16.html" >16</a>
+            
+            <a href="page_17.html" >17</a>
+            
+            <a href="page_18.html" >18</a>
+            
+            <a href="page_19.html" >19</a>
+            
+            <a href="page_20.html" >20</a>
+            
+
+            
+            <a href="page_21.html">Next</a>
+            
+        </div>
+        <!-- 回到顶部按钮 -->
+        <button id="back-to-top" onclick="topFunction()">回到顶部</button>
+    </div>
+
+    <script>
+        // 回到顶部按钮显示与隐藏逻辑
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // 回到顶部按钮点击事件
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

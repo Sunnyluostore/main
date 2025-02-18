@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L8EDEXZBV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9L8EDEXZBV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品列表 - 第页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 200px;
+            /* 可根据实际情况调整图片大小 */
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        nav {
+            background-color: #03a9f4;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* 新添加的样式 */
+        .product-item h3 {
+            font-size: 14px;
+            /* 产品名称文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item p {
+            font-size: 12px;
+            /* 其他产品信息文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item:hover h3 {
+            color: #03a9f4;
+            /* 鼠标悬停时产品名称文字变色 */
+        }
+
+        .product-item:hover p {
+            color: #03a9f4;
+            /* 鼠标悬停时其他产品信息文字变色 */
+        }
+
+        /* 产品容器样式 */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        /* 产品项样式 */
+        .product-item {
+            width: calc(25% - 20px);
+            /* 默认每行显示 4 个产品 */
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 鼠标悬停效果 */
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* 媒体查询，适配不同屏幕尺寸 */
+        @media (max-width: 1024px) {
+            .product-item {
+                width: calc(33.33% - 20px);
+                /* 平板设备每行显示 3 个产品 */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* 小屏幕设备每行显示 2 个产品 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: 100%;
+                /* 超小屏幕设备每行显示 1 个产品 */
+            }
+        }
+
+        /* 分页按钮样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        /* 回到顶部按钮样式 */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #03a9f4;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部图片和文字 -->
+    <div class="header">
+        <img src="../../../main/image/logo.png" alt="Logo">
+        <p>Sunnyluo Store</p>
+        <p>Build a curated directory of store with factory</p>
+    </div>
+    <nav>
+        <a href="../../../index.html">Home</a>
+        <a href="../../pdfs/pdf.html">Resources</a>
+        <a href="../../../main/About us.html">About Us</a>
+        <a href="mailto:sunnyluo330@gmail.com">Contact Us</a>
+        <a href="https://www.facebook.com/sunnyluoting">Facebook</a>
+    </nav>
+    <h1>Product list</h1>
+    <div class="products">
+        
+        <div class="product-item">
+            <a href="product_1101.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H85acf6675adc405b99746c384e38416fT.jpg_300x300.jpg" alt="PVC Shutter Profiles Plastic Material Curtain Track" style="max-width: 200px;">
+            </a>
+            <h3>PVC Shutter Profiles Plastic Material Curtain Track</h3>
+            <p>Price: $0.10-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1102.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0fda1ae563fb4794a344dc5b847374d6k.jpg_300x300.jpg" alt="Green High Quality Building Material Villa Roof PVC Plastic Drainage System White Rain Gutter" style="max-width: 200px;">
+            </a>
+            <h3>Green High Quality Building Material Villa Roof PVC Plastic Drainage System White Rain Gutter</h3>
+            <p>Price: $1.50-1.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1103.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9e9af01d133c4afa859188a8f0db0684I.jpg_300x300.jpg" alt="Good Quality Pvc Plastic Molds For Concrete V Shao Interlocking Molds For Color Paver Blocks" style="max-width: 200px;">
+            </a>
+            <h3>Good Quality Pvc Plastic Molds For Concrete V Shao Interlocking Molds For Color Paver Blocks</h3>
+            <p>Price: $0.90-1.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1104.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha110dd9cd938496b9380c497acc326b1w.jpg_300x300.jpg" alt="Hot Selling PVC Plastic Profile for Building Efficient Wire Management Wiring Duct at Preferred Price" style="max-width: 200px;">
+            </a>
+            <h3>Hot Selling PVC Plastic Profile for Building Efficient Wire Management Wiring Duct at Preferred Price</h3>
+            <p>Price: $0.01-0.10</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 3,000 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1105.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Haa9cd30b948e4b9b82a8a286763e9cbc2.jpg_300x300.jpg" alt="Underground Conduit Spacers and Duct Bank Spacers Plastic Building Materials" style="max-width: 200px;">
+            </a>
+            <h3>Underground Conduit Spacers and Duct Bank Spacers Plastic Building Materials</h3>
+            <p>Price: $0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1106.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1_aT7B5OYBuNjSsD4q6zSkFXaE.jpg_300x300.jpg" alt="2018 New 50pcs/lot Architecture Model Grass for Model Building Materials Maker Factory" style="max-width: 200px;">
+            </a>
+            <h3>2018 New 50pcs/lot Architecture Model Grass for Model Building Materials Maker Factory</h3>
+            <p>Price: $0.05-0.10</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1107.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H313eb936cf55401082f37dbd43784016U.jpg_300x300.jpg" alt="Building Materials Plastic Wall Angle Bead White Plaster Trim PVC Corner Bead" style="max-width: 200px;">
+            </a>
+            <h3>Building Materials Plastic Wall Angle Bead White Plaster Trim PVC Corner Bead</h3>
+            <p>Price: $0.135-0.28</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1108.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb1cdb6b8a10547fb81505136c2f1686fI.jpg_300x300.jpg" alt="Villa Roof Building Materials Plastic PVC Guttering Rain Water Collection System Gutter" style="max-width: 200px;">
+            </a>
+            <h3>Villa Roof Building Materials Plastic PVC Guttering Rain Water Collection System Gutter</h3>
+            <p>Price: $1.50-1.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1109.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1K6WfJpXXXXXkXFXXq6xXFXXXU.jpg_300x300.jpg" alt="Toilet Bathroom Building Materails, Model Toilet Furniture, Architectural Plastic Model Bathtub for Scale 1/20" style="max-width: 200px;">
+            </a>
+            <h3>Toilet Bathroom Building Materails, Model Toilet Furniture, Architectural Plastic Model Bathtub for Scale 1/20</h3>
+            <p>Price: $0.02-0.10</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1110.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6dd223e8785746c2afcaab51c1d5b476P.png_300x300.png" alt="Factory Mushroom PP Plastic Rebar Caps 8mm-32mm Fit Bar #2 to #8 Construction Material Rebar Caps Plastic Rebar Safety Cap Bar" style="max-width: 200px;">
+            </a>
+            <h3>Factory Mushroom PP Plastic Rebar Caps 8mm-32mm Fit Bar #2 to #8 Construction Material Rebar Caps Plastic Rebar Safety Cap Bar</h3>
+            <p>Price: $0.01-0.07</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1111.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7aaa5cc858934240939a0865b1cb02d8p.jpg_300x300.jpg" alt="#8 to #12 Round Plastic Rebar Safety Caps Building Construction Material" style="max-width: 200px;">
+            </a>
+            <h3>#8 to #12 Round Plastic Rebar Safety Caps Building Construction Material</h3>
+            <p>Price: $0.07</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1112.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He1be6c01480a4d2f92304d3dfaa906ab8.jpg_300x300.jpg" alt="PP Polypropylene Honeycomb Core Panel for Boat Building With Non Woven" style="max-width: 200px;">
+            </a>
+            <h3>PP Polypropylene Honeycomb Core Panel for Boat Building With Non Woven</h3>
+            <p>Price: $6.00-50.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1113.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1abERXDjxK1Rjy0Fnq6yBaFXa3.jpg_300x300.jpg" alt="Extruder Moulding PVC Material Plastic Frame for Window and Door" style="max-width: 200px;">
+            </a>
+            <h3>Extruder Moulding PVC Material Plastic Frame for Window and Door</h3>
+            <p>Price: $200.00-1,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 ton</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1114.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1ggCAKv5TBuNjSspmq6yDRVXaG.jpg_300x300.jpg" alt="5 Size J Flange Type Fixed Bore Sleeve Rubber Coupling Flange Bore Plastic Building Material" style="max-width: 200px;">
+            </a>
+            <h3>5 Size J Flange Type Fixed Bore Sleeve Rubber Coupling Flange Bore Plastic Building Material</h3>
+            <p>Price: $1.00-3.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1115.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H11433a73d1774a6f8b3630a1d4d611917.png_300x300.png" alt="Higher Quality Hard Plastic Wedge Shims Construction Material Glazing Packers Spacers Composite Wedge Shim Plastic Window Packer" style="max-width: 200px;">
+            </a>
+            <h3>Higher Quality Hard Plastic Wedge Shims Construction Material Glazing Packers Spacers Composite Wedge Shim Plastic Window Packer</h3>
+            <p>Price: $0.01-0.04</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1116.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1tlAHKFXXXXcdXVXXq6xXFXXX8.jpg_300x300.jpg" alt="1/500 Landscape Lamp Modeling Materials" style="max-width: 200px;">
+            </a>
+            <h3>1/500 Landscape Lamp Modeling Materials</h3>
+            <p>Price: $0.05-0.06</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1117.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1nbG1JpXXXXaUXXXXq6xXFXXXH.jpg_300x300.jpg" alt="New Scale Sponge in Cheap Building Materails" style="max-width: 200px;">
+            </a>
+            <h3>New Scale Sponge in Cheap Building Materails</h3>
+            <p>Price: $0.50-0.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1118.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd40c6d924d1c4989b3e63681490b9330j.jpg_300x300.jpg" alt="High Quality PE/EPP Round Air Ventil Duct HVAC Air Distribution Box for Building Ventilation System Plastic Building Material" style="max-width: 200px;">
+            </a>
+            <h3>High Quality PE/EPP Round Air Ventil Duct HVAC Air Distribution Box for Building Ventilation System Plastic Building Material</h3>
+            <p>Price: $1.25-3.58</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1119.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H38f26dab10d74aa09951e92d70e5db73e.png_300x300.png" alt="Organic Pigment Red 57.1 Ink Plastic Paint Pigments Plastic Building Material" style="max-width: 200px;">
+            </a>
+            <h3>Organic Pigment Red 57.1 Ink Plastic Paint Pigments Plastic Building Material</h3>
+            <p>Price: $20.00-28.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1120.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H02c0992233694c22947a1c0a6423b108k.jpg_300x300.jpg" alt="Wholesale Pvc Window Frame Profile Quality Plastic Steel Window Profile Manufacturer Plastic Profiles for Doors and Windows" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Pvc Window Frame Profile Quality Plastic Steel Window Profile Manufacturer Plastic Profiles for Doors and Windows</h3>
+            <p>Price: $0.20-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1121.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1X_QfkbwrBKNjSZPcq6xpapXaO.jpg_300x300.jpg" alt="Architectural Plastic Scale Model White Furniture for 1/50&1/75" style="max-width: 200px;">
+            </a>
+            <h3>Architectural Plastic Scale Model White Furniture for 1/50&1/75</h3>
+            <p>Price: $0.40-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1122.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8bb917f09a8c4dd8833cc4eee3588797W.jpg_300x300.jpg" alt="Factory Price Customized Extruded U-Shape Plastic Extrusion PVC Profile" style="max-width: 200px;">
+            </a>
+            <h3>Factory Price Customized Extruded U-Shape Plastic Extrusion PVC Profile</h3>
+            <p>Price: $0.01-0.10</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 3,000 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1123.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1WABlLXXXXXa_XVXXq6xXFXXXT.jpg_300x300.jpg" alt="3d A4 Model Street Paper in DIY Building Model Materials" style="max-width: 200px;">
+            </a>
+            <h3>3d A4 Model Street Paper in DIY Building Model Materials</h3>
+            <p>Price: $0.50-0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1124.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf1fd510779a14fecb2cf8466338f0fd9f.jpg_300x300.jpg" alt="Trusted Polycarbonate Sheet Manufacturer Produces Cost-Effective Plastic Roofing Sheet Polycarbonate for Industrial Use" style="max-width: 200px;">
+            </a>
+            <h3>Trusted Polycarbonate Sheet Manufacturer Produces Cost-Effective Plastic Roofing Sheet Polycarbonate for Industrial Use</h3>
+            <p>Price: $1.50-4.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square miles</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1125.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0d0b97f047db44b8962bf82c3ecbcd69Y.png_300x300.png" alt="OEM & ODM High Quality Plastic Chair Spacers for Rebar Factory PVC/PP/PE Building Materials for Hotels Construction Buildings" style="max-width: 200px;">
+            </a>
+            <h3>OEM & ODM High Quality Plastic Chair Spacers for Rebar Factory PVC/PP/PE Building Materials for Hotels Construction Buildings</h3>
+            <p>Price: $0.09</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1126.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf9a32ac183bd4aba89c10368e9d8c022Y.png_300x300.png" alt="OEM SIZE of Cable Copper Pvc Pipe Plastic Cap Flexible Round Tube Vinyl End Pipe Cap Plastic Building Material" style="max-width: 200px;">
+            </a>
+            <h3>OEM SIZE of Cable Copper Pvc Pipe Plastic Cap Flexible Round Tube Vinyl End Pipe Cap Plastic Building Material</h3>
+            <p>Price: $0.20-0.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pallets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1127.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H343f623d5d2243fe9cd62c8bc2de0136D.jpg_300x300.jpg" alt="High transparent acrylic plexiglass cast plastic sheets" style="max-width: 200px;">
+            </a>
+            <h3>High transparent acrylic plexiglass cast plastic sheets</h3>
+            <p>Price: $1.20-5.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1128.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1b81e9c2ec8944cfa9dba6873de23a21M.png_300x300.png" alt="Low Price Building Material Hollow Polycarbonate Sheet Anti-UV Plastic Panel" style="max-width: 200px;">
+            </a>
+            <h3>Low Price Building Material Hollow Polycarbonate Sheet Anti-UV Plastic Panel</h3>
+            <p>Price: $1.10-5.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1129.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H46ececb9901843458821f1398a6f1722J.jpg_300x300.jpg" alt="Variety PVC/UPVC Extrusion Window Profile Plastic Window Panel" style="max-width: 200px;">
+            </a>
+            <h3>Variety PVC/UPVC Extrusion Window Profile Plastic Window Panel</h3>
+            <p>Price: $0.30-0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2,000 miles</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1130.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbf0322c55a614bdbac3d0a5675aea4ae6.jpg_300x300.jpg" alt="Wholesale Pvc Extruder Extrude Plastic Profiles Extruded Plastic Profiles for Windows Plastic Profiles for Pvc Window Frames" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Pvc Extruder Extrude Plastic Profiles Extruded Plastic Profiles for Windows Plastic Profiles for Pvc Window Frames</h3>
+            <p>Price: $0.20-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1131.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8cb805cd08674662b5b9870091ffaf370.jpg_300x300.jpg" alt="Galvanized Aluminum Building Materials Plastics Bending Roof Coil Aluminum Conductor for Rain Dobradeiras Gutters" style="max-width: 200px;">
+            </a>
+            <h3>Galvanized Aluminum Building Materials Plastics Bending Roof Coil Aluminum Conductor for Rain Dobradeiras Gutters</h3>
+            <p>Price: $1.50-1.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1132.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H95fe50f1f57f4ea8b434fd6e48dc7d31U.jpg_300x300.jpg" alt="Custom building materials metal pipe template corners rounded" style="max-width: 200px;">
+            </a>
+            <h3>Custom building materials metal pipe template corners rounded</h3>
+            <p>Price: $0.10-0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1133.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3f8b95471b354b4eac0c300fad493ebfo.jpg_300x300.jpg" alt="Foshan Building Material Outdoor 2mm Polycarbonate Solid Sheet Plastic Roofing Sheet" style="max-width: 200px;">
+            </a>
+            <h3>Foshan Building Material Outdoor 2mm Polycarbonate Solid Sheet Plastic Roofing Sheet</h3>
+            <p>Price: $2.85-33.43</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1134.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdf2b6b5fb8584507b569270fdbbff5f02.jpg_300x300.jpg" alt="Modern Style Multi Color Plastic / Roofing Material Panel Polycarbonate Corrugated Sheets" style="max-width: 200px;">
+            </a>
+            <h3>Modern Style Multi Color Plastic / Roofing Material Panel Polycarbonate Corrugated Sheets</h3>
+            <p>Price: $2.50-3.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1135.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc92f2efc3b5446d298827795b94c8c223.png_300x300.png" alt="High Strength 100x75mm Thickness Solid Plastic Shim Packer Construction Materials Plastic Sim Pads for Levelling Concrete Units" style="max-width: 200px;">
+            </a>
+            <h3>High Strength 100x75mm Thickness Solid Plastic Shim Packer Construction Materials Plastic Sim Pads for Levelling Concrete Units</h3>
+            <p>Price: $0.01-0.04</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1136.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1cb5ffa3532342edbd0fbf999fa8f7dae.jpg_300x300.jpg" alt="Windows And Doors Plastic Profiles Customized OEM Plastic PVC Extrusion Corner Profiles China Plastic PVC Profile" style="max-width: 200px;">
+            </a>
+            <h3>Windows And Doors Plastic Profiles Customized OEM Plastic PVC Extrusion Corner Profiles China Plastic PVC Profile</h3>
+            <p>Price: $0.20-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1137.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1osLpJXXXXXa0XVXXq6xXFXXXr.jpg_300x300.jpg" alt="Architectural Mode Materails, Scale Building Tools, Architecture Model Tools, Graver" style="max-width: 200px;">
+            </a>
+            <h3>Architectural Mode Materails, Scale Building Tools, Architecture Model Tools, Graver</h3>
+            <p>Price: $1.00-1.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1138.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Heb3d6624c6f4407499a98298676983a8Q.jpg_300x300.jpg" alt="concrete roman column pillars molds Other Plastic Building Materials for sale ABS plastic modern design" style="max-width: 200px;">
+            </a>
+            <h3>concrete roman column pillars molds Other Plastic Building Materials for sale ABS plastic modern design</h3>
+            <p>Price: $93.00-185.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1139.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4255e1f8690749e08a80b0b19ded6d916.jpg_300x300.jpg" alt="Factory Wholesale Pvc Gutter Building Materials Roof Falling Water System PVC Gutter" style="max-width: 200px;">
+            </a>
+            <h3>Factory Wholesale Pvc Gutter Building Materials Roof Falling Water System PVC Gutter</h3>
+            <p>Price: $1.50-1.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1140.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H59049736dd044d1796b41b8cf80abc3fz.jpg_300x300.jpg" alt="Pvc Wall Panel" style="max-width: 200px;">
+            </a>
+            <h3>Pvc Wall Panel</h3>
+            <p>Price: $2.80-3.56</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1141.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H53fc9321b1124a13a1100b385327f29cq.jpg_300x300.jpg" alt="PVC Plastic Profiles for Building Use for Casement Windows and Doors Moulding PC Plastic Extrusion Profile" style="max-width: 200px;">
+            </a>
+            <h3>PVC Plastic Profiles for Building Use for Casement Windows and Doors Moulding PC Plastic Extrusion Profile</h3>
+            <p>Price: $0.20-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1142.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hfddaa603aed648abb0cdb7579617774ay.jpg_300x300.jpg" alt="Safety Equipment Scaffolding Plastic Pvc Thread Protector 25mm Inner Diameter 5mm in Construction Profile Rebar Safety End Cap" style="max-width: 200px;">
+            </a>
+            <h3>Safety Equipment Scaffolding Plastic Pvc Thread Protector 25mm Inner Diameter 5mm in Construction Profile Rebar Safety End Cap</h3>
+            <p>Price: $0.30-0.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1143.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H20dae5301fbe45868150e235bfb25e69b.jpg_300x300.jpg" alt="Plastic Conduit/Pipe Spacers and Pipe Separated Spacers for Building Materials" style="max-width: 200px;">
+            </a>
+            <h3>Plastic Conduit/Pipe Spacers and Pipe Separated Spacers for Building Materials</h3>
+            <p>Price: $0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1144.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H794bc2e877b64432b478e2d7267fb173f.jpg_300x300.jpg" alt="New Design HDPE Fireproof Resin Plastic Banana Leaf Cocu Nuts Thatch Roofing 1000*600mm" style="max-width: 200px;">
+            </a>
+            <h3>New Design HDPE Fireproof Resin Plastic Banana Leaf Cocu Nuts Thatch Roofing 1000*600mm</h3>
+            <p>Price: $1.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 60 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1145.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6536e86885794fb0aec59ac035ab07de9.png_300x300.png" alt="Manufacturer 48.3mm Yellow or Black Scaffold Rebar Cap Construction Material Scaffolding Tube Safety Caps Plastic Rebar Caps" style="max-width: 200px;">
+            </a>
+            <h3>Manufacturer 48.3mm Yellow or Black Scaffold Rebar Cap Construction Material Scaffolding Tube Safety Caps Plastic Rebar Caps</h3>
+            <p>Price: $0.02-0.07</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1146.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He898bb3ede06413a8a0d6c494d5d596aF.jpg_300x300.jpg" alt="Fastest Delivery Low Price Professional Durable builing Material Round and square Colorful plastic PVC Rain Gutters" style="max-width: 200px;">
+            </a>
+            <h3>Fastest Delivery Low Price Professional Durable builing Material Round and square Colorful plastic PVC Rain Gutters</h3>
+            <p>Price: $0.10-1.65</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1147.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Acf19ed394e6446a28c221a6ea028274fb.jpg_300x300.jpg" alt="High Quality Soft PVC Compound Plastic Factory Price Raw Material for Plastic Profiles" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Soft PVC Compound Plastic Factory Price Raw Material for Plastic Profiles</h3>
+            <p>Price: $120.00-135.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1148.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdd9c347047ab42eab9dc771988a14cccN.jpg_300x300.jpg" alt="Customized PVC Extrusion Profiles Wall Panel UPVC Material for Building" style="max-width: 200px;">
+            </a>
+            <h3>Customized PVC Extrusion Profiles Wall Panel UPVC Material for Building</h3>
+            <p>Price: $0.01-0.10</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1149.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H64f0278f93084da38e3ace665b0b0ebeQ.jpg_300x300.jpg" alt="ABS plastic Balcony Garden Fence Cement Railing precast Baluster Mold building materials for concrete" style="max-width: 200px;">
+            </a>
+            <h3>ABS plastic Balcony Garden Fence Cement Railing precast Baluster Mold building materials for concrete</h3>
+            <p>Price: $7.90-10.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1150.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc1a7616a68674f05939e82f698eaf5d25.jpg_300x300.jpg" alt="Casement And Sliding Conch Brand Customized Cheap Upvc lead Free Plastic South America Co-extrution Window Pvc Profile VL" style="max-width: 200px;">
+            </a>
+            <h3>Casement And Sliding Conch Brand Customized Cheap Upvc lead Free Plastic South America Co-extrution Window Pvc Profile VL</h3>
+            <p>Price: $1,180.00-1,230.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 ton</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1151.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1P0VEkL6TBKNjSZJiq6zKVFXaI.jpg_300x300.jpg" alt="1/20 Building Materials Model Toilet Furniture" style="max-width: 200px;">
+            </a>
+            <h3>1/20 Building Materials Model Toilet Furniture</h3>
+            <p>Price: $0.02-0.10</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1152.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9734faa698ec4f2198abe46a591e8a6eb.jpg_300x300.jpg" alt="Good Quality Corrugated Plastic Roofing Sheets" style="max-width: 200px;">
+            </a>
+            <h3>Good Quality Corrugated Plastic Roofing Sheets</h3>
+            <p>Price: $3.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1153.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8ebed5bdd9964edbacc897c5836c2e1e9.jpg_300x300.jpg" alt="Customized House Building Window and Door Plastic Extrusion Angle Channel Plastic Frame Profile Corner Trim" style="max-width: 200px;">
+            </a>
+            <h3>Customized House Building Window and Door Plastic Extrusion Angle Channel Plastic Frame Profile Corner Trim</h3>
+            <p>Price: $0.02-0.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 3,000 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1154.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2104770f50b14dea99dc7b60889e409fM.jpg_300x300.jpg" alt="Plastic Pvc Laminate Ceiling Panel Designs" style="max-width: 200px;">
+            </a>
+            <h3>Plastic Pvc Laminate Ceiling Panel Designs</h3>
+            <p>Price: $2.70-5.98</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1155.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1nnGIvdknBKNjSZKPq6x6OFXam.jpg_300x300.jpg" alt="2018 New 3pcs/lot Architecture Model Grass in 30g for Model Building Materials" style="max-width: 200px;">
+            </a>
+            <h3>2018 New 3pcs/lot Architecture Model Grass in 30g for Model Building Materials</h3>
+            <p>Price: $0.30-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1156.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1e0b8a4f6dec4759bb51074a071ec1d1W.jpg_300x300.jpg" alt="ABS Scale Building Model Tube Materials for Architecture Model Ho Train Layout" style="max-width: 200px;">
+            </a>
+            <h3>ABS Scale Building Model Tube Materials for Architecture Model Ho Train Layout</h3>
+            <p>Price: $0.14-0.16</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1157.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha2dc74b8b3d9435ebd97ad99dd4a9920R.jpg_300x300.jpg" alt="Construction Rebar Clip Plastic Bar Chair Spacer for Hotel Building Material" style="max-width: 200px;">
+            </a>
+            <h3>Construction Rebar Clip Plastic Bar Chair Spacer for Hotel Building Material</h3>
+            <p>Price: $0.05</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1158.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hee1c3541db324338bbdc25ac21936047E.png_300x300.png" alt="New Trend Plastic Rain Water Drainage Channel for Household Roadside" style="max-width: 200px;">
+            </a>
+            <h3>New Trend Plastic Rain Water Drainage Channel for Household Roadside</h3>
+            <p>Price: $2.50-3.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1159.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1lSXcXiLxK1Rjy0Ffq6zYdVXaj.jpg_300x300.jpg" alt="High Quality Construction Plastic Spacer for Building Material 1 1/4" Reinforcing Concrete Rebar Chair From China Factory" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Construction Plastic Spacer for Building Material 1 1/4" Reinforcing Concrete Rebar Chair From China Factory</h3>
+            <p>Price: $0.05-1.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1160.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2e87669d0447405a9a880cd12f82044fj.jpg_300x300.jpg" alt="Exterior Composite Wall Panel Price" style="max-width: 200px;">
+            </a>
+            <h3>Exterior Composite Wall Panel Price</h3>
+            <p>Price: $2.80-3.56</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1161.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ac26e18087f944510a27bf9bac2fe2e20S.jpg_300x300.jpg" alt="High Quality PVC Regrind Scrap and PVC Pipe Scrap Plastic Material for Sale" style="max-width: 200px;">
+            </a>
+            <h3>High Quality PVC Regrind Scrap and PVC Pipe Scrap Plastic Material for Sale</h3>
+            <p>Price: $130.00-150.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 6 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1162.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8c1c02f4d4c147519afc5f036d02db6bt.jpg_300x300.jpg" alt="Synthetic HDPE Resin Plastic Fireproof Simulated Decoration Thatch Roof Tile Plastic Sheet 500*500mm" style="max-width: 200px;">
+            </a>
+            <h3>Synthetic HDPE Resin Plastic Fireproof Simulated Decoration Thatch Roof Tile Plastic Sheet 500*500mm</h3>
+            <p>Price: $1.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 60 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1163.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbafd8a3a8f094807883a15531a1bd0f6D.png_300x300.png" alt="Wholesale Waterproof Extrusion Plastic Profiles PVC PP ABS PE UPVC PC Profiles Pipes Upvc windows Hardware Ceiling Corner" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Waterproof Extrusion Plastic Profiles PVC PP ABS PE UPVC PC Profiles Pipes Upvc windows Hardware Ceiling Corner</h3>
+            <p>Price: $0.40-0.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1164.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2098313926f04aa2a0e5b8a24086c47dB.jpg_300x300.jpg" alt="Strong and Light Weight PP Honeyocmb Core Plastic Panel for Yacht Boat Building" style="max-width: 200px;">
+            </a>
+            <h3>Strong and Light Weight PP Honeyocmb Core Plastic Panel for Yacht Boat Building</h3>
+            <p>Price: $1.50-9.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 sheet</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1165.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1535hXDjxK1Rjy0Fnq6yBaFXaB.jpg_300x300.jpg" alt="Wear-resisting Gear Rubber Flexible Coupling 14J 13J 11J 10J 8J 7J 6J 5J 4J 3J Sure Flex Plastic Building Materials" style="max-width: 200px;">
+            </a>
+            <h3>Wear-resisting Gear Rubber Flexible Coupling 14J 13J 11J 10J 8J 7J 6J 5J 4J 3J Sure Flex Plastic Building Materials</h3>
+            <p>Price: $3.00-5.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1166.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H69d9f163d29447ffa50c5a5a004ba943u.png_300x300.png" alt="PPR polyethylene Plastic Pipe glass fiber ppr water pipe and fittings for hot water" style="max-width: 200px;">
+            </a>
+            <h3>PPR polyethylene Plastic Pipe glass fiber ppr water pipe and fittings for hot water</h3>
+            <p>Price: $0.15-0.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1167.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7ab11b2c76054d6d92b80d9dd890dc84k.jpg_300x300.jpg" alt="Manufacturer Outdoor Modern Polycarbonate Corrugated Sheet for Greenhouse Solid Pc Sheet" style="max-width: 200px;">
+            </a>
+            <h3>Manufacturer Outdoor Modern Polycarbonate Corrugated Sheet for Greenhouse Solid Pc Sheet</h3>
+            <p>Price: $128.00-165.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1168.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3ac5f28ecd9a412dac1bc898b1583661P.jpg_300x300.jpg" alt="siding vinyl exterior" style="max-width: 200px;">
+            </a>
+            <h3>siding vinyl exterior</h3>
+            <p>Price: $3.05-4.46</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1169.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hae00a100349e48c9adf992349aa037bbR.jpg_300x300.jpg" alt="2MM 3MM Polycarbonate Embossed Diamond Solid Sheet PC Board Building Roof Materials" style="max-width: 200px;">
+            </a>
+            <h3>2MM 3MM Polycarbonate Embossed Diamond Solid Sheet PC Board Building Roof Materials</h3>
+            <p>Price: $1.59-5.69</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1170.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H373d34d7b46a47ea958c03c9c84f73ddu.jpg_300x300.jpg" alt="PE ABS PC PVC Extrusion Profiles For Building Customized Plastic Extrusion PVC Square Pipe Cover Industrial Plastic Profiles" style="max-width: 200px;">
+            </a>
+            <h3>PE ABS PC PVC Extrusion Profiles For Building Customized Plastic Extrusion PVC Square Pipe Cover Industrial Plastic Profiles</h3>
+            <p>Price: $0.20-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1171.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4337ab5851d348698cf0ac74ed76331cL.png_300x300.png" alt="Factory 80x45\50mm Plastic Window Packers Building Materials Plastic Window Shims and Wedge for Door Frame and Flooring" style="max-width: 200px;">
+            </a>
+            <h3>Factory 80x45\50mm Plastic Window Packers Building Materials Plastic Window Shims and Wedge for Door Frame and Flooring</h3>
+            <p>Price: $0.01-0.04</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1172.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc4019895a2af4d4b82002a11822d5c1aj.jpg_300x300.jpg" alt="Polypropylene Honeycomb Core Fiberglass Honeycomb Core" style="max-width: 200px;">
+            </a>
+            <h3>Polypropylene Honeycomb Core Fiberglass Honeycomb Core</h3>
+            <p>Price: $7.00-25.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1173.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1ca32e62a0f34a56869c5340111043a5B.jpg_300x300.jpg" alt="Top Quality Pvc Perfiles Hardware for Upvc Windows Pvc Profile for Window Led Plastic Profiles" style="max-width: 200px;">
+            </a>
+            <h3>Top Quality Pvc Perfiles Hardware for Upvc Windows Pvc Profile for Window Led Plastic Profiles</h3>
+            <p>Price: $0.20-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1174.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbdb29ad63bbf456894a9c0c3994a2961d.jpg_300x300.jpg" alt="Faux Wood Vinyl Siding Plastic Composite Wall Panel Wall Panel" style="max-width: 200px;">
+            </a>
+            <h3>Faux Wood Vinyl Siding Plastic Composite Wall Panel Wall Panel</h3>
+            <p>Price: $3.48-4.46</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1175.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H87903ae10ccf4ee5bc44f8df74bb2723L.jpg_300x300.jpg" alt="Boat Building UAV Materials Board Low Density Pvc Foam Eco-friendly Customized Construction Matte Coated Closed Cell Foam Pvc" style="max-width: 200px;">
+            </a>
+            <h3>Boat Building UAV Materials Board Low Density Pvc Foam Eco-friendly Customized Construction Matte Coated Closed Cell Foam Pvc</h3>
+            <p>Price: $5.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1176.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbfeac254e35c42438c5c16828d0e122dU.jpg_300x300.jpg" alt="Polycarbonate Sheet 40mm UV Resistant for Heavy-Duty Industrial Use" style="max-width: 200px;">
+            </a>
+            <h3>Polycarbonate Sheet 40mm UV Resistant for Heavy-Duty Industrial Use</h3>
+            <p>Price: $1.50-4.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square miles</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1177.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9e3a20f0617f46aabd3c0905050188a8a.jpg_300x300.jpg" alt="High Transparency Polycarbonate Skylight Roofing Solid Sheets Top Selling Building Construction Pnales for Outdoor" style="max-width: 200px;">
+            </a>
+            <h3>High Transparency Polycarbonate Skylight Roofing Solid Sheets Top Selling Building Construction Pnales for Outdoor</h3>
+            <p>Price: $1.42-5.96</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1178.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2f31ea68cbb249bcb166eabe51c6432cH.jpg_300x300.jpg" alt="Custom Manufacturer's Eco-Friendly WPC PVC Hard Foaming Profile Nonstandard Nonstandard Plastic Extrusion for Building Moulding" style="max-width: 200px;">
+            </a>
+            <h3>Custom Manufacturer's Eco-Friendly WPC PVC Hard Foaming Profile Nonstandard Nonstandard Plastic Extrusion for Building Moulding</h3>
+            <p>Price: $0.02</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 3,000 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1179.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H496496683eca4481b9fca71f34da5b5a8.jpg_300x300.jpg" alt="Polycarbonate Sheet 40mm UV Resistant for Heavy-Duty Industrial Use" style="max-width: 200px;">
+            </a>
+            <h3>Polycarbonate Sheet 40mm UV Resistant for Heavy-Duty Industrial Use</h3>
+            <p>Price: $1.50-4.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square miles</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1180.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc5c44a38d35b4d44a63b278fca47f4e7U.png_300x300.png" alt="Manufacturer Plastic Wedge Shims Construction Materials Door Stop Table Furniture Leveler Reusable Tile Spacers Leveling Shims" style="max-width: 200px;">
+            </a>
+            <h3>Manufacturer Plastic Wedge Shims Construction Materials Door Stop Table Furniture Leveler Reusable Tile Spacers Leveling Shims</h3>
+            <p>Price: $0.01-0.04</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1181.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H498409b67d994f988340ba39eae3ac2f6.jpg_300x300.jpg" alt="HF Formwork Concrete Hardware System Plastic Chamfer Corner" style="max-width: 200px;">
+            </a>
+            <h3>HF Formwork Concrete Hardware System Plastic Chamfer Corner</h3>
+            <p>Price: $0.10-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1182.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H92d5ce8cdf4c43f587e85b3a999f94e2m.png_300x300.png" alt="BAKWAY Weather resistance Clear Transparent UV Plastic Polycarbonate 2mm 3mm 4mm 6mm 10mm Solid Sheet" style="max-width: 200px;">
+            </a>
+            <h3>BAKWAY Weather resistance Clear Transparent UV Plastic Polycarbonate 2mm 3mm 4mm 6mm 10mm Solid Sheet</h3>
+            <p>Price: $1.20-4.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1183.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7e095662e2c3469e9bee04866ab5bc36s.jpg_300x300.jpg" alt="Polycarbonate Sheet 40mm UV Resistant for Heavy-Duty Industrial Use" style="max-width: 200px;">
+            </a>
+            <h3>Polycarbonate Sheet 40mm UV Resistant for Heavy-Duty Industrial Use</h3>
+            <p>Price: $1.50-4.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square miles</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1184.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H32a1543aed674bd4b6e8cb3225287957C.jpg_300x300.jpg" alt="Woshun 25mm - 57mm Rebar Safety Caps Construction Material #8 - #18 Rebar Cap Plastic Rebar Caps for Protection Workers on Site" style="max-width: 200px;">
+            </a>
+            <h3>Woshun 25mm - 57mm Rebar Safety Caps Construction Material #8 - #18 Rebar Cap Plastic Rebar Caps for Protection Workers on Site</h3>
+            <p>Price: $0.01-0.16</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1185.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9b8a37fb8fc9499d8b12e5d0e296caf04.png_300x300.png" alt="Latest New plastic window sill concrete mold cement door frame building moulding casting mould house decorative window molds" style="max-width: 200px;">
+            </a>
+            <h3>Latest New plastic window sill concrete mold cement door frame building moulding casting mould house decorative window molds</h3>
+            <p>Price: $180.00-460.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1186.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc60a7b7db421484fbe1a7d7e249cceb3u.jpg_300x300.jpg" alt="Indoor/Outdoor 6mm 10mm 14mm Honeycomb Polycarbonate Sheet PC Plastic Greenhouse Sunroom Sun Roof Sunshade Industrial Hotels" style="max-width: 200px;">
+            </a>
+            <h3>Indoor/Outdoor 6mm 10mm 14mm Honeycomb Polycarbonate Sheet PC Plastic Greenhouse Sunroom Sun Roof Sunshade Industrial Hotels</h3>
+            <p>Price: $2.60-5.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1187.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H30fc99d8b6114ff4b90c7ab481babb38V.jpg_300x300.jpg" alt="Stylish PE Profiles for Modern Living PP/PVC/PE/ABS/PA/POM/PC t shaped plastic extrusion profile mould pp extrusion" style="max-width: 200px;">
+            </a>
+            <h3>Stylish PE Profiles for Modern Living PP/PVC/PE/ABS/PA/POM/PC t shaped plastic extrusion profile mould pp extrusion</h3>
+            <p>Price: $0.35-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1188.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hfb831e845c6f4c41bee9e84d105bd5f51.jpg_300x300.jpg" alt="High Quality Used for Awning/patio/terrace Shed Roofing Panel Polycarbonate Solid Sheet" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Used for Awning/patio/terrace Shed Roofing Panel Polycarbonate Solid Sheet</h3>
+            <p>Price: $2.30-6.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1189.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf76840f562224c88ad90eecdeef5e668l.jpg_300x300.jpg" alt="High Performance Corrosion Resistant Glazed Type ASA Synthetic Resin Roof Tile" style="max-width: 200px;">
+            </a>
+            <h3>High Performance Corrosion Resistant Glazed Type ASA Synthetic Resin Roof Tile</h3>
+            <p>Price: $2.90-2.95</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1190.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H983cf015a4184f508b563bcff6130ff6x.jpg_300x300.jpg" alt="Hot Sale PVC Vinyl Wall Siding Covering Plastic Wall Panels House Siding Fix Low Price" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale PVC Vinyl Wall Siding Covering Plastic Wall Panels House Siding Fix Low Price</h3>
+            <p>Price: $4.92-6.25</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1191.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H05db5aa762b540faa12fef719709a68d0.jpg_300x300.jpg" alt="Ceiling Soffit" style="max-width: 200px;">
+            </a>
+            <h3>Ceiling Soffit</h3>
+            <p>Price: $4.54-6.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1192.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1b5b716efaa040e791887c4d54131c80A.jpg_300x300.jpg" alt="Wall Smart Board Insulated Siding Panel" style="max-width: 200px;">
+            </a>
+            <h3>Wall Smart Board Insulated Siding Panel</h3>
+            <p>Price: $3.48-4.46</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1193.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0d5cabff034a457d99757663c9244f0fp.jpg_300x300.jpg" alt="Black 4D DL Exterior Plastic Dutch Lap Vinyl Siding" style="max-width: 200px;">
+            </a>
+            <h3>Black 4D DL Exterior Plastic Dutch Lap Vinyl Siding</h3>
+            <p>Price: $3.05-4.46</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1194.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H10bed447104f4f3e9a3e0f98b5f3e18cR.jpg_300x300.jpg" alt="sliding doors exteriorvinyl siding kits cost" style="max-width: 200px;">
+            </a>
+            <h3>sliding doors exteriorvinyl siding kits cost</h3>
+            <p>Price: $3.48-4.46</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1195.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He02035ce75854c40aefd469b5c19b7b2e.jpg_300x300.jpg" alt="vinyl siding colors" style="max-width: 200px;">
+            </a>
+            <h3>vinyl siding colors</h3>
+            <p>Price: $3.48-4.46</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1196.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf760590914ea4da791c8390bf0e8322bC.jpg_300x300.jpg" alt="Decorative PVC Wall Panel Siding" style="max-width: 200px;">
+            </a>
+            <h3>Decorative PVC Wall Panel Siding</h3>
+            <p>Price: $3.48-4.46</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1197.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5b20d1337f3c4d5487374b24e6a63e45Y.jpg_300x300.jpg" alt="12 inch outdoor plastic 33.5cm solid soffit panel" style="max-width: 200px;">
+            </a>
+            <h3>12 inch outdoor plastic 33.5cm solid soffit panel</h3>
+            <p>Price: $4.54-6.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1198.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6584a9bbfbee4e809d0f4bf4b76fcf16A.jpg_300x300.jpg" alt="100 Outdoor 7 Inch Pvc Vinyl Vertical Board and Batten Siding Wood Effect Siding for Residential Houses" style="max-width: 200px;">
+            </a>
+            <h3>100 Outdoor 7 Inch Pvc Vinyl Vertical Board and Batten Siding Wood Effect Siding for Residential Houses</h3>
+            <p>Price: $3.48-4.46</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1199.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He6445d6f3fdd46cda1a75a6ed907adfaF.jpg_300x300.jpg" alt="blue gray 4D DL Exterior Plastic Dutch Lap vinyl siding" style="max-width: 200px;">
+            </a>
+            <h3>blue gray 4D DL Exterior Plastic Dutch Lap vinyl siding</h3>
+            <p>Price: $3.05-4.46</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1200.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7fba2cb0b9a1451ab4979ef2550dd78bC.jpg_300x300.jpg" alt="vinyl siding wall panel discontinuedvinylsidingforsale" style="max-width: 200px;">
+            </a>
+            <h3>vinyl siding wall panel discontinuedvinylsidingforsale</h3>
+            <p>Price: $3.48-4.46</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <!-- 分页按钮 -->
+        <div class="pagination">
+            
+            <a href="page_11.html">Previous</a>
+            
+
+            
+            
+
+            
+            <a href="page_11.html" >11</a>
+            
+            <a href="page_12.html" class="active">12</a>
+            
+            <a href="page_13.html" >13</a>
+            
+            <a href="page_14.html" >14</a>
+            
+            <a href="page_15.html" >15</a>
+            
+            <a href="page_16.html" >16</a>
+            
+            <a href="page_17.html" >17</a>
+            
+            <a href="page_18.html" >18</a>
+            
+            <a href="page_19.html" >19</a>
+            
+            <a href="page_20.html" >20</a>
+            
+
+            
+            <a href="page_21.html">Next</a>
+            
+        </div>
+        <!-- 回到顶部按钮 -->
+        <button id="back-to-top" onclick="topFunction()">回到顶部</button>
+    </div>
+
+    <script>
+        // 回到顶部按钮显示与隐藏逻辑
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // 回到顶部按钮点击事件
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>
