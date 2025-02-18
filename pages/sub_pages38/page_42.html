@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L8EDEXZBV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9L8EDEXZBV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品列表 - 第页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 200px;
+            /* 可根据实际情况调整图片大小 */
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        nav {
+            background-color: #03a9f4;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* 新添加的样式 */
+        .product-item h3 {
+            font-size: 14px;
+            /* 产品名称文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item p {
+            font-size: 12px;
+            /* 其他产品信息文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item:hover h3 {
+            color: #03a9f4;
+            /* 鼠标悬停时产品名称文字变色 */
+        }
+
+        .product-item:hover p {
+            color: #03a9f4;
+            /* 鼠标悬停时其他产品信息文字变色 */
+        }
+
+        /* 产品容器样式 */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        /* 产品项样式 */
+        .product-item {
+            width: calc(25% - 20px);
+            /* 默认每行显示 4 个产品 */
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 鼠标悬停效果 */
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* 媒体查询，适配不同屏幕尺寸 */
+        @media (max-width: 1024px) {
+            .product-item {
+                width: calc(33.33% - 20px);
+                /* 平板设备每行显示 3 个产品 */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* 小屏幕设备每行显示 2 个产品 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: 100%;
+                /* 超小屏幕设备每行显示 1 个产品 */
+            }
+        }
+
+        /* 分页按钮样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        /* 回到顶部按钮样式 */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #03a9f4;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部图片和文字 -->
+    <div class="header">
+        <img src="../../../main/image/logo.png" alt="Logo">
+        <p>Sunnyluo Store</p>
+        <p>Build a curated directory of store with factory</p>
+    </div>
+    <nav>
+        <a href="../../../index.html">Home</a>
+        <a href="../../pdfs/pdf.html">Resources</a>
+        <a href="../../../main/About us.html">About Us</a>
+        <a href="mailto:sunnyluo330@gmail.com">Contact Us</a>
+        <a href="https://www.facebook.com/sunnyluoting">Facebook</a>
+    </nav>
+    <h1>Product list</h1>
+    <div class="products">
+        
+        <div class="product-item">
+            <a href="product_4101.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hac7485c5d58d459b8eea54ec0d629285z.jpg_300x300.jpg" alt="Kingway High Quality vapor Barrier Aluminum Foil Radiant Reflective Wall Insulation Material" style="max-width: 200px;">
+            </a>
+            <h3>Kingway High Quality vapor Barrier Aluminum Foil Radiant Reflective Wall Insulation Material</h3>
+            <p>Price: 2550</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4102.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha79fd1fc85b24230b082a016e793cf838.jpg_300x300.jpg" alt="Vapour Radiant Aluminum Woven Foil Insulation Fabric Barrier Building Material" style="max-width: 200px;">
+            </a>
+            <h3>Vapour Radiant Aluminum Woven Foil Insulation Fabric Barrier Building Material</h3>
+            <p>Price: 2550</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4103.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha43bdf118b05485d9a73f4bb91b98fbdN.jpg_300x300.jpg" alt="Factory Price Supply Insulation Fireproof and Waterproof Rock Wool Blanket Mineral Wool Board for Roofs and Walls" style="max-width: 200px;">
+            </a>
+            <h3>Factory Price Supply Insulation Fireproof and Waterproof Rock Wool Blanket Mineral Wool Board for Roofs and Walls</h3>
+            <p>Price: $3.50-4.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 700 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4104.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf7b58806a65d43c4a35946eca69892d0O.jpg_300x300.jpg" alt="Good Price Glass Wool for Fire Resistance Acoustic Insulation Materials 20kg 60mm 0.6*1.2m" style="max-width: 200px;">
+            </a>
+            <h3>Good Price Glass Wool for Fire Resistance Acoustic Insulation Materials 20kg 60mm 0.6*1.2m</h3>
+            <p>Price: 0.55</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 7,000 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4105.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbf2701e3c6ef417d829c9c8b5bbc12412.jpg_300x300.jpg" alt="Fiberglass Glass Wool Insulation Sheet 50mm Thickness Aluminium Foil Wrapped Price Competitive Acoustic Panels Rolls Blankets" style="max-width: 200px;">
+            </a>
+            <h3>Fiberglass Glass Wool Insulation Sheet 50mm Thickness Aluminium Foil Wrapped Price Competitive Acoustic Panels Rolls Blankets</h3>
+            <p>Price: $0.51-0.95</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4106.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1qE.MKwHqK1RjSZJnq6zNLpXaT.jpg_300x300.jpg" alt="ISOKING Aluminum Foil Kraft Paper Vapor Barrier for Heat Insulation Materials" style="max-width: 200px;">
+            </a>
+            <h3>ISOKING Aluminum Foil Kraft Paper Vapor Barrier for Heat Insulation Materials</h3>
+            <p>Price: $0.20-0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4107.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1Xg7EKrvpK1RjSZPiq6zmwXXar.jpg_300x300.jpg" alt="ISOKING Fireproof Insulation Material Cloth Aluminum Foil Polyethylene Vapor Barrier" style="max-width: 200px;">
+            </a>
+            <h3>ISOKING Fireproof Insulation Material Cloth Aluminum Foil Polyethylene Vapor Barrier</h3>
+            <p>Price: $0.50-0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4108.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb7b6197323c344f1bdad6f46d17bdc0eq.jpg_300x300.jpg" alt="ISOKING ISOFOIL Aluminum Foil Insulation Vapor Barrier Reflective Key Features for Heat Insulation Materials" style="max-width: 200px;">
+            </a>
+            <h3>ISOKING ISOFOIL Aluminum Foil Insulation Vapor Barrier Reflective Key Features for Heat Insulation Materials</h3>
+            <p>Price: 0.6</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4109.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1F.UGKrvpK1RjSZFqq6AXUVXa5.jpg_300x300.jpg" alt="IKING Laminated Aluminium Foil Scrim Kraft High Performance Heat Insulation Materials Product" style="max-width: 200px;">
+            </a>
+            <h3>IKING Laminated Aluminium Foil Scrim Kraft High Performance Heat Insulation Materials Product</h3>
+            <p>Price: $0.20-0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4110.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB15MgJKpzqK1RjSZFoq6zfcXXa4.jpg_300x300.jpg" alt="ISOKING Polyethylene Vapor Barrier Aluminum Foil High-Performance Heat Insulation Materials" style="max-width: 200px;">
+            </a>
+            <h3>ISOKING Polyethylene Vapor Barrier Aluminum Foil High-Performance Heat Insulation Materials</h3>
+            <p>Price: $0.20-0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4111.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1ibIMKrrpK1RjSZTEq6AWAVXay.jpg_300x300.jpg" alt="ISOKING ISOFOIL Double Sided Reflective Aluminum Foil Premium Heat Insulation Material for Construction" style="max-width: 200px;">
+            </a>
+            <h3>ISOKING ISOFOIL Double Sided Reflective Aluminum Foil Premium Heat Insulation Material for Construction</h3>
+            <p>Price: $0.20-0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4112.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H77bc6c5aa46b48efaba0c75585f4125eK.png_300x300.png" alt="Automatic Motorized Fireproof Curtains Industrial Design Flexible Silicone Fabric Aluminium Metal Heat Insulation Smoke Blocking" style="max-width: 200px;">
+            </a>
+            <h3>Automatic Motorized Fireproof Curtains Industrial Design Flexible Silicone Fabric Aluminium Metal Heat Insulation Smoke Blocking</h3>
+            <p>Price: $40.00-50.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4113.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8f878564074d416abbe84f890fbad509K.jpg_300x300.jpg" alt="100kg/m3 150kg/m3 150mm Basalt Thermal Insulation Rock Wool Panel For Mobile House Roof /Wall" style="max-width: 200px;">
+            </a>
+            <h3>100kg/m3 150kg/m3 150mm Basalt Thermal Insulation Rock Wool Panel For Mobile House Roof /Wall</h3>
+            <p>Price: $0.68-0.87</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4114.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hddfe507c92cd4b148dab66389d994419A.jpg_300x300.jpg" alt="150kg/m3 50mm High Density Mineral Wool Insulation Board Roof Thermal Insulation Stone Rock Wool Panel" style="max-width: 200px;">
+            </a>
+            <h3>150kg/m3 50mm High Density Mineral Wool Insulation Board Roof Thermal Insulation Stone Rock Wool Panel</h3>
+            <p>Price: $0.30-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4115.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbd309cf930f14cccbe91525c1f1ac4d3H.jpg_300x300.jpg" alt="Density 180kg/m3 Thickness100mm Rock Wool Material Wall Thermal Insulation Board" style="max-width: 200px;">
+            </a>
+            <h3>Density 180kg/m3 Thickness100mm Rock Wool Material Wall Thermal Insulation Board</h3>
+            <p>Price: $0.30-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4116.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He26cb7fdc033498ba5871f7b7f02953dl.jpg_300x300.jpg" alt="MBI Metal Building Roof and Wall Glass Wool Heat Insulation Material R Value Thermal Fiber Glass Wool Blanket" style="max-width: 200px;">
+            </a>
+            <h3>MBI Metal Building Roof and Wall Glass Wool Heat Insulation Material R Value Thermal Fiber Glass Wool Blanket</h3>
+            <p>Price: $0.31-0.61</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 square meter</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4117.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H63d78f3f8cb44225bd5cd232c8e697ddh.jpg_300x300.jpg" alt="Wholesale Customized Size Excellent Aluminum Foil XPE Foam Wall Insulation/Metal Roof Insulation" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Customized Size Excellent Aluminum Foil XPE Foam Wall Insulation/Metal Roof Insulation</h3>
+            <p>Price: $1.00-3.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4118.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd5a36c626b594c64bb115c21cf266611v.jpg_300x300.jpg" alt="Heat Insulation Fiberglass VIP Panel Construction Fumed Silica Vacuum Insulated Panel" style="max-width: 200px;">
+            </a>
+            <h3>Heat Insulation Fiberglass VIP Panel Construction Fumed Silica Vacuum Insulated Panel</h3>
+            <p>Price: $15.62-20.31</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4119.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc0fddd6aea14443e9c9e3dd754d2e7adD.jpg_300x300.jpg" alt="yellow fiber glass wool blanket roll vacuum package wool yellow" style="max-width: 200px;">
+            </a>
+            <h3>yellow fiber glass wool blanket roll vacuum package wool yellow</h3>
+            <p>Price: $12.30-12.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 510 rolls</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4120.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H796ecbf6717945ddb93a15148307336a5.png_300x300.png" alt="Rock Wool Sandwich Wall Panel" style="max-width: 200px;">
+            </a>
+            <h3>Rock Wool Sandwich Wall Panel</h3>
+            <p>Price: 11.5</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,500 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4121.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb575c2e4a6a14c518a791b6f025e7427p.jpg_300x300.jpg" alt="Sustainable High Barrier VIP Insulated Wall Panel Fumed Silica Vacuum Insulation Board External Wall Heat Insulation Materials" style="max-width: 200px;">
+            </a>
+            <h3>Sustainable High Barrier VIP Insulated Wall Panel Fumed Silica Vacuum Insulation Board External Wall Heat Insulation Materials</h3>
+            <p>Price: $7.81-10.16</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4122.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9b4f6b4b193a40e2be12e4f0002804e9e.jpg_300x300.jpg" alt="Aluminium Composite Sandwich Insulation Panel with Fiberglass Core VIP Model for Effective Heat Insulation" style="max-width: 200px;">
+            </a>
+            <h3>Aluminium Composite Sandwich Insulation Panel with Fiberglass Core VIP Model for Effective Heat Insulation</h3>
+            <p>Price: $10.00-30.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4123.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H90157008019f42399eb38f05e1bd3ddbp.jpg_300x300.jpg" alt="Cooling water pipe foam insulation material 6-42mm rubber and plastic material copper pipe insulation" style="max-width: 200px;">
+            </a>
+            <h3>Cooling water pipe foam insulation material 6-42mm rubber and plastic material copper pipe insulation</h3>
+            <p>Price: $0.20-0.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4124.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1a0953faf8c849d28e1237d7bd1ec4fb6.png_300x300.png" alt="Factory price Hvac Refrigeration Air Conditioner Heat Insulation Material NBR Rubber Insulation Pipe" style="max-width: 200px;">
+            </a>
+            <h3>Factory price Hvac Refrigeration Air Conditioner Heat Insulation Material NBR Rubber Insulation Pipe</h3>
+            <p>Price: $0.50-0.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4125.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H158e59d3bb544bdf86b320b43871e32c9.jpg_300x300.jpg" alt="Hot Selling Refrigeration Equipment air Conditioning Insulation Materials Rubber Plastic Pipe Copper Pipe Insulation Pipe" style="max-width: 200px;">
+            </a>
+            <h3>Hot Selling Refrigeration Equipment air Conditioning Insulation Materials Rubber Plastic Pipe Copper Pipe Insulation Pipe</h3>
+            <p>Price: $0.33-0.45</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4126.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H94777c68b7904f02b726eb8c0b528b09E.png_300x300.png" alt="High Density Materials Thermal Insulation Pipe Rubber Foam Insulation Tube For Air Conditioner" style="max-width: 200px;">
+            </a>
+            <h3>High Density Materials Thermal Insulation Pipe Rubber Foam Insulation Tube For Air Conditioner</h3>
+            <p>Price: $0.80-1.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4127.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H975e6b6da8ad452590d38e2411cc80cci.jpg_300x300.jpg" alt="Reflective Insulation Film Aluminum Foil Metallized Mylar Coated Plastic PE/PP/PET" style="max-width: 200px;">
+            </a>
+            <h3>Reflective Insulation Film Aluminum Foil Metallized Mylar Coated Plastic PE/PP/PET</h3>
+            <p>Price: $0.10-0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4128.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd9bb9b147c5344f68d15be8bb7a59512c.jpg_300x300.jpg" alt="Factory Wholesale Super Thin Vacuum Insulated Panels VIP Board Heat Resistance Made Fiberglass Cloth Construction Application" style="max-width: 200px;">
+            </a>
+            <h3>Factory Wholesale Super Thin Vacuum Insulated Panels VIP Board Heat Resistance Made Fiberglass Cloth Construction Application</h3>
+            <p>Price: $10.00-30.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4129.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4bac9d2afcd845ffa380a01f19cbc61f1.jpg_300x300.jpg" alt="Aluminum Foil/Silver Metallized Mylar Polyester PET Coated LDPE Film for Insulation Material" style="max-width: 200px;">
+            </a>
+            <h3>Aluminum Foil/Silver Metallized Mylar Polyester PET Coated LDPE Film for Insulation Material</h3>
+            <p>Price: $0.10-0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10,000 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4130.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He96d35b9cb9e437187b4dc02baa537e44.png_300x300.png" alt="1200 600mm Thickness 50mm Density 80kg Rock Wool Board Waterproof Thermal Insulation" style="max-width: 200px;">
+            </a>
+            <h3>1200 600mm Thickness 50mm Density 80kg Rock Wool Board Waterproof Thermal Insulation</h3>
+            <p>Price: $2.18-2.27</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4131.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3de0855cbe294e0988a79c805dad7928N.png_300x300.png" alt="Roof and Wall Material Rock Wool Insulation Compressed Rock Wool Board" style="max-width: 200px;">
+            </a>
+            <h3>Roof and Wall Material Rock Wool Insulation Compressed Rock Wool Board</h3>
+            <p>Price: $2.18-2.27</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4132.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7a49eeb9675849eb9647e764139187012.jpg_300x300.jpg" alt="Factory Wholesale Super Thin Vacuum Insulated Panels VIP Board Heat Resistance Made Fiberglass Cloth Construction Application" style="max-width: 200px;">
+            </a>
+            <h3>Factory Wholesale Super Thin Vacuum Insulated Panels VIP Board Heat Resistance Made Fiberglass Cloth Construction Application</h3>
+            <p>Price: $10.00-30.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4133.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6fa19d62925643b6bb2e4dbce7f30cebx.jpeg_300x300.jpeg" alt="INSULWOOL 120kg/m3 100mm Basalt Stone Wool Board Mineral Rock Wool Slab Insulation Material for Building Exterior Wall" style="max-width: 200px;">
+            </a>
+            <h3>INSULWOOL 120kg/m3 100mm Basalt Stone Wool Board Mineral Rock Wool Slab Insulation Material for Building Exterior Wall</h3>
+            <p>Price: $1.00-3.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_4134.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1650531f52dd477eb6288d7a7a065a4eC.jpg_300x300.jpg" alt="6 12 Mic Metallic Polyester Laminated Polyethylene Reflective Surfaces of Packaging and Insulation Materials" style="max-width: 200px;">
+            </a>
+            <h3>6 12 Mic Metallic Polyester Laminated Polyethylene Reflective Surfaces of Packaging and Insulation Materials</h3>
+            <p>Price: $0.10-0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10,000 square meters</p>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <!-- 分页按钮 -->
+        <div class="pagination">
+            
+            <a href="page_41.html">Previous</a>
+            
+
+            
+            
+
+            
+            <a href="page_41.html" >41</a>
+            
+            <a href="page_42.html" class="active">42</a>
+            
+
+            
+        </div>
+        <!-- 回到顶部按钮 -->
+        <button id="back-to-top" onclick="topFunction()">回到顶部</button>
+    </div>
+
+    <script>
+        // 回到顶部按钮显示与隐藏逻辑
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // 回到顶部按钮点击事件
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

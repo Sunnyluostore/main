@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L8EDEXZBV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9L8EDEXZBV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品列表 - 第页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 200px;
+            /* 可根据实际情况调整图片大小 */
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        nav {
+            background-color: #03a9f4;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* 新添加的样式 */
+        .product-item h3 {
+            font-size: 14px;
+            /* 产品名称文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item p {
+            font-size: 12px;
+            /* 其他产品信息文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item:hover h3 {
+            color: #03a9f4;
+            /* 鼠标悬停时产品名称文字变色 */
+        }
+
+        .product-item:hover p {
+            color: #03a9f4;
+            /* 鼠标悬停时其他产品信息文字变色 */
+        }
+
+        /* 产品容器样式 */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        /* 产品项样式 */
+        .product-item {
+            width: calc(25% - 20px);
+            /* 默认每行显示 4 个产品 */
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 鼠标悬停效果 */
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* 媒体查询，适配不同屏幕尺寸 */
+        @media (max-width: 1024px) {
+            .product-item {
+                width: calc(33.33% - 20px);
+                /* 平板设备每行显示 3 个产品 */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* 小屏幕设备每行显示 2 个产品 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: 100%;
+                /* 超小屏幕设备每行显示 1 个产品 */
+            }
+        }
+
+        /* 分页按钮样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        /* 回到顶部按钮样式 */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #03a9f4;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部图片和文字 -->
+    <div class="header">
+        <img src="../../../main/image/logo.png" alt="Logo">
+        <p>Sunnyluo Store</p>
+        <p>Build a curated directory of store with factory</p>
+    </div>
+    <nav>
+        <a href="../../../index.html">Home</a>
+        <a href="../../pdfs/pdf.html">Resources</a>
+        <a href="../../../main/About us.html">About Us</a>
+        <a href="mailto:sunnyluo330@gmail.com">Contact Us</a>
+        <a href="https://www.facebook.com/sunnyluoting">Facebook</a>
+    </nav>
+    <h1>Product list</h1>
+    <div class="products">
+        
+        <div class="product-item">
+            <a href="product_601.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha3ecf98334944f9e9b8d947bf0946457H.jpg_300x300.jpg" alt="Exterior Building Facade Aluminum Panels Well Designed Aluminium Curtain Wall Cladding Screen Panel" style="max-width: 200px;">
+            </a>
+            <h3>Exterior Building Facade Aluminum Panels Well Designed Aluminium Curtain Wall Cladding Screen Panel</h3>
+            <p>Price: $49.00-69.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_602.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hadc39d124a514a05912e9dcecb10d89bz.jpg_300x300.jpg" alt="High-end Skyscrapers Full-Frame Glass Facades Panel Curtain Wall Aluminum Profile Curtain Wall Prices" style="max-width: 200px;">
+            </a>
+            <h3>High-end Skyscrapers Full-Frame Glass Facades Panel Curtain Wall Aluminum Profile Curtain Wall Prices</h3>
+            <p>Price: $130.00-200.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_603.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3388a0a121ef46d489ee19d46f3296dfs.jpg_300x300.jpg" alt="Hanging Wall Panel Z-bracket Aluminum Alloy Dry Hanging Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Hanging Wall Panel Z-bracket Aluminum Alloy Dry Hanging Accessories</h3>
+            <p>Price: $0.90-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_604.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HLB1zx.FQmzqK1RjSZPcq6zTepXa1.jpg_300x300.jpg" alt="Price Cost Per square Metre Aluminum Profile Glass Curtain Wall" style="max-width: 200px;">
+            </a>
+            <h3>Price Cost Per square Metre Aluminum Profile Glass Curtain Wall</h3>
+            <p>Price: $20.00-200.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_605.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5b1c0aa4221b440888b584a3883e75e3L.png_300x300.png" alt="Popular Decorative Wall Cladding Sheets Metal Curtain Wall Decoration Aluminum Profile" style="max-width: 200px;">
+            </a>
+            <h3>Popular Decorative Wall Cladding Sheets Metal Curtain Wall Decoration Aluminum Profile</h3>
+            <p>Price: $18.00-35.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_606.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb5a6fb80ab8e4df982a8c77ebdcc6564z.jpeg_300x300.jpeg" alt="Factory Price Outdoor Curtain Wall Decoration Aluminum Great Wall Profile With Thermal Insulation" style="max-width: 200px;">
+            </a>
+            <h3>Factory Price Outdoor Curtain Wall Decoration Aluminum Great Wall Profile With Thermal Insulation</h3>
+            <p>Price: $20.00-50.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_607.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9d6929c1fd344ab68bb4abfc3ec0f63bI.jpg_300x300.jpg" alt="Curtain Walls Aluminum Metal Cladding Panel Exterior Walls Curtain Walls" style="max-width: 200px;">
+            </a>
+            <h3>Curtain Walls Aluminum Metal Cladding Panel Exterior Walls Curtain Walls</h3>
+            <p>Price: $15.00-35.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_608.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H11cadbbf88d44c44b705c2e4fc2d8143m.jpg_300x300.jpg" alt="Aluminium Double Glazing Tempered Glass Unitized Curtain Wall System Price" style="max-width: 200px;">
+            </a>
+            <h3>Aluminium Double Glazing Tempered Glass Unitized Curtain Wall System Price</h3>
+            <p>Price: $75.00-100.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_609.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0159cf49fb834031a128e1af49820613R.jpg_300x300.jpg" alt="Modern Double Glazing Aluminum Curtain Wall with Tempered Glass for Building & Hotel Exterior Decoration" style="max-width: 200px;">
+            </a>
+            <h3>Modern Double Glazing Aluminum Curtain Wall with Tempered Glass for Building & Hotel Exterior Decoration</h3>
+            <p>Price: $50.00-69.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_610.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdc01a20e49a842598d7b459ce3990c24t.jpg_300x300.jpg" alt="Prima High Quality Factory Price Glass Aluminium Curtain Wall Exterior Building Frameless Curtain Window Wall" style="max-width: 200px;">
+            </a>
+            <h3>Prima High Quality Factory Price Glass Aluminium Curtain Wall Exterior Building Frameless Curtain Window Wall</h3>
+            <p>Price: $105.00-118.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_611.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc612d1875ec7400483163607b0f3c768b.png_300x300.png" alt="Curtain Wall Facade Low E Glass Panel Curtain Wall FACTORY Aluminum Structural Glass Curtain Wall" style="max-width: 200px;">
+            </a>
+            <h3>Curtain Wall Facade Low E Glass Panel Curtain Wall FACTORY Aluminum Structural Glass Curtain Wall</h3>
+            <p>Price: $40.00-54.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_612.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8fe2c6121b0a4783a2985cf3f715218bq.jpg_300x300.jpg" alt="Modern Double Glazing Tempered Glass Curtain Wall for Building Decoration High Quality Window Facade" style="max-width: 200px;">
+            </a>
+            <h3>Modern Double Glazing Tempered Glass Curtain Wall for Building Decoration High Quality Window Facade</h3>
+            <p>Price: $50.00-60.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_613.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4f616b651a9340c3b57d379b6ac4ca04I.png_300x300.png" alt="Perforated Aluminium Facades Panel Wall Cladding and Clad Panel Metal Exterior Wall Panels Cladding" style="max-width: 200px;">
+            </a>
+            <h3>Perforated Aluminium Facades Panel Wall Cladding and Clad Panel Metal Exterior Wall Panels Cladding</h3>
+            <p>Price: 17</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_614.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H63443f1488774abb9ee9e58bbca985952.jpg_300x300.jpg" alt="Precast Concrete Accessories Hot Dipped Galvanized Cold Rolled Steel Anchor C ChannelHalfen Channel with Anchor Bolt" style="max-width: 200px;">
+            </a>
+            <h3>Precast Concrete Accessories Hot Dipped Galvanized Cold Rolled Steel Anchor C ChannelHalfen Channel with Anchor Bolt</h3>
+            <p>Price: $0.04-0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_615.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H82cc4c02429a4f039be3057aec026babp.png_300x300.png" alt="Aluminum Perforated Wall Panel Laser Cut Aluminum Perforated Wall Panels Building Facade Exterior Wall Cladding Perforated Panel" style="max-width: 200px;">
+            </a>
+            <h3>Aluminum Perforated Wall Panel Laser Cut Aluminum Perforated Wall Panels Building Facade Exterior Wall Cladding Perforated Panel</h3>
+            <p>Price: $35.72-41.36</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_616.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H460be1f4b69d4d449079d10981992812m.jpg_300x300.jpg" alt="Customized aluminum panels for exterior wall decoration on demand including column wrapped single aluminum panels" style="max-width: 200px;">
+            </a>
+            <h3>Customized aluminum panels for exterior wall decoration on demand including column wrapped single aluminum panels</h3>
+            <p>Price: 9.9</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_617.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd8759e41ae274ea09ade23763bc25a5aO.jpg_300x300.jpg" alt="Exterior Building Materials Aluminum Accessories Foam PVC Composite Panels Aluco Wood Facade" style="max-width: 200px;">
+            </a>
+            <h3>Exterior Building Materials Aluminum Accessories Foam PVC Composite Panels Aluco Wood Facade</h3>
+            <p>Price: $7.40-7.75</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 370 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_618.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hab5d60ce36264c9eb98d07165f368f27s.jpg_300x300.jpg" alt="Alucobond Facade PE PVDF Coating Aluminum Composite Panel" style="max-width: 200px;">
+            </a>
+            <h3>Alucobond Facade PE PVDF Coating Aluminum Composite Panel</h3>
+            <p>Price: $8.00-12.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_619.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H30b84f95da3a4e5499bf9a0414f4b436y.jpg_300x300.jpg" alt="Customized Laser Cut Decoration Wall Panel Exterior Decorative Perforated Corten Steel Wall Cladding Sheet" style="max-width: 200px;">
+            </a>
+            <h3>Customized Laser Cut Decoration Wall Panel Exterior Decorative Perforated Corten Steel Wall Cladding Sheet</h3>
+            <p>Price: $99.00-199.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_620.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2b8b64da3d2f4e04b81e68b4de4505335.jpg_300x300.jpg" alt="Metal Insulation Wall Cladding Aluminium Facade Panel Exterior Facade Systems For Curtain Walls" style="max-width: 200px;">
+            </a>
+            <h3>Metal Insulation Wall Cladding Aluminium Facade Panel Exterior Facade Systems For Curtain Walls</h3>
+            <p>Price: 99</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_621.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9ce177e4e43f445eb34871af7aa468caG.jpg_300x300.jpg" alt="Competitive Price Aluminum Solid Cladding Facade Panel for Building Decoration" style="max-width: 200px;">
+            </a>
+            <h3>Competitive Price Aluminum Solid Cladding Facade Panel for Building Decoration</h3>
+            <p>Price: 31.5</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_622.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H93223015651d43728453f85298ee5acex.jpg_300x300.jpg" alt="Imagery glass partition modular fabric space system dividing office room double glazed aluminum glass partition wall" style="max-width: 200px;">
+            </a>
+            <h3>Imagery glass partition modular fabric space system dividing office room double glazed aluminum glass partition wall</h3>
+            <p>Price: $79.00-99.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 150 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_623.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H11f62ff8c11c448dbbe72f0caf4eb1759.jpg_300x300.jpg" alt="Prima MDF 3D Wall Panels Interior Design Decorative Materials" style="max-width: 200px;">
+            </a>
+            <h3>Prima MDF 3D Wall Panels Interior Design Decorative Materials</h3>
+            <p>Price: $10.00-20.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_624.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8f412730b52c449c83b4b1c9e277c72fW.jpg_300x300.jpg" alt="China Factory Aluminium Extrusion Profiles Aluminum Alloy Profile Excellent Curtain Wall Aluminium Extrusion Profiles" style="max-width: 200px;">
+            </a>
+            <h3>China Factory Aluminium Extrusion Profiles Aluminum Alloy Profile Excellent Curtain Wall Aluminium Extrusion Profiles</h3>
+            <p>Price: $2.11-2.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_625.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hcda3672a80db4993bd6c44e3af202251R.jpg_300x300.jpg" alt="Professional Building Facades House Outdoor Facade Panel High Quality Facade Cladding Material for Curtain Walls" style="max-width: 200px;">
+            </a>
+            <h3>Professional Building Facades House Outdoor Facade Panel High Quality Facade Cladding Material for Curtain Walls</h3>
+            <p>Price: $30.00-70.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_626.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb39559bfc9314d18b65a67c0c97131bez.png_300x300.png" alt="Modern Building Material Exterior Decorative Aluminum Profiles Cladding Composite Wall Panels Facade Unitized Curtain Wall" style="max-width: 200px;">
+            </a>
+            <h3>Modern Building Material Exterior Decorative Aluminum Profiles Cladding Composite Wall Panels Facade Unitized Curtain Wall</h3>
+            <p>Price: $23.74-25.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_627.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5bfbe774235947f29d62832d1a7dababU.jpg_300x300.jpg" alt="Stainless Steel 304/316/410 Flat Head Eye Bolt for Marble Fixing System" style="max-width: 200px;">
+            </a>
+            <h3>Stainless Steel 304/316/410 Flat Head Eye Bolt for Marble Fixing System</h3>
+            <p>Price: $0.15-0.38</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_628.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H25f21394b2874c80bec4fc33a43fb93fg.jpg_300x300.jpg" alt="A2/A4 Stainless Steel Stone Fixing Bracket/Granite Anchor/Marble Angle/Bracket" style="max-width: 200px;">
+            </a>
+            <h3>A2/A4 Stainless Steel Stone Fixing Bracket/Granite Anchor/Marble Angle/Bracket</h3>
+            <p>Price: $0.97-1.97</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 3,000 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_629.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc2b69dcba9064b69b6b68c402aa2ce29s.jpg_300x300.jpg" alt="Aluminum Exterior Wall Cladding Decorative Facade Design for Building Interior and External Panels for Curtain Walls" style="max-width: 200px;">
+            </a>
+            <h3>Aluminum Exterior Wall Cladding Decorative Facade Design for Building Interior and External Panels for Curtain Walls</h3>
+            <p>Price: $98.00-125.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 90 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_630.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc9060340a90b453eba2d7962cb91c3f3i.jpg_300x300.jpg" alt="3d Ventilated Exterior Decoration External Cladding Aluminum Facade Panel Accessories and Curtain Walls" style="max-width: 200px;">
+            </a>
+            <h3>3d Ventilated Exterior Decoration External Cladding Aluminum Facade Panel Accessories and Curtain Walls</h3>
+            <p>Price: $100.00-200.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_631.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd9809bf0ff0d495198c7095360d570d0D.jpg_300x300.jpg" alt="Manufacturer Wholesale Price High Quality Energy Saving Aluminum Glass Curtain Wall Facade" style="max-width: 200px;">
+            </a>
+            <h3>Manufacturer Wholesale Price High Quality Energy Saving Aluminum Glass Curtain Wall Facade</h3>
+            <p>Price: $118.00-126.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_632.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0018cf2cc2c44909bf0c0f2cd91e40b1n.png_300x300.png" alt="Modern Style Commercial Project Tempered Glass Facade Panels Aluminium Curtain Wall From China for Building Decorations" style="max-width: 200px;">
+            </a>
+            <h3>Modern Style Commercial Project Tempered Glass Facade Panels Aluminium Curtain Wall From China for Building Decorations</h3>
+            <p>Price: $115.00-135.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_633.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6d9d070826224abcac0afb6c3d610fc4a.jpg_300x300.jpg" alt="Business Building Facade Facade Wall Sandwich Panels Aluminum Honeycomb Panels Custom" style="max-width: 200px;">
+            </a>
+            <h3>Business Building Facade Facade Wall Sandwich Panels Aluminum Honeycomb Panels Custom</h3>
+            <p>Price: $20.00-50.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_634.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H15fd17a423d641df8841e232f7061080P.jpg_300x300.jpg" alt="Exterior Terracotta Brick Wall Panels Terracotta Panel Wall Cladding" style="max-width: 200px;">
+            </a>
+            <h3>Exterior Terracotta Brick Wall Panels Terracotta Panel Wall Cladding</h3>
+            <p>Price: $22.00-29.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_635.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H85d2005a2b2e4335ab61ca223ed5a881T.jpg_300x300.jpg" alt="Exterior Tempered Tinted Glass Facades in Architectural Design" style="max-width: 200px;">
+            </a>
+            <h3>Exterior Tempered Tinted Glass Facades in Architectural Design</h3>
+            <p>Price: $30.00-50.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_636.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbf16c0f21194427db683ace6daf41ff6C.jpg_300x300.jpg" alt="Customized Building Facade Unitized Exterior Structural Glazing Ventilated Interior Curtain Wall Cladding" style="max-width: 200px;">
+            </a>
+            <h3>Customized Building Facade Unitized Exterior Structural Glazing Ventilated Interior Curtain Wall Cladding</h3>
+            <p>Price: $60.00-70.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_637.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hcf2f173a7b384489aaf6cb9556d5608a9.jpg_300x300.jpg" alt="Modern Metal Wall Cladding for Facades Exterior Aluminum Facade Panels Aluminium Curtain Wall" style="max-width: 200px;">
+            </a>
+            <h3>Modern Metal Wall Cladding for Facades Exterior Aluminum Facade Panels Aluminium Curtain Wall</h3>
+            <p>Price: $79.00-109.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_638.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H080468fd5874409996154421993bd919y.jpg_300x300.jpg" alt="Skyscraper building glass window walls panels laminate facade curtain wall" style="max-width: 200px;">
+            </a>
+            <h3>Skyscraper building glass window walls panels laminate facade curtain wall</h3>
+            <p>Price: $80.00-85.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_639.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hfa699b974ade4ca09acd8aa5d93860511.png_300x300.png" alt="Fit up House Metal Cladding Wall Aluminum Brushed Gloden Sliver Facade Composite Panels" style="max-width: 200px;">
+            </a>
+            <h3>Fit up House Metal Cladding Wall Aluminum Brushed Gloden Sliver Facade Composite Panels</h3>
+            <p>Price: $7.00-15.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_640.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H50a7738506c24b43982dd72f311335029.jpg_300x300.jpg" alt="Modern Invisible Frame Aluminium Glazing Facade Glass Curtain Wall Aluminum Profile Office Building Decoration Manufactured" style="max-width: 200px;">
+            </a>
+            <h3>Modern Invisible Frame Aluminium Glazing Facade Glass Curtain Wall Aluminum Profile Office Building Decoration Manufactured</h3>
+            <p>Price: $60.00-200.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 tons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_641.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hcf730dac4cd84e86929036c1ea136885n.jpg_300x300.jpg" alt="Curtain Wall Hardware 200mm Adjustable Length SS316 Stainless Steel 180 Degree Fitting Fixed Joint Four-Arm Glass Spider" style="max-width: 200px;">
+            </a>
+            <h3>Curtain Wall Hardware 200mm Adjustable Length SS316 Stainless Steel 180 Degree Fitting Fixed Joint Four-Arm Glass Spider</h3>
+            <p>Price: $7.00-16.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_642.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H035466fe14894a41a4255981b48ea5e6j.png_300x300.png" alt="Wood Grain Profile Exterior Decoration Aluminum Boards Slab Plate Aluminum Profile Panel" style="max-width: 200px;">
+            </a>
+            <h3>Wood Grain Profile Exterior Decoration Aluminum Boards Slab Plate Aluminum Profile Panel</h3>
+            <p>Price: $3.80-5.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_643.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2ea1d90a945b4fccb5448d827239ed3aR.jpg_300x300.jpg" alt="PRIMA Building System Exterior Curtain Wall Aluminum Glass Facade Modern Design Cladding Curtain Wall" style="max-width: 200px;">
+            </a>
+            <h3>PRIMA Building System Exterior Curtain Wall Aluminum Glass Facade Modern Design Cladding Curtain Wall</h3>
+            <p>Price: $30.00-35.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_644.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H806bbcb7a053441ea0b6e90d8023bf1ep.jpg_300x300.jpg" alt="ZD Four Ways K Type Stainless Steel 316 250mm Mirror Glass Spider Fittings" style="max-width: 200px;">
+            </a>
+            <h3>ZD Four Ways K Type Stainless Steel 316 250mm Mirror Glass Spider Fittings</h3>
+            <p>Price: $19.00-25.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_645.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hde7eb1f345114eadbdcec7fd709adb17t.jpg_300x300.jpg" alt="Aluminum T Profiles for G.A.J Cladding facade system cladding system Anodized powder coating" style="max-width: 200px;">
+            </a>
+            <h3>Aluminum T Profiles for G.A.J Cladding facade system cladding system Anodized powder coating</h3>
+            <p>Price: 1</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_646.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H496fb104b3d24cf390a8e5156fdcf639J.jpg_300x300.jpg" alt="2024 exquisite design ceiling panels fashionable exterior waterproof ceiling panel decoration good-looking appearance metal mesh" style="max-width: 200px;">
+            </a>
+            <h3>2024 exquisite design ceiling panels fashionable exterior waterproof ceiling panel decoration good-looking appearance metal mesh</h3>
+            <p>Price: 8</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20,000 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_647.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2a2d79edd9ab4c5ea4d8cd2eea1ede17n.png_300x300.png" alt="Modern Building Stainless Steel Accessories Frame Less Point Fixed Facade Glass Spider Curtain Walls" style="max-width: 200px;">
+            </a>
+            <h3>Modern Building Stainless Steel Accessories Frame Less Point Fixed Facade Glass Spider Curtain Walls</h3>
+            <p>Price: $80.00-220.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 square meter</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_648.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4d15e3c14f074e12b5f7a88ffdb7436cU.png_300x300.png" alt="ROUTE Stainless Steel 304 316 Countersunk Routel Glass Fasteners Wall Curtain Spider Clamp GLASS STANDOFF" style="max-width: 200px;">
+            </a>
+            <h3>ROUTE Stainless Steel 304 316 Countersunk Routel Glass Fasteners Wall Curtain Spider Clamp GLASS STANDOFF</h3>
+            <p>Price: 3.1</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_649.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4643ccff96614cecbd9ecf7f4d5c484bo.jpg_300x300.jpg" alt="Stainless Steel 316 304 Frameless Wall Fittings Glass Spider" style="max-width: 200px;">
+            </a>
+            <h3>Stainless Steel 316 304 Frameless Wall Fittings Glass Spider</h3>
+            <p>Price: 6.5</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_650.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8d362a590da24be8a42536aebc7495c9k.jpg_300x300.jpg" alt="Alumtimes Building Facades Modern Audi Sheet 3D Wall For Cladding System Perforated Metal For Residential Aluminium Single Panel" style="max-width: 200px;">
+            </a>
+            <h3>Alumtimes Building Facades Modern Audi Sheet 3D Wall For Cladding System Perforated Metal For Residential Aluminium Single Panel</h3>
+            <p>Price: $30.00-40.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_651.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He7204487358c4cb5a660896d051f7d99v.jpg_300x300.jpg" alt="Hannover High Quality Pre-Fabricated Aluminium Glass Curtain Wall Including Accessories-Matrix Spider Curtain Wall" style="max-width: 200px;">
+            </a>
+            <h3>Hannover High Quality Pre-Fabricated Aluminium Glass Curtain Wall Including Accessories-Matrix Spider Curtain Wall</h3>
+            <p>Price: $108.90-133.10</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_652.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hfa6f723dcfad49899a4f5844547c7d4ca.png_300x300.png" alt="Fasteners Pin Type Metal Hit Anchor Fastener Galvanized 4.8 Grade Material Q195 Hit Pin Fastener Other Curtain Wall Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Fasteners Pin Type Metal Hit Anchor Fastener Galvanized 4.8 Grade Material Q195 Hit Pin Fastener Other Curtain Wall Accessories</h3>
+            <p>Price: $0.02-0.10</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_653.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1ONxRXr5YBuNjSspoq6zeNFXaQ.jpg_300x300.jpg" alt="Stainless Steel Restraint Fixing System,marble Anchor,granite Anchor" style="max-width: 200px;">
+            </a>
+            <h3>Stainless Steel Restraint Fixing System,marble Anchor,granite Anchor</h3>
+            <p>Price: $1.00-3.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_654.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H850bca6c89b84d62b0cdf07ce0464562f.png_300x300.png" alt="Alucobond Construction Materials Durability Composite Panel Curtain Wall Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Alucobond Construction Materials Durability Composite Panel Curtain Wall Accessories</h3>
+            <p>Price: $30.00-40.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_655.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb873cd1fd2d5411c9b810d086b93dd9cR.jpg_300x300.jpg" alt="TAKA Industrial Cheap Price Accessories Top Class Glass Curtain Wall Spider Fitting" style="max-width: 200px;">
+            </a>
+            <h3>TAKA Industrial Cheap Price Accessories Top Class Glass Curtain Wall Spider Fitting</h3>
+            <p>Price: $2.80-18.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_656.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H413f5c44fa044ce08c4c8aa06abf512bl.jpg_300x300.jpg" alt="Facade Cladding System Aluminum Alloy Bracket Customized Curtain Wall Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Facade Cladding System Aluminum Alloy Bracket Customized Curtain Wall Accessories</h3>
+            <p>Price: $0.10-2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_657.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb42fc76bfc7149a9bd94dad3617d5e4dB.jpg_300x300.jpg" alt="Custom Made Curtain Wall Profiles Home Curtain Wall Hook Popular Style Curtain Wall Aluminum Profile" style="max-width: 200px;">
+            </a>
+            <h3>Custom Made Curtain Wall Profiles Home Curtain Wall Hook Popular Style Curtain Wall Aluminum Profile</h3>
+            <p>Price: $87.00-125.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_658.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha34042af10a74608ae257f9b2f1adf050.jpg_300x300.jpg" alt="Good Performance 304/316 Stainless Steel Curtain Wall Accessories Satin Glass Spider" style="max-width: 200px;">
+            </a>
+            <h3>Good Performance 304/316 Stainless Steel Curtain Wall Accessories Satin Glass Spider</h3>
+            <p>Price: $27.00-30.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_659.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc1f3da010d694f398809ae116873e8f57.jpg_300x300.jpg" alt="Exterior Facade Panel Glass Curtain Wall and Aluminium Glass Curtain Walls Accessories Hook Brackets System" style="max-width: 200px;">
+            </a>
+            <h3>Exterior Facade Panel Glass Curtain Wall and Aluminium Glass Curtain Walls Accessories Hook Brackets System</h3>
+            <p>Price: $80.00-90.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_660.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1d0aedf91ae74f9784bddbb969a7eac9c.jpg_300x300.jpg" alt="TAKA Hot Sales Curtain Wall Glass Spider Hardware Accessories for Glass Spider" style="max-width: 200px;">
+            </a>
+            <h3>TAKA Hot Sales Curtain Wall Glass Spider Hardware Accessories for Glass Spider</h3>
+            <p>Price: $2.10-30.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 meter</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_661.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbe276dd093a64cacbd60f4dc6a7a967bH.jpg_300x300.jpg" alt="Wholesale Hardware SS304 306 Curtain Wall Systems Glass Spider Fittings Spider Glass Holder Accessories Curtain Wall Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Hardware SS304 306 Curtain Wall Systems Glass Spider Fittings Spider Glass Holder Accessories Curtain Wall Accessories</h3>
+            <p>Price: 15</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_662.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H36f3f13c27f040f8b2fbfdac373a48440.jpg_300x300.jpg" alt="Foshan Nanhai Aluminum Cladding Expanded Metal Wall Panel Facade Panels Building Decoration Living Room Curtain Wall Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Foshan Nanhai Aluminum Cladding Expanded Metal Wall Panel Facade Panels Building Decoration Living Room Curtain Wall Accessories</h3>
+            <p>Price: $1.90-19.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_663.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Heca616bb8ed240e781449f67eed7809ck.png_300x300.png" alt="Curtain Wall Accessories Fiber Cement Panel Fixed Clamp Exterior Cladding System Bracket" style="max-width: 200px;">
+            </a>
+            <h3>Curtain Wall Accessories Fiber Cement Panel Fixed Clamp Exterior Cladding System Bracket</h3>
+            <p>Price: 0.5</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_664.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1234db21ce374b388716b6d365d7dc51o.jpg_300x300.jpg" alt="Curtain Wall Pendant Stone Accessories Stainless Steel Bracket" style="max-width: 200px;">
+            </a>
+            <h3>Curtain Wall Pendant Stone Accessories Stainless Steel Bracket</h3>
+            <p>Price: $0.84-1.59</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 3,000 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_665.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha8cdb62e90c54e46b56b792b2db45ff0L.jpg_300x300.jpg" alt="Aluminum Metal Accessories Tempered Spider System Glass Curtain Wall for Building" style="max-width: 200px;">
+            </a>
+            <h3>Aluminum Metal Accessories Tempered Spider System Glass Curtain Wall for Building</h3>
+            <p>Price: $77.00-99.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 3 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_666.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbfac21e4af844c1c84568df4fbe0f62ak.jpg_300x300.jpg" alt="Manufacturer Custom Facade Cladding System Aluminum Alloy Bracket Curtain Wall Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Manufacturer Custom Facade Cladding System Aluminum Alloy Bracket Curtain Wall Accessories</h3>
+            <p>Price: $0.10-2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_667.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H274c61b1013943919b18466fc9559a9dX.jpg_300x300.jpg" alt="Aluminum Wall Facade Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Aluminum Wall Facade Accessories</h3>
+            <p>Price: $15.60-25.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_668.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd8d8b1b7ebcb49e392023e3dc38c72d4L.jpg_300x300.jpg" alt="TAKA New Tempered Spider Glass Curtain Wall with Steel Fitting Accessories" style="max-width: 200px;">
+            </a>
+            <h3>TAKA New Tempered Spider Glass Curtain Wall with Steel Fitting Accessories</h3>
+            <p>Price: $3.00-28.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_669.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4ed81e398e1e4926b6ad47231c26c11b8.jpg_300x300.jpg" alt="K-type Stainless Steel Glass Spider Claw Curtain Wall Accessories Glass Canopy Fitting Accessories Glass Curtain Wall Spider" style="max-width: 200px;">
+            </a>
+            <h3>K-type Stainless Steel Glass Spider Claw Curtain Wall Accessories Glass Canopy Fitting Accessories Glass Curtain Wall Spider</h3>
+            <p>Price: $16.00-18.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_670.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha97bfe070bd74e6d99100a5ce0f5c7495.jpg_300x300.jpg" alt="Guangdong Guangzhou Facade Panels Building Decoration Wall Curtain Wall Accessories Aluminum Cladding Expanded Metal Wall Mesh" style="max-width: 200px;">
+            </a>
+            <h3>Guangdong Guangzhou Facade Panels Building Decoration Wall Curtain Wall Accessories Aluminum Cladding Expanded Metal Wall Mesh</h3>
+            <p>Price: $1.90-19.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_671.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H91bc14f12d604c8ea23f026ca6e64237h.jpg_300x300.jpg" alt="OKing Aluminum Alloy Ear Hanging Curtain Wall Accessories for Marble Fixing System Manufacturers Direct Sales" style="max-width: 200px;">
+            </a>
+            <h3>OKing Aluminum Alloy Ear Hanging Curtain Wall Accessories for Marble Fixing System Manufacturers Direct Sales</h3>
+            <p>Price: $0.04-0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_672.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0972ea36c6f3455696e6efaed58e6335N.jpg_300x300.jpg" alt="Foshan Nanhai Aluminum Cladding Expanded Metal Wall Panel Facade Panels Building Decoration Living Room Curtain Wall Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Foshan Nanhai Aluminum Cladding Expanded Metal Wall Panel Facade Panels Building Decoration Living Room Curtain Wall Accessories</h3>
+            <p>Price: $9.90-19.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_673.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H12d96a58362c4fa9a9d632fb092c01ffh.jpg_300x300.jpg" alt="ZHTDOORS Exterior Facade Panel Glass Curtain Wall and Aluminium Glass Curtain Walls Accessories Hook Brackets System" style="max-width: 200px;">
+            </a>
+            <h3>ZHTDOORS Exterior Facade Panel Glass Curtain Wall and Aluminium Glass Curtain Walls Accessories Hook Brackets System</h3>
+            <p>Price: $320.00-350.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 square meter</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_674.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Heec369fe70da45488eaff65609254267N.jpg_300x300.jpg" alt="Curtain Wall Profile With Aluminium Structural And Glass" style="max-width: 200px;">
+            </a>
+            <h3>Curtain Wall Profile With Aluminium Structural And Glass</h3>
+            <p>Price: $2.60-2.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_675.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdfa7702bdad34ff99b2e90fbc26a17cbT.png_300x300.png" alt="Splendidshell 12mm High-Density Fibre Board Baseboard Accessories H-Shield Frame Building Materials Curtain Walls Foshan" style="max-width: 200px;">
+            </a>
+            <h3>Splendidshell 12mm High-Density Fibre Board Baseboard Accessories H-Shield Frame Building Materials Curtain Walls Foshan</h3>
+            <p>Price: $22.97-23.97</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 300 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_676.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H32ae95c034424d36a398943f53a39502b.jpg_300x300.jpg" alt="Wholesale Price Building Materials SS306 4 Arms Glass Spider Curtain Wall Spider Glass Curtain Wall Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Price Building Materials SS306 4 Arms Glass Spider Curtain Wall Spider Glass Curtain Wall Accessories</h3>
+            <p>Price: 15</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_677.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H155a621dc5ab4e7babb8f0b32d1a70b0Q.jpg_300x300.jpg" alt="Manufacturer Custom Facade Cladding System Aluminum Alloy Bracket Curtain Wall Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Manufacturer Custom Facade Cladding System Aluminum Alloy Bracket Curtain Wall Accessories</h3>
+            <p>Price: $0.04-0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_678.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc31a75373f24431b979bd39e2515077eg.png_300x300.png" alt="Anodized Aluminum Panel Profiles Price Safety Architectural Products Curtain Wall Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Anodized Aluminum Panel Profiles Price Safety Architectural Products Curtain Wall Accessories</h3>
+            <p>Price: $30.00-40.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_679.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6f0afa4b552b42c785922caab26cccbaQ.jpg_300x300.jpg" alt="Customized 304 201 Stainless Steel 135 Degree Curtain Wall Stone Marble Dry Hanging Accessories Hanging Parts" style="max-width: 200px;">
+            </a>
+            <h3>Customized 304 201 Stainless Steel 135 Degree Curtain Wall Stone Marble Dry Hanging Accessories Hanging Parts</h3>
+            <p>Price: $0.10-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_680.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H43f06998fcd349399c41f08bc4e320b60.png_300x300.png" alt="Architectural Powder Coated Aluminum Outdoor Wall Covering Facade Curtain Walls And Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Architectural Powder Coated Aluminum Outdoor Wall Covering Facade Curtain Walls And Accessories</h3>
+            <p>Price: $25.00-35.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_681.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5f7001b1f83748248a8b54e164b7e93f3.jpg_300x300.jpg" alt="Mullion Profile for Curtain Whole Wall Panel Price Profile Accessories Unitized Curtain Wall Glass Spider" style="max-width: 200px;">
+            </a>
+            <h3>Mullion Profile for Curtain Whole Wall Panel Price Profile Accessories Unitized Curtain Wall Glass Spider</h3>
+            <p>Price: $15.00-17.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_682.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H73ef0274a9df4277b2e0e10f1abf3a25K.jpg_300x300.jpg" alt="Stainless Steel 304 316 Tile Painting Pendant Curtain Wall Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Stainless Steel 304 316 Tile Painting Pendant Curtain Wall Accessories</h3>
+            <p>Price: $0.04-0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_683.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H55c97bb95a82414fa8546480ced7dd9aw.jpg_300x300.jpg" alt="Factory Direct Sales 304316 Stainless Steel Flat Head Screw Curtain Wall Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Factory Direct Sales 304316 Stainless Steel Flat Head Screw Curtain Wall Accessories</h3>
+            <p>Price: $0.04-0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_684.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2cb8ff1c2f07435698b6876e5bde59557.jpg_300x300.jpg" alt="Custom Decorative 3D Aluminum Exterior Decoration Curtain Wall Aluminum Punched Panel" style="max-width: 200px;">
+            </a>
+            <h3>Custom Decorative 3D Aluminum Exterior Decoration Curtain Wall Aluminum Punched Panel</h3>
+            <p>Price: $20.00-26.85</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_685.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8332dcb75f604e75a097c66c49dd3972O.jpg_300x300.jpg" alt="Ventilated Exterior Decoration External Cladding Veneer Aluminum Facade Panel Accessories and Curtain Walls" style="max-width: 200px;">
+            </a>
+            <h3>Ventilated Exterior Decoration External Cladding Veneer Aluminum Facade Panel Accessories and Curtain Walls</h3>
+            <p>Price: $22.00-32.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_686.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9627c947395d48b8a7ab29556af974bbF.jpg_300x300.jpg" alt="Pvc Curtain Wall Detail Dwg Metal Curtain Wall" style="max-width: 200px;">
+            </a>
+            <h3>Pvc Curtain Wall Detail Dwg Metal Curtain Wall</h3>
+            <p>Price: $60.00-150.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 3 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_687.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H28dbded3eafb4c01b85c9186abe59107w.png_300x300.png" alt="Quality Supplier Customized Aluminum Curtain Wall Perforated Ceiling Aluminum Mesh Engraved Panel With Pvdf Coating" style="max-width: 200px;">
+            </a>
+            <h3>Quality Supplier Customized Aluminum Curtain Wall Perforated Ceiling Aluminum Mesh Engraved Panel With Pvdf Coating</h3>
+            <p>Price: $20.00-50.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_688.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2dfe67271ec040d894661bf791a12285P.jpg_300x300.jpg" alt="Carved Aluminum Plate Ceiling Wood Grain Baking Paint Curtain Wall Decoration Punched Wood Grain Curtain Wall" style="max-width: 200px;">
+            </a>
+            <h3>Carved Aluminum Plate Ceiling Wood Grain Baking Paint Curtain Wall Decoration Punched Wood Grain Curtain Wall</h3>
+            <p>Price: $10.00-30.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_689.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Heec28ac3393049909434158447d2e6c7b.jpg_300x300.jpg" alt="Aluminum Engraving Panels Decorative Privacy Screen Garden Laser Cut Panel Curtain Wall Aluminum Laser Cut Panels" style="max-width: 200px;">
+            </a>
+            <h3>Aluminum Engraving Panels Decorative Privacy Screen Garden Laser Cut Panel Curtain Wall Aluminum Laser Cut Panels</h3>
+            <p>Price: $13.00-18.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 150 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_690.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hce535922340b42e4aa536c09261c6acff.jpg_300x300.jpg" alt="Aluminum Alloyangle Bracket Code Curtain Wall Accessories Dry Hanging System" style="max-width: 200px;">
+            </a>
+            <h3>Aluminum Alloyangle Bracket Code Curtain Wall Accessories Dry Hanging System</h3>
+            <p>Price: $0.90-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_691.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9562808e51c646fd9818d071a68adb9bQ.jpg_300x300.jpg" alt="Decoration cladding panels carved panel perforated partition outdoor curtain facade aluminum metal panel curtain wall" style="max-width: 200px;">
+            </a>
+            <h3>Decoration cladding panels carved panel perforated partition outdoor curtain facade aluminum metal panel curtain wall</h3>
+            <p>Price: $20.00-25.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_692.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hab06b2bf66014642a7cafa1898d5712cS.jpg_300x300.jpg" alt="Shopping Mall Building Decorative Screen Partition Perforated Metal Terracota Facade Stainless Steel Aluminium Unit Curtain Wall" style="max-width: 200px;">
+            </a>
+            <h3>Shopping Mall Building Decorative Screen Partition Perforated Metal Terracota Facade Stainless Steel Aluminium Unit Curtain Wall</h3>
+            <p>Price: $10.00-25.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_693.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2259a3a63dc54d5aacaf2918d12f8239E.jpg_300x300.jpg" alt="Strength Factory OEM Casting Services for Fin Glass Curtain Wall Accessories High Quality Spiders for Curtain Walls" style="max-width: 200px;">
+            </a>
+            <h3>Strength Factory OEM Casting Services for Fin Glass Curtain Wall Accessories High Quality Spiders for Curtain Walls</h3>
+            <p>Price: $7.20-8.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_694.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd0bae48cb84e4a07897e4268a4d65934r.jpg_300x300.jpg" alt="Frameless Mirror Curved Double Glazing Aluminum Curtain Wall Building Facade with Operable Awning Windows" style="max-width: 200px;">
+            </a>
+            <h3>Frameless Mirror Curved Double Glazing Aluminum Curtain Wall Building Facade with Operable Awning Windows</h3>
+            <p>Price: $79.00-109.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_695.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H72523878d2f54cee9b5351c2a3184a9fN.jpg_300x300.jpg" alt="China Powder Coated Glazed Curtain Wall Aluminum Decorative Wall Exterior Wall Office" style="max-width: 200px;">
+            </a>
+            <h3>China Powder Coated Glazed Curtain Wall Aluminum Decorative Wall Exterior Wall Office</h3>
+            <p>Price: $100.00-110.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_696.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H796a8e3005514384be5c204bc1fc9e27q.jpg_300x300.jpg" alt="Clay Plate Pendant Aluminum Alloy Stainless Steel Pendant Curtain Wall Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Clay Plate Pendant Aluminum Alloy Stainless Steel Pendant Curtain Wall Accessories</h3>
+            <p>Price: $0.25-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_697.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha59857d540fe42989b1079d39e37303dv.jpg_300x300.jpg" alt="External Cladding Curtain Wall Terracotta Facade Panel Sale Black Yellow Green Plain Waterproof Curtain Wall" style="max-width: 200px;">
+            </a>
+            <h3>External Cladding Curtain Wall Terracotta Facade Panel Sale Black Yellow Green Plain Waterproof Curtain Wall</h3>
+            <p>Price: 95</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_698.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hef71343be02847bc93460c62e6c783300.jpg_300x300.jpg" alt="Shopping Mall Building Curtain Wall Aluminum Systems Exterior Cladding Aluminium Curtain Wall" style="max-width: 200px;">
+            </a>
+            <h3>Shopping Mall Building Curtain Wall Aluminum Systems Exterior Cladding Aluminium Curtain Wall</h3>
+            <p>Price: $79.00-109.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_699.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hde3a7750ed03484f8ec4c7dd67ebafbeh.jpg_300x300.jpg" alt="Aluminum Metal 3D Wall Facade Wind Facade Panel for Indoor and Outdoor Curtain Wall Project Decoration" style="max-width: 200px;">
+            </a>
+            <h3>Aluminum Metal 3D Wall Facade Wind Facade Panel for Indoor and Outdoor Curtain Wall Project Decoration</h3>
+            <p>Price: $79.00-109.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_700.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf3b116bd58e144949dcb245619fdbbc73.jpg_300x300.jpg" alt="Cbdmart Glass Curtain Walls Curtain Walls Accessories High-End Modern High Quality Glass Curtain" style="max-width: 200px;">
+            </a>
+            <h3>Cbdmart Glass Curtain Walls Curtain Walls Accessories High-End Modern High Quality Glass Curtain</h3>
+            <p>Price: $60.00-100.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 meters</p>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <!-- 分页按钮 -->
+        <div class="pagination">
+            
+            <a href="page_6.html">Previous</a>
+            
+
+            
+            
+
+            
+            <a href="page_1.html" >1</a>
+            
+            <a href="page_2.html" >2</a>
+            
+            <a href="page_3.html" >3</a>
+            
+            <a href="page_4.html" >4</a>
+            
+            <a href="page_5.html" >5</a>
+            
+            <a href="page_6.html" >6</a>
+            
+            <a href="page_7.html" class="active">7</a>
+            
+            <a href="page_8.html" >8</a>
+            
+            <a href="page_9.html" >9</a>
+            
+            <a href="page_10.html" >10</a>
+            
+
+            
+            <a href="page_11.html">Next</a>
+            
+        </div>
+        <!-- 回到顶部按钮 -->
+        <button id="back-to-top" onclick="topFunction()">回到顶部</button>
+    </div>
+
+    <script>
+        // 回到顶部按钮显示与隐藏逻辑
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // 回到顶部按钮点击事件
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>
