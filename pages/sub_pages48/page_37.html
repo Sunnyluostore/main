@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L8EDEXZBV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9L8EDEXZBV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品列表 - 第页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 200px;
+            /* 可根据实际情况调整图片大小 */
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        nav {
+            background-color: #03a9f4;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* 新添加的样式 */
+        .product-item h3 {
+            font-size: 14px;
+            /* 产品名称文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item p {
+            font-size: 12px;
+            /* 其他产品信息文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item:hover h3 {
+            color: #03a9f4;
+            /* 鼠标悬停时产品名称文字变色 */
+        }
+
+        .product-item:hover p {
+            color: #03a9f4;
+            /* 鼠标悬停时其他产品信息文字变色 */
+        }
+
+        /* 产品容器样式 */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        /* 产品项样式 */
+        .product-item {
+            width: calc(25% - 20px);
+            /* 默认每行显示 4 个产品 */
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 鼠标悬停效果 */
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* 媒体查询，适配不同屏幕尺寸 */
+        @media (max-width: 1024px) {
+            .product-item {
+                width: calc(33.33% - 20px);
+                /* 平板设备每行显示 3 个产品 */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* 小屏幕设备每行显示 2 个产品 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: 100%;
+                /* 超小屏幕设备每行显示 1 个产品 */
+            }
+        }
+
+        /* 分页按钮样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        /* 回到顶部按钮样式 */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #03a9f4;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部图片和文字 -->
+    <div class="header">
+        <img src="../../../main/image/logo.png" alt="Logo">
+        <p>Sunnyluo Store</p>
+        <p>Build a curated directory of store with factory</p>
+    </div>
+    <nav>
+        <a href="../../../index.html">Home</a>
+        <a href="../../pdfs/pdf.html">Resources</a>
+        <a href="../../../main/About us.html">About Us</a>
+        <a href="mailto:sunnyluo330@gmail.com">Contact Us</a>
+        <a href="https://www.facebook.com/sunnyluoting">Facebook</a>
+    </nav>
+    <h1>Product list</h1>
+    <div class="products">
+        
+        <div class="product-item">
+            <a href="product_3601.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6b1f250d7b0d472fadcbbc09fd0b777dF.jpg_300x300.jpg" alt="KPX08 Turn and Tilt Window With Concealed Friction Stay Hardware System Configuration 90 Degree Open Angle" style="max-width: 200px;">
+            </a>
+            <h3>KPX08 Turn and Tilt Window With Concealed Friction Stay Hardware System Configuration 90 Degree Open Angle</h3>
+            <p>Price: $12.27-18.07</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3602.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha4e18da3d7ac434ab714a48bbc034f7ci.jpg_300x300.jpg" alt="Durable Sliding Glass Door Hook Style Flush Mount Aluminium Window Handle Lock" style="max-width: 200px;">
+            </a>
+            <h3>Durable Sliding Glass Door Hook Style Flush Mount Aluminium Window Handle Lock</h3>
+            <p>Price: $2.77</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 cases</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3603.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4d7d58aa15a6430cbe51a7fd3418a4383.jpg_300x300.jpg" alt="Aluminum Thermal Break Casement Window Double Tempered Glass Soundproof Heat Insulation Fixed Open Bedroom House Window" style="max-width: 200px;">
+            </a>
+            <h3>Aluminum Thermal Break Casement Window Double Tempered Glass Soundproof Heat Insulation Fixed Open Bedroom House Window</h3>
+            <p>Price: $99.00-126.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3604.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5eb545108f634a87b13f8d51f0bb0f43b.jpg_300x300.jpg" alt="High Quality Hardware Accessories Aluminium Door Extrusion Hinges Casement Gate Frame Heavy Duty Aluminum Hinge" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Hardware Accessories Aluminium Door Extrusion Hinges Casement Gate Frame Heavy Duty Aluminum Hinge</h3>
+            <p>Price: $1.90-2.16</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3605.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2648f38fad8048a3b272b7693f51bc4bz.jpg_300x300.jpg" alt="Heavy Duty Doors Apposite Accessories Aluminium Hinges Supplier Top Roller Folding Door Hinge for Africa Market" style="max-width: 200px;">
+            </a>
+            <h3>Heavy Duty Doors Apposite Accessories Aluminium Hinges Supplier Top Roller Folding Door Hinge for Africa Market</h3>
+            <p>Price: $5.25-5.75</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3606.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7730c2fac1a046308a66f0c52c053ed9e.jpg_300x300.jpg" alt="Door Hardware Accessories Single Leaf Aluminum Hinge Extrusion Commercial Aluminium Casement Doors Handle Hinges" style="max-width: 200px;">
+            </a>
+            <h3>Door Hardware Accessories Single Leaf Aluminum Hinge Extrusion Commercial Aluminium Casement Doors Handle Hinges</h3>
+            <p>Price: $3.13-3.48</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3607.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H51233798d0074bc7b3d927c9ab830fddw.png_300x300.png" alt="Factory Cheap 180 Degree Quick Mount Invisible Hinge Adjustable Window Hinge" style="max-width: 200px;">
+            </a>
+            <h3>Factory Cheap 180 Degree Quick Mount Invisible Hinge Adjustable Window Hinge</h3>
+            <p>Price: $1.67</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 boxes</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3608.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf99346095e334cd88e9d04dd2502739bg.jpg_300x300.jpg" alt="Factory Supply Exterior and Interior Windows Shutters Pvc and Wooden Shutters for Window Plantation Shutters for Australia" style="max-width: 200px;">
+            </a>
+            <h3>Factory Supply Exterior and Interior Windows Shutters Pvc and Wooden Shutters for Window Plantation Shutters for Australia</h3>
+            <p>Price: $65.00-70.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3609.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He2ccba6b1d3647e0aa5cb8dd0fe7a6adc.jpg_300x300.jpg" alt="Modern Aluminum Glass Sliding Window for Villas Horizontal Opening Louver Curtain with Stainless Steel Screen" style="max-width: 200px;">
+            </a>
+            <h3>Modern Aluminum Glass Sliding Window for Villas Horizontal Opening Louver Curtain with Stainless Steel Screen</h3>
+            <p>Price: $82.00-108.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3610.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Haa820924b5fc4d31946a24c9547adaf7f.jpg_300x300.jpg" alt="ZHTDOORS China Foshan Supplier Leaded Glass Lowe Metal Drafty Safety Casement windows" style="max-width: 200px;">
+            </a>
+            <h3>ZHTDOORS China Foshan Supplier Leaded Glass Lowe Metal Drafty Safety Casement windows</h3>
+            <p>Price: $124.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3611.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdbf6c6aab7144390b1ca1248e6d7b953Y.jpg_300x300.jpg" alt="Window Lock Zinc Aluminum Alloy Window Hardware Accessories Sliding Latch Window Lock" style="max-width: 200px;">
+            </a>
+            <h3>Window Lock Zinc Aluminum Alloy Window Hardware Accessories Sliding Latch Window Lock</h3>
+            <p>Price: $0.46-1.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3612.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H24051e2f02704608960b1aadc27a5145C.jpg_300x300.jpg" alt="ZHTDOORS Old Fashioned Broken Bridge Premium Vinyl Interior Casement Glass windows" style="max-width: 200px;">
+            </a>
+            <h3>ZHTDOORS Old Fashioned Broken Bridge Premium Vinyl Interior Casement Glass windows</h3>
+            <p>Price: $124.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3613.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H152c46c8b57644939989209475fcc549E.jpg_300x300.jpg" alt="Baivilla Supplier Custom Against Hurricane Thermal Break Aluminium Hollow Laminated Glass Sliding Window" style="max-width: 200px;">
+            </a>
+            <h3>Baivilla Supplier Custom Against Hurricane Thermal Break Aluminium Hollow Laminated Glass Sliding Window</h3>
+            <p>Price: $89.00-119.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3614.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2da6ecfb5ce6466dbb2fefae6729a3ear.jpg_300x300.jpg" alt="Modern Anti Hurricane White Color Plastic PVC Glass Swing Windows UPVC Double Tempered Glass Casement Window" style="max-width: 200px;">
+            </a>
+            <h3>Modern Anti Hurricane White Color Plastic PVC Glass Swing Windows UPVC Double Tempered Glass Casement Window</h3>
+            <p>Price: $39.00-59.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3615.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H727f318f6f53403da08f5fe8292bbab2j.jpg_300x300.jpg" alt="Aluminium Spacer Bar for Door and Window Accessories Whosale Insulating Glass Strip 3003 Aluminum Free Spare Parts" style="max-width: 200px;">
+            </a>
+            <h3>Aluminium Spacer Bar for Door and Window Accessories Whosale Insulating Glass Strip 3003 Aluminum Free Spare Parts</h3>
+            <p>Price: $0.06</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2,100 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3616.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H996f09b0b8f7403aba3dafb3b9933602f.jpg_300x300.jpg" alt="110 Series Modern Casement Windows Windproof and Soundproof Double Inward Opening Louver Curtain Sliding Design for Villas" style="max-width: 200px;">
+            </a>
+            <h3>110 Series Modern Casement Windows Windproof and Soundproof Double Inward Opening Louver Curtain Sliding Design for Villas</h3>
+            <p>Price: $71.00-110.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3617.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9155c382bf374907abca8d418a8105e5B.jpg_300x300.jpg" alt="Modern Design Customized Wind Resistance Slide Windows Door System Aluminium Hurricane Impact Double Glass Sliding Window" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Customized Wind Resistance Slide Windows Door System Aluminium Hurricane Impact Double Glass Sliding Window</h3>
+            <p>Price: $89.00-119.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3618.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H084609a2a9ec4663afb569cd7419b894O.jpg_300x300.jpg" alt="ZHTDOORS Modern High Technology Double Glazed European 18 X 36 24 X 48 Flush Aluminium Casement windows" style="max-width: 200px;">
+            </a>
+            <h3>ZHTDOORS Modern High Technology Double Glazed European 18 X 36 24 X 48 Flush Aluminium Casement windows</h3>
+            <p>Price: $124.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3619.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha2c40102c33a41009c805841cc2aa7fc6.jpg_300x300.jpg" alt="Different Sizes 4 Inch T-Strap Barn Butt Door Hinges 316¡ã Opening and Closing Tee Hinge Construction Hardware Accessory Metal" style="max-width: 200px;">
+            </a>
+            <h3>Different Sizes 4 Inch T-Strap Barn Butt Door Hinges 316¡ã Opening and Closing Tee Hinge Construction Hardware Accessory Metal</h3>
+            <p>Price: $0.18</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3620.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf91e7dadd7374ec2af24d7b0653c52b5t.jpg_300x300.jpg" alt="Hinge Factory 6 Inch Heavy Duty T-Shape Door Hinge Bisagras Hardware Accessory T-Strap Barn Door Hinges for Barn Door" style="max-width: 200px;">
+            </a>
+            <h3>Hinge Factory 6 Inch Heavy Duty T-Shape Door Hinge Bisagras Hardware Accessory T-Strap Barn Door Hinges for Barn Door</h3>
+            <p>Price: $0.26</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3621.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H04ecdd9ce7954cf083ac1b0277eb740eW.jpg_300x300.jpg" alt="European Lock Iron Shutter Metal Door Door Handle for House Upper Glass Window Handle" style="max-width: 200px;">
+            </a>
+            <h3>European Lock Iron Shutter Metal Door Door Handle for House Upper Glass Window Handle</h3>
+            <p>Price: $0.60-1.12</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3622.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5682a7bd40fc4259afdddc4b02a84c02A.png_300x300.png" alt="Aluminum Door and Window Hardware Lock Series Black Window Handle Modern and Simple Window Handle" style="max-width: 200px;">
+            </a>
+            <h3>Aluminum Door and Window Hardware Lock Series Black Window Handle Modern and Simple Window Handle</h3>
+            <p>Price: $0.60-1.12</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3623.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H18c90957a20e4444bec423e405b01de9y.jpg_300x300.jpg" alt="ZHTDOORS Advanced Factory Technology Aluminium Large Fiberglass Casement Glass windows with Burglary Proof" style="max-width: 200px;">
+            </a>
+            <h3>ZHTDOORS Advanced Factory Technology Aluminium Large Fiberglass Casement Glass windows with Burglary Proof</h3>
+            <p>Price: $124.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3624.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H39581bb821884c2bb280203d0e14997c4.jpg_300x300.jpg" alt="Aluminum Alloy Window Drive Handle Upper Glass Door Hand Casement Window Handle Inside Door Handle" style="max-width: 200px;">
+            </a>
+            <h3>Aluminum Alloy Window Drive Handle Upper Glass Door Hand Casement Window Handle Inside Door Handle</h3>
+            <p>Price: $0.60-1.12</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3625.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H75528caeff3b4e0787c18fa6d2c8d0efV.jpg_300x300.jpg" alt="ZHTDOORS Family General Purpose square 36 X 40 24x30 Black Aluminium Tempered Glass Casement windows" style="max-width: 200px;">
+            </a>
+            <h3>ZHTDOORS Family General Purpose square 36 X 40 24x30 Black Aluminium Tempered Glass Casement windows</h3>
+            <p>Price: $124.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3626.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3b2ab2f63cc74b63b29abd0ba9a702a6E.jpg_300x300.jpg" alt="Factory Manufacture European Style High Quality Hot Sale Alloy Door Handle" style="max-width: 200px;">
+            </a>
+            <h3>Factory Manufacture European Style High Quality Hot Sale Alloy Door Handle</h3>
+            <p>Price: $2.20-2.42</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3627.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H94b138ef698443f5b5a458572a78e06cj.png_300x300.png" alt="Four Sets 304# Stainless Steel Lockblock Casement Window Hardware System Manufacturer Metal Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Four Sets 304# Stainless Steel Lockblock Casement Window Hardware System Manufacturer Metal Accessories</h3>
+            <p>Price: $1.00-1.16</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 300 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3628.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1781d788e9464b77ae91c72a316e56d7H.jpg_300x300.jpg" alt="High-end Black Door and Window Hardware Fittings Flat Open Window Screen Fan Crooked Handle Straight Handle" style="max-width: 200px;">
+            </a>
+            <h3>High-end Black Door and Window Hardware Fittings Flat Open Window Screen Fan Crooked Handle Straight Handle</h3>
+            <p>Price: $1.65-1.73</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3629.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H88771c926bd3420c87410fec569d6948y.png_300x300.png" alt="Aluminum UPVC Windows Hardware System Accessories High Quality Modern Easy Installation Window and Door Handle" style="max-width: 200px;">
+            </a>
+            <h3>Aluminum UPVC Windows Hardware System Accessories High Quality Modern Easy Installation Window and Door Handle</h3>
+            <p>Price: $0.52-0.72</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3630.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H48c49af4394b4dcca1480737be57e3e78.jpg_300x300.jpg" alt="ZHTDOORS Modern Products 50 in X 90 in Full Invisible Grille Insulated Black Metal Casement windows" style="max-width: 200px;">
+            </a>
+            <h3>ZHTDOORS Modern Products 50 in X 90 in Full Invisible Grille Insulated Black Metal Casement windows</h3>
+            <p>Price: $124.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3631.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb690ca7f300a4cbda48c1927d20d479d6.jpg_300x300.jpg" alt="Free Sample Hardware Window Gate Accessories Steel Gate Hinge Heavy Duty Metal Gate Hinge" style="max-width: 200px;">
+            </a>
+            <h3>Free Sample Hardware Window Gate Accessories Steel Gate Hinge Heavy Duty Metal Gate Hinge</h3>
+            <p>Price: $0.30-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3632.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hef232b9e9cdb4df6933bf45d7b360e24Z.jpg_300x300.jpg" alt="United States Aluminum Tempered Glass Sash Windows Vertical Sliding Double Hung Window System With Electric Venetian Blinds" style="max-width: 200px;">
+            </a>
+            <h3>United States Aluminum Tempered Glass Sash Windows Vertical Sliding Double Hung Window System With Electric Venetian Blinds</h3>
+            <p>Price: $89.00-109.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3633.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7a0aec3c32cd4dfcae52964198ae3a0fE.jpg_300x300.jpg" alt="3D Adjustable Concealed Door Hinge Zinc Alloy 180 Opening Angle for Furniture Heavy Duty Wooden Door Hidden Hardware Accessory" style="max-width: 200px;">
+            </a>
+            <h3>3D Adjustable Concealed Door Hinge Zinc Alloy 180 Opening Angle for Furniture Heavy Duty Wooden Door Hidden Hardware Accessory</h3>
+            <p>Price: $15.09-16.09</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3634.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf2d7aef8fd434aa492750895b5766066Q.png_300x300.png" alt="Hot Sale Aluminum Casement Accessories Doors Lock Handle Aluminium Alloy Door Handle" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale Aluminum Casement Accessories Doors Lock Handle Aluminium Alloy Door Handle</h3>
+            <p>Price: $3.20-3.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3635.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H36538ada8f3841a29b6a0a9b7fadfbc1u.png_300x300.png" alt="Factory Direct Sale Black Aluminum Alloy Sliding Door Handle Aluminum Accessories Door Handle" style="max-width: 200px;">
+            </a>
+            <h3>Factory Direct Sale Black Aluminum Alloy Sliding Door Handle Aluminum Accessories Door Handle</h3>
+            <p>Price: $3.20-3.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3636.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H68839b37b00d4445942422d61ea637f5u.png_300x300.png" alt="Factory Direct Sale Aluminum Mortise Door Lock Handle Set Anti Theft Door Handle" style="max-width: 200px;">
+            </a>
+            <h3>Factory Direct Sale Aluminum Mortise Door Lock Handle Set Anti Theft Door Handle</h3>
+            <p>Price: $3.10-3.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3637.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He1307cc530e740fcb183eb4329c4ac68U.png_300x300.png" alt="Manufacturer Customized Aluminum Door and Window Lever Handle Furniture Handles Knobs Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Manufacturer Customized Aluminum Door and Window Lever Handle Furniture Handles Knobs Accessories</h3>
+            <p>Price: $1.70-1.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3638.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H41ce28d98ffc4579892e2e7d6fb49347U.png_300x300.png" alt="New Arrived Modern Design Anti Theft Square Shaft Handle Handle Door Window Drive Handle" style="max-width: 200px;">
+            </a>
+            <h3>New Arrived Modern Design Anti Theft Square Shaft Handle Handle Door Window Drive Handle</h3>
+            <p>Price: $1.70-1.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3639.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5ad02814010b4299bdb5ab8cb874b8a12.png_300x300.png" alt="Custom Transmission Fork Square Shaft Integrated Handle Professional Casement Aluminum Accessories Handle for Windows" style="max-width: 200px;">
+            </a>
+            <h3>Custom Transmission Fork Square Shaft Integrated Handle Professional Casement Aluminum Accessories Handle for Windows</h3>
+            <p>Price: $1.70-1.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3640.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb50498b98cf640b0b4faa8df6e8d7571g.png_300x300.png" alt="Hot Sale Aluminum Casement Accessories Doors Lock Handle Aluminium Alloy Door Handle" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale Aluminum Casement Accessories Doors Lock Handle Aluminium Alloy Door Handle</h3>
+            <p>Price: $15.00-17.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3641.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3266fb1100b749aab3f07c1d2b3c6bb8n.png_300x300.png" alt="Wholesale Window Hardware Accessories Grooved Aluminum Alloy Internal External Energy Saving Ventilation System" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Window Hardware Accessories Grooved Aluminum Alloy Internal External Energy Saving Ventilation System</h3>
+            <p>Price: $18.00-19.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3642.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9528e7a7581d4e82bfb0af3219e6a5ae5.jpg_300x300.jpg" alt="2025 New Arrival Modern Stainless Steel Sliding Door Window Heat Insulation Soundproof Horizontal Opening for Villa Application" style="max-width: 200px;">
+            </a>
+            <h3>2025 New Arrival Modern Stainless Steel Sliding Door Window Heat Insulation Soundproof Horizontal Opening for Villa Application</h3>
+            <p>Price: $60.00-75.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3643.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb892dde9541943b0b0c12eb2b6b84dbbm.jpg_300x300.jpg" alt="Minimalist Luxury Design Door Lever Handle Yellow Bronze Passage Bathroom Look Handles High Standard Interior Doors Lock Set" style="max-width: 200px;">
+            </a>
+            <h3>Minimalist Luxury Design Door Lever Handle Yellow Bronze Passage Bathroom Look Handles High Standard Interior Doors Lock Set</h3>
+            <p>Price: $18.00-25.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3644.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He03155a17ae64baea383e6fa8e3dbff4g.jpg_300x300.jpg" alt="Project Soundproof Impact Swing Casement Window Thermal Break Double Glazed Windproof Home Aluminum Windows" style="max-width: 200px;">
+            </a>
+            <h3>Project Soundproof Impact Swing Casement Window Thermal Break Double Glazed Windproof Home Aluminum Windows</h3>
+            <p>Price: $46.00-99.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3645.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc9b63a57127d4184be2a3380d2a5a220J.jpg_300x300.jpg" alt="Aluminum Alloy Frosted Glass Window Sectional Garage Door clear Glass Window Garage Door for Sale" style="max-width: 200px;">
+            </a>
+            <h3>Aluminum Alloy Frosted Glass Window Sectional Garage Door clear Glass Window Garage Door for Sale</h3>
+            <p>Price: $50.00-55.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 6 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3646.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbdcc284cbf294632a4949c17dff30a10Y.jpg_300x300.jpg" alt="Direct Wholesalers' ABS Special Wind Shaft Cover Hardware Accessories Modern Style Stacking Fast Door Workshop Window" style="max-width: 200px;">
+            </a>
+            <h3>Direct Wholesalers' ABS Special Wind Shaft Cover Hardware Accessories Modern Style Stacking Fast Door Workshop Window</h3>
+            <p>Price: $0.10-0.28</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3647.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H42798518c66b403b99ddd937b7260e38w.jpg_300x300.jpg" alt="Hot Selling 2-Inch Automatic Torsion Garage Door Spring High Performance Anti-Rust Oil Plating Modern Design Window Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Hot Selling 2-Inch Automatic Torsion Garage Door Spring High Performance Anti-Rust Oil Plating Modern Design Window Accessories</h3>
+            <p>Price: $1.30-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3648.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0138a63cf0a2427282075b7a95f5d6553.jpg_300x300.jpg" alt="Modern European Square Cross Window Accessories Plastic Design for Villa Garages and Small Windows" style="max-width: 200px;">
+            </a>
+            <h3>Modern European Square Cross Window Accessories Plastic Design for Villa Garages and Small Windows</h3>
+            <p>Price: $7.50-7.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3649.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf3173a30f2534a24b18386e59812b8c65.jpg_300x300.jpg" alt="European Style Modern Garage Door Window Decoration Fan-Type Direct Sales Manufacturer Transparent Lighting Plastic Accessories" style="max-width: 200px;">
+            </a>
+            <h3>European Style Modern Garage Door Window Decoration Fan-Type Direct Sales Manufacturer Transparent Lighting Plastic Accessories</h3>
+            <p>Price: $15.10-15.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3650.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H150b76c0231b41849ad3d47a25d3051bw.jpg_300x300.jpg" alt="Custom Automatic Garage & Curtain Door Tension Spring Modern Design Available in Any Size-Door & Window Hardware Accessory" style="max-width: 200px;">
+            </a>
+            <h3>Custom Automatic Garage & Curtain Door Tension Spring Modern Design Available in Any Size-Door & Window Hardware Accessory</h3>
+            <p>Price: $1.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 kilograms</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3651.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H68b186881e4a41a29e026850775bc7b3i.jpg_300x300.jpg" alt="Small Modern Split Window Lighting Accessory for Villa Garage Doors Durable Plastic Exclusive Factory Source" style="max-width: 200px;">
+            </a>
+            <h3>Small Modern Split Window Lighting Accessory for Villa Garage Doors Durable Plastic Exclusive Factory Source</h3>
+            <p>Price: $30.20-30.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3652.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1ed94d21466e48ac956dbdd5bd780364l.jpg_300x300.jpg" alt="Luxury European Pentagonal Window Design Steel Glass Garage Door Accessories Modern Style Elegant Lighting Special Plastic" style="max-width: 200px;">
+            </a>
+            <h3>Luxury European Pentagonal Window Design Steel Glass Garage Door Accessories Modern Style Elegant Lighting Special Plastic</h3>
+            <p>Price: $7.40-7.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3653.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hccc4b9f3736147f69672407a4b0ada78A.jpg_300x300.jpg" alt="Industrial Electric Garage Door Panel Bolt Sliding Flap Door with Universal Hardware Accessories Steel and Zinc Window Bolts" style="max-width: 200px;">
+            </a>
+            <h3>Industrial Electric Garage Door Panel Bolt Sliding Flap Door with Universal Hardware Accessories Steel and Zinc Window Bolts</h3>
+            <p>Price: $1.10-2.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3654.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1bdc1453dfd24ed8af73343fa2c5e76dw.jpg_300x300.jpg" alt="Modern Design Industrial Automatic Section 51/4 Spring Garage Door Hardware & Window Accessories Factory Direct for Workshop Use" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Industrial Automatic Section 51/4 Spring Garage Door Hardware & Window Accessories Factory Direct for Workshop Use</h3>
+            <p>Price: $1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 kilometers</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3655.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdedc9489cd484e3fb18af71e0634718ah.jpg_300x300.jpg" alt="Modern Design Transparent Lighting Window for European Villa Garages Plastic Window and Door Accessories by Manufacturers" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Transparent Lighting Window for European Villa Garages Plastic Window and Door Accessories by Manufacturers</h3>
+            <p>Price: $7.40-7.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3656.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7ceaf959fa4748a08141924266fc86deL.png_300x300.png" alt="Hot Sale High Quality Luxury Design Exterior Burglar Proof Main Entrance Entry Front French Wrought Iron Security Doors" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale High Quality Luxury Design Exterior Burglar Proof Main Entrance Entry Front French Wrought Iron Security Doors</h3>
+            <p>Price: $329.00-364.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 4 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3657.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb919e2764baa48d4833143a189c6401eZ.png_300x300.png" alt="Wrought Iron Window Grill Desig Patio Balcony Entry Door Wrought Iron French Iron Double Doors" style="max-width: 200px;">
+            </a>
+            <h3>Wrought Iron Window Grill Desig Patio Balcony Entry Door Wrought Iron French Iron Double Doors</h3>
+            <p>Price: $329.00-364.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 4 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3658.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7573b3e9bcb24c44a2581ea98aaf5e664.jpg_300x300.jpg" alt="Hardware Accessory 304 201 Stainless Steel Metal Window Corner Spring Door Hinge Hinge for Wooden Door" style="max-width: 200px;">
+            </a>
+            <h3>Hardware Accessory 304 201 Stainless Steel Metal Window Corner Spring Door Hinge Hinge for Wooden Door</h3>
+            <p>Price: $0.80-1.21</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3659.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9f860845699b46ce83985f68df456b3bp.jpg_300x300.jpg" alt="Sliding Door Lock High Level Handle D-shape Big-size Aluminum Window Accessories Great Appearance Hardware Project Manufacturer" style="max-width: 200px;">
+            </a>
+            <h3>Sliding Door Lock High Level Handle D-shape Big-size Aluminum Window Accessories Great Appearance Hardware Project Manufacturer</h3>
+            <p>Price: $10.35-14.95</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3660.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H256a85300d424548878d382fd6e9bc02j.png_300x300.png" alt="Wholesale Customized Push Big Pull Handles Office Room Main Interior Metal Wooden Glass Doors Stainless Steel Door Handle" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Customized Push Big Pull Handles Office Room Main Interior Metal Wooden Glass Doors Stainless Steel Door Handle</h3>
+            <p>Price: $71.00-160.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3661.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8901433f25e04b4a920fcb540cf9f795V.jpg_300x300.jpg" alt="Factory Directly Sale Minimalist Office Use Villa Main Door Handles Glass Wooden Double Door Single Doors Big Pull Handle" style="max-width: 200px;">
+            </a>
+            <h3>Factory Directly Sale Minimalist Office Use Villa Main Door Handles Glass Wooden Double Door Single Doors Big Pull Handle</h3>
+            <p>Price: $51.00-186.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3662.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf9fb687aadba47c18957258b38e1ba08f.jpg_300x300.jpg" alt="Factory Wholesale Minimalist Stainless Steel Doors Pulls Handles Home & Hotel Wooden Glass Big Door Handle Customized Size" style="max-width: 200px;">
+            </a>
+            <h3>Factory Wholesale Minimalist Stainless Steel Doors Pulls Handles Home & Hotel Wooden Glass Big Door Handle Customized Size</h3>
+            <p>Price: $48.00-118.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3663.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H04c77f079e384d77ae2ced5b043fdac67.jpg_300x300.jpg" alt="Customized Durable and Corrosion-Resistant Aluminium Plastic Trim Strip Door & Window Accessories for Cold Storage" style="max-width: 200px;">
+            </a>
+            <h3>Customized Durable and Corrosion-Resistant Aluminium Plastic Trim Strip Door & Window Accessories for Cold Storage</h3>
+            <p>Price: $3.00-5.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3664.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H413b6108328a497eb3237c1acea00f3c4.jpg_300x300.jpg" alt="Bespoke Style Long Entrance Doors Handles Push Pull Indoor Furniture New Design Entry Front Door Handle for Wooden Glass Door" style="max-width: 200px;">
+            </a>
+            <h3>Bespoke Style Long Entrance Doors Handles Push Pull Indoor Furniture New Design Entry Front Door Handle for Wooden Glass Door</h3>
+            <p>Price: $35.00-78.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3665.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He1cb317835664b6dae1d65b8d186be1cP.jpg_300x300.jpg" alt="Customized Luxury Handle Home Office Interior Wooden Doors Big Pull Push Modern Entry Front Door Handles Glass Door Handle" style="max-width: 200px;">
+            </a>
+            <h3>Customized Luxury Handle Home Office Interior Wooden Doors Big Pull Push Modern Entry Front Door Handles Glass Door Handle</h3>
+            <p>Price: $44.00-124.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3666.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hcaa885d200324257a92e28ae4fd417cc3.jpg_300x300.jpg" alt="Kfc Door Kfc-door Push-pull Aluminum logo Exit Front Double for House Outlet Swing Durable Kfc Door" style="max-width: 200px;">
+            </a>
+            <h3>Kfc Door Kfc-door Push-pull Aluminum logo Exit Front Double for House Outlet Swing Durable Kfc Door</h3>
+            <p>Price: $53.00-100.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3667.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd283e900b19d4eb0b1ad6efdf110a963y.jpg_300x300.jpg" alt="Safety Double Door Design Front for House Front Main Design Main Double Entry Door Double Front Door" style="max-width: 200px;">
+            </a>
+            <h3>Safety Double Door Design Front for House Front Main Design Main Double Entry Door Double Front Door</h3>
+            <p>Price: $53.00-100.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3668.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7df6f34c033b47c9a8e9550845fa88ceX.jpg_300x300.jpg" alt="Luxury Customized Stainless Steel Wooden Door Big Pull Handle Push Modern Entry Front Long Handles Exterior for Glass Doors" style="max-width: 200px;">
+            </a>
+            <h3>Luxury Customized Stainless Steel Wooden Door Big Pull Handle Push Modern Entry Front Long Handles Exterior for Glass Doors</h3>
+            <p>Price: $35.00-91.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3669.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H80bc20cffa66491c8378cc6dc01f9be8Y.jpg_300x300.jpg" alt="Durable Kfc Door Aluminium-front-double-door Double Leaf Design Glass Kfc Glass Door" style="max-width: 200px;">
+            </a>
+            <h3>Durable Kfc Door Aluminium-front-double-door Double Leaf Design Glass Kfc Glass Door</h3>
+            <p>Price: $53.00-100.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3670.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Haad04b4efe784bae99325a58d062c3bba.jpg_300x300.jpg" alt="Double Entrance Door Safety Design Front for House Entry Double Front Door Double Sheet Metal Doors" style="max-width: 200px;">
+            </a>
+            <h3>Double Entrance Door Safety Design Front for House Entry Double Front Door Double Sheet Metal Doors</h3>
+            <p>Price: $53.00-100.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3671.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4e59b391a6ae47a4b59a90c64cc587dcF.jpg_300x300.jpg" alt="Kfc Glass Door Kfc Restaurant Door Main Designs Double Glass Entry French Double Exterior Doors" style="max-width: 200px;">
+            </a>
+            <h3>Kfc Glass Door Kfc Restaurant Door Main Designs Double Glass Entry French Double Exterior Doors</h3>
+            <p>Price: $53.00-100.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3672.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3ab6d38e893b4af88bf59d87b1347370t.jpg_300x300.jpg" alt="Factory Price New Style Simple Stainless Steel Big Door Pull Handles Office Meeting Room Wooden Glass Doors Handles Customized" style="max-width: 200px;">
+            </a>
+            <h3>Factory Price New Style Simple Stainless Steel Big Door Pull Handles Office Meeting Room Wooden Glass Doors Handles Customized</h3>
+            <p>Price: $42.00-100.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3673.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H552051ad72594a5299700b4d6dd9fd400.jpg_300x300.jpg" alt="Kfc Door Double Entrance Safety Design Double Sheet Metal Doors Front for House Kfc-door" style="max-width: 200px;">
+            </a>
+            <h3>Kfc Door Double Entrance Safety Design Double Sheet Metal Doors Front for House Kfc-door</h3>
+            <p>Price: $53.00-100.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3674.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3ba630c8e3fa42cf8a7de5e2ec60456ex.png_300x300.png" alt="Provide Customized Best Price Interior Glass Office Door Big Pull Handle Stainless Steel for Meeting Room Wooden Doors" style="max-width: 200px;">
+            </a>
+            <h3>Provide Customized Best Price Interior Glass Office Door Big Pull Handle Stainless Steel for Meeting Room Wooden Doors</h3>
+            <p>Price: $22.00-76.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3675.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5ddbb15936c0481aac1f5bb71503cf4a9.jpg_300x300.jpg" alt="Kfc Commercial Door for House Exterior Modern House Front Design House Aluminum Double Leaf French Door for Kfc" style="max-width: 200px;">
+            </a>
+            <h3>Kfc Commercial Door for House Exterior Modern House Front Design House Aluminum Double Leaf French Door for Kfc</h3>
+            <p>Price: $53.00-100.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3676.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd5417a087ae34233b62ce331a07cb4ddY.jpg_300x300.jpg" alt="Customized Best Price Interior Glass Office H Shape Door Big Pull Handle Aluminium Alloy for Office Meeting Room Wooden Doors" style="max-width: 200px;">
+            </a>
+            <h3>Customized Best Price Interior Glass Office H Shape Door Big Pull Handle Aluminium Alloy for Office Meeting Room Wooden Doors</h3>
+            <p>Price: $10.00-39.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3677.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf4284871e9f0460bb5281c633c2b4793g.jpg_300x300.jpg" alt="Customized Interior Office H Shape Glass Door Big Pull Handle Stainless Steel for Meeting Room Wooden Doors Push Handles" style="max-width: 200px;">
+            </a>
+            <h3>Customized Interior Office H Shape Glass Door Big Pull Handle Stainless Steel for Meeting Room Wooden Doors Push Handles</h3>
+            <p>Price: $4.00-18.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3678.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2749903473e342679703c70a3328e01e6.jpg_300x300.jpg" alt="Kfc Outlet Door Latest Design Main Unequal Double Doors French Double Exterior Swing Kfc Door" style="max-width: 200px;">
+            </a>
+            <h3>Kfc Outlet Door Latest Design Main Unequal Double Doors French Double Exterior Swing Kfc Door</h3>
+            <p>Price: $53.00-100.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3679.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H31ad3916629a40a2b2895ca7f6acb75fG.jpg_300x300.jpg" alt="Minimalist Customized Glass Villa Office Door Big Pull Handle Stainless Steel for Meeting Room Wooden Doors Push Handles" style="max-width: 200px;">
+            </a>
+            <h3>Minimalist Customized Glass Villa Office Door Big Pull Handle Stainless Steel for Meeting Room Wooden Doors Push Handles</h3>
+            <p>Price: $27.00-87.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3680.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7b318f4e54a3478eba1b889ee06d1c38d.jpg_300x300.jpg" alt="Kfc Door Uk Aluminum Glass Safety Design for House Entry Double Front Door Kfc Restaurant Door" style="max-width: 200px;">
+            </a>
+            <h3>Kfc Door Uk Aluminum Glass Safety Design for House Entry Double Front Door Kfc Restaurant Door</h3>
+            <p>Price: $53.00-100.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3681.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1f67f36f89894dd8aeedd3f1e3ecdac6w.jpg_300x300.jpg" alt="Customized Modern Entrance Glass Office Door Big Pull Handle Stainless Steel for Meeting Room Wooden Doors Long Push Handles" style="max-width: 200px;">
+            </a>
+            <h3>Customized Modern Entrance Glass Office Door Big Pull Handle Stainless Steel for Meeting Room Wooden Doors Long Push Handles</h3>
+            <p>Price: $49.00-135.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3682.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H80a73b2acaa64492a8fa8e179410e032g.jpg_300x300.jpg" alt="High Quality Customized Entrance Glass Office Door Big Pull Handle Stainless Steel Meeting Room Wooden Doors Push Handles" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Customized Entrance Glass Office Door Big Pull Handle Stainless Steel Meeting Room Wooden Doors Push Handles</h3>
+            <p>Price: $55.00-74.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3683.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He9ee8af26bc8413f9ba9d1659cde863bZ.jpg_300x300.jpg" alt="Long Apartment Entrance Doors Handles Push Pull Indoor Furniture New Design Hotel Entry Front Door Handle for Wooden Glass Door" style="max-width: 200px;">
+            </a>
+            <h3>Long Apartment Entrance Doors Handles Push Pull Indoor Furniture New Design Hotel Entry Front Door Handle for Wooden Glass Door</h3>
+            <p>Price: $24.00-61.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3684.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3048bc01a5aa495f91755d3f5d0b266eb.png_300x300.png" alt="European Style Apartment Exterior Doors Handles Push Pull Indoor Luxury Hotel Entry Front Door Handle for Wooden Glass Door" style="max-width: 200px;">
+            </a>
+            <h3>European Style Apartment Exterior Doors Handles Push Pull Indoor Luxury Hotel Entry Front Door Handle for Wooden Glass Door</h3>
+            <p>Price: $16.00-42.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3685.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2d545337d57d4362acbda723684d8f2cw.jpg_300x300.jpg" alt="Modern Minimalism Exterior Glass Doors Handles Pull Indoor Stainless Steel Solid Wood Hotel Front Door Handle for Wooden Door" style="max-width: 200px;">
+            </a>
+            <h3>Modern Minimalism Exterior Glass Doors Handles Pull Indoor Stainless Steel Solid Wood Hotel Front Door Handle for Wooden Door</h3>
+            <p>Price: $44.00-146.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3686.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1d0cb72a6ab646e29ace311a06abd978x.jpg_300x300.jpg" alt="Minimalism Style Apartment Exterior Handles Push Pull Indoor Stainless Steel Hotel Entry Front Doors Handle Wooden Glass Door" style="max-width: 200px;">
+            </a>
+            <h3>Minimalism Style Apartment Exterior Handles Push Pull Indoor Stainless Steel Hotel Entry Front Doors Handle Wooden Glass Door</h3>
+            <p>Price: $5.10-21.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3687.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H415bc30d6dbf4e378d247d06e6389699Q.jpg_300x300.jpg" alt="Unique Design JUSTOR Customized OEM/ODM Logo Design Glass Door Square Stainless Steel 304 Aluminium Alloy Patch Lock With Keys" style="max-width: 200px;">
+            </a>
+            <h3>Unique Design JUSTOR Customized OEM/ODM Logo Design Glass Door Square Stainless Steel 304 Aluminium Alloy Patch Lock With Keys</h3>
+            <p>Price: $4.99-6.99</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3688.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3d7a2194fde848dbac4e84d0b03d03dac.jpg_300x300.jpg" alt="Office Building 8-12mm Frame-less Glass Door Fitting Satin Stainless Steel 201/304 Cover Aluminum Alloy Casting Patch Lock" style="max-width: 200px;">
+            </a>
+            <h3>Office Building 8-12mm Frame-less Glass Door Fitting Satin Stainless Steel 201/304 Cover Aluminum Alloy Casting Patch Lock</h3>
+            <p>Price: $4.99-6.99</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3689.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H44579a2eadd24e0f838b220e4792451es.jpg_300x300.jpg" alt="Large Front Door Knob and Stainless Steel Glass Door Handle for Wooden Door" style="max-width: 200px;">
+            </a>
+            <h3>Large Front Door Knob and Stainless Steel Glass Door Handle for Wooden Door</h3>
+            <p>Price: $1.50-7.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3690.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H97285c4cfd9043a198cce920379cd277R.png_300x300.png" alt="Heavy Duty Luxury Main Door Handle for Interior Doors Home Wooden Glass Handle Accessories Stainless Steel Pulls Handles" style="max-width: 200px;">
+            </a>
+            <h3>Heavy Duty Luxury Main Door Handle for Interior Doors Home Wooden Glass Handle Accessories Stainless Steel Pulls Handles</h3>
+            <p>Price: $61.00-139.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3691.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H04268e30b8714c728600c40950a92d0cE.jpg_300x300.jpg" alt="Direct Sale From Manufacturer High Quality Industrial Sliding Door Lock Emergency Manual Wire Rope Window Hardware Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Direct Sale From Manufacturer High Quality Industrial Sliding Door Lock Emergency Manual Wire Rope Window Hardware Accessories</h3>
+            <p>Price: $7.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3692.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha069e7f9601d4f7db9fc751b9df2de6dY.jpg_300x300.jpg" alt="Heavy Duty Chinese Style Main Door Handle for Exterior Doors Wooden Glass Handle Accessories Aluminium Alloy Pull Handles" style="max-width: 200px;">
+            </a>
+            <h3>Heavy Duty Chinese Style Main Door Handle for Exterior Doors Wooden Glass Handle Accessories Aluminium Alloy Pull Handles</h3>
+            <p>Price: $33.00-167.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3693.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H18b1e083a7c14f8580673aa875edc07aa.jpg_300x300.jpg" alt="Heavy Duty Main Door Handle for Exterior Doors Modern Wooden Glass Handle Accessories Stainless Steel Office Room Pull Handles" style="max-width: 200px;">
+            </a>
+            <h3>Heavy Duty Main Door Handle for Exterior Doors Modern Wooden Glass Handle Accessories Stainless Steel Office Room Pull Handles</h3>
+            <p>Price: $17.00-58.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3694.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8aab70da69f14696a28b1295efa250618.jpg_300x300.jpg" alt="2024 Factory Hot Sales Modern Stainless Steel Single Bearing Wheel U Groove Bracket Interior Window Door Door Window Accessories" style="max-width: 200px;">
+            </a>
+            <h3>2024 Factory Hot Sales Modern Stainless Steel Single Bearing Wheel U Groove Bracket Interior Window Door Door Window Accessories</h3>
+            <p>Price: $0.50-10.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3695.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd689543cae184a5ea59767064d38eeadx.jpg_300x300.jpg" alt="Sliding Rubber Stopper for Swing Iron Gate Metal Gate Stopper & End Stopper Door & Window Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Sliding Rubber Stopper for Swing Iron Gate Metal Gate Stopper & End Stopper Door & Window Accessories</h3>
+            <p>Price: $0.92-1.11</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3696.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1a8f8726f4ff418685c3f038ed3b05ea8.jpg_300x300.jpg" alt="Adjustable Glass Door Hinge 90 Degree Double Clamp Shower Door Hardware Accessories for Apartment" style="max-width: 200px;">
+            </a>
+            <h3>Adjustable Glass Door Hinge 90 Degree Double Clamp Shower Door Hardware Accessories for Apartment</h3>
+            <p>Price: $4.50-5.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3697.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6c34dd6a844c4523b2a8032aeeacbd419.png_300x300.png" alt="ZHTDOORS Best Seller Timber Look External Casement Double Glazed Insulated windows" style="max-width: 200px;">
+            </a>
+            <h3>ZHTDOORS Best Seller Timber Look External Casement Double Glazed Insulated windows</h3>
+            <p>Price: $124.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3698.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hfbf017741a044df097f5757eb284e832M.jpg_300x300.jpg" alt="Hot Selling Support OEM Custom Color Door Window Handle for Upvc Aluminium Casement Door&Window Hardware Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Hot Selling Support OEM Custom Color Door Window Handle for Upvc Aluminium Casement Door&Window Hardware Accessories</h3>
+            <p>Price: $0.88-1.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3699.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He430264c4f65409e89b4fa89b79ec333P.png_300x300.png" alt="Double Entry windows Guangdong Custom Commercial Balcony Aluminum 10 Foot Glass Sliding Interior and Frame Exterior House Doors" style="max-width: 200px;">
+            </a>
+            <h3>Double Entry windows Guangdong Custom Commercial Balcony Aluminum 10 Foot Glass Sliding Interior and Frame Exterior House Doors</h3>
+            <p>Price: $62.00-82.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_3700.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H79566eca3cd042339461e0fe2ecc5e28k.jpg_300x300.jpg" alt="ZHTDOORS Modern Cheap 36 Inch extra Large Casement Aluminum windows Outward" style="max-width: 200px;">
+            </a>
+            <h3>ZHTDOORS Modern Cheap 36 Inch extra Large Casement Aluminum windows Outward</h3>
+            <p>Price: $124.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <!-- 分页按钮 -->
+        <div class="pagination">
+            
+            <a href="page_36.html">Previous</a>
+            
+
+            
+            
+
+            
+            <a href="page_31.html" >31</a>
+            
+            <a href="page_32.html" >32</a>
+            
+            <a href="page_33.html" >33</a>
+            
+            <a href="page_34.html" >34</a>
+            
+            <a href="page_35.html" >35</a>
+            
+            <a href="page_36.html" >36</a>
+            
+            <a href="page_37.html" class="active">37</a>
+            
+            <a href="page_38.html" >38</a>
+            
+            <a href="page_39.html" >39</a>
+            
+            <a href="page_40.html" >40</a>
+            
+
+            
+            <a href="page_41.html">Next</a>
+            
+        </div>
+        <!-- 回到顶部按钮 -->
+        <button id="back-to-top" onclick="topFunction()">回到顶部</button>
+    </div>
+
+    <script>
+        // 回到顶部按钮显示与隐藏逻辑
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // 回到顶部按钮点击事件
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

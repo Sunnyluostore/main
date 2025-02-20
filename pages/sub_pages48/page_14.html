@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L8EDEXZBV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9L8EDEXZBV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品列表 - 第页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 200px;
+            /* 可根据实际情况调整图片大小 */
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        nav {
+            background-color: #03a9f4;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* 新添加的样式 */
+        .product-item h3 {
+            font-size: 14px;
+            /* 产品名称文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item p {
+            font-size: 12px;
+            /* 其他产品信息文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item:hover h3 {
+            color: #03a9f4;
+            /* 鼠标悬停时产品名称文字变色 */
+        }
+
+        .product-item:hover p {
+            color: #03a9f4;
+            /* 鼠标悬停时其他产品信息文字变色 */
+        }
+
+        /* 产品容器样式 */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        /* 产品项样式 */
+        .product-item {
+            width: calc(25% - 20px);
+            /* 默认每行显示 4 个产品 */
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 鼠标悬停效果 */
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* 媒体查询，适配不同屏幕尺寸 */
+        @media (max-width: 1024px) {
+            .product-item {
+                width: calc(33.33% - 20px);
+                /* 平板设备每行显示 3 个产品 */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* 小屏幕设备每行显示 2 个产品 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: 100%;
+                /* 超小屏幕设备每行显示 1 个产品 */
+            }
+        }
+
+        /* 分页按钮样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        /* 回到顶部按钮样式 */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #03a9f4;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部图片和文字 -->
+    <div class="header">
+        <img src="../../../main/image/logo.png" alt="Logo">
+        <p>Sunnyluo Store</p>
+        <p>Build a curated directory of store with factory</p>
+    </div>
+    <nav>
+        <a href="../../../index.html">Home</a>
+        <a href="../../pdfs/pdf.html">Resources</a>
+        <a href="../../../main/About us.html">About Us</a>
+        <a href="mailto:sunnyluo330@gmail.com">Contact Us</a>
+        <a href="https://www.facebook.com/sunnyluoting">Facebook</a>
+    </nav>
+    <h1>Product list</h1>
+    <div class="products">
+        
+        <div class="product-item">
+            <a href="product_1301.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H18bcfba59c254bd782d5166a5e7a43d4R.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door for Patio and Balcony With Customization Option From Factory" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door for Patio and Balcony With Customization Option From Factory</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1302.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H101a585441d0419299d33f456ac293ceU.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door for Interior and Exterior Use With Customization Options Factory Direct" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door for Interior and Exterior Use With Customization Options Factory Direct</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1303.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8ed5233ad1bb4fdc838adf097682372bU.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door for Patio and Balcony With Customization Option Factory Direct" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door for Patio and Balcony With Customization Option Factory Direct</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1304.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf746f5bdc1ab4ac0bb6038bb4afe10cfw.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door With Customization Option for Uk and Us Markets Factory Direct Sale" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door With Customization Option for Uk and Us Markets Factory Direct Sale</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1305.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H576c9ca3b0d244b281708c16bd25f80bH.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door for Home and Office Use in Europe" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door for Home and Office Use in Europe</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1306.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hfb8fa7b8285b4af7bf021fe19e5342caA.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door for Space Saving and Versatile Use in Homes and Offices With Customization Options From F" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door for Space Saving and Versatile Use in Homes and Offices With Customization Options From F</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1307.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6c6f125f2c0c4ec88a5bec8e1cd29ee4d.jpg_300x300.jpg" alt="Aluminium Folding Door With Multipurpose Function for Home and Office Use Customized by Factory" style="max-width: 200px;">
+            </a>
+            <h3>Aluminium Folding Door With Multipurpose Function for Home and Office Use Customized by Factory</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1308.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H555e393336af4114b3513f6eeb243936D.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door for Interior and Exterior Use With Customization Options Factory Direct" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door for Interior and Exterior Use With Customization Options Factory Direct</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1309.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd75d8007913549b8832d1fb3031725cfG.jpg_300x300.jpg" alt="Multi-Functional Aluminium Folding Door for Home and Office Use in Europe With Customization Options From Factory" style="max-width: 200px;">
+            </a>
+            <h3>Multi-Functional Aluminium Folding Door for Home and Office Use in Europe With Customization Options From Factory</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1310.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5517b5148be6453b9ab3381498a19e4bQ.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door for Home Office Use Customized by Factory" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door for Home Office Use Customized by Factory</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1311.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb56e3a414f1741aa9fbd79401b9e6bd6P.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door for Patio and Balcony With Customization Option Factory Direct" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door for Patio and Balcony With Customization Option Factory Direct</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1312.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6ffd5bd10b0b474a8564245c1119d472y.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door for Home and Office Use in Uk Made by Factory" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door for Home and Office Use in Uk Made by Factory</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1313.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbb449247c32b41e7bd0e8872ca8ca446e.jpg_300x300.jpg" alt="Customized Aluminium Folding Door for Home Office Use With Smart Function and Modern Design in Uk Factory" style="max-width: 200px;">
+            </a>
+            <h3>Customized Aluminium Folding Door for Home Office Use With Smart Function and Modern Design in Uk Factory</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1314.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H06f28075c91c445489f03093396f295dZ.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door for Home and Office Use With Customization Option From Factory" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door for Home and Office Use With Customization Option From Factory</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1315.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2b6bc3641fe54408b52dfd18dc7a5cf9L.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door for Home Office Use Customized by Factory" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door for Home Office Use Customized by Factory</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1316.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb1cc6ab73b334c509c38813edff27743e.jpg_300x300.jpg" alt="Aluminium Folding Door for Patio and Balcony With Customized Function From Factory" style="max-width: 200px;">
+            </a>
+            <h3>Aluminium Folding Door for Patio and Balcony With Customized Function From Factory</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1317.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H269494b48a7a4cb8a47f82a0b7ade1ff7.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door for Space Saving in Home and Office Customized by Factory" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door for Space Saving in Home and Office Customized by Factory</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1318.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc2ce140a726141d2bf98e15469e9eea9I.png_300x300.png" alt="Modern Design UPVC Window Accessories U Groove Steel Single Pulley Wheel Iron Roller Wheels for Sliding Door Hotel Applications" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design UPVC Window Accessories U Groove Steel Single Pulley Wheel Iron Roller Wheels for Sliding Door Hotel Applications</h3>
+            <p>Price: $0.03-0.15</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1319.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hfc37351754c94f4da5a159f85c6c26236.jpg_300x300.jpg" alt="Multi-Functional Aluminium Folding Door for Home Office Use Customized by Factory" style="max-width: 200px;">
+            </a>
+            <h3>Multi-Functional Aluminium Folding Door for Home Office Use Customized by Factory</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1320.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4835181d16464b96907fe0ba3f711a5bY.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door for Patio and Living Room With Customization Option Factory Direct" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door for Patio and Living Room With Customization Option Factory Direct</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1321.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha55e9cfb1bad44f4b47355bc67255e0cC.jpg_300x300.jpg" alt="Modern Aluminium Saddle Door Threshold for Apartment Use Seal & Door Hardware with Screw Installation Discount Rubber Material" style="max-width: 200px;">
+            </a>
+            <h3>Modern Aluminium Saddle Door Threshold for Apartment Use Seal & Door Hardware with Screw Installation Discount Rubber Material</h3>
+            <p>Price: $14.00-15.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1322.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H34b53b63859847e5862c752b4aa90911y.png_300x300.png" alt="2025 New High Quality Insulating Glass Flexible Warm Edge Glass Spacer for Hollow Glass Windows and Doors As Building Materials" style="max-width: 200px;">
+            </a>
+            <h3>2025 New High Quality Insulating Glass Flexible Warm Edge Glass Spacer for Hollow Glass Windows and Doors As Building Materials</h3>
+            <p>Price: $0.52</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1323.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8ed39d4e238549c3b93c8e5406a5ea43r.jpg_300x300.jpg" alt="China Georgian bar Decorative Accessories" style="max-width: 200px;">
+            </a>
+            <h3>China Georgian bar Decorative Accessories</h3>
+            <p>Price: $0.40-0.58</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1324.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd56c2827466e40c98628dda6497df63d5.png_300x300.png" alt="Wholesale Customized Aluminum Glass Exterior Bifold Doors Sliding Door Folding Bi-Fold Doors for Home Window Apartment" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Customized Aluminum Glass Exterior Bifold Doors Sliding Door Folding Bi-Fold Doors for Home Window Apartment</h3>
+            <p>Price: $100.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1325.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1a2551c90b6d404d97a3320271443558b.jpg_300x300.jpg" alt="Factory Direct Sale Fire Resistant Door Seal Strip With Self-Adhesive Expansion Flat Type Strip" style="max-width: 200px;">
+            </a>
+            <h3>Factory Direct Sale Fire Resistant Door Seal Strip With Self-Adhesive Expansion Flat Type Strip</h3>
+            <p>Price: $0.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 3,000 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1326.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H093befd456f94d4ca8e75aeac9efdc8bF.jpg_300x300.jpg" alt="Hot Sale Door Fire Retardant Expansion Seal Strip With Self-Adhesive Flat Type Seal" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale Door Fire Retardant Expansion Seal Strip With Self-Adhesive Flat Type Seal</h3>
+            <p>Price: $0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 3,000 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1327.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Haa53d6f328df4f8bbfb717dee8c4c6d8J.jpg_300x300.jpg" alt="AS2047 TOMA Window Handles for Outdoor Aluminum Doors & Siding Waterproof Steel Glass Featuring Polymer Nylon Screen Netting" style="max-width: 200px;">
+            </a>
+            <h3>AS2047 TOMA Window Handles for Outdoor Aluminum Doors & Siding Waterproof Steel Glass Featuring Polymer Nylon Screen Netting</h3>
+            <p>Price: $75.00-79.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1328.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He120ce9f82394a19bc43f9214bfdbdeaw.jpg_300x300.jpg" alt="Anti Mosquito Bugs Trackless Design Pleated Insect Fly Screen Net Door" style="max-width: 200px;">
+            </a>
+            <h3>Anti Mosquito Bugs Trackless Design Pleated Insect Fly Screen Net Door</h3>
+            <p>Price: $45.00-55.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 square meter</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1329.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H41b6f30d654f4491a750fdac7040fdd8F.jpg_300x300.jpg" alt="Industrial Design PVC Door Seal Dust Door Bottom Brush Strip Window Accessories Application Featuring Aluminium Plastic EPDM PP" style="max-width: 200px;">
+            </a>
+            <h3>Industrial Design PVC Door Seal Dust Door Bottom Brush Strip Window Accessories Application Featuring Aluminium Plastic EPDM PP</h3>
+            <p>Price: $0.99-2.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1330.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H493f351fb0ed47c0a2cb1008f0b86e3as.jpg_300x300.jpg" alt="High Load Capacity Concealed Silent Hidden Door Hinges Durable Rust-Proof Indoor Outdoor Industrial Door Steel Metal" style="max-width: 200px;">
+            </a>
+            <h3>High Load Capacity Concealed Silent Hidden Door Hinges Durable Rust-Proof Indoor Outdoor Industrial Door Steel Metal</h3>
+            <p>Price: $0.60-1.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1331.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H53bd44a1979744e0af3340015d0b94fcy.jpg_300x300.jpg" alt="Stainless Steel Sliding Door Pulleys Aluminum Door and Window Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Stainless Steel Sliding Door Pulleys Aluminum Door and Window Accessories</h3>
+            <p>Price: $0.48-0.51</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1332.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hddd637e133a34091a5982921f8e7035dO.jpg_300x300.jpg" alt="Zhen Jian High Quality Black Sliding Door Handle Lock Set Aluminum Sliding Hardware Accessories with Brass Steel Window Hardware" style="max-width: 200px;">
+            </a>
+            <h3>Zhen Jian High Quality Black Sliding Door Handle Lock Set Aluminum Sliding Hardware Accessories with Brass Steel Window Hardware</h3>
+            <p>Price: $9.00-15.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1333.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd6ff90769d4144599514de35546830e7M.jpg_300x300.jpg" alt="Modern Black Aluminium Casement Window Handle Lock Metal Hardware Accessories for Hotel Door Use" style="max-width: 200px;">
+            </a>
+            <h3>Modern Black Aluminium Casement Window Handle Lock Metal Hardware Accessories for Hotel Door Use</h3>
+            <p>Price: $0.50-2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1334.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H817580d969cb4b21b6e65c040de79aaah.jpg_300x300.jpg" alt="NUOMI Invisible Door Hinges 3D Adjustment Furniture Hardware Soft Close 180 Degree Hydraulic Concealed Hinges for Wooden Doors" style="max-width: 200px;">
+            </a>
+            <h3>NUOMI Invisible Door Hinges 3D Adjustment Furniture Hardware Soft Close 180 Degree Hydraulic Concealed Hinges for Wooden Doors</h3>
+            <p>Price: $7.99</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1335.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb8aec063bb514bc7aa3aed5ada8f23c9X.jpg_300x300.jpg" alt="Modern Four-Wheel Sliding Industrial Door Roller Steel Window Roller for Hotel Applications" style="max-width: 200px;">
+            </a>
+            <h3>Modern Four-Wheel Sliding Industrial Door Roller Steel Window Roller for Hotel Applications</h3>
+            <p>Price: $2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1336.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd19027194a474cb69f1e385488f66fd4k.png_300x300.png" alt="New Hidden Embedded Flush Handle, Oval Square Circular Handle, Cabinet Door Handle, Furniture Hardware Accessories" style="max-width: 200px;">
+            </a>
+            <h3>New Hidden Embedded Flush Handle, Oval Square Circular Handle, Cabinet Door Handle, Furniture Hardware Accessories</h3>
+            <p>Price: $1.00-1.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 packs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1337.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Sa5fa3a27de3a444485f2a7ce44662980q.jpg_300x300.jpg" alt="8-12mm Glass Hinge 135 Degree Wall Rose Gold Stainless Steel Polished Brass Clamp Clip Spigot Screw Door Window Shower Door" style="max-width: 200px;">
+            </a>
+            <h3>8-12mm Glass Hinge 135 Degree Wall Rose Gold Stainless Steel Polished Brass Clamp Clip Spigot Screw Door Window Shower Door</h3>
+            <p>Price: $6.00-9.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1338.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He1b6ab958e7b4a0a963cfbd28fe9ec83x.jpg_300x300.jpg" alt="Heavy Duty 304 Stainless Steel Hinge High Strength Anti-Corrosion Industrial Door Application for Aluminium Heavy Duty Doors" style="max-width: 200px;">
+            </a>
+            <h3>Heavy Duty 304 Stainless Steel Hinge High Strength Anti-Corrosion Industrial Door Application for Aluminium Heavy Duty Doors</h3>
+            <p>Price: $0.60-0.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1339.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H61d7f9700a0f4777a529e18c75791028n.jpg_300x300.jpg" alt="Durable Heavy-Duty Corrosion-Resistant 304 Stainless Steel Hinge Folding Industrial Metal Door Solution Aluminium Fold Door" style="max-width: 200px;">
+            </a>
+            <h3>Durable Heavy-Duty Corrosion-Resistant 304 Stainless Steel Hinge Folding Industrial Metal Door Solution Aluminium Fold Door</h3>
+            <p>Price: $0.60-0.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1340.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha19fd3ef8ce84c6b95be5c71b187798aG.jpg_300x300.jpg" alt="Modern Design Fireproof Rubber Seals for Doors and Windows" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Fireproof Rubber Seals for Doors and Windows</h3>
+            <p>Price: $0.10-0.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5,000 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1341.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf31174ee168a419b924d1f84f24b82975.jpg_300x300.jpg" alt="High Precision 304 Stainless Steel Satin Accessories for Modern Stair Balustrades & Door/Window Decoration" style="max-width: 200px;">
+            </a>
+            <h3>High Precision 304 Stainless Steel Satin Accessories for Modern Stair Balustrades & Door/Window Decoration</h3>
+            <p>Price: $3.10</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1342.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H16d29af9119446e6afbff57b9a025c36c.jpg_300x300.jpg" alt="Polished Aluminium Window Corner Joint Profiles With Durable Shining Nails Modern Design Style for Home Hotel Door Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Polished Aluminium Window Corner Joint Profiles With Durable Shining Nails Modern Design Style for Home Hotel Door Accessories</h3>
+            <p>Price: $0.23-0.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1343.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3bc7b6faf8bc47dbad8ec501d1c1f72as.jpg_300x300.jpg" alt="Aluminium Door Window Die-Cast Zinc Nickel Plated Inner Connectors Steel Corner Joint Profile Connector With Available Samples" style="max-width: 200px;">
+            </a>
+            <h3>Aluminium Door Window Die-Cast Zinc Nickel Plated Inner Connectors Steel Corner Joint Profile Connector With Available Samples</h3>
+            <p>Price: $0.20-0.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1344.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8cf6a05581ab4297bb0108884fe3d60al.jpg_300x300.jpg" alt="Modern Design Durable Zinc Alloy Window Hardware Accessories Aluminium Window Hinge for Door Use" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Durable Zinc Alloy Window Hardware Accessories Aluminium Window Hinge for Door Use</h3>
+            <p>Price: $0.55-0.62</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1345.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H053900a969ba49e3af134bf4d324f33fc.jpg_300x300.jpg" alt="Eloyd Outdoor European-Style Glass Villa Casement Windows Stainless Steel Aluminum Louver Curtained Vertical Opening Kitchen" style="max-width: 200px;">
+            </a>
+            <h3>Eloyd Outdoor European-Style Glass Villa Casement Windows Stainless Steel Aluminum Louver Curtained Vertical Opening Kitchen</h3>
+            <p>Price: $170.00-190.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1346.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdf014c5cbcbb4c40a74bb42a86646657L.jpg_300x300.jpg" alt="Eloyd Most Popular Modern Aluminum Sliding Windows Cheap House Fixed Glass Grill Opener Horizontal Opening Exterior Applications" style="max-width: 200px;">
+            </a>
+            <h3>Eloyd Most Popular Modern Aluminum Sliding Windows Cheap House Fixed Glass Grill Opener Horizontal Opening Exterior Applications</h3>
+            <p>Price: $90.00-170.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1347.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb076f2e9f92c4d558853d70fe93d9159e.jpg_300x300.jpg" alt="Hot Selling Aluminum Tempered Glass Sliding Door Villa Soundproof Patio Doors Custom Size Sunroom Sliding Glass Doors" style="max-width: 200px;">
+            </a>
+            <h3>Hot Selling Aluminum Tempered Glass Sliding Door Villa Soundproof Patio Doors Custom Size Sunroom Sliding Glass Doors</h3>
+            <p>Price: $120.00-150.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 15 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1348.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3a6159dc31de4f3b843cebabbbef71b27.png_300x300.png" alt="Zinc Alloy Glass Sliding Door Accessories Bathroom Concealed Glass Sliding Barn Pocket Pivot Shower Door Hardware Kit" style="max-width: 200px;">
+            </a>
+            <h3>Zinc Alloy Glass Sliding Door Accessories Bathroom Concealed Glass Sliding Barn Pocket Pivot Shower Door Hardware Kit</h3>
+            <p>Price: $8.30-8.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1349.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3840cc1c249948dc956e52cce31bbbdeK.png_300x300.png" alt="Moran Magnetic Stainless Steel Zinc Indoor Room Door Lock Black Walnut with Silent Feature Home Use Window Accessory" style="max-width: 200px;">
+            </a>
+            <h3>Moran Magnetic Stainless Steel Zinc Indoor Room Door Lock Black Walnut with Silent Feature Home Use Window Accessory</h3>
+            <p>Price: $25.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1350.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H89476698bb9642a1a897a6fc0960755am.png_300x300.png" alt="Rustic Stainless Steel Barn Door Lock Modern PVC Window Accessories Bypass Sliding Barn Door Hardware Kit for Glass Wooden Door" style="max-width: 200px;">
+            </a>
+            <h3>Rustic Stainless Steel Barn Door Lock Modern PVC Window Accessories Bypass Sliding Barn Door Hardware Kit for Glass Wooden Door</h3>
+            <p>Price: $99.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1351.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf29aea3461104aabba031e46e0cba5d8S.jpg_300x300.jpg" alt="Modern Design Steel Zinc Sliding Door System Hardware Accessories Factory Price Remote Exterior Window Accessories with Handles" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Steel Zinc Sliding Door System Hardware Accessories Factory Price Remote Exterior Window Accessories with Handles</h3>
+            <p>Price: $1.50-3.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1352.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H818654f1ff4c4b82bee6b625913842f2Y.jpg_300x300.jpg" alt="Electric 300 Stroke Push Rod 800 N Push Pull Window Opener Large Buildings High Support Strength Modern Design Glass Home Door" style="max-width: 200px;">
+            </a>
+            <h3>Electric 300 Stroke Push Rod 800 N Push Pull Window Opener Large Buildings High Support Strength Modern Design Glass Home Door</h3>
+            <p>Price: $38.60-41.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1353.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H94e545e53423433a900a5ef576a0f346D.jpg_300x300.jpg" alt="Customized Modern Wrought Iron/Steel Swing Door with Window Grilles Waterproof Outdoor Garden Frame Design" style="max-width: 200px;">
+            </a>
+            <h3>Customized Modern Wrought Iron/Steel Swing Door with Window Grilles Waterproof Outdoor Garden Frame Design</h3>
+            <p>Price: $1,515.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square feet</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1354.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf69fccb1c5a04dddb4bca9b355bdd426B.png_300x300.png" alt="Hot Selling Stainless Steel Lock Body Door and Window Hardware Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Hot Selling Stainless Steel Lock Body Door and Window Hardware Accessories</h3>
+            <p>Price: $2.99-4.28</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1355.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha6c0164ec7e043bfa7e33cbfec7f37ceS.png_300x300.png" alt="Modern New Design Stainless Steel Lock Body Mortise Lock Durable Door and Window Hardware Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Modern New Design Stainless Steel Lock Body Mortise Lock Durable Door and Window Hardware Accessories</h3>
+            <p>Price: $2.99-4.28</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1356.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1ac26c2aa29f4233b8dce8310ded8076L.png_300x300.png" alt="Mew Design Modern Stainless Steel Mortise Lock Body Durable Door and Window Hardware Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Mew Design Modern Stainless Steel Mortise Lock Body Durable Door and Window Hardware Accessories</h3>
+            <p>Price: $2.99-4.28</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1357.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H68ae54e9ac6a4b6d9ce7cc4e52279241e.png_300x300.png" alt="Modern Design Stainless Steel Lock Body Mortise Lock Durable Door and Window Hardware Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Stainless Steel Lock Body Mortise Lock Durable Door and Window Hardware Accessories</h3>
+            <p>Price: $2.99-4.28</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1358.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He3ca7bbc8e484eeeacb9dcc1cd9530acJ.jpg_300x300.jpg" alt="New Hardware Accessory Products 2025 Zinc Alloy Recessed Concealed Sliding Door Lock for 35-45mm Thickness Door" style="max-width: 200px;">
+            </a>
+            <h3>New Hardware Accessory Products 2025 Zinc Alloy Recessed Concealed Sliding Door Lock for 35-45mm Thickness Door</h3>
+            <p>Price: $7.70-9.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1359.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H21383a099e8d42c690c616776d4359ddl.jpg_300x300.jpg" alt="Aluminum Plisse Pleated Net Mosquito Folded Mesh Wire Accessory Kit PP Material Window Screen for Door Window Home Hotel Use" style="max-width: 200px;">
+            </a>
+            <h3>Aluminum Plisse Pleated Net Mosquito Folded Mesh Wire Accessory Kit PP Material Window Screen for Door Window Home Hotel Use</h3>
+            <p>Price: $1.15-1.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5,000 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1360.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8a19d1bb07d94bba82578b2fdcfdc924m.jpg_300x300.jpg" alt="Zhenjian Best Selling Zinc Alloy T Type Door Window Accessories Durable Aluminum Casement Lock for Flat Open Windows Home Use" style="max-width: 200px;">
+            </a>
+            <h3>Zhenjian Best Selling Zinc Alloy T Type Door Window Accessories Durable Aluminum Casement Lock for Flat Open Windows Home Use</h3>
+            <p>Price: $1.00-5.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1361.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbde4c14a82464bf2a7f4509ece2798b55.jpg_300x300.jpg" alt="Roldanas Accessories for Aluminum & Glass 6mm & 8mm Sliding Door Rollers POM Pulley Steel Nylon Iron Material Window Hanging" style="max-width: 200px;">
+            </a>
+            <h3>Roldanas Accessories for Aluminum & Glass 6mm & 8mm Sliding Door Rollers POM Pulley Steel Nylon Iron Material Window Hanging</h3>
+            <p>Price: $0.03-0.15</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1362.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5cbc5ddc35d948f28d0799075b41c41dc.jpg_300x300.jpg" alt="High Quality Modern Design Electric Push-Rod Window Opener Hardware for Hold Open Sash Windows & Door Building Application" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Modern Design Electric Push-Rod Window Opener Hardware for Hold Open Sash Windows & Door Building Application</h3>
+            <p>Price: $16.50-26.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1363.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7c50e62156a140bf874d4945db351ab9o.jpg_300x300.jpg" alt="OREDY 8mm-8cm Adjustable Anti-Balance Wheel Guide Wheel Steel Plastic Material Hotel Automatic Glass Sliding Door Accessories" style="max-width: 200px;">
+            </a>
+            <h3>OREDY 8mm-8cm Adjustable Anti-Balance Wheel Guide Wheel Steel Plastic Material Hotel Automatic Glass Sliding Door Accessories</h3>
+            <p>Price: $1.60-2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1364.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H63af5850d5f841428dcc6f2165052fe2C.png_300x300.png" alt="Direct Manufacturer Stainless Steel Decorative Door Flower Modern Glass Fittings Accessories Hotel Use Door Window Decoration" style="max-width: 200px;">
+            </a>
+            <h3>Direct Manufacturer Stainless Steel Decorative Door Flower Modern Glass Fittings Accessories Hotel Use Door Window Decoration</h3>
+            <p>Price: $0.60-1.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1365.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H97f4044f9284432c9d20e338647fa76a8.png_300x300.png" alt="Invisible Design Stainless Steel Door Hinge Sleek Appearance with High Weight Support Durable Metal for Window Use" style="max-width: 200px;">
+            </a>
+            <h3>Invisible Design Stainless Steel Door Hinge Sleek Appearance with High Weight Support Durable Metal for Window Use</h3>
+            <p>Price: $0.60-1.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1366.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc09a77349cc1448a9f3363f2d2cf5ce6d.jpg_300x300.jpg" alt="HDSAFE Frameless Glass Window Large Panorama Accordion Sliding Swing Aluminium Door and Window Accessories Sliding Bifold Window" style="max-width: 200px;">
+            </a>
+            <h3>HDSAFE Frameless Glass Window Large Panorama Accordion Sliding Swing Aluminium Door and Window Accessories Sliding Bifold Window</h3>
+            <p>Price: $76.00-116.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1367.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H03d2ffb12ed6482ea30b857bc419eb83Z.jpg_300x300.jpg" alt="High Quality Heavy Duty Aluminum Pivot Hinge Adjustable Steel Hardware for Window and Door Manufactured at Factory Price" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Heavy Duty Aluminum Pivot Hinge Adjustable Steel Hardware for Window and Door Manufactured at Factory Price</h3>
+            <p>Price: $0.55-0.62</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1368.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He7a6143461984fc8b0b707594615f575p.jpg_300x300.jpg" alt="Modern Design Aluminum Accessories for Window and Door Frames Durable Corner Joint Connector for Home and Hotel Use" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Aluminum Accessories for Window and Door Frames Durable Corner Joint Connector for Home and Hotel Use</h3>
+            <p>Price: $0.23-0.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1369.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd98d0bb0ad7242cf961020e270fd0fdbw.jpg_300x300.jpg" alt="90 Degree Sliding Door and Window Corner Joint Connector for Aluminium Profiles Glass Window Accessories for Home and Hotel Use" style="max-width: 200px;">
+            </a>
+            <h3>90 Degree Sliding Door and Window Corner Joint Connector for Aluminium Profiles Glass Window Accessories for Home and Hotel Use</h3>
+            <p>Price: $0.23-0.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1370.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hda1ec28bd18045f29f47f392a3961902V.jpg_300x300.jpg" alt="RHETECH Custom Made Modern OEM Commercial Interior Door Lock Accessories Steel Brass T-Shape Strike Plate Lock Body Guide Hotels" style="max-width: 200px;">
+            </a>
+            <h3>RHETECH Custom Made Modern OEM Commercial Interior Door Lock Accessories Steel Brass T-Shape Strike Plate Lock Body Guide Hotels</h3>
+            <p>Price: $5.99</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1371.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb852441b24e7404c8ceb03650f2eac94k.jpg_300x300.jpg" alt="Modern Design Electric Chain Window Opener with Remote Control for Home Use-Door & Window Accessory" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Electric Chain Window Opener with Remote Control for Home Use-Door & Window Accessory</h3>
+            <p>Price: $35.30-36.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1372.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf71a467573ed4292be1f4e788fcff7a1I.jpg_300x300.jpg" alt="High Protection Level 90 Degrees Sliding Arm Window Opener Electric for Smart Home with Door Application Window Accessories" style="max-width: 200px;">
+            </a>
+            <h3>High Protection Level 90 Degrees Sliding Arm Window Opener Electric for Smart Home with Door Application Window Accessories</h3>
+            <p>Price: $40.90-43.87</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1373.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6329868cc5f74afe8b9dd197f77cc080C.jpg_300x300.jpg" alt="MP-218P Modern Design Aluminium Window Accessories High Quality Window Two Point Lock" style="max-width: 200px;">
+            </a>
+            <h3>MP-218P Modern Design Aluminium Window Accessories High Quality Window Two Point Lock</h3>
+            <p>Price: $2.71-3.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1374.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hca6b7954579149a4aecfd385e82397ben.jpg_300x300.jpg" alt="Modern Design Solid Aluminum Alloy Window Push Pull Handle Hotel Casement Windows Screens Window Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Solid Aluminum Alloy Window Push Pull Handle Hotel Casement Windows Screens Window Accessories</h3>
+            <p>Price: $0.28-0.33</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1375.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4acb0cccb3bc410ba3273e83752dbc1aV.jpg_300x300.jpg" alt="Single-point Multi-point System Broken Bridge Swing Door Locks Double-sided Handles Window Accessories Aluminum Alloy Modern /" style="max-width: 200px;">
+            </a>
+            <h3>Single-point Multi-point System Broken Bridge Swing Door Locks Double-sided Handles Window Accessories Aluminum Alloy Modern /</h3>
+            <p>Price: $8.20-10.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1376.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H524ca7c5ff34459f8eed645da7ca807cR.jpg_300x300.jpg" alt="Side Window Restrictor Casement Stopper Wind Brace Sliding Door Window Locks Child Safety Fixed Lock Accessories Stainless Steel" style="max-width: 200px;">
+            </a>
+            <h3>Side Window Restrictor Casement Stopper Wind Brace Sliding Door Window Locks Child Safety Fixed Lock Accessories Stainless Steel</h3>
+            <p>Price: $0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1377.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha4c16f51882d40aabfd2ef7ed497a8cfl.jpg_300x300.jpg" alt="Air Brace Wind Expansion Brace Upper Hanging Window Hinge Broken Bridge Stainless Steel Aluminum Modern Door Window Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Air Brace Wind Expansion Brace Upper Hanging Window Hinge Broken Bridge Stainless Steel Aluminum Modern Door Window Accessories</h3>
+            <p>Price: $0.85-1.24</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1378.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc0c1c9aa9ab0452299ff7f8276a603f9b.jpg_300x300.jpg" alt="Upper Hanging Window Sliding Brace / Limiter Steel Windows / Doors and Windows Hardware Accessories Sliding Plastic Modern Screw" style="max-width: 200px;">
+            </a>
+            <h3>Upper Hanging Window Sliding Brace / Limiter Steel Windows / Doors and Windows Hardware Accessories Sliding Plastic Modern Screw</h3>
+            <p>Price: $0.60-1.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1379.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb5f297ced6704630a51f9dc4fd1dd115P.jpg_300x300.jpg" alt="Modern Revolving Door Spring Accessories Top Pivot Shaft Wooden Aluminum Alloy Door Lock Wood Door Handle for Glass / CN;SIC" style="max-width: 200px;">
+            </a>
+            <h3>Modern Revolving Door Spring Accessories Top Pivot Shaft Wooden Aluminum Alloy Door Lock Wood Door Handle for Glass / CN;SIC</h3>
+            <p>Price: $3.21-3.92</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1380.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0635eea9c5d6481d92bc4f48834d85511.jpg_300x300.jpg" alt="Hot Sale Plantation Shutter Hidden Control Arm Window Shutter Accessory Hinges Pins Accessories Shutter Parts" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale Plantation Shutter Hidden Control Arm Window Shutter Accessory Hinges Pins Accessories Shutter Parts</h3>
+            <p>Price: $0.01-0.03</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1381.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9e6aaed039eb43888975e77a89d211c3N.jpg_300x300.jpg" alt="Hot Sale Plantation Shutter Hidden Control Arm Hinges Pins Shutter Parts Wood Window Shutters Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale Plantation Shutter Hidden Control Arm Hinges Pins Shutter Parts Wood Window Shutters Accessories</h3>
+            <p>Price: $0.01-0.03</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1382.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8b21ab717baf4bfbbfb4f949af4a16d7T.jpg_300x300.jpg" alt="Hot Sale Plantation Shutter Hidden Control Arm Hinges Pins Window Shutter Accessories Shutter Parts" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale Plantation Shutter Hidden Control Arm Hinges Pins Window Shutter Accessories Shutter Parts</h3>
+            <p>Price: $0.01-0.03</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1383.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7954f28506cd4291b2c30490c56e43829.jpg_300x300.jpg" alt="Hot Sale Plantation Shutter Hidden Control Arm Plantation Shutter Hinges Motors Pins Accessories Louver Window Parts" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale Plantation Shutter Hidden Control Arm Plantation Shutter Hinges Motors Pins Accessories Louver Window Parts</h3>
+            <p>Price: $0.01-0.03</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1384.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc2239f35b83744b0b5f0028320967495n.jpg_300x300.jpg" alt="Hot Sale Plantation Shutter Hidden Control Arm Plantation Shutter Hinges Pins Accessories Window Shutter Parts Motors" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale Plantation Shutter Hidden Control Arm Plantation Shutter Hinges Pins Accessories Window Shutter Parts Motors</h3>
+            <p>Price: $0.01-0.03</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1385.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H79d38e999b9c44f59ff4fea0267e908aZ.jpg_300x300.jpg" alt="Hot Sale Plantation Shutter Hidden Control Arm Plantation Shutter Motors Window Parts Hinges Pins Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale Plantation Shutter Hidden Control Arm Plantation Shutter Motors Window Parts Hinges Pins Accessories</h3>
+            <p>Price: $0.01-0.03</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1386.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5376867a185f43efb4cc931f80c0c0ebk.jpg_300x300.jpg" alt="Industrial Sliding High Quality Stainless Steel Telescopic Automatic Sliding Gate Hardware Accessories Kits" style="max-width: 200px;">
+            </a>
+            <h3>Industrial Sliding High Quality Stainless Steel Telescopic Automatic Sliding Gate Hardware Accessories Kits</h3>
+            <p>Price: $0.45-0.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1387.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H851e50cd83a64f13a840908776b1333dD.jpg_300x300.jpg" alt="Industrial Sliding Sliding Gate Hardware Accessories U Groove Roller Pulley Metal Wheel R10" style="max-width: 200px;">
+            </a>
+            <h3>Industrial Sliding Sliding Gate Hardware Accessories U Groove Roller Pulley Metal Wheel R10</h3>
+            <p>Price: $0.45-0.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1388.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1085b8038cb845b4958a39c72f6211dfR.png_300x300.png" alt="Modern Design Steel and Galvanized Garage Door Window Accessories for Industrial Use" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Steel and Galvanized Garage Door Window Accessories for Industrial Use</h3>
+            <p>Price: $19.00-20.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 square meter</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1389.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H46d06b09399149f680e240009b31badeM.png_300x300.png" alt="Modern Industrial Design Steel Garage Door Accessories with Long Window Galvanized Villa Door and Window Set" style="max-width: 200px;">
+            </a>
+            <h3>Modern Industrial Design Steel Garage Door Accessories with Long Window Galvanized Villa Door and Window Set</h3>
+            <p>Price: $19.00-20.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 square meter</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1390.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H986017007fbc4e128fde668d4fac48f9z.png_300x300.png" alt="Innovative Hidden Door Hinge Easy Installation Steel Stainless Steel Metal Pivot Hinge Space Saving Solution for Window Door" style="max-width: 200px;">
+            </a>
+            <h3>Innovative Hidden Door Hinge Easy Installation Steel Stainless Steel Metal Pivot Hinge Space Saving Solution for Window Door</h3>
+            <p>Price: $0.60-1.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1391.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7b65d70e361645cf9ce619a3c73403232.jpg_300x300.jpg" alt="Zhen Jian Modern Design Keyed Window Lock with Pull Handle Black & White Zinc & Plastic Door Window Hardware Accessories Hotels" style="max-width: 200px;">
+            </a>
+            <h3>Zhen Jian Modern Design Keyed Window Lock with Pull Handle Black & White Zinc & Plastic Door Window Hardware Accessories Hotels</h3>
+            <p>Price: $2.50-3.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1392.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB192TtNQvoK1RjSZFwq6AiCFXaQ.jpg_300x300.jpg" alt="Iron Spring Box for Rolling Shutters Window Accessories for Door Window Building Applications" style="max-width: 200px;">
+            </a>
+            <h3>Iron Spring Box for Rolling Shutters Window Accessories for Door Window Building Applications</h3>
+            <p>Price: $1.50-5.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1393.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7616a5bb058547cbb0cc4b61f55adac3x.jpg_300x300.jpg" alt="Aluminium Folding Doorcollapsible Doorbifold Doorindoor Dooroutdoor Doorspace Saving Doorcustomized Doorfactory Direct Door" style="max-width: 200px;">
+            </a>
+            <h3>Aluminium Folding Doorcollapsible Doorbifold Doorindoor Dooroutdoor Doorspace Saving Doorcustomized Doorfactory Direct Door</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1394.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1384aef9deb44380a174fffae25838b9e.jpg_300x300.jpg" alt="Aluminium Folding Door With Multi-Function and Customization Options for Indoor and Outdoor Use in Europe" style="max-width: 200px;">
+            </a>
+            <h3>Aluminium Folding Door With Multi-Function and Customization Options for Indoor and Outdoor Use in Europe</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1395.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H860ac44eb5bd4cbaa00d409641245cf7s.jpg_300x300.jpg" alt="Customized Aluminium Folding Door Factory Direct Sale for Home Office Use With Smart Function and Space Saving Design in Usa" style="max-width: 200px;">
+            </a>
+            <h3>Customized Aluminium Folding Door Factory Direct Sale for Home Office Use With Smart Function and Space Saving Design in Usa</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1396.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf7107a1893ef4b02a33b839a468b2fc59.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door for Home and Office Use With Customization Option Factory Direct" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door for Home and Office Use With Customization Option Factory Direct</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1397.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H893e0f51b09d42c6b8fd379697f0b6ceA.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door for Patio and Balcony in Uk With Customization Option Factory Direct Sale" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door for Patio and Balcony in Uk With Customization Option Factory Direct Sale</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1398.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd3abb4f0c2ba4f8fa0331e9909a8636bo.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door for Patio and Balcony in Europe and America With Customization Options From Factory" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door for Patio and Balcony in Europe and America With Customization Options From Factory</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1399.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1ca96ac8a3494cf0a26a338cae9878bbL.jpg_300x300.jpg" alt="Aluminium Folding Door With Multi-Functional Use for Home and Office Customization" style="max-width: 200px;">
+            </a>
+            <h3>Aluminium Folding Door With Multi-Functional Use for Home and Office Customization</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1400.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2dc12a35ac0141aeb6b0f1a8e7d38470z.jpg_300x300.jpg" alt="Multifunctional Aluminium Folding Door for Home and Office Customized by Factory in China" style="max-width: 200px;">
+            </a>
+            <h3>Multifunctional Aluminium Folding Door for Home and Office Customized by Factory in China</h3>
+            <p>Price: $120.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 square meters</p>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <!-- 分页按钮 -->
+        <div class="pagination">
+            
+            <a href="page_13.html">Previous</a>
+            
+
+            
+            
+
+            
+            <a href="page_11.html" >11</a>
+            
+            <a href="page_12.html" >12</a>
+            
+            <a href="page_13.html" >13</a>
+            
+            <a href="page_14.html" class="active">14</a>
+            
+            <a href="page_15.html" >15</a>
+            
+            <a href="page_16.html" >16</a>
+            
+            <a href="page_17.html" >17</a>
+            
+            <a href="page_18.html" >18</a>
+            
+            <a href="page_19.html" >19</a>
+            
+            <a href="page_20.html" >20</a>
+            
+
+            
+            <a href="page_21.html">Next</a>
+            
+        </div>
+        <!-- 回到顶部按钮 -->
+        <button id="back-to-top" onclick="topFunction()">回到顶部</button>
+    </div>
+
+    <script>
+        // 回到顶部按钮显示与隐藏逻辑
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // 回到顶部按钮点击事件
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

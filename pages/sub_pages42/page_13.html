@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L8EDEXZBV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9L8EDEXZBV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品列表 - 第页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 200px;
+            /* 可根据实际情况调整图片大小 */
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        nav {
+            background-color: #03a9f4;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* 新添加的样式 */
+        .product-item h3 {
+            font-size: 14px;
+            /* 产品名称文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item p {
+            font-size: 12px;
+            /* 其他产品信息文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item:hover h3 {
+            color: #03a9f4;
+            /* 鼠标悬停时产品名称文字变色 */
+        }
+
+        .product-item:hover p {
+            color: #03a9f4;
+            /* 鼠标悬停时其他产品信息文字变色 */
+        }
+
+        /* 产品容器样式 */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        /* 产品项样式 */
+        .product-item {
+            width: calc(25% - 20px);
+            /* 默认每行显示 4 个产品 */
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 鼠标悬停效果 */
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* 媒体查询，适配不同屏幕尺寸 */
+        @media (max-width: 1024px) {
+            .product-item {
+                width: calc(33.33% - 20px);
+                /* 平板设备每行显示 3 个产品 */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* 小屏幕设备每行显示 2 个产品 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: 100%;
+                /* 超小屏幕设备每行显示 1 个产品 */
+            }
+        }
+
+        /* 分页按钮样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        /* 回到顶部按钮样式 */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #03a9f4;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部图片和文字 -->
+    <div class="header">
+        <img src="../../../main/image/logo.png" alt="Logo">
+        <p>Sunnyluo Store</p>
+        <p>Build a curated directory of store with factory</p>
+    </div>
+    <nav>
+        <a href="../../../index.html">Home</a>
+        <a href="../../pdfs/pdf.html">Resources</a>
+        <a href="../../../main/About us.html">About Us</a>
+        <a href="mailto:sunnyluo330@gmail.com">Contact Us</a>
+        <a href="https://www.facebook.com/sunnyluoting">Facebook</a>
+    </nav>
+    <h1>Product list</h1>
+    <div class="products">
+        
+        <div class="product-item">
+            <a href="product_1201.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H517daf50025f4ede962427d9b8f742592.jpg_300x300.jpg" alt="Commercial Escalator with Aluminum Alloy Escalator Step and Handrail Passenger Escalator" style="max-width: 200px;">
+            </a>
+            <h3>Commercial Escalator with Aluminum Alloy Escalator Step and Handrail Passenger Escalator</h3>
+            <p>Price: $12,000.00-15,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 set</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1202.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB16DLaavjsK1Rjy1Xaq6zispXaN.jpg_300x300.jpg" alt="ORIA Mini Escalator and Residential Escalator" style="max-width: 200px;">
+            </a>
+            <h3>ORIA Mini Escalator and Residential Escalator</h3>
+            <p>Price: $10,000.00-27,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 set</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1203.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H14c776b6d65f4dfa91b4dcd03549cc465.jpg_300x300.jpg" alt="Stainless Steel Cladding Escalator Energy Saving Escalator European Quality" style="max-width: 200px;">
+            </a>
+            <h3>Stainless Steel Cladding Escalator Energy Saving Escalator European Quality</h3>
+            <p>Price: $8,851.63-9,621.33</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1204.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He27f712611104b30a18881329cb52bcen.jpg_300x300.jpg" alt="FUJIZY BEST CHINA ESCALATOR ELEVATOR VVVF SHOPPING MALL USE LUXURY GOOD PRICE STAINLESS STEEL" style="max-width: 200px;">
+            </a>
+            <h3>FUJIZY BEST CHINA ESCALATOR ELEVATOR VVVF SHOPPING MALL USE LUXURY GOOD PRICE STAINLESS STEEL</h3>
+            <p>Price: $10,000.00-14,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 unit</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1205.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1Zhdke8nTBKNjSZPfq6zf1XXaY.jpg_300x300.jpg" alt="Exquisite Workmanship Cheap Residential Lift Elevator With Gearless Traction Machine" style="max-width: 200px;">
+            </a>
+            <h3>Exquisite Workmanship Cheap Residential Lift Elevator With Gearless Traction Machine</h3>
+            <p>Price: $10,000.00-20,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 unit</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1206.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1L6W3endYBeNkSmLyq6xfnVXa9.jpg_300x300.jpg" alt="Supply All Brand Elevator Parts Top Sale Cargo Elevator for Big Opening Door Size" style="max-width: 200px;">
+            </a>
+            <h3>Supply All Brand Elevator Parts Top Sale Cargo Elevator for Big Opening Door Size</h3>
+            <p>Price: $18,888.00-23,333.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1207.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf15b52455ae646729687d62e543f05f2c.jpg_300x300.jpg" alt="Foshan Shopping Mall Escalator 30 Degree Escalators Price Commercial Escalator" style="max-width: 200px;">
+            </a>
+            <h3>Foshan Shopping Mall Escalator 30 Degree Escalators Price Commercial Escalator</h3>
+            <p>Price: $11,900.00-12,900.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 set</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1208.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hcea3d12fc3234f1db4d27156e02cf14e9.png_300x300.png" alt="FUJI Factory Price Passengerl Elevator& Escalators Smooth& Safe Electric Escalator Moving Walker" style="max-width: 200px;">
+            </a>
+            <h3>FUJI Factory Price Passengerl Elevator& Escalators Smooth& Safe Electric Escalator Moving Walker</h3>
+            <p>Price: $8,960.00-15,600.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 units</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1209.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB126M3KwHqK1RjSZFPq6AwapXal.jpg_300x300.jpg" alt="Aluminum Step Automatic Indoor Commercial Low Escalator Price" style="max-width: 200px;">
+            </a>
+            <h3>Aluminum Step Automatic Indoor Commercial Low Escalator Price</h3>
+            <p>Price: $12,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 set</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1210.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB19cY9asrrK1RjSspaq6AREXXa9.jpg_300x300.jpg" alt="CE Approved Competitive Escalator Price/Escalator Cost with Safety Tempered Glass" style="max-width: 200px;">
+            </a>
+            <h3>CE Approved Competitive Escalator Price/Escalator Cost with Safety Tempered Glass</h3>
+            <p>Price: $10,000.00-15,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1211.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6e30db4d9f4a444bbd4540f773cb7c6aC.png_300x300.png" alt="Manufacturer Passager Trolley Escalator" style="max-width: 200px;">
+            </a>
+            <h3>Manufacturer Passager Trolley Escalator</h3>
+            <p>Price: $8,851.63-9,621.33</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1212.html">
+                <img src="https://s.alicdn.com/@sc04/kf/U0bd920fcf6cb40ae8e1950a42b88a7e1N.jpg_300x300.jpg" alt="Step Roller Escalator Rollers" style="max-width: 200px;">
+            </a>
+            <h3>Step Roller Escalator Rollers</h3>
+            <p>Price: $1.50-2.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1213.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc8f96841e68e4a32a9e8001e817d2ae2m.jpg_300x300.jpg" alt="China Factory China Shopping Mall Escalator Manufacturers Price" style="max-width: 200px;">
+            </a>
+            <h3>China Factory China Shopping Mall Escalator Manufacturers Price</h3>
+            <p>Price: $10,800.00-13,200.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1214.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1HNO3RFXXXXazXVXXq6xXFXXXz.jpg_300x300.jpg" alt="Cargo Lift Warehouse Lift Freight Elevator Price with High Quality" style="max-width: 200px;">
+            </a>
+            <h3>Cargo Lift Warehouse Lift Freight Elevator Price with High Quality</h3>
+            <p>Price: $12,800.00-12,999.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 unit</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1215.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1NwzWaYH1gK0jSZFwq6A7aXXaX.jpg_300x300.jpg" alt="Escalator Step" style="max-width: 200px;">
+            </a>
+            <h3>Escalator Step</h3>
+            <p>Price: $60.00-500.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1216.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0c059edc5e92440dadc2c2faf3b89a268.jpg_300x300.jpg" alt="Brand New Escalator Roller With High Quality" style="max-width: 200px;">
+            </a>
+            <h3>Brand New Escalator Roller With High Quality</h3>
+            <p>Price: $1.65-2.53</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1217.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H942fabab3eaa44edbbf19b3d8c3be1f3l.png_300x300.png" alt="Wholesale Building Elevators Villa Electric Elevator Lift Lifting Home Outdoor Small Lift Residential Elevator Price" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Building Elevators Villa Electric Elevator Lift Lifting Home Outdoor Small Lift Residential Elevator Price</h3>
+            <p>Price: $4,500.00-6,500.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1218.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1ac0747daf5f4521aa478bfa7125bac09.jpg_300x300.jpg" alt="Home Elevator Price in China Passenger Elevators Lift" style="max-width: 200px;">
+            </a>
+            <h3>Home Elevator Price in China Passenger Elevators Lift</h3>
+            <p>Price: $6,000.00-9,500.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 unit</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1219.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H45466b6d565e40e3b7f4b5d3a53d76757.jpg_300x300.jpg" alt="Hotel Elevator Price Elevator Manufacturer China Luxury Residential Lift Elevator for Hotel, Office, Home" style="max-width: 200px;">
+            </a>
+            <h3>Hotel Elevator Price Elevator Manufacturer China Luxury Residential Lift Elevator for Hotel, Office, Home</h3>
+            <p>Price: $8,000.00-9,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 units</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1220.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5de27958e24f4f3eb38610b3f564fe4a9.jpg_300x300.jpg" alt="Passenger Elevator with Low Price From China" style="max-width: 200px;">
+            </a>
+            <h3>Passenger Elevator with Low Price From China</h3>
+            <p>Price: $13,000.00-15,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 set</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1221.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2154b5b46a9e4d4c8853689003a5786bH.png_300x300.png" alt="Hot Sale Lift in China Grain Storage Elevators Fashional Passenger Elevator" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale Lift in China Grain Storage Elevators Fashional Passenger Elevator</h3>
+            <p>Price: $6,000.00-7,500.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 unit</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1222.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0fc60ee1e56e44579fd44dad0280be6aV.jpg_300x300.jpg" alt="Indoor Outdoor Vertical Hydraulic House Villa Lift Passenger Elevators" style="max-width: 200px;">
+            </a>
+            <h3>Indoor Outdoor Vertical Hydraulic House Villa Lift Passenger Elevators</h3>
+            <p>Price: $4,500.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 pack</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1223.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H64550cbfef45474aa520217cba59391dJ.jpg_300x300.jpg" alt="Elevator Lifts Price Elevators Home Elevators" style="max-width: 200px;">
+            </a>
+            <h3>Elevator Lifts Price Elevators Home Elevators</h3>
+            <p>Price: $2,000.00-5,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 set</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1224.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7b26af6303a14bf39ef884795c4e49b5C.jpg_300x300.jpg" alt="2-5 Floors High Quality Hydraulic Elevator Lift Made Residential Customized Home Elevator" style="max-width: 200px;">
+            </a>
+            <h3>2-5 Floors High Quality Hydraulic Elevator Lift Made Residential Customized Home Elevator</h3>
+            <p>Price: $3,300.00-3,500.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1225.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha01359b7b786452580cdda550a0470d6V.jpg_300x300.jpg" alt="An Elevator Is Installed in the Middle of the Stairs Home Lift China Made" style="max-width: 200px;">
+            </a>
+            <h3>An Elevator Is Installed in the Middle of the Stairs Home Lift China Made</h3>
+            <p>Price: $2,000.00-2,500.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1226.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H08d6242eb0284ee18522455b5f618775u.jpg_300x300.jpg" alt="Customized Design High Quality Lifts Elevator" style="max-width: 200px;">
+            </a>
+            <h3>Customized Design High Quality Lifts Elevator</h3>
+            <p>Price: $10,000.00-15,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 units</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1227.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd344fb6dc25f4b96bdfe0161d29caa3fh.png_300x300.png" alt="Hospital Elevator Passenger Elevator Villa Elevator Ascenseur Ascensor Aufzug Ascensor Elevador" style="max-width: 200px;">
+            </a>
+            <h3>Hospital Elevator Passenger Elevator Villa Elevator Ascenseur Ascensor Aufzug Ascensor Elevador</h3>
+            <p>Price: $9,100.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 unit</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1228.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H10762e43342f4a44bfd0ce47072e988ap.png_300x300.png" alt="Passenger Elevator Home Elevator Lift Residential Observation Elevator" style="max-width: 200px;">
+            </a>
+            <h3>Passenger Elevator Home Elevator Lift Residential Observation Elevator</h3>
+            <p>Price: $8,888.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 unit</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1229.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7a21b66605084fe7b7d86355be20f88aM.jpg_300x300.jpg" alt="China Factory Escalator Spare Parts Escalator Comb Plate 22 Teeth SMR313609" style="max-width: 200px;">
+            </a>
+            <h3>China Factory Escalator Spare Parts Escalator Comb Plate 22 Teeth SMR313609</h3>
+            <p>Price: $2.00-3.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1230.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc621fbcd996d405ebd330b2f0c91a64fp.jpg_300x300.jpg" alt="Escalator Parts Pcb Step Escalator Information Collection Board SM-09-I485" style="max-width: 200px;">
+            </a>
+            <h3>Escalator Parts Pcb Step Escalator Information Collection Board SM-09-I485</h3>
+            <p>Price: $55.00-62.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1231.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H603146db1f8149ef8890ce008c2037b82.jpg_300x300.jpg" alt="XBA26220AB7 Escalator Switch Box Base Station With Key XBA26220AB17 Stop Button Lock Control Panel Escalator Spare Parts" style="max-width: 200px;">
+            </a>
+            <h3>XBA26220AB7 Escalator Switch Box Base Station With Key XBA26220AB17 Stop Button Lock Control Panel Escalator Spare Parts</h3>
+            <p>Price: $57.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 units</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1232.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3bbb77abd8a740c1ae1ad4a5b3d06595h.jpg_300x300.jpg" alt="Escalator Spare Parts SJEC Escalator Main Board EJ01V5 Battery Protect Pcb With LED" style="max-width: 200px;">
+            </a>
+            <h3>Escalator Spare Parts SJEC Escalator Main Board EJ01V5 Battery Protect Pcb With LED</h3>
+            <p>Price: $80.00-200.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 parcel</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1233.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha56d6913fbb741c4b49ac24c1ff9bb16B.jpg_300x300.jpg" alt="4090110000 Escalator 3-Hole Comb Plate 204*116*68 L204mm W116mm Hole Space 68mm 24T AL Step Parts Escalator Spare Parts" style="max-width: 200px;">
+            </a>
+            <h3>4090110000 Escalator 3-Hole Comb Plate 204*116*68 L204mm W116mm Hole Space 68mm 24T AL Step Parts Escalator Spare Parts</h3>
+            <p>Price: $4.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 units</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1234.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H35de3480a41b4e57893794ca403f2383f.jpg_300x300.jpg" alt="Kone Escalator Parts Escalator Comb Plate 5130667D10 5130669D10 5130668D10" style="max-width: 200px;">
+            </a>
+            <h3>Kone Escalator Parts Escalator Comb Plate 5130667D10 5130669D10 5130668D10</h3>
+            <p>Price: $4.00-6.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1235.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hac7df22408c748a8b7d7fe072395df3bG.jpg_300x300.jpg" alt="XIZI Escalator Parts Escalator Switch Sensor NYP-40S20PC" style="max-width: 200px;">
+            </a>
+            <h3>XIZI Escalator Parts Escalator Switch Sensor NYP-40S20PC</h3>
+            <p>Price: $20.00-55.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1236.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H70444482ad874da19e86c9def3b354742.jpg_300x300.jpg" alt="FUJI Indoor and Outdoor Escalator Energy-saving Escalator for Airport" style="max-width: 200px;">
+            </a>
+            <h3>FUJI Indoor and Outdoor Escalator Energy-saving Escalator for Airport</h3>
+            <p>Price: $10,500.00-15,800.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 units</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1237.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Aa118c99debf24ce1be14323c9a26902eW.jpg_300x300.jpg" alt="EAC CE SASO Certificate Residential 1000KG Passenger Elevator Lift Residential Apartment Commercial Hotel Elevator 630KG Ascense" style="max-width: 200px;">
+            </a>
+            <h3>EAC CE SASO Certificate Residential 1000KG Passenger Elevator Lift Residential Apartment Commercial Hotel Elevator 630KG Ascense</h3>
+            <p>Price: $4,500.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1238.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9ea98826f3794165bb38faf7f7c9e596G.jpg_300x300.jpg" alt="FUJI Professional Factory Moving Walk Sidewalks Price Elevator 2 Years Warranty 3000-12000mm Aluminum 0.5m/s CL Mall Application" style="max-width: 200px;">
+            </a>
+            <h3>FUJI Professional Factory Moving Walk Sidewalks Price Elevator 2 Years Warranty 3000-12000mm Aluminum 0.5m/s CL Mall Application</h3>
+            <p>Price: $12,000.00-20,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1239.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb7a161a172aa4ecbadcad7b614e7e2b5s.jpg_300x300.jpg" alt="NI25U-CK40-AP6X2-H1141 Escalator Step Sensor Escalator Spare Parts" style="max-width: 200px;">
+            </a>
+            <h3>NI25U-CK40-AP6X2-H1141 Escalator Step Sensor Escalator Spare Parts</h3>
+            <p>Price: $29.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 3 units</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1240.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8a5f765d7bd64ff39ccc149e5c38a84cE.jpg_300x300.jpg" alt="GAB438BNX1 GAB438BNX2 Escalator Black Plastic Handrail Entrance Cover Escalator Handrail Inlet LHS/RHS Escalator Spare Parts" style="max-width: 200px;">
+            </a>
+            <h3>GAB438BNX1 GAB438BNX2 Escalator Black Plastic Handrail Entrance Cover Escalator Handrail Inlet LHS/RHS Escalator Spare Parts</h3>
+            <p>Price: $15.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1241.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbe145a499d194c74a4f2a36a3f7b6876p.jpg_300x300.jpg" alt="Elevator Escalator Converter All-in-one Motherboard IECB CONTROL V1.2 YM2105120011IECBV1.2 Elevator Inverter Board Lift Parts" style="max-width: 200px;">
+            </a>
+            <h3>Elevator Escalator Converter All-in-one Motherboard IECB CONTROL V1.2 YM2105120011IECBV1.2 Elevator Inverter Board Lift Parts</h3>
+            <p>Price: $340.00-350.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1242.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf671aa1a9356414ca9764759183e042fh.png_300x300.png" alt="Elevator Escalator Power Lock LW42A1Y-4736/OF302 Maintenance Switch DAA177CD1" style="max-width: 200px;">
+            </a>
+            <h3>Elevator Escalator Power Lock LW42A1Y-4736/OF302 Maintenance Switch DAA177CD1</h3>
+            <p>Price: $3.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 units</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1243.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H65afa83c0fb04d48aeb53b6337d24c42L.png_300x300.png" alt="High Quality Spare Parts Hyundai Escalator Step Roller 76*25*6204" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Spare Parts Hyundai Escalator Step Roller 76*25*6204</h3>
+            <p>Price: $1.60-1.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 parcel</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1244.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha63f3d22d62641f3b13346ba9d2287f4X.jpg_300x300.jpg" alt="76*55*6201 GAA2215AB7 XAA2215AB7 Escalator Handrail Support Roller OD76mm W55mm Bearing 6201 for 506NCE Escalator Spare Parts" style="max-width: 200px;">
+            </a>
+            <h3>76*55*6201 GAA2215AB7 XAA2215AB7 Escalator Handrail Support Roller OD76mm W55mm Bearing 6201 for 506NCE Escalator Spare Parts</h3>
+            <p>Price: $11.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 units</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1245.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H89f3bf313856411eb0b5a6ad61d005ceR.jpg_300x300.jpg" alt="SCS319903 213*28mm Escalator Yellow Plastic Warning Strip L213mm W28mm Step DemarcationSidewalk Edge Strip Escalator Step Parts" style="max-width: 200px;">
+            </a>
+            <h3>SCS319903 213*28mm Escalator Yellow Plastic Warning Strip L213mm W28mm Step DemarcationSidewalk Edge Strip Escalator Step Parts</h3>
+            <p>Price: $2.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 units</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1246.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7c8cecdc78dd497dba017c036fb968d6N.jpg_300x300.jpg" alt="SIGM Escalator Comb DSA2001488A-L DSA2001489-M DSA2001488B-R" style="max-width: 200px;">
+            </a>
+            <h3>SIGM Escalator Comb DSA2001488A-L DSA2001489-M DSA2001488B-R</h3>
+            <p>Price: $1.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1247.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hce95b70226954cb2b750b97182d16564g.png_300x300.png" alt="Factory-price for Hyundai Escalator Step Roller 76*25*6204-2RS" style="max-width: 200px;">
+            </a>
+            <h3>Factory-price for Hyundai Escalator Step Roller 76*25*6204-2RS</h3>
+            <p>Price: $2.20-2.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1248.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2d54171314cf4b75b17806657d889472L.jpg_300x300.jpg" alt="Kone Escalator Parts Escalator Rotary Chain" style="max-width: 200px;">
+            </a>
+            <h3>Kone Escalator Parts Escalator Rotary Chain</h3>
+            <p>Price: $18.00-23.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1249.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H04323ba33ae542798e64708f85b7392dj.jpg_300x300.jpg" alt="FUJI 600/800/1000mm Width 30¡ã 35¡ã Outdoor Escalator and Moving Walks" style="max-width: 200px;">
+            </a>
+            <h3>FUJI 600/800/1000mm Width 30¡ã 35¡ã Outdoor Escalator and Moving Walks</h3>
+            <p>Price: $5,000.00-8,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1250.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He64f9f58cf0e47c7a1e249bf503aab07N.png_300x300.png" alt="Ehc Pu Handrail Escalator Handrail Belt Escalator Parts" style="max-width: 200px;">
+            </a>
+            <h3>Ehc Pu Handrail Escalator Handrail Belt Escalator Parts</h3>
+            <p>Price: $9.00-16.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1251.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H79ba294b9b734653aba5feff132b2892J.jpg_300x300.jpg" alt="Easy-to-install Hydraulic Small House Lift Villa Residential Elevator Personal Home Lift" style="max-width: 200px;">
+            </a>
+            <h3>Easy-to-install Hydraulic Small House Lift Villa Residential Elevator Personal Home Lift</h3>
+            <p>Price: $2,500.00-3,200.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1252.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H78082ce6e3aa4e5aa6a62c246c1048beM.jpg_300x300.jpg" alt="DSA3003965 Escalator Step Chain Roller Wheel Moving Walk Parts 70x25x6204" style="max-width: 200px;">
+            </a>
+            <h3>DSA3003965 Escalator Step Chain Roller Wheel Moving Walk Parts 70x25x6204</h3>
+            <p>Price: $1.76-1.98</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1253.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6dab3c83a0aa483ba27a71670f9d75bfp.jpg_300x300.jpg" alt="Escalator Moving Walk Step Chain Factory Price Elevators Escalators Safety Step Chain for Escalator Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Escalator Moving Walk Step Chain Factory Price Elevators Escalators Safety Step Chain for Escalator Accessories</h3>
+            <p>Price: $4.40-8.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1254.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8d5ee89671374505b7f09bd573b9ff3f1.jpg_300x300.jpg" alt="80*23*6204 Escalator Parts Escalator Step Chain Roller Aluminum Core Wheel Escalator Spare Parts" style="max-width: 200px;">
+            </a>
+            <h3>80*23*6204 Escalator Parts Escalator Step Chain Roller Aluminum Core Wheel Escalator Spare Parts</h3>
+            <p>Price: $2.75</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1255.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6f8c129a2077428e8fece6afc7fed136T.jpg_300x300.jpg" alt="Factory Price High Quality New Elevator Wheels Roller 90x30x6202 70x25x6202" style="max-width: 200px;">
+            </a>
+            <h3>Factory Price High Quality New Elevator Wheels Roller 90x30x6202 70x25x6202</h3>
+            <p>Price: $8.80-11.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1256.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hde0ccb3baac748d5b4e3d4aaf49c81d2q.jpg_300x300.jpg" alt="YS011C272G01 Escalator Drive Roller Wheel OD132mm Thickness 35mm ID 45mm" style="max-width: 200px;">
+            </a>
+            <h3>YS011C272G01 Escalator Drive Roller Wheel OD132mm Thickness 35mm ID 45mm</h3>
+            <p>Price: $10.45-11.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <!-- 分页按钮 -->
+        <div class="pagination">
+            
+            <a href="page_12.html">Previous</a>
+            
+
+            
+            
+
+            
+            <a href="page_11.html" >11</a>
+            
+            <a href="page_12.html" >12</a>
+            
+            <a href="page_13.html" class="active">13</a>
+            
+
+            
+        </div>
+        <!-- 回到顶部按钮 -->
+        <button id="back-to-top" onclick="topFunction()">回到顶部</button>
+    </div>
+
+    <script>
+        // 回到顶部按钮显示与隐藏逻辑
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // 回到顶部按钮点击事件
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>
