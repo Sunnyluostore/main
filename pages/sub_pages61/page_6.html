@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L8EDEXZBV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9L8EDEXZBV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品列表 - 第页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 200px;
+            /* 可根据实际情况调整图片大小 */
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        nav {
+            background-color: #03a9f4;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* 新添加的样式 */
+        .product-item h3 {
+            font-size: 14px;
+            /* 产品名称文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item p {
+            font-size: 12px;
+            /* 其他产品信息文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item:hover h3 {
+            color: #03a9f4;
+            /* 鼠标悬停时产品名称文字变色 */
+        }
+
+        .product-item:hover p {
+            color: #03a9f4;
+            /* 鼠标悬停时其他产品信息文字变色 */
+        }
+
+        /* 产品容器样式 */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        /* 产品项样式 */
+        .product-item {
+            width: calc(25% - 20px);
+            /* 默认每行显示 4 个产品 */
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 鼠标悬停效果 */
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* 媒体查询，适配不同屏幕尺寸 */
+        @media (max-width: 1024px) {
+            .product-item {
+                width: calc(33.33% - 20px);
+                /* 平板设备每行显示 3 个产品 */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* 小屏幕设备每行显示 2 个产品 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: 100%;
+                /* 超小屏幕设备每行显示 1 个产品 */
+            }
+        }
+
+        /* 分页按钮样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        /* 回到顶部按钮样式 */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #03a9f4;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部图片和文字 -->
+    <div class="header">
+        <img src="../../../main/image/logo.png" alt="Logo">
+        <p>Sunnyluo Store</p>
+        <p>Build a curated directory of store with factory</p>
+    </div>
+    <nav>
+        <a href="../../../index.html">Home</a>
+        <a href="../../pdfs/pdf.html">Resources</a>
+        <a href="../../../main/About us.html">About Us</a>
+        <a href="mailto:sunnyluo330@gmail.com">Contact Us</a>
+        <a href="https://www.facebook.com/sunnyluoting">Facebook</a>
+    </nav>
+    <h1>Product list</h1>
+    <div class="products">
+        
+        <div class="product-item">
+            <a href="product_501.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1e0086e52f2a494fb3d62fd60533efdfQ.jpg_300x300.jpg" alt="New Product Furniture Hardware Accessories Metal Plating Polishing Sofa Legs Bed Y Foot Chair Feet Coffee Table Leg for Bedroom" style="max-width: 200px;">
+            </a>
+            <h3>New Product Furniture Hardware Accessories Metal Plating Polishing Sofa Legs Bed Y Foot Chair Feet Coffee Table Leg for Bedroom</h3>
+            <p>Price: $0.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_502.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6c277e8696154f5a8bd7ebdc40c0df76j.jpg_300x300.jpg" alt="Factory Supply Golden Sofa Accessories Metal Furniture Parts Angle Sofa Chair Legs" style="max-width: 200px;">
+            </a>
+            <h3>Factory Supply Golden Sofa Accessories Metal Furniture Parts Angle Sofa Chair Legs</h3>
+            <p>Price: $1.40-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_503.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6c277e8696154f5a8bd7ebdc40c0df76j.jpg_300x300.jpg" alt="Factory Supply Golden Sofa Accessories Metal Furniture Parts Angle Sofa Chair Legs" style="max-width: 200px;">
+            </a>
+            <h3>Factory Supply Golden Sofa Accessories Metal Furniture Parts Angle Sofa Chair Legs</h3>
+            <p>Price: $1.40-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_504.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0cbec59916684255836f6538fb0191f0b.jpg_300x300.jpg" alt="China Factory Price Furniture Accessories 15mm Thickness Metal Contour Furniture Hardware Gold Sofa Leg" style="max-width: 200px;">
+            </a>
+            <h3>China Factory Price Furniture Accessories 15mm Thickness Metal Contour Furniture Hardware Gold Sofa Leg</h3>
+            <p>Price: $0.89-1.59</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 4 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_505.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H04795784d7d54a7781790d6b35fb00e0I.jpg_300x300.jpg" alt="Adjustable Chrome Iron Furniture Accessories for Cabinet Legs ,tool Cabinet,kitchen Cabinet" style="max-width: 200px;">
+            </a>
+            <h3>Adjustable Chrome Iron Furniture Accessories for Cabinet Legs ,tool Cabinet,kitchen Cabinet</h3>
+            <p>Price: $0.25-0.39</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_506.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H530eba7aa0314867b64099acd71a6f45J.jpg_300x300.jpg" alt="Modern Design Office Staff Chair Mechanisms Furniture Hardware Parts for Spring Tension Rod for Living Room Kitchen Workshop" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Office Staff Chair Mechanisms Furniture Hardware Parts for Spring Tension Rod for Living Room Kitchen Workshop</h3>
+            <p>Price: $1.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 boxes</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_507.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hcecbf81f91c44212bdbdbfc1b636f5203.jpg_300x300.jpg" alt="Professional Factory Production Furniture Parts Decorative Metal Furniture Modern Y Sofa Leg Cabinet Leg" style="max-width: 200px;">
+            </a>
+            <h3>Professional Factory Production Furniture Parts Decorative Metal Furniture Modern Y Sofa Leg Cabinet Leg</h3>
+            <p>Price: $0.37-0.39</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_508.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H31cd2012874f40d19d1972bda9a49c85q.png_300x300.png" alt="Renowned Chinese Brand Manufacturer of Indoor Furniture Hardware Accessories, High-end Customized Metal Sofa Legs" style="max-width: 200px;">
+            </a>
+            <h3>Renowned Chinese Brand Manufacturer of Indoor Furniture Hardware Accessories, High-end Customized Metal Sofa Legs</h3>
+            <p>Price: $0.22-2.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_509.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8b4dfbd4acc547b0a510b0f88ee0af5eZ.jpg_300x300.jpg" alt="Sofa Accessories Furniture Hardware Modern Strong Support Thick Sofa Legs" style="max-width: 200px;">
+            </a>
+            <h3>Sofa Accessories Furniture Hardware Modern Strong Support Thick Sofa Legs</h3>
+            <p>Price: $9.00-15.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_510.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H06f8406644954ee78ab692ef9e42acf2K.jpg_300x300.jpg" alt="4181Z Recliner Mechanism Steel Sofa Frames Sofa Furniture Part Swing Chair Parts Sofa Components Recliner Spare Parts" style="max-width: 200px;">
+            </a>
+            <h3>4181Z Recliner Mechanism Steel Sofa Frames Sofa Furniture Part Swing Chair Parts Sofa Components Recliner Spare Parts</h3>
+            <p>Price: $30.88-34.13</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_511.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4daf2f0d25754503b7f02de383657bccE.jpg_300x300.jpg" alt="Furniture Accessories Hardware Adjustable Cabinet Coffee Table Legs Wardrobe Metal Furniture Legs" style="max-width: 200px;">
+            </a>
+            <h3>Furniture Accessories Hardware Adjustable Cabinet Coffee Table Legs Wardrobe Metal Furniture Legs</h3>
+            <p>Price: $3.36-3.45</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 300 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_512.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hcb0e99e083f144abaffc354debbf80998.jpg_300x300.jpg" alt="Wholesale Cheap Price Hardware Furniture Accessories Durable Decorative Iron Sofa Leg" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Cheap Price Hardware Furniture Accessories Durable Decorative Iron Sofa Leg</h3>
+            <p>Price: $0.70-0.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 60 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_513.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4c8d618a122b4f99a66e8b2e0eec0d52Q.jpg_300x300.jpg" alt="Modern Style Hardware Iron Sofa Leg Furniture Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Modern Style Hardware Iron Sofa Leg Furniture Accessories</h3>
+            <p>Price: $0.84-0.87</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_514.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H495474ebd2e24972a972310c53cb5247G.jpg_300x300.jpg" alt="Modern Design Upholstery Furniture Hardware Accessories Fittings Components Metal Five Star Base" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Upholstery Furniture Hardware Accessories Fittings Components Metal Five Star Base</h3>
+            <p>Price: $3.53-3.73</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_515.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5fc127cc12624ac1b126e59e1fa38396J.jpg_300x300.jpg" alt="Office Chair Parts Components Accessories Furniture Lift Swivel up and Down Lock Tilt Mechanism" style="max-width: 200px;">
+            </a>
+            <h3>Office Chair Parts Components Accessories Furniture Lift Swivel up and Down Lock Tilt Mechanism</h3>
+            <p>Price: $4.18-4.38</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_516.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf738ea16072049a4938891a062e8f2b5k.png_300x300.png" alt="YJY Best Selling Furniture Hardware Accessories Steel Sofa Legs" style="max-width: 200px;">
+            </a>
+            <h3>YJY Best Selling Furniture Hardware Accessories Steel Sofa Legs</h3>
+            <p>Price: $0.28-0.32</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_517.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3b4b461a66c143b1b7c1ce4a43c0ec3eI.jpg_300x300.jpg" alt="High Quality 5 Star Base Spare Parts Office Chair Legs Chair Base Office Furniture" style="max-width: 200px;">
+            </a>
+            <h3>High Quality 5 Star Base Spare Parts Office Chair Legs Chair Base Office Furniture</h3>
+            <p>Price: $2.90-3.36</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_518.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4dea6d18dae44cf6a510b8ff26bda80eQ.jpg_300x300.jpg" alt="Wholesale Furniture Accessories Sofa Legs New Design Style Sofa, Table, Cabinet Leg" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Furniture Accessories Sofa Legs New Design Style Sofa, Table, Cabinet Leg</h3>
+            <p>Price: $4.20-5.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_519.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H84eb030a136542f4a581293a8ed4bbc9I.jpg_300x300.jpg" alt="Sofa Hardware Legs 10 cm Glossy Legs Stainless Steel Furniture Parts Single Metal Sofa Legs Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Sofa Hardware Legs 10 cm Glossy Legs Stainless Steel Furniture Parts Single Metal Sofa Legs Accessories</h3>
+            <p>Price: $0.91-0.96</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_520.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H71bd1354d9d54f7f814d8c4644b6a9e7W.jpg_300x300.jpg" alt="Sofa Leg Accessories Modern Furniture Base Handle Sofa Spare Parts Sofa Gold Aluminum Chrome" style="max-width: 200px;">
+            </a>
+            <h3>Sofa Leg Accessories Modern Furniture Base Handle Sofa Spare Parts Sofa Gold Aluminum Chrome</h3>
+            <p>Price: $0.29-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_521.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha7782ce76d1e4da9bd0f152e2164adffz.jpg_300x300.jpg" alt="Cylindrical Plastic Furniture Support Folding Legs Sofa Leg Accessories Hardware" style="max-width: 200px;">
+            </a>
+            <h3>Cylindrical Plastic Furniture Support Folding Legs Sofa Leg Accessories Hardware</h3>
+            <p>Price: $0.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_522.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He72da89eec3648c1875fe4ac96b70e4eD.jpg_300x300.jpg" alt="Simple Design Furniture Curved Chair Plywood Leisure Chair Accessories Plywood Parts" style="max-width: 200px;">
+            </a>
+            <h3>Simple Design Furniture Curved Chair Plywood Leisure Chair Accessories Plywood Parts</h3>
+            <p>Price: $16.60-25.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_523.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Heabb22b76a5f4df49096cffae52d57adE.jpg_300x300.jpg" alt="Chrome Iron Sofa Legs Furniture Accessories With Iron Table Legs for Cupboard Coffee Table Cabinet" style="max-width: 200px;">
+            </a>
+            <h3>Chrome Iron Sofa Legs Furniture Accessories With Iron Table Legs for Cupboard Coffee Table Cabinet</h3>
+            <p>Price: $0.53-0.54</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 600 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_524.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hed3f23c05c064f8185340fb76c6b56acG.png_300x300.png" alt="Furniture Bed Metal Mechanism Parts Fittings Accessory Sofa Hinge" style="max-width: 200px;">
+            </a>
+            <h3>Furniture Bed Metal Mechanism Parts Fittings Accessory Sofa Hinge</h3>
+            <p>Price: $0.30-4.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_525.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4549326006364d2abebb8c85e8e891d5N.jpg_300x300.jpg" alt="Wholesale Furniture Parts Metal Office Chair Accessories Swivel Office Chair Base" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Furniture Parts Metal Office Chair Accessories Swivel Office Chair Base</h3>
+            <p>Price: $4.30-4.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_526.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1VKC2as_vK1RkSmRy760wupXaG.png_300x300.png" alt="High Quality Black PP Square Sofa Foot Fixed Plate Furniture Part Accessories" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Black PP Square Sofa Foot Fixed Plate Furniture Part Accessories</h3>
+            <p>Price: $0.24-2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_527.html">
+                <img src="https://s.alicdn.com/@sc04/kf/A47f368c24cf24a27b67c0ed251e82a37J.jpg_300x300.jpg" alt="Factory Price Hardware Chair Accessories Parts Straight Modern Chair for Furniture Metal Table Leg From Vietnam" style="max-width: 200px;">
+            </a>
+            <h3>Factory Price Hardware Chair Accessories Parts Straight Modern Chair for Furniture Metal Table Leg From Vietnam</h3>
+            <p>Price: $8.00-10.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_528.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdcd6756a0088409e95846747759e9c5eW.jpg_300x300.jpg" alt="Wholesale Chair Parts Accessories,chair Parts Factory,office Chair Backrest Parts" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Chair Parts Accessories,chair Parts Factory,office Chair Backrest Parts</h3>
+            <p>Price: $1.00-3.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_529.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hfbd38e615a6e466b901967dba41285abj.jpg_300x300.jpg" alt="Industrial Restaurant Modern Industrial Restaurant Modern Furniture Parts Accessories Hardware Steel Legs for Heavy Table" style="max-width: 200px;">
+            </a>
+            <h3>Industrial Restaurant Modern Industrial Restaurant Modern Furniture Parts Accessories Hardware Steel Legs for Heavy Table</h3>
+            <p>Price: $44.58-48.95</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_530.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H94657d4700ad4bfd901b6685294f3c5fY.jpg_300x300.jpg" alt="Furniture Parts 60MM Small Office Gaming Chair Plastic Wheels Components Spare Parts Caster" style="max-width: 200px;">
+            </a>
+            <h3>Furniture Parts 60MM Small Office Gaming Chair Plastic Wheels Components Spare Parts Caster</h3>
+            <p>Price: $0.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_531.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4bbee225df1d465e8d3425de1d60a430K.jpg_300x300.jpg" alt="Factory Wholesale Furniture Parts Sofa Components Motorized Recliner Mechanism Salon Chair Parts" style="max-width: 200px;">
+            </a>
+            <h3>Factory Wholesale Furniture Parts Sofa Components Motorized Recliner Mechanism Salon Chair Parts</h3>
+            <p>Price: $54.00-55.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_532.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H35c9b4c0393c49db9ce4d782a5c22173w.jpg_300x300.jpg" alt="KEDE Other Furniture Part Manufacturer Direct Selling High Quality Office Chair Part Plastic Chair Armrests" style="max-width: 200px;">
+            </a>
+            <h3>KEDE Other Furniture Part Manufacturer Direct Selling High Quality Office Chair Part Plastic Chair Armrests</h3>
+            <p>Price: $3.83-3.98</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_533.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He66ef2719e974994bc81c74c8dcd63efA.jpg_300x300.jpg" alt="Modern Farmhouse Trestle Dining Table Pedestals White Laq Pine for Heavy Wood Table" style="max-width: 200px;">
+            </a>
+            <h3>Modern Farmhouse Trestle Dining Table Pedestals White Laq Pine for Heavy Wood Table</h3>
+            <p>Price: $200.00-220.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_534.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5c9611c40245469aaf4b9e08ac615a07A.png_300x300.png" alt="Factory Direct Finished Natural Wood Craft Dowel Rod Birch Round Wooden Sticks for Furniture Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Factory Direct Finished Natural Wood Craft Dowel Rod Birch Round Wooden Sticks for Furniture Accessories</h3>
+            <p>Price: $0.29</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_535.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4769f2a7edfb400d8693fcd1b5fd3542E.jpg_300x300.jpg" alt="Custom Furniture Accessories Wooden Dowel Pins Factory Outlet Furniture Fittings Rod Wooden Dowel High Hardness Wooden Dowels" style="max-width: 200px;">
+            </a>
+            <h3>Custom Furniture Accessories Wooden Dowel Pins Factory Outlet Furniture Fittings Rod Wooden Dowel High Hardness Wooden Dowels</h3>
+            <p>Price: $0.02-0.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_536.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H19867be691a5493f9c8f5514b42cc2d10.jpg_300x300.jpg" alt="Wholesale Whole Plastic Chair Spare Parts Accept Custom" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Whole Plastic Chair Spare Parts Accept Custom</h3>
+            <p>Price: $7.03-10.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_537.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf1ab4fa6f1ad41c7a16ff6f942c6dd43i.png_300x300.png" alt="Stainless Steel Good Sofa Paramenters Design Decoration Furniture Parts for Upholstery Furniture Use in Gold" style="max-width: 200px;">
+            </a>
+            <h3>Stainless Steel Good Sofa Paramenters Design Decoration Furniture Parts for Upholstery Furniture Use in Gold</h3>
+            <p>Price: $8.18-9.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 300 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_538.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H36264f73a16e4e38bcbb3962b7fe5806m.jpg_300x300.jpg" alt="Metal Hardware Decorative Buckle Furniture Luggage Accessories Elliptical Zinc Alloy Die-casting Buckle" style="max-width: 200px;">
+            </a>
+            <h3>Metal Hardware Decorative Buckle Furniture Luggage Accessories Elliptical Zinc Alloy Die-casting Buckle</h3>
+            <p>Price: $0.08-0.09</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_539.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H714baf27808e4a7ba44559940ed9db80m.jpg_300x300.jpg" alt="China Supplier Heavy Duty Stainless Steel Cabinet Leveling Feet Adjustable for Furniture" style="max-width: 200px;">
+            </a>
+            <h3>China Supplier Heavy Duty Stainless Steel Cabinet Leveling Feet Adjustable for Furniture</h3>
+            <p>Price: $1.50-2.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_540.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8b81650a5de44e13b9abcee977dbda16A.jpg_300x300.jpg" alt="Chair Part Silla De Oficina Partes Furniture Parts for Real Organized Furniture" style="max-width: 200px;">
+            </a>
+            <h3>Chair Part Silla De Oficina Partes Furniture Parts for Real Organized Furniture</h3>
+            <p>Price: $2.05-3.09</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_541.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H09584b5432644623a4a8fbc397f018b6f.jpg_300x300.jpg" alt="High Quality Modern Living Room Bedroom Furniture Part Adjustable Sofa" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Modern Living Room Bedroom Furniture Part Adjustable Sofa</h3>
+            <p>Price: $35.00-45.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_542.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc385a655a9854d5aada3b59bae834882d.jpg_300x300.jpg" alt="Tulip Metal Table Base Parts Supply Commercial Furniture Table Legs Wholesale" style="max-width: 200px;">
+            </a>
+            <h3>Tulip Metal Table Base Parts Supply Commercial Furniture Table Legs Wholesale</h3>
+            <p>Price: $17.00-21.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_543.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Acf02c9e0cbfa400196b0fd3bb723ccf7Z.jpg_300x300.jpg" alt="Furniture Legs Furniture Parts Hot Selling Stainless Steel Cross Frame Chromed Metal Dining Table Furniture Hardware Table Legs" style="max-width: 200px;">
+            </a>
+            <h3>Furniture Legs Furniture Parts Hot Selling Stainless Steel Cross Frame Chromed Metal Dining Table Furniture Hardware Table Legs</h3>
+            <p>Price: $5.00-9.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 300 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_544.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H05120e0754884356b46f4aab461bb0a8p.jpg_300x300.jpg" alt="Guangdong Chancheng Full Set Chair Accessories Repuestos De Sillas for Office Chair Part Office Furniture Spare Part" style="max-width: 200px;">
+            </a>
+            <h3>Guangdong Chancheng Full Set Chair Accessories Repuestos De Sillas for Office Chair Part Office Furniture Spare Part</h3>
+            <p>Price: $2.00-6.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_545.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5f9c1146c552471abe88a39daf30a3c6G.jpg_300x300.jpg" alt="Low MOQ Furniture Parts Industrial Rotary Damper with Spring for Soft Closing Soft Opening" style="max-width: 200px;">
+            </a>
+            <h3>Low MOQ Furniture Parts Industrial Rotary Damper with Spring for Soft Closing Soft Opening</h3>
+            <p>Price: $0.42-0.65</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_546.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf2dddf85d1e54eba927fe180ed8e29bbk.png_300x300.png" alt="Factory Wholesale Price Component Accessories Pneumatic Hydraulic Cylinder Gas Lift Office Chair and Spare Iron Furniture Parts" style="max-width: 200px;">
+            </a>
+            <h3>Factory Wholesale Price Component Accessories Pneumatic Hydraulic Cylinder Gas Lift Office Chair and Spare Iron Furniture Parts</h3>
+            <p>Price: $1.73-2.67</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_547.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb932cb6a24004a4c90aa16b9af7062edo.jpg_300x300.jpg" alt="Hot Sales Wholesale Wood Dowel and Pins Furniture Connection Birch Wood Dowel Screw" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sales Wholesale Wood Dowel and Pins Furniture Connection Birch Wood Dowel Screw</h3>
+            <p>Price: $3.20-7.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 25 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_548.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He07b0acb2a994c2cb887d7ae5dad70328.jpeg_300x300.jpeg" alt="Furniture Embellishment Wood Applique Onlays Hand Carved Decal Unpainted Furniture Bed Door Cabinet Decor for Home Decoration" style="max-width: 200px;">
+            </a>
+            <h3>Furniture Embellishment Wood Applique Onlays Hand Carved Decal Unpainted Furniture Bed Door Cabinet Decor for Home Decoration</h3>
+            <p>Price: $2.50-22.31</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_549.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha6b49ad086454d14935742cdf9c51c48N.jpg_300x300.jpg" alt="China Furniture Parts Desk Leg Hardware Metal Furniture Office Table Leg" style="max-width: 200px;">
+            </a>
+            <h3>China Furniture Parts Desk Leg Hardware Metal Furniture Office Table Leg</h3>
+            <p>Price: $10.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_550.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1486849730324180b8df5957ba5d3502s.jpg_300x300.jpg" alt="High-quality Stainless-Steel Shock Adjustable Gas Lift Furniture Parts for Office Chair" style="max-width: 200px;">
+            </a>
+            <h3>High-quality Stainless-Steel Shock Adjustable Gas Lift Furniture Parts for Office Chair</h3>
+            <p>Price: $1.60-2.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_551.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H308dfdb00ba541889ef593b305a2df0fY.jpg_300x300.jpg" alt="High Quality Metal & Metallurgy Machinery Parts Furniture Accessories Fixed Leveling Feet with Rubber Pad" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Metal & Metallurgy Machinery Parts Furniture Accessories Fixed Leveling Feet with Rubber Pad</h3>
+            <p>Price: $1.00-3.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_552.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbfd50014ad884695be2b0279f6264bf4w.jpg_300x300.jpg" alt="Factory Wholesale Modern Style Steel Furniture Parts Motorized Recliner Mechanism Salon Chair and Bed Frame Components" style="max-width: 200px;">
+            </a>
+            <h3>Factory Wholesale Modern Style Steel Furniture Parts Motorized Recliner Mechanism Salon Chair and Bed Frame Components</h3>
+            <p>Price: $54.00-65.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_553.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2f390d0c4f1642678e157f064ddfb443C.jpg_300x300.jpg" alt="WINSTAR Simple Style Modern Furniture Steel Frame Aluminum 1400mm Dining Table From China" style="max-width: 200px;">
+            </a>
+            <h3>WINSTAR Simple Style Modern Furniture Steel Frame Aluminum 1400mm Dining Table From China</h3>
+            <p>Price: $66.00-68.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_554.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H760e7bbf552e4260817ee78f5a1870905.jpg_300x300.jpg" alt="Factory Wholesale Price Modern Metal Iron/Stainless Steel Round Furniture Leg for Sofa" style="max-width: 200px;">
+            </a>
+            <h3>Factory Wholesale Price Modern Metal Iron/Stainless Steel Round Furniture Leg for Sofa</h3>
+            <p>Price: $0.23-0.46</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 3,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_555.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha7aa16a6854a425db76d239c93e65173C.jpg_300x300.jpg" alt="Hot Sale Living Room Modular Sofa Comfortable Functional L Shape Lounge Sofa for Home Chair Furniture Parts" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale Living Room Modular Sofa Comfortable Functional L Shape Lounge Sofa for Home Chair Furniture Parts</h3>
+            <p>Price: $203.90-388.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_556.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha0346b8ba6674a9aaaaa91b702872e0ar.jpg_300x300.jpg" alt="European Style Real Wood Decoration Material Furniture Part Wood Carved Onlays" style="max-width: 200px;">
+            </a>
+            <h3>European Style Real Wood Decoration Material Furniture Part Wood Carved Onlays</h3>
+            <p>Price: $1.00-2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 27 cubic meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_557.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd8d23a7153ab4ccda7064316ab678c5cM.jpg_300x300.jpg" alt="Decorative Wood Carved Onlays and Appliques Rosettes Interior Decor Furniture Appliques" style="max-width: 200px;">
+            </a>
+            <h3>Decorative Wood Carved Onlays and Appliques Rosettes Interior Decor Furniture Appliques</h3>
+            <p>Price: $0.50-23.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_558.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1061525d4e854601a9b43ac709750002j.jpg_300x300.jpg" alt="White Color Pvc Edge Banding" style="max-width: 200px;">
+            </a>
+            <h3>White Color Pvc Edge Banding</h3>
+            <p>Price: $0.02-1.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100,000 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_559.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdde2a6fb875a420baa7a8d4ff8f045fd5.jpg_300x300.jpg" alt="Chrome Gas Lift Furniture Parts for Office Chair" style="max-width: 200px;">
+            </a>
+            <h3>Chrome Gas Lift Furniture Parts for Office Chair</h3>
+            <p>Price: $2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10,000 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_560.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5e1b044fa81342dc91e289699522c5acC.png_300x300.png" alt="Other Furniture Parts Comfortable Anti Static Esd Chair Components PU Seat Back for Lab Cleanroom Hospital Research Room" style="max-width: 200px;">
+            </a>
+            <h3>Other Furniture Parts Comfortable Anti Static Esd Chair Components PU Seat Back for Lab Cleanroom Hospital Research Room</h3>
+            <p>Price: $7.35</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_561.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5ddeff69b91444deba889e1c917586d8z.jpg_300x300.jpg" alt="Manufacture Furniture Parts Living Room Home Functional Electric Recliner" style="max-width: 200px;">
+            </a>
+            <h3>Manufacture Furniture Parts Living Room Home Functional Electric Recliner</h3>
+            <p>Price: $16.63-18.38</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_562.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H444d77086b6e4a4693de2b4089cc5547F.jpg_300x300.jpg" alt="Taiwan Furniture Hardware Company Various Type Furniture Accessories Bed Hardware, Bed Hook , Sofa Connect Bed Support" style="max-width: 200px;">
+            </a>
+            <h3>Taiwan Furniture Hardware Company Various Type Furniture Accessories Bed Hardware, Bed Hook , Sofa Connect Bed Support</h3>
+            <p>Price: $3.20-4.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_563.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H622beb57ff474e97ba1d76ccf515034d3.jpg_300x300.jpg" alt="Hydraulic Pump Chair Part Beauty Salon Spare Part Hydraulic Oil Barber Chair Parts" style="max-width: 200px;">
+            </a>
+            <h3>Hydraulic Pump Chair Part Beauty Salon Spare Part Hydraulic Oil Barber Chair Parts</h3>
+            <p>Price: $40.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_564.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb5de038ad2574f95aa48015bd8fddb51C.jpg_300x300.jpg" alt="Modern Design Wood Metal Recliner Sofa with Hot Sale Home Furniture for Office Living Room Bedroom or Hotel Use" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Wood Metal Recliner Sofa with Hot Sale Home Furniture for Office Living Room Bedroom or Hotel Use</h3>
+            <p>Price: $5.00-10.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_565.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9b5b881d8411430bad3db7d8e74756746.jpg_300x300.jpg" alt="Wejoy Bedroom Furniture Parts 13cm Height Fumigated Wood Leg for Bedroom Table" style="max-width: 200px;">
+            </a>
+            <h3>Wejoy Bedroom Furniture Parts 13cm Height Fumigated Wood Leg for Bedroom Table</h3>
+            <p>Price: $0.85-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_566.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbb765b7fdaad45b4963d76684bfeb861S.jpg_300x300.jpg" alt="Manufacturer Furniture Parts Office Legs/Simple Table Legs for Office Table Metal Frame Legs" style="max-width: 200px;">
+            </a>
+            <h3>Manufacturer Furniture Parts Office Legs/Simple Table Legs for Office Table Metal Frame Legs</h3>
+            <p>Price: $12.88-14.85</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_567.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7e6b528bbb864369915413d2b095a6f75.jpg_300x300.jpg" alt="WEKIS Furniture Parts ODM Table Legs Outdoor Bench Desk Coffee Office Bar Furniture Desk Metal Modern Design OEM Dining" style="max-width: 200px;">
+            </a>
+            <h3>WEKIS Furniture Parts ODM Table Legs Outdoor Bench Desk Coffee Office Bar Furniture Desk Metal Modern Design OEM Dining</h3>
+            <p>Price: $0.90-3.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_568.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0cd49e17757c4f3b919cd4363315f9e2Z.jpg_300x300.jpg" alt="Stainless Steel Metal Industrial Equipment Leveling Feet Adjustable Furniture Feet Adjustable Foot" style="max-width: 200px;">
+            </a>
+            <h3>Stainless Steel Metal Industrial Equipment Leveling Feet Adjustable Furniture Feet Adjustable Foot</h3>
+            <p>Price: $1.60-2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_569.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H846437434a634bcfaf232f61d4e33a3eb.jpg_300x300.jpg" alt="Jieying Factory Wholesale New Decoration Sofa Accessories 255mm Round Golden Furniture Parts Plastic Sofa Buttons for Sofa Bed" style="max-width: 200px;">
+            </a>
+            <h3>Jieying Factory Wholesale New Decoration Sofa Accessories 255mm Round Golden Furniture Parts Plastic Sofa Buttons for Sofa Bed</h3>
+            <p>Price: $1.10-1.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_570.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H82237e226a9240e782037353116392c7R.jpg_300x300.jpg" alt="Chain Linear Actuator" style="max-width: 200px;">
+            </a>
+            <h3>Chain Linear Actuator</h3>
+            <p>Price: $1.00-50.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_571.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H095de6d468764891844409fcb456a286M.jpg_300x300.jpg" alt="Patas Muebles Furniture Legs for Modern Leather Sectional Office Sofa Fashionable Furniture Leg" style="max-width: 200px;">
+            </a>
+            <h3>Patas Muebles Furniture Legs for Modern Leather Sectional Office Sofa Fashionable Furniture Leg</h3>
+            <p>Price: $1.29-1.58</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_572.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd2e6ad2881d54586a31cb8ed742a0206J.jpg_300x300.jpg" alt="Commercial Contract Restaurant Metal Furniture Parts Copper Table Leg /Rose Gold Table Base Furniture Leg" style="max-width: 200px;">
+            </a>
+            <h3>Commercial Contract Restaurant Metal Furniture Parts Copper Table Leg /Rose Gold Table Base Furniture Leg</h3>
+            <p>Price: $30.00-58.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_573.html">
+                <img src="https://s.alicdn.com/@sc04/kf/S10d7aa2a59204fa5b8cc47c4cd7575df7.jpg_300x300.jpg" alt="Decor-Custom Vintage Wood Corbel Wall Corner Solid Wood Construction Moulding for Home Decorative Furniture Wood Carving Corbel" style="max-width: 200px;">
+            </a>
+            <h3>Decor-Custom Vintage Wood Corbel Wall Corner Solid Wood Construction Moulding for Home Decorative Furniture Wood Carving Corbel</h3>
+            <p>Price: $0.50-1.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_574.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3940ddd872014aa3803a9101f938f4f0W.jpg_300x300.jpg" alt="Furniture Parts for Chair Gas Springs Lift Struts Cylinder Piston Class 1 2 3 4" style="max-width: 200px;">
+            </a>
+            <h3>Furniture Parts for Chair Gas Springs Lift Struts Cylinder Piston Class 1 2 3 4</h3>
+            <p>Price: $1.38-1.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_575.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4b92b38c86984ca9b2832d85f589f2dc0.jpg_300x300.jpg" alt="Standard Furniture Parts Components Office Chair Parts and Accessories Metal Chair Legs Replacement Aluminum Five Star Leg" style="max-width: 200px;">
+            </a>
+            <h3>Standard Furniture Parts Components Office Chair Parts and Accessories Metal Chair Legs Replacement Aluminum Five Star Leg</h3>
+            <p>Price: $7.75-7.95</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_576.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7bdc13cd0f6248409438a6a655916857I.png_300x300.png" alt="Swivel Leveling Feet Stainless Steel 304 Adjustable Leveling Feet Furniture Leg Feet" style="max-width: 200px;">
+            </a>
+            <h3>Swivel Leveling Feet Stainless Steel 304 Adjustable Leveling Feet Furniture Leg Feet</h3>
+            <p>Price: $0.39-2.44</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_577.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd2465089fc044e119dcd55851d8aa0c0b.png_300x300.png" alt="OEM ODM Factory Custom Iron Chromed Metal Sofa Legs Steel Furniture Hardware Accessories for Sofa Table Chair for Apartments" style="max-width: 200px;">
+            </a>
+            <h3>OEM ODM Factory Custom Iron Chromed Metal Sofa Legs Steel Furniture Hardware Accessories for Sofa Table Chair for Apartments</h3>
+            <p>Price: $0.70-0.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_578.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hca28ddead5b64f2a90323331080389a2e.png_300x300.png" alt="Parts Swivel Spare Office Chairs Part Armrest Revolving Plastic Gamer Other Furniture Manufacturer Steelcase Chair Arms Pads" style="max-width: 200px;">
+            </a>
+            <h3>Parts Swivel Spare Office Chairs Part Armrest Revolving Plastic Gamer Other Furniture Manufacturer Steelcase Chair Arms Pads</h3>
+            <p>Price: $2.90-3.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 56 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_579.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5d6f0e2ec3fa41f08202d502084211f0h.jpg_300x300.jpg" alt="Winstar Furniture Leg Parts Wholesaler Supplies Foshan Manufacturer Plastic Sofa Legs" style="max-width: 200px;">
+            </a>
+            <h3>Winstar Furniture Leg Parts Wholesaler Supplies Foshan Manufacturer Plastic Sofa Legs</h3>
+            <p>Price: $0.28-0.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2,400 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_580.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H980834f22237467d84cc65b1a50c16b5E.jpg_300x300.jpg" alt="03.088 Hot Sale Sofa Accessories Hardware Black Furniture Legs Metal Gold Cabinet Feet Iron Sofa Legs for Bed TV Kitchen" style="max-width: 200px;">
+            </a>
+            <h3>03.088 Hot Sale Sofa Accessories Hardware Black Furniture Legs Metal Gold Cabinet Feet Iron Sofa Legs for Bed TV Kitchen</h3>
+            <p>Price: $0.09-0.19</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_581.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hfedf8be265b341f0b1c09d11338744ef2.jpg_300x300.jpg" alt="High End Metal Furniture Accessories for Sofas Tables Chairs Hair Clips Table Legs Sofas and Furniture Legs" style="max-width: 200px;">
+            </a>
+            <h3>High End Metal Furniture Accessories for Sofas Tables Chairs Hair Clips Table Legs Sofas and Furniture Legs</h3>
+            <p>Price: $5.20-5.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 60 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_582.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H27c2230e32ca414f8136298cf225bb5b9.jpg_300x300.jpg" alt="High Quality Sofa Legs 12 15 18cm Gold Chrome Gun Black Silver Polish Metal Bed Foot Cabinet Feet Furniture Hardware Accessories" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Sofa Legs 12 15 18cm Gold Chrome Gun Black Silver Polish Metal Bed Foot Cabinet Feet Furniture Hardware Accessories</h3>
+            <p>Price: $0.42-0.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 600 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_583.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2c0768b7ca0744288a47527d4f16e2cbB.jpg_300x300.jpg" alt="The Factory Exports Various Models and Styles of Furniture Plastic Sofa Leg, Used for Tables, Chairs, Cabinets, and Beds, Etc." style="max-width: 200px;">
+            </a>
+            <h3>The Factory Exports Various Models and Styles of Furniture Plastic Sofa Leg, Used for Tables, Chairs, Cabinets, and Beds, Etc.</h3>
+            <p>Price: $0.50-1.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_584.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc564f9f9ec3648b7a259f387799e18b6l.jpg_300x300.jpg" alt="Modern Y Shape Hardware Furniture Supplies Home Accessories Metal Legs for Furniture Sturdy Sofa Accessories Furniture Hardware" style="max-width: 200px;">
+            </a>
+            <h3>Modern Y Shape Hardware Furniture Supplies Home Accessories Metal Legs for Furniture Sturdy Sofa Accessories Furniture Hardware</h3>
+            <p>Price: $0.48-0.75</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_585.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf75458b01b3e484c94b44e7a5b1332baJ.png_300x300.png" alt="Other Furniture Office Chair Parts Anti Static Esd Chair Components PU Seat Back for Lab Cleanroom Hospital Research Room" style="max-width: 200px;">
+            </a>
+            <h3>Other Furniture Office Chair Parts Anti Static Esd Chair Components PU Seat Back for Lab Cleanroom Hospital Research Room</h3>
+            <p>Price: $7.00-8.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_586.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2b2088e5b24641fa9a1eba7d761e6e9dS.png_300x300.png" alt="Modern Square Beech Wood Sofa Legs Various Shapes Wooden Furniture Parts Wholesale OEM Cabinet Bed Desk Wooden Chair Outdoor" style="max-width: 200px;">
+            </a>
+            <h3>Modern Square Beech Wood Sofa Legs Various Shapes Wooden Furniture Parts Wholesale OEM Cabinet Bed Desk Wooden Chair Outdoor</h3>
+            <p>Price: $1.50-1.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_587.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hea67a1e37a24454696cb553175a6a7eex.jpg_300x300.jpg" alt="03.1317 Hot Sale Sofa Accessories Square Furniture Legs Wood Table Legs Wood Wooden Leg for Armchair Recliner Dresser Chair" style="max-width: 200px;">
+            </a>
+            <h3>03.1317 Hot Sale Sofa Accessories Square Furniture Legs Wood Table Legs Wood Wooden Leg for Armchair Recliner Dresser Chair</h3>
+            <p>Price: $1.48</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_588.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5e1b044fa81342dc91e289699522c5acC.png_300x300.png" alt="Other Furniture Parts Comfortable Anti Static Esd Chair Components PU Seat Back for Lab Cleanroom Hospital Research Room" style="max-width: 200px;">
+            </a>
+            <h3>Other Furniture Parts Comfortable Anti Static Esd Chair Components PU Seat Back for Lab Cleanroom Hospital Research Room</h3>
+            <p>Price: $7.35</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_589.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0277372266604536b4c2be8d7f4df444g.jpg_300x300.jpg" alt="Caiyi Manufacturing Round Black Tube Design Metal Furniture Parts Legs for Sofa Bed Cabinet" style="max-width: 200px;">
+            </a>
+            <h3>Caiyi Manufacturing Round Black Tube Design Metal Furniture Parts Legs for Sofa Bed Cabinet</h3>
+            <p>Price: $0.34-0.38</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_590.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf30d3805b4064a0288daa39c25195554Q.jpg_300x300.jpg" alt="Yonfia FLA10004 High Quality Aluminum Cabinet Table Legs Gold Black Furniture Hardware TV Sofa Support Legs" style="max-width: 200px;">
+            </a>
+            <h3>Yonfia FLA10004 High Quality Aluminum Cabinet Table Legs Gold Black Furniture Hardware TV Sofa Support Legs</h3>
+            <p>Price: $1.79-4.16</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_591.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb6e23946bbcf47fe9311bf39d4d9f00cY.png_300x300.png" alt="Furniture Parts Metal Chrome Sofa Legs With Chrome Plated" style="max-width: 200px;">
+            </a>
+            <h3>Furniture Parts Metal Chrome Sofa Legs With Chrome Plated</h3>
+            <p>Price: $1.46</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_592.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdb550c4cb7cd4c20aad45227fdcf3832j.jpg_300x300.jpg" alt="WINSTAR Small Home Hardware Black Plastic Furniture Feet Sofa Foot Without Screw" style="max-width: 200px;">
+            </a>
+            <h3>WINSTAR Small Home Hardware Black Plastic Furniture Feet Sofa Foot Without Screw</h3>
+            <p>Price: $0.07-0.09</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_593.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H29d10811f8d549ef95b4a82412392ab42.jpg_300x300.jpg" alt="WINSTAR Hotsale Style Furniture Parts Metal Pipe 80/100/120mm Chrome Sofa Bed Legs for Cabinet" style="max-width: 200px;">
+            </a>
+            <h3>WINSTAR Hotsale Style Furniture Parts Metal Pipe 80/100/120mm Chrome Sofa Bed Legs for Cabinet</h3>
+            <p>Price: $0.30-0.33</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_594.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6ec58e267a91468d88afd97884534ff3J.jpg_300x300.jpg" alt="Pinlong Factory Customized Special Shape Plastic Sofa Support Cabinet Legs for Decorative Furniture Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Pinlong Factory Customized Special Shape Plastic Sofa Support Cabinet Legs for Decorative Furniture Accessories</h3>
+            <p>Price: $0.87-1.09</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_595.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9bbe394f921d4b83bfee0c7e2590b6335.jpg_300x300.jpg" alt="Modern Furniture Accessories Solid Wooden Legs Dining Coffee Table Legs Sofa Leg for Armchair Cabinet With Screw" style="max-width: 200px;">
+            </a>
+            <h3>Modern Furniture Accessories Solid Wooden Legs Dining Coffee Table Legs Sofa Leg for Armchair Cabinet With Screw</h3>
+            <p>Price: $0.35-1.53</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_596.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H62bf38c0504b41c2800311a413dfe077u.png_300x300.png" alt="Arms Pads Swivel Spare Office Chairs Part Armrest Revolving Plastic Gamer Other Furniture Manufacturer Steelcase Chair Parts" style="max-width: 200px;">
+            </a>
+            <h3>Arms Pads Swivel Spare Office Chairs Part Armrest Revolving Plastic Gamer Other Furniture Manufacturer Steelcase Chair Parts</h3>
+            <p>Price: $4.00-6.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_597.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8acf3ae84a4b439e99420629ddbebf3fC.jpg_300x300.jpg" alt="Manufacturer Custom Vintage Base Furniture Leg Parts Metal Steel Coffee Legs for Tables" style="max-width: 200px;">
+            </a>
+            <h3>Manufacturer Custom Vintage Base Furniture Leg Parts Metal Steel Coffee Legs for Tables</h3>
+            <p>Price: $26.16-30.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_598.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1d2d0f6ee0db443ca6a06a37c22a743bJ.jpg_300x300.jpg" alt="YOYOW Hardware Wholesale Iron Sofa Leg OEM ODM Coffee Table Feet Right Angle Bed Furniture Feet" style="max-width: 200px;">
+            </a>
+            <h3>YOYOW Hardware Wholesale Iron Sofa Leg OEM ODM Coffee Table Feet Right Angle Bed Furniture Feet</h3>
+            <p>Price: $0.81-1.25</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_599.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Heabba904f4b1473da43b6613060e6486h.jpg_300x300.jpg" alt="WELLTOP Furniture Legs Stainless Steel Adjustable Cabinet Sofa Feet Leg for Furniture Parts VT-03.014" style="max-width: 200px;">
+            </a>
+            <h3>WELLTOP Furniture Legs Stainless Steel Adjustable Cabinet Sofa Feet Leg for Furniture Parts VT-03.014</h3>
+            <p>Price: $0.15-0.19</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_600.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H52119cf335ff4b5c9a183588b899f5fb6.jpg_300x300.jpg" alt="Modern Furniture Accessories Solid Wooden Sofa Legs Wooden Table Legs for Armchair Cabinet With Screw" style="max-width: 200px;">
+            </a>
+            <h3>Modern Furniture Accessories Solid Wooden Sofa Legs Wooden Table Legs for Armchair Cabinet With Screw</h3>
+            <p>Price: $0.35-1.53</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <!-- 分页按钮 -->
+        <div class="pagination">
+            
+            <a href="page_5.html">Previous</a>
+            
+
+            
+            
+
+            
+            <a href="page_1.html" >1</a>
+            
+            <a href="page_2.html" >2</a>
+            
+            <a href="page_3.html" >3</a>
+            
+            <a href="page_4.html" >4</a>
+            
+            <a href="page_5.html" >5</a>
+            
+            <a href="page_6.html" class="active">6</a>
+            
+            <a href="page_7.html" >7</a>
+            
+            <a href="page_8.html" >8</a>
+            
+            <a href="page_9.html" >9</a>
+            
+            <a href="page_10.html" >10</a>
+            
+
+            
+            <a href="page_11.html">Next</a>
+            
+        </div>
+        <!-- 回到顶部按钮 -->
+        <button id="back-to-top" onclick="topFunction()">回到顶部</button>
+    </div>
+
+    <script>
+        // 回到顶部按钮显示与隐藏逻辑
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // 回到顶部按钮点击事件
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L8EDEXZBV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9L8EDEXZBV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品列表 - 第页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 200px;
+            /* 可根据实际情况调整图片大小 */
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        nav {
+            background-color: #03a9f4;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* 新添加的样式 */
+        .product-item h3 {
+            font-size: 14px;
+            /* 产品名称文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item p {
+            font-size: 12px;
+            /* 其他产品信息文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item:hover h3 {
+            color: #03a9f4;
+            /* 鼠标悬停时产品名称文字变色 */
+        }
+
+        .product-item:hover p {
+            color: #03a9f4;
+            /* 鼠标悬停时其他产品信息文字变色 */
+        }
+
+        /* 产品容器样式 */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        /* 产品项样式 */
+        .product-item {
+            width: calc(25% - 20px);
+            /* 默认每行显示 4 个产品 */
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 鼠标悬停效果 */
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* 媒体查询，适配不同屏幕尺寸 */
+        @media (max-width: 1024px) {
+            .product-item {
+                width: calc(33.33% - 20px);
+                /* 平板设备每行显示 3 个产品 */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* 小屏幕设备每行显示 2 个产品 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: 100%;
+                /* 超小屏幕设备每行显示 1 个产品 */
+            }
+        }
+
+        /* 分页按钮样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        /* 回到顶部按钮样式 */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #03a9f4;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部图片和文字 -->
+    <div class="header">
+        <img src="../../../main/image/logo.png" alt="Logo">
+        <p>Sunnyluo Store</p>
+        <p>Build a curated directory of store with factory</p>
+    </div>
+    <nav>
+        <a href="../../../index.html">Home</a>
+        <a href="../../pdfs/pdf.html">Resources</a>
+        <a href="../../../main/About us.html">About Us</a>
+        <a href="mailto:sunnyluo330@gmail.com">Contact Us</a>
+        <a href="https://www.facebook.com/sunnyluoting">Facebook</a>
+    </nav>
+    <h1>Product list</h1>
+    <div class="products">
+        
+        <div class="product-item">
+            <a href="product_1101.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H940e0022b6f243b6afff5bd8d3a90863F.jpg_300x300.jpg" alt="Modern Design Iron Metal Gold Black Y Shape Furniture Legs Sofa Legs Cabinet Legs" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Iron Metal Gold Black Y Shape Furniture Legs Sofa Legs Cabinet Legs</h3>
+            <p>Price: $0.30-0.33</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1102.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H85183201e4844ec1bf43caa03fbe577c3.jpg_300x300.jpg" alt="Factory Price Round Tube Pipe Belt Screw Iron Metal Sofa Legs Furniture Legs Cabinet Legs" style="max-width: 200px;">
+            </a>
+            <h3>Factory Price Round Tube Pipe Belt Screw Iron Metal Sofa Legs Furniture Legs Cabinet Legs</h3>
+            <p>Price: $0.34-0.36</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1103.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H56bfbe7606944e63857a964e2183a2368.jpg_300x300.jpg" alt="Manufacturer Supply Iron Metal Y Shape Furniture Legs Sofa Legs Cabinet Legs for Sofa" style="max-width: 200px;">
+            </a>
+            <h3>Manufacturer Supply Iron Metal Y Shape Furniture Legs Sofa Legs Cabinet Legs for Sofa</h3>
+            <p>Price: $0.32-0.34</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1104.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H53199a9c9b6f4c4fad9a6bcd77e21ea7L.jpg_300x300.jpg" alt="Factory Price Iron Metal Y Shape Gold Black Sofa Legs Furniture Legs Cabinet Legs" style="max-width: 200px;">
+            </a>
+            <h3>Factory Price Iron Metal Y Shape Gold Black Sofa Legs Furniture Legs Cabinet Legs</h3>
+            <p>Price: $0.43-0.45</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1105.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0f2eb475b9284ddcb78d21ef026cb33dB.jpg_300x300.jpg" alt="Adjustable Round Tube Furniture Legs Cabinet Legs Sofa Legs for Sofa" style="max-width: 200px;">
+            </a>
+            <h3>Adjustable Round Tube Furniture Legs Cabinet Legs Sofa Legs for Sofa</h3>
+            <p>Price: $0.34-0.38</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 150 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1106.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6a40dc0fe78d43c79fe396bc90c649e2j.jpg_300x300.jpg" alt="Professional Factory Iron Metal Round Tube Gold Furniture Legs Black Cabinet Legs Sofa Legs" style="max-width: 200px;">
+            </a>
+            <h3>Professional Factory Iron Metal Round Tube Gold Furniture Legs Black Cabinet Legs Sofa Legs</h3>
+            <p>Price: $0.27-0.31</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1107.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H07638d01cb9a4529b3b8d942368897f9y.jpg_300x300.jpg" alt="Factory Direct Price Gold Black Silver Y Shape Sofa Legs Cabinet Legs Furniture Legs" style="max-width: 200px;">
+            </a>
+            <h3>Factory Direct Price Gold Black Silver Y Shape Sofa Legs Cabinet Legs Furniture Legs</h3>
+            <p>Price: $0.37-0.39</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1108.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha88f8766f9b1416fb3649d12156a0d3cN.jpg_300x300.jpg" alt="High Quality Nylon Bolt Swivel Leveling Feet Adjustable Table Sofa Furniture & Kitchen Cabinets Modern Design for Hotels" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Nylon Bolt Swivel Leveling Feet Adjustable Table Sofa Furniture & Kitchen Cabinets Modern Design for Hotels</h3>
+            <p>Price: $0.16-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1109.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Uc1513e83bdd64798821984df55320aee3.jpeg_300x300.jpeg" alt="Industrial Cast Iron Crank Cafe Table Legs" style="max-width: 200px;">
+            </a>
+            <h3>Industrial Cast Iron Crank Cafe Table Legs</h3>
+            <p>Price: $30.00-50.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1110.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1f434bb1126a43f8b0452435469961d6j.jpg_300x300.jpg" alt="Adjustable Imitated Metal Sofa Bed Feet Plastic Furniture Parts for Outdoor Living Room Workshop Use" style="max-width: 200px;">
+            </a>
+            <h3>Adjustable Imitated Metal Sofa Bed Feet Plastic Furniture Parts for Outdoor Living Room Workshop Use</h3>
+            <p>Price: $0.24-0.29</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1111.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H52321513bb8d43a6921bef4671d4389aM.jpg_300x300.jpg" alt="Beautiful Modern ABS Plastic Sofa Bed Leg Passed SGS Test for Home Office Dining Kitchen Living Room Bedroom Bathroom Furniture" style="max-width: 200px;">
+            </a>
+            <h3>Beautiful Modern ABS Plastic Sofa Bed Leg Passed SGS Test for Home Office Dining Kitchen Living Room Bedroom Bathroom Furniture</h3>
+            <p>Price: $0.52-1.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1112.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3ae83755a2dd497cbf49974da23a67beg.jpg_300x300.jpg" alt="Good Quality Modern Furniture Customization Metal Legs Square White Table Base Adjustable Lifting Table Leg" style="max-width: 200px;">
+            </a>
+            <h3>Good Quality Modern Furniture Customization Metal Legs Square White Table Base Adjustable Lifting Table Leg</h3>
+            <p>Price: $60.00-70.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 cartons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1113.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hff1e984358134563b714d7320183df7bj.jpg_300x300.jpg" alt="Good Quality Coffee Room Table Base L1050xW700xH(720-1220)mm Steel Frame 2 Segments 2 Motors Table Base" style="max-width: 200px;">
+            </a>
+            <h3>Good Quality Coffee Room Table Base L1050xW700xH(720-1220)mm Steel Frame 2 Segments 2 Motors Table Base</h3>
+            <p>Price: $235.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1114.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha09f263a38e94431bf2db10d2b1bbacfF.jpg_300x300.jpg" alt="Custom Modern Luxury Dining Chair Bent Plywood Leisure Wood Products Accessories Bamboo Furniture Parts for Kitchen Use" style="max-width: 200px;">
+            </a>
+            <h3>Custom Modern Luxury Dining Chair Bent Plywood Leisure Wood Products Accessories Bamboo Furniture Parts for Kitchen Use</h3>
+            <p>Price: $50.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1115.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6eaad98ffc7c441694df30b2402a12535.jpg_300x300.jpg" alt="BIFMA High Quality Nylon Plastic 5-Star Foot for Office Chair Base Swivel Chair Accessories Furniture Parts" style="max-width: 200px;">
+            </a>
+            <h3>BIFMA High Quality Nylon Plastic 5-Star Foot for Office Chair Base Swivel Chair Accessories Furniture Parts</h3>
+            <p>Price: $2.87-11.18</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1116.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H56207ccccef7423ab03f55ded55e0dfaG.jpg_300x300.jpg" alt="Good Quality Coffee Room Table Base D620xH720mm S.S 201 Rome Four LegTable Base" style="max-width: 200px;">
+            </a>
+            <h3>Good Quality Coffee Room Table Base D620xH720mm S.S 201 Rome Four LegTable Base</h3>
+            <p>Price: $21.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1117.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He47ec42737a24545b4887744b30d861fJ.jpg_300x300.jpg" alt="Cheap Price Coffee Restaurant Furniture Industrial Style Iron Legs Heavy Duty Stand Metal Black Wrought Iron Dining Table Base" style="max-width: 200px;">
+            </a>
+            <h3>Cheap Price Coffee Restaurant Furniture Industrial Style Iron Legs Heavy Duty Stand Metal Black Wrought Iron Dining Table Base</h3>
+            <p>Price: $22.50-27.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1118.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H65d64d00a2c94b29903857b62068af3e2.jpg_300x300.jpg" alt="Hot Sale Good Quality Table Base 550x550mmX(720-1080)mm Hand-crank Lifting Table Base" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale Good Quality Table Base 550x550mmX(720-1080)mm Hand-crank Lifting Table Base</h3>
+            <p>Price: $51.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1119.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9e59ebef48874609ab0352d0efda6b52G.jpg_300x300.jpg" alt="Factory Manufacture Various Metal Square Stainless Steel Coffee Table Legs Table Base Dining" style="max-width: 200px;">
+            </a>
+            <h3>Factory Manufacture Various Metal Square Stainless Steel Coffee Table Legs Table Base Dining</h3>
+            <p>Price: $40.00-43.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1120.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hebc1575a058d45598518a4666e7146aaU.jpg_300x300.jpg" alt="Modern Table Leg Restaurant Coffee Metal Folding Table Base Aluminium Dinning Table Pedestal Base" style="max-width: 200px;">
+            </a>
+            <h3>Modern Table Leg Restaurant Coffee Metal Folding Table Base Aluminium Dinning Table Pedestal Base</h3>
+            <p>Price: $14.00-16.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1121.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1a6da21d31f94a8a9860a4d79b9fd432i.jpg_300x300.jpg" alt="Tea Shop Table Legs Dessert Shop Table Cafe Western Restaurant Marble Table Round Base" style="max-width: 200px;">
+            </a>
+            <h3>Tea Shop Table Legs Dessert Shop Table Cafe Western Restaurant Marble Table Round Base</h3>
+            <p>Price: $36.00-43.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 units</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1122.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2449e30dc61042a799fa964d6fac6d2fb.jpg_300x300.jpg" alt="Industrial Modern Furniture Parts for Coffee Shop Restaurant Table Base for Sale" style="max-width: 200px;">
+            </a>
+            <h3>Industrial Modern Furniture Parts for Coffee Shop Restaurant Table Base for Sale</h3>
+            <p>Price: $33.50-37.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 units</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1123.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc9c73299824a473f829d35326e9cdb48b.jpg_300x300.jpg" alt="Industrial Modern WholesaleTable Base Dining Coffee Stainless Steel Metal Table Legs" style="max-width: 200px;">
+            </a>
+            <h3>Industrial Modern WholesaleTable Base Dining Coffee Stainless Steel Metal Table Legs</h3>
+            <p>Price: $30.00-35.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1124.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9adbbd8090f14b4380f9a1dde2893905k.jpg_300x300.jpg" alt="Good Quality Table Base 650x650xH720MM Aluminum Stackable Folding Base" style="max-width: 200px;">
+            </a>
+            <h3>Good Quality Table Base 650x650xH720MM Aluminum Stackable Folding Base</h3>
+            <p>Price: $26.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1125.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1c508eadc3954490862720b837c688e7l.jpg_300x300.jpg" alt="Coffee Room bar Table Base D660xH725mm Stainless Steel Table Base" style="max-width: 200px;">
+            </a>
+            <h3>Coffee Room bar Table Base D660xH725mm Stainless Steel Table Base</h3>
+            <p>Price: $30.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1126.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5389b8768a8d4af6aae84e7339f286a41.jpg_300x300.jpg" alt="Modern Design Metal Table Base 700x400xH720mm Iron Plate Double Column Table Base" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Metal Table Base 700x400xH720mm Iron Plate Double Column Table Base</h3>
+            <p>Price: $35.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1127.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5f1cc697aa8b460882944c73e145a638D.jpg_300x300.jpg" alt="Black Color Metal Table Base L1200xW600xH(730-1165)mm Handle Lifting Table Base" style="max-width: 200px;">
+            </a>
+            <h3>Black Color Metal Table Base L1200xW600xH(730-1165)mm Handle Lifting Table Base</h3>
+            <p>Price: $85.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1128.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H4f7324dc81574fa5928ade3f5b38d317p.jpg_300x300.jpg" alt="Wholesale Furniture Part Aluminum Alloy Table Legs Metal Legs Frame Table Base for Dining Table Finished" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Furniture Part Aluminum Alloy Table Legs Metal Legs Frame Table Base for Dining Table Finished</h3>
+            <p>Price: $30.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1129.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hfcd72b2c4e764d67837150afc7e21b94J.jpg_300x300.jpg" alt="Wholesale Furniture Part Aluminum Alloy Table Legs Metal Legs Frame Table Base for Dining Table" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Furniture Part Aluminum Alloy Table Legs Metal Legs Frame Table Base for Dining Table</h3>
+            <p>Price: $30.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1130.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hfeacb04266c547379b3e1c63be273fd6S.jpg_300x300.jpg" alt="Good Quality Coffee Room Table Base L1200xW600x(730-1165)mm Single Motor Height Ajustable Table Base" style="max-width: 200px;">
+            </a>
+            <h3>Good Quality Coffee Room Table Base L1200xW600x(730-1165)mm Single Motor Height Ajustable Table Base</h3>
+            <p>Price: $117.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1131.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1771ccdd53254974b161404a5846902fJ.jpg_300x300.jpg" alt="Cast Aluminum Coffee Table Base 295x295xH(410-720)mm Gas Lift 2 Joint Tatami Lifting Base" style="max-width: 200px;">
+            </a>
+            <h3>Cast Aluminum Coffee Table Base 295x295xH(410-720)mm Gas Lift 2 Joint Tatami Lifting Base</h3>
+            <p>Price: $65.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1132.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbffea01fb34f400c850cd8794db98aeak.jpg_300x300.jpg" alt="Good Quality Coffee Room Table Base Folding Cast Iron bar Table Base" style="max-width: 200px;">
+            </a>
+            <h3>Good Quality Coffee Room Table Base Folding Cast Iron bar Table Base</h3>
+            <p>Price: $43.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1133.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H012717d809b14aa7b8da814c6ada1712D.jpg_300x300.jpg" alt="Good Quality Coffee Room Table Base 450x680xH710mm Cast Iron Folding Table Base" style="max-width: 200px;">
+            </a>
+            <h3>Good Quality Coffee Room Table Base 450x680xH710mm Cast Iron Folding Table Base</h3>
+            <p>Price: $32.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1134.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He368c6ceb3cb4d87abc9e7d6cf619fadD.jpg_300x300.jpg" alt="Metal Cast Iron Table Base 450x450xH(720-1080)mm Hand Crank Adjustable Table Base" style="max-width: 200px;">
+            </a>
+            <h3>Metal Cast Iron Table Base 450x450xH(720-1080)mm Hand Crank Adjustable Table Base</h3>
+            <p>Price: $30.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1135.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H16aa4a3695464ecf94852ef60a176db3y.jpg_300x300.jpg" alt="Good Quality Home Office Outdoor Table Base D660xH725mm Stainless Steel Table Base" style="max-width: 200px;">
+            </a>
+            <h3>Good Quality Home Office Outdoor Table Base D660xH725mm Stainless Steel Table Base</h3>
+            <p>Price: $27.00-29.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1136.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1001a8dd006f4ecbb6c3b98a279589c05.jpg_300x300.jpg" alt="Wholesale 500mm Iron Swivel Chair Base Customizable Chrome Bar for Outdoor Metal Material for Kitchen Hotel Use Barber Chair" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale 500mm Iron Swivel Chair Base Customizable Chrome Bar for Outdoor Metal Material for Kitchen Hotel Use Barber Chair</h3>
+            <p>Price: $5.00-6.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1137.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H028b67ee7ab4406aa9a90ed05d8061f24.jpg_300x300.jpg" alt="office chair replacement tool" style="max-width: 200px;">
+            </a>
+            <h3>office chair replacement tool</h3>
+            <p>Price: $2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1138.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He62eb7f2647543c39661b0b1013c4daej.jpg_300x300.jpg" alt="Good Quality Cast Aluminum D700xH720mm Table Base for Sale" style="max-width: 200px;">
+            </a>
+            <h3>Good Quality Cast Aluminum D700xH720mm Table Base for Sale</h3>
+            <p>Price: $35.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1139.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2c9ca6ee010847099ed000e0959ccd70l.jpg_300x300.jpg" alt="2023 Hot Sale Modern Chrome Metal Sofa Furniture Legs 150-180mm Iron Cabinet Triangle for Home & Outdoor Use" style="max-width: 200px;">
+            </a>
+            <h3>2023 Hot Sale Modern Chrome Metal Sofa Furniture Legs 150-180mm Iron Cabinet Triangle for Home & Outdoor Use</h3>
+            <p>Price: $0.95-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 60 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1140.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hfa2e54b45dcd44c4abf5e0d401da7b43Q.jpg_300x300.jpg" alt="Custom Cast Iron Metal Gold Steel Furniture Legs for Coffee Dining Sofa Table for Kitchen Hotel & Home Office Use" style="max-width: 200px;">
+            </a>
+            <h3>Custom Cast Iron Metal Gold Steel Furniture Legs for Coffee Dining Sofa Table for Kitchen Hotel & Home Office Use</h3>
+            <p>Price: $0.76-0.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 60 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1141.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H52a2b6717d1d4ab686d47e00bad1c7bcw.png_300x300.png" alt="Modern Design Replacement Furniture Hardware Legs Black & Golden Iron for Sofa & Table Base for Living Room & Park" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design Replacement Furniture Hardware Legs Black & Golden Iron for Sofa & Table Base for Living Room & Park</h3>
+            <p>Price: $1.90-2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1142.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1d7c98c7190c45d99bae4d2ec1cf72c06.jpg_300x300.jpg" alt="Professional Custom Iron Sofa Leg Metal Furniture Accessories Y-Shape Strong Table Feet Chrome Golden for Outdoor Workshop" style="max-width: 200px;">
+            </a>
+            <h3>Professional Custom Iron Sofa Leg Metal Furniture Accessories Y-Shape Strong Table Feet Chrome Golden for Outdoor Workshop</h3>
+            <p>Price: $0.46-0.48</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 60 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1143.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hede1ae2f0c794fc5851b555818807052K.jpg_300x300.jpg" alt="Traditional Metal Good Quality Table Base Gas Lift Table Base for Sale" style="max-width: 200px;">
+            </a>
+            <h3>Traditional Metal Good Quality Table Base Gas Lift Table Base for Sale</h3>
+            <p>Price: $30.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1144.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hadf4bac0eaee418eb7a4b9c41e2d9744Q.jpg_300x300.jpg" alt="Accept Customized Good Quality Table Base 400x400xH720mm S.S304 Table Base" style="max-width: 200px;">
+            </a>
+            <h3>Accept Customized Good Quality Table Base 400x400xH720mm S.S304 Table Base</h3>
+            <p>Price: $29.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1145.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8f4f53f08a764221b50e27ae2f59a7b8A.jpg_300x300.jpg" alt="WINSTAR Popular Furniture Fittings Matt Black 130mm Y Shape Cheap Sofa Legs for Living Room" style="max-width: 200px;">
+            </a>
+            <h3>WINSTAR Popular Furniture Fittings Matt Black 130mm Y Shape Cheap Sofa Legs for Living Room</h3>
+            <p>Price: $1.15-1.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 300 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1146.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb76edafcc9444b599f04a0b23eb8cec4b.jpg_300x300.jpg" alt="Wholesale Nylon Adjustable Round Plastic Footstool Modern Design Swivel Chair Base School and Home Office Chair Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Nylon Adjustable Round Plastic Footstool Modern Design Swivel Chair Base School and Home Office Chair Accessories</h3>
+            <p>Price: $3.00-3.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1147.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha8aafab5611e4034ae27825200764c7bE.jpg_300x300.jpg" alt="WINSTAR Hotsale Furniture Feet Parts Metal 150mm Shiny Black Cheap Sofa Bed Leg with Rubber" style="max-width: 200px;">
+            </a>
+            <h3>WINSTAR Hotsale Furniture Feet Parts Metal 150mm Shiny Black Cheap Sofa Bed Leg with Rubber</h3>
+            <p>Price: $0.98-1.02</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 400 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1148.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8e3b3ab1cdc44942a153ffa8d943bb56s.jpg_300x300.jpg" alt="Factory Wholesale Office Chair Accessories, High Quality Nylon Plastic boss Chair 5 Star Feet, Office Chair Base" style="max-width: 200px;">
+            </a>
+            <h3>Factory Wholesale Office Chair Accessories, High Quality Nylon Plastic boss Chair 5 Star Feet, Office Chair Base</h3>
+            <p>Price: $4.50-8.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1149.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H85352adfbb0e4b5c9d6d31d5e5068d5dK.jpg_300x300.jpg" alt="High Quality BIFMA 4-Star Nylon Plastic Office Chair Base Wholesale Modern Swivel Chair Accessory for Home or Hospital Use" style="max-width: 200px;">
+            </a>
+            <h3>High Quality BIFMA 4-Star Nylon Plastic Office Chair Base Wholesale Modern Swivel Chair Accessory for Home or Hospital Use</h3>
+            <p>Price: $4.30-10.75</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1150.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdde2a6fb875a420baa7a8d4ff8f045fd5.jpg_300x300.jpg" alt="Chrome Gas Lift Furniture Parts for Office Chair" style="max-width: 200px;">
+            </a>
+            <h3>Chrome Gas Lift Furniture Parts for Office Chair</h3>
+            <p>Price: $2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10,000 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1151.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H137d46ce19904ce58c9ee6c9a7706ba7y.jpg_300x300.jpg" alt="High Quality Nylon Plastic Swivel Chair Base Five Star Foot Boss Office Chair for Home or School Modern Design" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Nylon Plastic Swivel Chair Base Five Star Foot Boss Office Chair for Home or School Modern Design</h3>
+            <p>Price: $1.50-2.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1152.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2bd44950b3764f958f85aba7e89aabc8k.jpg_300x300.jpg" alt="WINSTAR High Quality Furniture Feet Chrome Metal Modern Sofa Leg for Double Bed" style="max-width: 200px;">
+            </a>
+            <h3>WINSTAR High Quality Furniture Feet Chrome Metal Modern Sofa Leg for Double Bed</h3>
+            <p>Price: $1.59-1.68</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 300 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1153.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdbf4edcc6c1b4d50a9e80d9e9fb63a26E.jpg_300x300.jpg" alt="Wholesale Custom Chrome Steel Furniture Chair Frame Export Price High Quality Parts" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Custom Chrome Steel Furniture Chair Frame Export Price High Quality Parts</h3>
+            <p>Price: $10.00-12.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1154.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He62cda4ae12b4e6eb2a46a0e59c1bc9bL.jpg_300x300.jpg" alt="Spare Parts Plastic Chair Office Computer Chair Cover Woodland Plywood Seat for Office Chair Part" style="max-width: 200px;">
+            </a>
+            <h3>Spare Parts Plastic Chair Office Computer Chair Cover Woodland Plywood Seat for Office Chair Part</h3>
+            <p>Price: $1.58-2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1155.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H8673a2e835a34abfac049c2ec86e6e8f1.jpg_300x300.jpg" alt="Modern Style High Chair Swivel Metal Base Footrest Leather Bar Stool for Kitchen Counter Dining School Hotel" style="max-width: 200px;">
+            </a>
+            <h3>Modern Style High Chair Swivel Metal Base Footrest Leather Bar Stool for Kitchen Counter Dining School Hotel</h3>
+            <p>Price: $16.68-19.18</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1156.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H14361a7d03334275861c51616db95841C.jpg_300x300.jpg" alt="Office Parts Unfinished Wood Chair Frames Modern Furniture Frame Wood Chair Seat Parts" style="max-width: 200px;">
+            </a>
+            <h3>Office Parts Unfinished Wood Chair Frames Modern Furniture Frame Wood Chair Seat Parts</h3>
+            <p>Price: $1.58-2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1157.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2c64ec352a5c47aeafe01b9317a629364.jpg_300x300.jpg" alt="High-Quality OEM Modern Accessoires Metal Chair Office Chair Base 5 Star Swivel Chair Base" style="max-width: 200px;">
+            </a>
+            <h3>High-Quality OEM Modern Accessoires Metal Chair Office Chair Base 5 Star Swivel Chair Base</h3>
+            <p>Price: $6.00-7.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1158.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3503b63bc05546d88515d42cbeaf66b2I.jpg_300x300.jpg" alt="Wholesale Bar Stool Accessories Fixed Swivel Chair Base Do Not Rotate-Furniture Parts" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Bar Stool Accessories Fixed Swivel Chair Base Do Not Rotate-Furniture Parts</h3>
+            <p>Price: $5.83-15.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1159.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H89aec7fd22a046589f7ba60fad187414c.jpg_300x300.jpg" alt="Chair Parts Bent Plywood Seats and Backs Plywood Shells for Chair Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Chair Parts Bent Plywood Seats and Backs Plywood Shells for Chair Accessories</h3>
+            <p>Price: $1.58-2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1160.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdb094bd633ae416cb22c66745c205326a.jpg_300x300.jpg" alt="Office Chairs Furniture Seat Plywood Contemporary Chair Frame Wooden Panel Sofa Frame Wood" style="max-width: 200px;">
+            </a>
+            <h3>Office Chairs Furniture Seat Plywood Contemporary Chair Frame Wooden Panel Sofa Frame Wood</h3>
+            <p>Price: $1.58-2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1161.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hfd3590f84afb4fabbc168944c5fb0b71A.jpg_300x300.jpg" alt="Office Chair Seat Component Part Chair Frames Parts Wooden Modern Furniture Frame Wood Chair Seat Parts" style="max-width: 200px;">
+            </a>
+            <h3>Office Chair Seat Component Part Chair Frames Parts Wooden Modern Furniture Frame Wood Chair Seat Parts</h3>
+            <p>Price: $1.58-2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1162.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1a1e40d838334a2cac8c12d459cbfc887.jpg_300x300.jpg" alt="Unfinished Raw Chair Frames /school Chair Wood Frame Modern Office Chair Parts" style="max-width: 200px;">
+            </a>
+            <h3>Unfinished Raw Chair Frames /school Chair Wood Frame Modern Office Chair Parts</h3>
+            <p>Price: $1.58-2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1163.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Af52185b03f2b4a8a8c45e3d383880cd1k.jpg_300x300.jpg" alt="Modern Iron Cabinet Furniture Legs for Coffee Office Table Bed Chair Feet Gold Sofa Legs" style="max-width: 200px;">
+            </a>
+            <h3>Modern Iron Cabinet Furniture Legs for Coffee Office Table Bed Chair Feet Gold Sofa Legs</h3>
+            <p>Price: $0.33</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1164.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H17506226e11c4649b2d7ae27803aca15q.jpg_300x300.jpg" alt="201 Stainless Steel New Style Steel Table Legs" style="max-width: 200px;">
+            </a>
+            <h3>201 Stainless Steel New Style Steel Table Legs</h3>
+            <p>Price: $1.88-2.10</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1165.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1116ba3456bc4e54b6969dab233521d29.jpg_300x300.jpg" alt="Metal Chrome-Plated Salon Chair Square Base Exported to Russia Barber Chair Furniture Part" style="max-width: 200px;">
+            </a>
+            <h3>Metal Chrome-Plated Salon Chair Square Base Exported to Russia Barber Chair Furniture Part</h3>
+            <p>Price: $6.99-9.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1166.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H82707ea8e7ad424d8624a9302e928d40R.jpg_300x300.jpg" alt="High-End Heavy-Duty Round Polished Heavy Metal Barber Chair Base Premium Furniture Part" style="max-width: 200px;">
+            </a>
+            <h3>High-End Heavy-Duty Round Polished Heavy Metal Barber Chair Base Premium Furniture Part</h3>
+            <p>Price: $7.50-9.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1167.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9255f97fd8864728ab9c002e306c0be81.jpg_300x300.jpg" alt="Modern Design PU Round Leather Counter Chairs with Casual Rotating Plastic Bases Bar Stools for Dining Room School Hospital" style="max-width: 200px;">
+            </a>
+            <h3>Modern Design PU Round Leather Counter Chairs with Casual Rotating Plastic Bases Bar Stools for Dining Room School Hospital</h3>
+            <p>Price: $5.29-6.29</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1168.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1fafcf6150184db29c436b51ff280f27G.jpg_300x300.jpg" alt="Swivel Chair with Gas Spring Bar Chair Accessory Furniture Part Office Chair Gas Spring" style="max-width: 200px;">
+            </a>
+            <h3>Swivel Chair with Gas Spring Bar Chair Accessory Furniture Part Office Chair Gas Spring</h3>
+            <p>Price: $7.13-8.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1169.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H360bc63876104018a561f3fde1862028h.jpg_300x300.jpg" alt="Chrome-Plated Metal Square Base for Export Barber Chair Base for Salons Furniture Parts" style="max-width: 200px;">
+            </a>
+            <h3>Chrome-Plated Metal Square Base for Export Barber Chair Base for Salons Furniture Parts</h3>
+            <p>Price: $9.00-10.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1170.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H099401372459435d98a3d630fe61c9fdb.jpg_300x300.jpg" alt="Hairdresser Hydraulic Pump Square Base Barber Chair Furniture Accessory" style="max-width: 200px;">
+            </a>
+            <h3>Hairdresser Hydraulic Pump Square Base Barber Chair Furniture Accessory</h3>
+            <p>Price: $9.09-13.99</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1171.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H650cc7b2992d4098bb08da734495b3673.jpg_300x300.jpg" alt="Heavy-Duty Chrome-Plated Steel Square Base for Salon Chairs Barber Chair Furniture Part" style="max-width: 200px;">
+            </a>
+            <h3>Heavy-Duty Chrome-Plated Steel Square Base for Salon Chairs Barber Chair Furniture Part</h3>
+            <p>Price: $6.29-9.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1172.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H63589b9882ca4b2cb007b528675e8800H.jpg_300x300.jpg" alt="Office Chair Parts Hardware Chair Mechanism Furniture Replacement Tilt Control butterfly Mechanism" style="max-width: 200px;">
+            </a>
+            <h3>Office Chair Parts Hardware Chair Mechanism Furniture Replacement Tilt Control butterfly Mechanism</h3>
+            <p>Price: $1.00-2.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1173.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha374c8b5daba46a896782f1677689320e.jpg_300x300.jpg" alt="Professional Manufacturer's Sales of Heavy Metal Hydraulic Pump Support Plate Essential Furniture Part for Barber Chair Base" style="max-width: 200px;">
+            </a>
+            <h3>Professional Manufacturer's Sales of Heavy Metal Hydraulic Pump Support Plate Essential Furniture Part for Barber Chair Base</h3>
+            <p>Price: $3.00-4.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1174.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7946606a90c04cdb84bf8e1928503a9aK.jpg_300x300.jpg" alt="Wholesale Steel Furniture Parts-Salon Chair with Hydraulic Pump Support Plate Barber Chair Base Mechanical Parts" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Steel Furniture Parts-Salon Chair with Hydraulic Pump Support Plate Barber Chair Base Mechanical Parts</h3>
+            <p>Price: $3.00-4.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1175.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H73182561da9d4cf881c6bd362341f3ffA.jpg_300x300.jpg" alt="Factory Wholesale 5-Star Rotary Office Chair Base Aluminum Polished Lift Swivel with Comfortable Furniture Legs" style="max-width: 200px;">
+            </a>
+            <h3>Factory Wholesale 5-Star Rotary Office Chair Base Aluminum Polished Lift Swivel with Comfortable Furniture Legs</h3>
+            <p>Price: $13.43-18.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1176.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H0b3530502d36489badc33267a5849ed2L.jpg_300x300.jpg" alt="Vertical Barbell Storage Double Barbell Storage Holder Wall Mount Hanging Barbell Rack Display Rack" style="max-width: 200px;">
+            </a>
+            <h3>Vertical Barbell Storage Double Barbell Storage Holder Wall Mount Hanging Barbell Rack Display Rack</h3>
+            <p>Price: $5.32-6.37</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1177.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H78e22524c56444d0831cf52d5064db48E.jpg_300x300.jpg" alt="Wholesale Five-Star Swivel Office Chair with Chrome-Plated Metal Footrest Furniture Parts Accessories Swivel Chair Base" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Five-Star Swivel Office Chair with Chrome-Plated Metal Footrest Furniture Parts Accessories Swivel Chair Base</h3>
+            <p>Price: $14.00-15.80</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1178.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7f6b7759aa2444cea9b13874c4d8065bo.jpg_300x300.jpg" alt="Factory Wholesale High-quality Aluminum Alloy Three-claw Fittings Dining Table Coffee Table Base" style="max-width: 200px;">
+            </a>
+            <h3>Factory Wholesale High-quality Aluminum Alloy Three-claw Fittings Dining Table Coffee Table Base</h3>
+            <p>Price: $11.50-12.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1179.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb227b990d1ce4d05be17f375b8ba2469g.jpg_300x300.jpg" alt="Office Chair Gas Lift Furniture Part for Comfortable Seating" style="max-width: 200px;">
+            </a>
+            <h3>Office Chair Gas Lift Furniture Part for Comfortable Seating</h3>
+            <p>Price: $2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1180.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hfb59e9f398884e39a1964d97eea27a3bM.jpg_300x300.jpg" alt="Factory Wholesale 5-Star Lifting Office Chair Base Aluminum Alloy Black Matte Swivel Chair Seat Furniture Legs" style="max-width: 200px;">
+            </a>
+            <h3>Factory Wholesale 5-Star Lifting Office Chair Base Aluminum Alloy Black Matte Swivel Chair Seat Furniture Legs</h3>
+            <p>Price: $18.00-19.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1181.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hcc5285a9b2c145cea3e5fa38c29917d0P.jpg_300x300.jpg" alt="Wholesale Four-Star Swivel Office Chair Base Aluminum Alloy Polishing Furniture Legs Chair Base Parts" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Four-Star Swivel Office Chair Base Aluminum Alloy Polishing Furniture Legs Chair Base Parts</h3>
+            <p>Price: $13.67-22.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1182.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H16df7a9bfdb342f1b6b0ff82362b0b19p.jpg_300x300.jpg" alt="Wholesale Four-Star Swivel Office Chair Base Parts One-piece Aluminum Alloy Die-casting Polishing Iron Material" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Four-Star Swivel Office Chair Base Parts One-piece Aluminum Alloy Die-casting Polishing Iron Material</h3>
+            <p>Price: $8.63-14.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1183.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3429552421004334b6a8d1f9bd24cc14N.jpg_300x300.jpg" alt="Good Quality D430xH720mm Table Base with Chrysanthemum Patten" style="max-width: 200px;">
+            </a>
+            <h3>Good Quality D430xH720mm Table Base with Chrysanthemum Patten</h3>
+            <p>Price: $31.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1184.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H99211f82eeba4b728107c17ad4b43c01g.jpg_300x300.jpg" alt="High-Grade Ergonomic Office Chair with Chrome-Plated Five-Star Swivel Chair Base Dismantling Furniture Part" style="max-width: 200px;">
+            </a>
+            <h3>High-Grade Ergonomic Office Chair with Chrome-Plated Five-Star Swivel Chair Base Dismantling Furniture Part</h3>
+            <p>Price: $5.14-7.18</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1185.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H85cb4f4d85ab41f6b3e97d661a0b88288.jpg_300x300.jpg" alt="Good Quality Metal Table Tube D60xH(755-1095)mm Hand-crank Lifting Table Tube" style="max-width: 200px;">
+            </a>
+            <h3>Good Quality Metal Table Tube D60xH(755-1095)mm Hand-crank Lifting Table Tube</h3>
+            <p>Price: $38.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1186.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H861a072b8cd74f1cb80777f3ee6a75b0H.jpg_300x300.jpg" alt="Hot Selling Custom Modern Cast Iron Furniture square Metal Office bar Restaurant Dining Table Legs" style="max-width: 200px;">
+            </a>
+            <h3>Hot Selling Custom Modern Cast Iron Furniture square Metal Office bar Restaurant Dining Table Legs</h3>
+            <p>Price: $28.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1187.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3a43b074338d411da817d86430594122d.jpg_300x300.jpg" alt="High End Modern 4D Armrest Office Chair Adjustability Plastic Chair for Home Office Bedroom Living Room School Hospital Hotel" style="max-width: 200px;">
+            </a>
+            <h3>High End Modern 4D Armrest Office Chair Adjustability Plastic Chair for Home Office Bedroom Living Room School Hospital Hotel</h3>
+            <p>Price: $7.60-8.71</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1188.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Haed2f25494e04a0589a5f3cfdda1104bz.jpg_300x300.jpg" alt="Hot Selling Custom Modern Cast Aluminum Furniture Irregular Metal Office bar Restaurant Dining Table Legs" style="max-width: 200px;">
+            </a>
+            <h3>Hot Selling Custom Modern Cast Aluminum Furniture Irregular Metal Office bar Restaurant Dining Table Legs</h3>
+            <p>Price: $65.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1189.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H73feffc743f14738a6850db6e47dd974p.jpg_300x300.jpg" alt="Hot Sale Metal Good Quality Table Base D400xH720mm S.S304 Table Base" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale Metal Good Quality Table Base D400xH720mm S.S304 Table Base</h3>
+            <p>Price: $25.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1190.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H560acc147f5e4d1aafc3588deedc885bl.jpg_300x300.jpg" alt="Coffee Room Table Base D450xH720mm Cast Iron Flower Table Base for Sale" style="max-width: 200px;">
+            </a>
+            <h3>Coffee Room Table Base D450xH720mm Cast Iron Flower Table Base for Sale</h3>
+            <p>Price: $25.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1191.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb66141a8c2b445659f44f46968899181T.jpg_300x300.jpg" alt="Good Quality Metal Table Base L440xW430xH720mm Cast Iron Pillow Edge Table Base" style="max-width: 200px;">
+            </a>
+            <h3>Good Quality Metal Table Base L440xW430xH720mm Cast Iron Pillow Edge Table Base</h3>
+            <p>Price: $29.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1192.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbb738c71b433481083ceb6b03800866ct.jpg_300x300.jpg" alt="Hot Sale Coffee Room Table Base D600xH720mm S.S 201 Rome Three Feet Table Base" style="max-width: 200px;">
+            </a>
+            <h3>Hot Sale Coffee Room Table Base D600xH720mm S.S 201 Rome Three Feet Table Base</h3>
+            <p>Price: $19.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 bags</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1193.html">
+                <img src="https://s.alicdn.com/@sc04/kf/A95f909317ff444d0b633b5c2b6238f76R.jpg_300x300.jpg" alt="Adjustable Solid Wood Outdoor Folding Table with Flower Box Accessories 64cm x 63cm for Dining and Living Room Furniture" style="max-width: 200px;">
+            </a>
+            <h3>Adjustable Solid Wood Outdoor Folding Table with Flower Box Accessories 64cm x 63cm for Dining and Living Room Furniture</h3>
+            <p>Price: $16.00-20.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 cartons</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1194.html">
+                <img src="https://s.alicdn.com/@sc04/kf/A113b8b39c05b4dbb9272b71f014b7510f.jpg_300x300.jpg" alt="Custom Minimalist Style Wood Furniture Parts TV Cabinet End Table Wardrobe Legs for Home Office Furniture Direct From Cambodia" style="max-width: 200px;">
+            </a>
+            <h3>Custom Minimalist Style Wood Furniture Parts TV Cabinet End Table Wardrobe Legs for Home Office Furniture Direct From Cambodia</h3>
+            <p>Price: $0.85-1.05</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1195.html">
+                <img src="https://s.alicdn.com/@sc04/kf/A6eddebbbeb4740c2864cc5a8b8b21993u.jpg_300x300.jpg" alt="Solid Wood Table Leg for Furniture Sofa Direct Factory Price From EFS Cambodia Cabinet Living Room Workshop Finished Painting" style="max-width: 200px;">
+            </a>
+            <h3>Solid Wood Table Leg for Furniture Sofa Direct Factory Price From EFS Cambodia Cabinet Living Room Workshop Finished Painting</h3>
+            <p>Price: $0.59-0.77</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1196.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H62148fcd93a54c2ca912de13c2de4a2aw.jpg_300x300.jpg" alt="Customized ABS Plastic Wood Furniture Legs Easy Install Matt Wood Grain Sofa Parts for Outdoor Living Room Workshop Laundry" style="max-width: 200px;">
+            </a>
+            <h3>Customized ABS Plastic Wood Furniture Legs Easy Install Matt Wood Grain Sofa Parts for Outdoor Living Room Workshop Laundry</h3>
+            <p>Price: $0.63-2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1197.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5d00debdb7174b44928bff96cf7b2e95P.jpg_300x300.jpg" alt="Professional Manufacture Outdoor Living Room Workshop Replacement Parts Cone Plastic and Wooden Sofa Leg Chair Legs" style="max-width: 200px;">
+            </a>
+            <h3>Professional Manufacture Outdoor Living Room Workshop Replacement Parts Cone Plastic and Wooden Sofa Leg Chair Legs</h3>
+            <p>Price: $0.68-0.73</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1198.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Head6be9ae3d746fd90272d22619d064aS.jpg_300x300.jpg" alt="2024 Customizable Stainless Steel Gas Piston Gas Lift for Home Office Chair Modern Design Class 1 2 3 4 Metal Material" style="max-width: 200px;">
+            </a>
+            <h3>2024 Customizable Stainless Steel Gas Piston Gas Lift for Home Office Chair Modern Design Class 1 2 3 4 Metal Material</h3>
+            <p>Price: $2.00-2.15</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1199.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7215bdcc87914935aa73d11bc88b1ade1.jpg_300x300.jpg" alt="Nordic Modern Design Dining Table with All Solid Wood Accessories Wooden Legs Horizontal Wooden Feet for Computer Study Desk" style="max-width: 200px;">
+            </a>
+            <h3>Nordic Modern Design Dining Table with All Solid Wood Accessories Wooden Legs Horizontal Wooden Feet for Computer Study Desk</h3>
+            <p>Price: $19.00-23.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_1200.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H6d8a2bdc1f6a4b5babbc5a64a187a9fds.png_300x300.png" alt="Plastic Support Furniture Table Adjustable Feet Sofa Cushion Feet Cabinet Fixing Black Adjustable Feet" style="max-width: 200px;">
+            </a>
+            <h3>Plastic Support Furniture Table Adjustable Feet Sofa Cushion Feet Cabinet Fixing Black Adjustable Feet</h3>
+            <p>Price: $0.20-0.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <!-- 分页按钮 -->
+        <div class="pagination">
+            
+            <a href="page_11.html">Previous</a>
+            
+
+            
+            
+
+            
+            <a href="page_11.html" >11</a>
+            
+            <a href="page_12.html" class="active">12</a>
+            
+            <a href="page_13.html" >13</a>
+            
+            <a href="page_14.html" >14</a>
+            
+            <a href="page_15.html" >15</a>
+            
+            <a href="page_16.html" >16</a>
+            
+            <a href="page_17.html" >17</a>
+            
+            <a href="page_18.html" >18</a>
+            
+            <a href="page_19.html" >19</a>
+            
+            <a href="page_20.html" >20</a>
+            
+
+            
+            <a href="page_21.html">Next</a>
+            
+        </div>
+        <!-- 回到顶部按钮 -->
+        <button id="back-to-top" onclick="topFunction()">回到顶部</button>
+    </div>
+
+    <script>
+        // 回到顶部按钮显示与隐藏逻辑
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // 回到顶部按钮点击事件
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

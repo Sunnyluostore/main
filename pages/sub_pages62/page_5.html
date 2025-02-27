@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L8EDEXZBV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9L8EDEXZBV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品列表 - 第页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 200px;
+            /* 可根据实际情况调整图片大小 */
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        nav {
+            background-color: #03a9f4;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* 新添加的样式 */
+        .product-item h3 {
+            font-size: 14px;
+            /* 产品名称文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item p {
+            font-size: 12px;
+            /* 其他产品信息文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item:hover h3 {
+            color: #03a9f4;
+            /* 鼠标悬停时产品名称文字变色 */
+        }
+
+        .product-item:hover p {
+            color: #03a9f4;
+            /* 鼠标悬停时其他产品信息文字变色 */
+        }
+
+        /* 产品容器样式 */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        /* 产品项样式 */
+        .product-item {
+            width: calc(25% - 20px);
+            /* 默认每行显示 4 个产品 */
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 鼠标悬停效果 */
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* 媒体查询，适配不同屏幕尺寸 */
+        @media (max-width: 1024px) {
+            .product-item {
+                width: calc(33.33% - 20px);
+                /* 平板设备每行显示 3 个产品 */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* 小屏幕设备每行显示 2 个产品 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: 100%;
+                /* 超小屏幕设备每行显示 1 个产品 */
+            }
+        }
+
+        /* 分页按钮样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        /* 回到顶部按钮样式 */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #03a9f4;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部图片和文字 -->
+    <div class="header">
+        <img src="../../../main/image/logo.png" alt="Logo">
+        <p>Sunnyluo Store</p>
+        <p>Build a curated directory of store with factory</p>
+    </div>
+    <nav>
+        <a href="../../../index.html">Home</a>
+        <a href="../../pdfs/pdf.html">Resources</a>
+        <a href="../../../main/About us.html">About Us</a>
+        <a href="mailto:sunnyluo330@gmail.com">Contact Us</a>
+        <a href="https://www.facebook.com/sunnyluoting">Facebook</a>
+    </nav>
+    <h1>Product list</h1>
+    <div class="products">
+        
+        <div class="product-item">
+            <a href="product_401.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hcad5668c8b4a4bde83881a86aa73a3cbA.jpg_300x300.jpg" alt="Modern Simple Design Aluminum Zinc Alloy Drawer Furniture Handle Knobs Black Gold Wardrobe Kitchen Pull Cabinet Handle" style="max-width: 200px;">
+            </a>
+            <h3>Modern Simple Design Aluminum Zinc Alloy Drawer Furniture Handle Knobs Black Gold Wardrobe Kitchen Pull Cabinet Handle</h3>
+            <p>Price: $0.87</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_402.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He344b869fabe4d4c89f8504584661b15P.jpg_300x300.jpg" alt="JIUFA Furniture Hardware Hidden Connector Furniture 4 in 1 Fastener Cupboard Hardware Fitting" style="max-width: 200px;">
+            </a>
+            <h3>JIUFA Furniture Hardware Hidden Connector Furniture 4 in 1 Fastener Cupboard Hardware Fitting</h3>
+            <p>Price: $0.128-0.16</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_403.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H24e2a436247844e5aca026031e634d20t.jpg_300x300.jpg" alt="Factory Direct Sales Stainless Steel 304 Hinge Furnitures Accessories Hinge Door and Window Cabinet Hinges" style="max-width: 200px;">
+            </a>
+            <h3>Factory Direct Sales Stainless Steel 304 Hinge Furnitures Accessories Hinge Door and Window Cabinet Hinges</h3>
+            <p>Price: $13.48-13.88</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_404.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha8d078d63fbc4d348c01703b4733d1e2H.jpg_300x300.jpg" alt="Reliable Factory New Products Furniture Drawer Hardware Accessories" style="max-width: 200px;">
+            </a>
+            <h3>Reliable Factory New Products Furniture Drawer Hardware Accessories</h3>
+            <p>Price: $0.35</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_405.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H45232b0642e74acf80d77e1db92a7932p.jpg_300x300.jpg" alt="Furniture Hardware Sofa Spare Parts Metal Sofa Hinge for Armrest" style="max-width: 200px;">
+            </a>
+            <h3>Furniture Hardware Sofa Spare Parts Metal Sofa Hinge for Armrest</h3>
+            <p>Price: $2.64-2.93</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,000 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_406.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H86169fdebc8b455bb233d4645b35fe5a5.jpg_300x300.jpg" alt="ZHONGLIAN Manufacturer 24 Hours Delivery Golden Black Aluminum Furniture Cabinet Handles" style="max-width: 200px;">
+            </a>
+            <h3>ZHONGLIAN Manufacturer 24 Hours Delivery Golden Black Aluminum Furniture Cabinet Handles</h3>
+            <p>Price: $2.00-2.15</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_407.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb4958d4e21b948db8be2f2a4d135881db.jpg_300x300.jpg" alt="Furniture Hardware Accessories Black Leather Cabinet Furniture Handle Drawer Knob Handle" style="max-width: 200px;">
+            </a>
+            <h3>Furniture Hardware Accessories Black Leather Cabinet Furniture Handle Drawer Knob Handle</h3>
+            <p>Price: $3.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_408.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H65512aef7b444b2480c3147cb5f0c5ddT.jpeg_300x300.jpeg" alt="Wholesale Furniture Hardware Steel Accessories Hinge Removable Cabinet Door Hydraulic Concealed Hinge" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Furniture Hardware Steel Accessories Hinge Removable Cabinet Door Hydraulic Concealed Hinge</h3>
+            <p>Price: $0.32-0.42</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_409.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1ce56f0deeee4ee49290e568d1f3a3d1p.jpg_300x300.jpg" alt="Stainless Steel Material Hinges Furniture Hardware Fittings Kitchen Cabinet Doors Hinges" style="max-width: 200px;">
+            </a>
+            <h3>Stainless Steel Material Hinges Furniture Hardware Fittings Kitchen Cabinet Doors Hinges</h3>
+            <p>Price: $0.42-0.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_410.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb89c1623710b476e925abaa475d17cd7a.jpg_300x300.jpg" alt="High Quality Kitchen Cabinet Door Hinge Hardware Soft Close Hydraulic Cabinet Hinges Furniture Fittings" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Kitchen Cabinet Door Hinge Hardware Soft Close Hydraulic Cabinet Hinges Furniture Fittings</h3>
+            <p>Price: $0.20-0.24</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_411.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3089102404f64dc58a7bce614c037e47N.jpg_300x300.jpg" alt="Cabinet Handle Matte Black Modern Hardware for Kitchen and Bathroom Cabinets Cupboard Handle" style="max-width: 200px;">
+            </a>
+            <h3>Cabinet Handle Matte Black Modern Hardware for Kitchen and Bathroom Cabinets Cupboard Handle</h3>
+            <p>Price: $0.48-4.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_412.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H874ea0b852c94aceafa382317162c392d.jpg_300x300.jpg" alt="Cabinet Equipment LS506 Industrial Cabinet Open Furniture Hardware Folding Handle Iron Cabinet Carbon Steel Modern Times Bedroom" style="max-width: 200px;">
+            </a>
+            <h3>Cabinet Equipment LS506 Industrial Cabinet Open Furniture Hardware Folding Handle Iron Cabinet Carbon Steel Modern Times Bedroom</h3>
+            <p>Price: $0.43-0.56</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 240 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_413.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H81025e6cdcc949ff86e70d2bf6fff28bY.jpg_300x300.jpg" alt="96/128mm Furniture Cabinet Handles Zinc Alloy K9 Crystal Handles Kitchen Cupboard Pulls Drawer Knobs Hardware Handle" style="max-width: 200px;">
+            </a>
+            <h3>96/128mm Furniture Cabinet Handles Zinc Alloy K9 Crystal Handles Kitchen Cupboard Pulls Drawer Knobs Hardware Handle</h3>
+            <p>Price: $2.93-3.38</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_414.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hbe637118b06a42cd8a65b78ce9cc509e3.jpg_300x300.jpg" alt="Furniture Handle 13.02.387 for Kitchen Cabinet Handle" style="max-width: 200px;">
+            </a>
+            <h3>Furniture Handle 13.02.387 for Kitchen Cabinet Handle</h3>
+            <p>Price: $0.73-0.81</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1,500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_415.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H22ba79cfccbd4e8a805d11ea5b73cac47.jpg_300x300.jpg" alt="Luxury Brass Furniture Fashion Black Gold Wardrobe Dresser Cupboard Cabinet Drawer Pulls Handles" style="max-width: 200px;">
+            </a>
+            <h3>Luxury Brass Furniture Fashion Black Gold Wardrobe Dresser Cupboard Cabinet Drawer Pulls Handles</h3>
+            <p>Price: $0.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_416.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H400bfd1c0c564e69950b07d0e89a50caS.jpg_300x300.jpg" alt="Made in China Furniture Cabinet Hardware Drawer Solid Brass Gold Knurled Knob and Pull Handle" style="max-width: 200px;">
+            </a>
+            <h3>Made in China Furniture Cabinet Hardware Drawer Solid Brass Gold Knurled Knob and Pull Handle</h3>
+            <p>Price: $1.22-1.88</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_417.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H67842ae199db4426b0cebd90e1dc1406D.jpg_300x300.jpg" alt="China Hardware Aluminum Furniture Accessory Handle" style="max-width: 200px;">
+            </a>
+            <h3>China Hardware Aluminum Furniture Accessory Handle</h3>
+            <p>Price: $1.65-2.65</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_418.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H12792d00edcd438e80bc15b571180297K.jpg_300x300.jpg" alt="Durable Rollers Wheels Sliding Roller Fittings for Furniture and Sliding Door System" style="max-width: 200px;">
+            </a>
+            <h3>Durable Rollers Wheels Sliding Roller Fittings for Furniture and Sliding Door System</h3>
+            <p>Price: $1.31-1.48</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2,000 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_419.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hb8e8c6f7d9b547f093fef724ee07a965y.jpg_300x300.jpg" alt="JAYA Knurled Tree Cupboard Zinc Alloy Bronze Silver Cabinet Handle and Knobs for Furniture Hardware Cabinet Door Kitchen Handle" style="max-width: 200px;">
+            </a>
+            <h3>JAYA Knurled Tree Cupboard Zinc Alloy Bronze Silver Cabinet Handle and Knobs for Furniture Hardware Cabinet Door Kitchen Handle</h3>
+            <p>Price: $0.33-0.98</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_420.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hf25c40c0268c40f3a7fff185afe4f3220.jpg_300x300.jpg" alt="High Quality Furniture Hardware Kitchen Cabinet Handles for Sale" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Furniture Hardware Kitchen Cabinet Handles for Sale</h3>
+            <p>Price: $0.50-0.90</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_421.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H7a8e8052f25a4a1f91ba165bee83ad59Q.jpg_300x300.jpg" alt="Sofa Connector Furniture Hardware Accessories Sofa Joint" style="max-width: 200px;">
+            </a>
+            <h3>Sofa Connector Furniture Hardware Accessories Sofa Joint</h3>
+            <p>Price: $0.30-0.70</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_422.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd0b00775586041d7b4ba8bff6b8a226aU.jpg_300x300.jpg" alt="1.5 Inch Swivel Caster Double Wheel Replacement for Furniture Cabinet, Office Chair, Kitchen Shelf, Sofa and Large Supply" style="max-width: 200px;">
+            </a>
+            <h3>1.5 Inch Swivel Caster Double Wheel Replacement for Furniture Cabinet, Office Chair, Kitchen Shelf, Sofa and Large Supply</h3>
+            <p>Price: $0.12-0.62</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_423.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H9045362c3dab4aa58f727e4a5cb5251e4.jpg_300x300.jpg" alt="Furniture-Handles Cabinet Pull Hardware Gold Furniture Modern Handle" style="max-width: 200px;">
+            </a>
+            <h3>Furniture-Handles Cabinet Pull Hardware Gold Furniture Modern Handle</h3>
+            <p>Price: $0.491-0.613</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_424.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H99e4b7dae3b04192a14723e4ca7fc8f1Q.jpg_300x300.jpg" alt="Furniture Mechanism Click Clack Sofa Bed Home Headrest Backrest Armrest Adjustable Folding Hardware Hinges" style="max-width: 200px;">
+            </a>
+            <h3>Furniture Mechanism Click Clack Sofa Bed Home Headrest Backrest Armrest Adjustable Folding Hardware Hinges</h3>
+            <p>Price: $1.10-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_425.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc738e61e9e26489e89d7f24d20aed5d5q.jpg_300x300.jpg" alt="Furniture Accessories Crystal Handle Dia 40mm Small Glass Cabinet Handle Decorative Drawer Pull Knobs" style="max-width: 200px;">
+            </a>
+            <h3>Furniture Accessories Crystal Handle Dia 40mm Small Glass Cabinet Handle Decorative Drawer Pull Knobs</h3>
+            <p>Price: $0.20-0.25</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_426.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Ha9657ab1c3c1491a9537a590c36c6484O.jpg_300x300.jpg" alt="Furniture Hardware Kitchen Cabinet Hanging Fittings" style="max-width: 200px;">
+            </a>
+            <h3>Furniture Hardware Kitchen Cabinet Hanging Fittings</h3>
+            <p>Price: $0.70-0.76</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_427.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H318696b0568a48268de118ce980c0684q.jpg_300x300.jpg" alt="Professional Modern Chrome Plating Tapped Round Handles with Rubber Kitchen Bedroom Office Bathroom Bedroom Door Handle" style="max-width: 200px;">
+            </a>
+            <h3>Professional Modern Chrome Plating Tapped Round Handles with Rubber Kitchen Bedroom Office Bathroom Bedroom Door Handle</h3>
+            <p>Price: $1.40-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 10 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_428.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hefe4369fa8e54871a90a8f0eebac455cV.jpg_300x300.jpg" alt="High Quality Furniture Hardware Modern Design Aluminum Furniture Handles" style="max-width: 200px;">
+            </a>
+            <h3>High Quality Furniture Hardware Modern Design Aluminum Furniture Handles</h3>
+            <p>Price: $0.70-0.92</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_429.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1GdkYcSWD3KVjSZSgq6ACxVXas.jpg_300x300.jpg" alt="TANJA K11 Zinc Alloy Cabinet butterfly Hinge With Inlaid Stud Hinge Steel Screw for Rack Enclosure Server Cabinets" style="max-width: 200px;">
+            </a>
+            <h3>TANJA K11 Zinc Alloy Cabinet butterfly Hinge With Inlaid Stud Hinge Steel Screw for Rack Enclosure Server Cabinets</h3>
+            <p>Price: $1.13</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_430.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hef5372aa88bd49bc85849b0ec880dbf85.jpg_300x300.jpg" alt="Knurled Knob Decoration Furniture Handle and Knobs Knurled Zinc Alloy Round Furniture Drawer Cabinet Knob and Handle" style="max-width: 200px;">
+            </a>
+            <h3>Knurled Knob Decoration Furniture Handle and Knobs Knurled Zinc Alloy Round Furniture Drawer Cabinet Knob and Handle</h3>
+            <p>Price: $0.83-0.92</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 4 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_431.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Haa1e9992e4e0412baecf85be04ae1293o.png_300x300.png" alt="Metal Furniture Knob Hign Quality Handles Aluminium Kitchen Cabinet Drawer New Cabinet Handles Gold Cabinet Pulls" style="max-width: 200px;">
+            </a>
+            <h3>Metal Furniture Knob Hign Quality Handles Aluminium Kitchen Cabinet Drawer New Cabinet Handles Gold Cabinet Pulls</h3>
+            <p>Price: $2.36-4.91</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_432.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hcaea8ec3c0714629a906dc27b2e325afn.jpg_300x300.jpg" alt="Favourable Price Furniture Hardwares Cabinet Hardwares Aluminum Handles" style="max-width: 200px;">
+            </a>
+            <h3>Favourable Price Furniture Hardwares Cabinet Hardwares Aluminum Handles</h3>
+            <p>Price: $1.15-1.35</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_433.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hab426b4561504f32a75fb0348dec0360c.jpg_300x300.jpg" alt="Furniture Squash Court Handle Hardware Door Pull" style="max-width: 200px;">
+            </a>
+            <h3>Furniture Squash Court Handle Hardware Door Pull</h3>
+            <p>Price: $0.50-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 200 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_434.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hdcbc046735854a37b39db0a400db9ff47.jpg_300x300.jpg" alt="Furniture Hardware Leg Accessory Metal Stainless Steel Plate for Sofa Table Chair Cabinet Bed" style="max-width: 200px;">
+            </a>
+            <h3>Furniture Hardware Leg Accessory Metal Stainless Steel Plate for Sofa Table Chair Cabinet Bed</h3>
+            <p>Price: $0.02-0.08</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_435.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hc36fe82a839b454d89d9a82e61b719a7N.jpg_300x300.jpg" alt="2 Colour Creative Handle and Knobs European Handles Drawer Pulls Kitchen Cabinet Knobs and Handles Furniture Hardware Z-3046" style="max-width: 200px;">
+            </a>
+            <h3>2 Colour Creative Handle and Knobs European Handles Drawer Pulls Kitchen Cabinet Knobs and Handles Furniture Hardware Z-3046</h3>
+            <p>Price: $3.07-6.99</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_436.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H1fdd906d71e344369a65456f0a4f7790D.jpg_300x300.jpg" alt="Close Cabinet Doors Furniture Hardware Fittings Plastic Soft Closing Damper for Sliding Door" style="max-width: 200px;">
+            </a>
+            <h3>Close Cabinet Doors Furniture Hardware Fittings Plastic Soft Closing Damper for Sliding Door</h3>
+            <p>Price: $1.10-1.65</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pairs</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_437.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hfe509740e8d74079aa7c17083606a73aQ.jpg_300x300.jpg" alt="Furniture Hardware Fittings, Cabinet Bracket Hanging to the Wall Mount Bracket" style="max-width: 200px;">
+            </a>
+            <h3>Furniture Hardware Fittings, Cabinet Bracket Hanging to the Wall Mount Bracket</h3>
+            <p>Price: $0.42</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pairs</p>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <!-- 分页按钮 -->
+        <div class="pagination">
+            
+            <a href="page_4.html">Previous</a>
+            
+
+            
+            
+
+            
+            <a href="page_1.html" >1</a>
+            
+            <a href="page_2.html" >2</a>
+            
+            <a href="page_3.html" >3</a>
+            
+            <a href="page_4.html" >4</a>
+            
+            <a href="page_5.html" class="active">5</a>
+            
+
+            
+        </div>
+        <!-- 回到顶部按钮 -->
+        <button id="back-to-top" onclick="topFunction()">回到顶部</button>
+    </div>
+
+    <script>
+        // 回到顶部按钮显示与隐藏逻辑
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // 回到顶部按钮点击事件
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>

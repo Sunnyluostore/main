@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9L8EDEXZBV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9L8EDEXZBV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品列表 - 第页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            width: 200px;
+            /* 可根据实际情况调整图片大小 */
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            margin: 5px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        nav {
+            background-color: #03a9f4;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 2px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* 新添加的样式 */
+        .product-item h3 {
+            font-size: 14px;
+            /* 产品名称文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item p {
+            font-size: 12px;
+            /* 其他产品信息文字变小 */
+            transition: color 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        .product-item:hover h3 {
+            color: #03a9f4;
+            /* 鼠标悬停时产品名称文字变色 */
+        }
+
+        .product-item:hover p {
+            color: #03a9f4;
+            /* 鼠标悬停时其他产品信息文字变色 */
+        }
+
+        /* 产品容器样式 */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        /* 产品项样式 */
+        .product-item {
+            width: calc(25% - 20px);
+            /* 默认每行显示 4 个产品 */
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* 鼠标悬停效果 */
+        .product-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* 媒体查询，适配不同屏幕尺寸 */
+        @media (max-width: 1024px) {
+            .product-item {
+                width: calc(33.33% - 20px);
+                /* 平板设备每行显示 3 个产品 */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-item {
+                width: calc(50% - 20px);
+                /* 小屏幕设备每行显示 2 个产品 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-item {
+                width: 100%;
+                /* 超小屏幕设备每行显示 1 个产品 */
+            }
+        }
+
+        /* 分页按钮样式 */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: 1px solid #ddd;
+            margin: 0 4px;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+        /* 回到顶部按钮样式 */
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #03a9f4;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        #back-to-top:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部图片和文字 -->
+    <div class="header">
+        <img src="../../../main/image/logo.png" alt="Logo">
+        <p>Sunnyluo Store</p>
+        <p>Build a curated directory of store with factory</p>
+    </div>
+    <nav>
+        <a href="../../../index.html">Home</a>
+        <a href="../../pdfs/pdf.html">Resources</a>
+        <a href="../../../main/About us.html">About Us</a>
+        <a href="mailto:sunnyluo330@gmail.com">Contact Us</a>
+        <a href="https://www.facebook.com/sunnyluoting">Facebook</a>
+    </nav>
+    <h1>Product list</h1>
+    <div class="products">
+        
+        <div class="product-item">
+            <a href="product_401.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H5ed8f72cbf3e4609b18aea74a49d0ca4A.jpg_300x300.jpg" alt="Rechargeable Powered Connector Copper Wire Plug Fairy LED Holiday USB String Light" style="max-width: 200px;">
+            </a>
+            <h3>Rechargeable Powered Connector Copper Wire Plug Fairy LED Holiday USB String Light</h3>
+            <p>Price: $1.78-2.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_402.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1s0ZpacnrK1RkHFrdq6xCoFXab.jpg_300x300.jpg" alt="Addressable SPI UCS1912 DMX512 Meteor Shower Rain Christmas Garden Lights Holiday Party Home Outdoor Decoration." style="max-width: 200px;">
+            </a>
+            <h3>Addressable SPI UCS1912 DMX512 Meteor Shower Rain Christmas Garden Lights Holiday Party Home Outdoor Decoration.</h3>
+            <p>Price: $6.75-7.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_403.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd84b20bda5da4aa9bf099f9a1595ca48A.jpg_300x300.jpg" alt="Wholesale Pink Color 10M 8 Different Play Modes Waterproof Christmas Lights 100 LED Holiday String Lighting" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Pink Color 10M 8 Different Play Modes Waterproof Christmas Lights 100 LED Holiday String Lighting</h3>
+            <p>Price: $1.15-1.20</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 100 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_404.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H3019c77c73ca46fd85b8bebcc0a5d5866.jpg_300x300.jpg" alt="Creative Decoration Outdoor Indoor Holidays and Festivals 220v Led Christmas Light" style="max-width: 200px;">
+            </a>
+            <h3>Creative Decoration Outdoor Indoor Holidays and Festivals 220v Led Christmas Light</h3>
+            <p>Price: $1.35-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 meters</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_405.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H037a8e9362e54c76a7edfcd577229f756.png_300x300.png" alt="High Quality 10ft 20ft 30ft Giant Outdoor Lighting Artificial Glitter Christmas Decoration LED Big Gift Box Motif Christmas Deco" style="max-width: 200px;">
+            </a>
+            <h3>High Quality 10ft 20ft 30ft Giant Outdoor Lighting Artificial Glitter Christmas Decoration LED Big Gift Box Motif Christmas Deco</h3>
+            <p>Price: $570.00-580.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 sets</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_406.html">
+                <img src="https://s.alicdn.com/@sc04/kf/He143483ef05a490796a9ab3af0e6e831v.jpg_300x300.jpg" alt="Outdoor Festival Led Fairy String Lights Led Twinkle Lights for Christmas and House Decoration" style="max-width: 200px;">
+            </a>
+            <h3>Outdoor Festival Led Fairy String Lights Led Twinkle Lights for Christmas and House Decoration</h3>
+            <p>Price: $3.20-3.60</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_407.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1q8xLasfrK1RjSszcq6xGGFXaZ.jpg_300x300.jpg" alt="Christmas Home Wedding Festival Room Decoration Outdoor Party Garden LED String Lights" style="max-width: 200px;">
+            </a>
+            <h3>Christmas Home Wedding Festival Room Decoration Outdoor Party Garden LED String Lights</h3>
+            <p>Price: $1.99</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_408.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2b8f4c9204f94696b1fe4eaaaa60a0e9W.jpg_300x300.jpg" alt="Holiday Outdoor Indoor Waterproof LED String Light for Christmas Garden Wedding Decoration Lights" style="max-width: 200px;">
+            </a>
+            <h3>Holiday Outdoor Indoor Waterproof LED String Light for Christmas Garden Wedding Decoration Lights</h3>
+            <p>Price: $0.98-1.30</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_409.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1clJCM6TpK1RjSZKPq6y3UpXaD.jpg_300x300.jpg" alt="Zhongshan Outdoor Landscape Decorative Christmas Lighting Multicolor Amusement 2W LED Lamp Holiday Light" style="max-width: 200px;">
+            </a>
+            <h3>Zhongshan Outdoor Landscape Decorative Christmas Lighting Multicolor Amusement 2W LED Lamp Holiday Light</h3>
+            <p>Price: $1.30-1.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_410.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1UPaTc1UXBuNjt_XBq6xeDXXan.jpg_300x300.jpg" alt="Wholesale Creative Electronic Holiday Valentine's Day Gift 3d Love Heart Led Gift Light" style="max-width: 200px;">
+            </a>
+            <h3>Wholesale Creative Electronic Holiday Valentine's Day Gift 3d Love Heart Led Gift Light</h3>
+            <p>Price: $3.50-4.40</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 30 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_411.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1JypWfmtYBeNjSspaq6yOOFXaY.jpg_300x300.jpg" alt="7M 24ft Street Garlands S14 String Lights Outdoor Weatherproof Holiday Commercial Grade Christmas Led String Lights" style="max-width: 200px;">
+            </a>
+            <h3>7M 24ft Street Garlands S14 String Lights Outdoor Weatherproof Holiday Commercial Grade Christmas Led String Lights</h3>
+            <p>Price: $16.00-35.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_412.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1ZEQQXvJNTKJjSspoq6A6mpXaq.jpg_300x300.jpg" alt="Solar Christmas Holiday Light Outdoor Garden Courtyard Decoration Led Colorful Ball Christmas Light Solar Energy Lighting Party" style="max-width: 200px;">
+            </a>
+            <h3>Solar Christmas Holiday Light Outdoor Garden Courtyard Decoration Led Colorful Ball Christmas Light Solar Energy Lighting Party</h3>
+            <p>Price: $3.94-4.38</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_413.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1SNrNRFXXXXctXpXXq6xXFXXX3.jpg_300x300.jpg" alt="STL Luxury Handmade Artificial LED Cherry Blossom Tree Night Light Christmas New Year Wedding Decoration Lights 1.8m Tree Light" style="max-width: 200px;">
+            </a>
+            <h3>STL Luxury Handmade Artificial LED Cherry Blossom Tree Night Light Christmas New Year Wedding Decoration Lights 1.8m Tree Light</h3>
+            <p>Price: $1.11-9.99</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_414.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H188c67dabf67444fbfb34805a10bc48fT.png_300x300.png" alt="Holiday Outdoor Lighting IP65 Waterproof RGB String Light Warm White Christmas Tree Decoration 220v Connectable String Lights" style="max-width: 200px;">
+            </a>
+            <h3>Holiday Outdoor Lighting IP65 Waterproof RGB String Light Warm White Christmas Tree Decoration 220v Connectable String Lights</h3>
+            <p>Price: $2.80-3.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 20 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_415.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Habfd69b79e7a4887a4626743b7ea8e75B.jpg_300x300.jpg" alt="Best Price Waterproof C9 Holiday Decorative Christmas LED Ball String Point Light for Garden Decoration" style="max-width: 200px;">
+            </a>
+            <h3>Best Price Waterproof C9 Holiday Decorative Christmas LED Ball String Point Light for Garden Decoration</h3>
+            <p>Price: $0.45-0.49</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_416.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1Dws9O4TpK1RjSZR0q6zEwXXac.jpg_300x300.jpg" alt="Holiday Lighting Christmas" style="max-width: 200px;">
+            </a>
+            <h3>Holiday Lighting Christmas</h3>
+            <p>Price: $3.00-6.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 50 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_417.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hd75b437a26d748849c7161de1f55ac166.jpg_300x300.jpg" alt="2025 WOWORK Luminous Battery Operated Mini Home Metal Animals Marquee Bulb Light for Holiday Decoration" style="max-width: 200px;">
+            </a>
+            <h3>2025 WOWORK Luminous Battery Operated Mini Home Metal Animals Marquee Bulb Light for Holiday Decoration</h3>
+            <p>Price: $11.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_418.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1ZxkiLQvoK1RjSZFDq6xY3pXaT.jpg_300x300.jpg" alt="C6 Bridge Type Bulb Holiday Lighting for 8V 12V 16V 19V 24V 34V 48V 55V3W Bridge LED Filament Lamp Bulb E10 Candle Holder Bulb" style="max-width: 200px;">
+            </a>
+            <h3>C6 Bridge Type Bulb Holiday Lighting for 8V 12V 16V 19V 24V 34V 48V 55V3W Bridge LED Filament Lamp Bulb E10 Candle Holder Bulb</h3>
+            <p>Price: $0.058-0.08</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 5,000 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_419.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1._knbfvsK1RjSspdq6AZepXaH.jpg_300x300.jpg" alt="Warm White Indoor Use Christmas Led Decoration Holiday Appliance Deer Acrylic Light" style="max-width: 200px;">
+            </a>
+            <h3>Warm White Indoor Use Christmas Led Decoration Holiday Appliance Deer Acrylic Light</h3>
+            <p>Price: $30.00-50.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 piece</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_420.html">
+                <img src="https://s.alicdn.com/@sc04/kf/Hede4c49dc4cb4587bffe3040cf49fbd7k.jpg_300x300.jpg" alt="Custom Giant Holiday Decoration Lighting Project RGBW Christmas LED Tree Light" style="max-width: 200px;">
+            </a>
+            <h3>Custom Giant Holiday Decoration Lighting Project RGBW Christmas LED Tree Light</h3>
+            <p>Price: $300.00-8,000.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 1 set</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_421.html">
+                <img src="https://s.alicdn.com/@sc04/kf/H2652cc721af14492a19ea32151fa3e9be.png_300x300.png" alt="Outdoor Christmas Holiday Lighting Lighted up Santa Claus Decorations" style="max-width: 200px;">
+            </a>
+            <h3>Outdoor Christmas Holiday Lighting Lighted up Santa Claus Decorations</h3>
+            <p>Price: $50.00-299.00</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 2 pieces</p>
+        </div>
+        
+        <div class="product-item">
+            <a href="product_422.html">
+                <img src="https://s.alicdn.com/@sc04/kf/HTB1vPRrX.CF3KVjSZJnq6znHFXan.jpg_300x300.jpg" alt="2020 New Design Customized Length Outdoor Led Christmas Light Led Light Christmas Decoration Christmas Decorations Outdoor Light" style="max-width: 200px;">
+            </a>
+            <h3>2020 New Design Customized Length Outdoor Led Christmas Light Led Light Christmas Decoration Christmas Decorations Outdoor Light</h3>
+            <p>Price: $0.40-1.50</p>
+            <p>Contact: /contact us by Wechatname:Sunny22345</p>
+            <p>MOQ: Min. order: 500 pieces</p>
+        </div>
+        
+    </div>
+    <div class="footer">
+        <!-- 分页按钮 -->
+        <div class="pagination">
+            
+            <a href="page_4.html">Previous</a>
+            
+
+            
+            
+
+            
+            <a href="page_1.html" >1</a>
+            
+            <a href="page_2.html" >2</a>
+            
+            <a href="page_3.html" >3</a>
+            
+            <a href="page_4.html" >4</a>
+            
+            <a href="page_5.html" class="active">5</a>
+            
+
+            
+        </div>
+        <!-- 回到顶部按钮 -->
+        <button id="back-to-top" onclick="topFunction()">回到顶部</button>
+    </div>
+
+    <script>
+        // 回到顶部按钮显示与隐藏逻辑
+        window.onscroll = function () {
+            scrollFunction();
+        };
+
+        function scrollFunction() {
+            var backToTopButton = document.getElementById("back-to-top");
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        // 回到顶部按钮点击事件
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+</body>
+
+</html>
